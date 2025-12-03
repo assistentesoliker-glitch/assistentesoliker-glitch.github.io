@@ -3,188 +3,363 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard Usina Solar</title>
+  <title>Dashboard Usina Solar Fotovoltaica</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-      :root { --prim:#2c3e50; --sec:#3498db; --succ:#27ae60; --danger:#e74c3c; --warn:#f39c12; }
-      * { margin:0;padding:0;box-sizing:border-box; }
-      body { font-family:'Inter',sans-serif; background:#f1f5f9; color:#2c3e50; padding:20px; }
-      .container { max-width:1700px; margin:0 auto; background:#fff; border-radius:16px; box-shadow:0 20px 50px rgba(0,0,0,0.1); overflow:hidden; }
-      .header { background:linear-gradient(135deg,#2c3e50,#34495e); color:white; padding:35px 40px; text-align:center; border-bottom:5px solid #3498db; }
-      .header h1 { font-size:2.8rem; font-weight:700; margin-bottom:10px; }
-      .header .date { font-size:1.3rem; background:rgba(255,255,255,0.15); padding:10px 25px; border-radius:30px; }
-      .kpi { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:25px; padding:30px; }
-      .kpicard { background:#fff; padding:25px; border-radius:12px; box-shadow:0 8px 25px rgba(0,0,0,0.1); text-align:center; cursor:pointer; transition:.3s; border-left:6px solid var(--sec); }
-      .kpicard:hover { transform:translateY(-10px); }
-      .kpicard h2 { font-size:3.2rem; font-weight:800; margin:10px 0; }
-      .kpicard p { color:#7f8c8d; font-weight:600; text-transform:uppercase; letter-spacing:1px; }
-      .kpicard.atrasadas { border-color:var(--danger); }
-      .kpicard.exec { border-color:var(--sec); }
-      .kpicard.prox { border-color:var(--warn); }
-      .kpicard.conc { border-color:var(--succ); }
-      .charts { display:grid; grid-template-columns:1fr 1fr; gap:30px; padding:0 30px 30px; }
-      @media (max-width:1100px) { .charts { grid-template-columns:1fr; } }
-      canvas { border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.08); }
-      .controls { padding:0 30px 20px; display:flex; gap:15px; align-items:center; flex-wrap:wrap; }
-      input[type=text] { padding:12px 20px; border:2px solid #ddd; border-radius:50px; width:420px; font-size:1rem; }
-      button { padding:12px 25px; background:var(--prim); color:white; border:none; border-radius:50px; cursor:pointer; font-weight:600; }
-      .atividades { padding:0 30px 40px; }
-      .atividade { background:#fff; padding:22px; margin-bottom:18px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.06); cursor:pointer; transition:.3s; border-left:6px solid var(--sec); }
-      .atividade:hover { transform:translateY(-5px); box-shadow:0 12px 30px rgba(0,0,0,0.12); }
-      .atividade.atrasada { border-left-color:var(--danger); }
-      .atividade.exec { border-left-color:var(--sec); }
-      .atividade.prox { border-left-color:var(--warn); }
-      .atividade.concluida { border-left-color:var(--succ); }
-      .atividade-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
-      .atividade-title { font-size:1.35rem; font-weight:600; }
-      .badge { padding:6px 14px; border-radius:50px; font-size:0.85rem; font-weight:600; }
-      .progress { height:12px; background:#ecf0f1; border-radius:6px; overflow:hidden; margin:12px 0; position:relative; }
-      .progress-bar { height:100%; border-radius:6px; transition:width .6s; }
-      .progress-ideal { position:absolute; top:0; width:4px; height:100%; background:#2c3e50; }
-      .modal { display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; }
-      .modal-content { background:#fff; padding:30px; border-radius:16px; max-width:800px; width:90%; max-height:90vh; overflow-y:auto; position:relative; }
-      .close { position:absolute; top:15px; right:25px; font-size:2.5rem; cursor:pointer; color:#aaa; }
-      .close:hover { color:#000; }
-      .deps-title { background:#f8f9fa; padding:10px 15px; font-weight:600; border-bottom:1px solid #eee; }
-      .dep-item { padding:10px 15px; background:#f8f9fa; border-left:4px solid #3498db; margin:8px 0; border-radius:4px; }
-      .dep-item.atrasada { border-left-color:#e74c3c; background:#fef2f2; }
-      .dep-item.concluida { border-left-color:#27ae60; background:#f0fdf4; }
-      footer { text-align:center; padding:30px; background:#f8f9fa; color:#636e72; }
+      :root { --p:#1d4ed8; --s:#16a34a; --d:#dc2626; --w:#d97706; --i:#2563eb; }
+      * { margin:0; padding:0; box-sizing:border-box; }
+      body { font-family:'Inter',sans-serif; background:#eef2ff; color:#1e293b; padding:20px; line-height:1.5; }
+      .container { max-width:1600px; margin:0 auto; background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 25px 50px rgba(0,0,0,0.12); }
+      header { background:linear-gradient(135deg,#1e40af,#2563eb); color:#fff; padding:3rem 2rem; text-align:center; }
+      header h1 { font-size:2.8rem; font-weight:700; }
+      .kpi { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; padding:2rem; }
+      .card { background:#fff; padding:1.8rem; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.08); border-left:6px solid var(--p); text-align:center; transition:transform .3s; }
+      .card:hover { transform:translateY(-8px); }
+      .card h3 { font-size:2.8rem; font-weight:700; margin:0.5rem 0; }
+      .card p { color:#64748b; font-size:0.95rem; text-transform:uppercase; letter-spacing:1px; }
+      .card.atrasadas { border-color:var(--d); }
+      .card.exec { border-color:var(--i); }
+      .card.concluidas { border-color:var(--s); }
+      .card.criticas { border-color:#92400e; }
+      .finance { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.5rem; padding:0 2rem 2rem; }
+      .finance-card { background:linear-gradient(135deg,#dbeafe,#c7d2fe); padding:2rem; border-radius:12px; text-align:center; }
+      .finance-card strong { font-size:2.4rem; display:block; margin-top:0.5rem; }
+      .tabs { display:flex; margin:2rem; border-radius:12px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.1); }
+      .tab { flex:1; padding:1.2rem; text-align:center; background:#e2e8f0; cursor:pointer; font-weight:600; transition:.3s; }
+      .tab.active { background:var(--p); color:#fff; }
+      .tab-content { display:none; padding:0 2rem 2rem; }
+      .tab-content.active { display:block; }
+      .atividade { background:#fff; padding:1.6rem; margin-bottom:1.2rem; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.06); border-left:6px solid var(--p); }
+      .atividade.atrasada { border-left-color:var(--d); }
+      .atividade.exec { border-left-color:var(--i); }
+      .atividade.concluida { border-left-color:var(--s); }
+      .badge { padding:0.4rem 1rem; border-radius:50px; font-size:0.85rem; font-weight:600; }
+      .badge.atrasada { background:#fee2e2; color:#991b1b; }
+      .badge.exec { background:#dbeafe; color:#1e40af; }
+      .badge.concluida { background:#dcfce7; color:#166534; }
+      .progress-container { margin:1rem 0; }
+      .progress-bar { height:12px; background:#e2e8f0; border-radius:6px; overflow:hidden; position:relative; }
+      .progress-fill { height:100%; background:var(--p); border-radius:6px; transition:width .6s ease; }
+      .progress-ideal { position:absolute; top:0; width:4px; height:100%; background:#1e293b; opacity:0.7; }
+      .progress-labels { display:flex; justify-content:space-between; margin-top:0.5rem; font-size:0.9rem; color:#64748b; }
+      footer { text-align:center; padding:2rem; color:#64748b; font-size:0.9rem; }
   </style>
   </head>
   <body>
-
   <div class="container">
-      <div class="header">
-          <h1>Relatório Diário de Obra - Usina Solar</h1>
-          <div class="date">Data da análise: 03/12/2025</div>
-      </div>
+  <header>
+      <h1>Dashboard Controle de Obra</h1>
+      <p style="font-size:1.5rem;margin-top:0.8rem;opacity:0.9;">Usina Solar Fotovoltaica • 03/12/2025</p>
+  </header>
 
-      <div class="kpi">
-          <div class="kpicard" onclick="filtra('total')"><p>Total de Atividades</p><h2>257</h2></div>
-          <div class="kpicard atrasadas" onclick="filtra('Atrasadas')"><p>Atrasadas</p><h2>2</h2></div>
-          <div class="kpicard exec" onclick="filtra('Em execução')"><p>Em Execução</p><h2>3</h2></div>
-          <div class="kpicard prox" onclick="filtra('Previstas (15 dias)')"><p>Próximos 15 dias</p><h2>1</h2></div>
-          <div class="kpicard conc" onclick="filtra('Concluídas')"><p>Concluídas</p><h2>2</h2></div>
-          <div class="kpicard" style="border-color:#8B4513" onclick="filtra('critica')"><p>Críticas</p><h2>5</h2></div>
-      </div>
-
-      <div class="charts">
-          <canvas id="pizza"></canvas>
-          <canvas id="linha"></canvas>
-      </div>
-
-      <div class="controls">
-          <input type="text" id="busca" placeholder="Buscar por código ou nome..." onkeyup="buscar()">
-          <button onclick="filtra('total')">Mostrar Todas</button>
-      </div>
-
-      <div class="atividades" id="lista"></div>
+  <div class="kpi">
+      <div class="card"><p>Total de Atividades</p><h3>257</h3></div>
+      <div class="card atrasadas"><p>Atrasadas</p><h3>2</h3></div>
+      <div class="card exec"><p>Em Execução</p><h3>3</h3></div>
+      <div class="card concluidas"><p>Concluídas</p><h3>2</h3></div>
+      <div class="card criticas"><p>Críticas</p><h3>5</h3></div>
+      <div class="card"><p>Progresso Financeiro</p><h3>0%</h3></div>
   </div>
 
-  <div class="modal" id="modal">
-      <div class="modal-content">
-          <span class="close" onclick="document.getElementById('modal').style.display='none'">×</span>
-          <h2 id="modalTitulo"></h2>
-          <div id="modalCorpo"></div>
+  <div class="finance">
+      <div class="finance-card"><div>Orçamento Planejado</div><strong>R$ 0,00</strong></div>
+      <div class="finance-card"><div>Executado</div><strong style="color:#166534">R$ 0,00</strong></div>
+      <div class="finance-card"><div>Restante</div><strong style="color:#991b1b">R$ 0,00</strong></div>
+  </div>
+
+  <!-- ATIVIDADES CRÍTICAS -->
+  <div style="padding:0 2rem"><h2 style="color:#92400e;margin:1.5rem 0">ATIVIDADES CRÍTICAS</h2>
+          <div class="atividade" style="border-left-color:#92400e">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
+                  <strong>#1.01.01 • Atividade</strong>
+                  <span class="badge" style="background:#fee2e2;color:#991b1b">CRÍTICA</span>
+              </div>
+              <div style="font-size:1.2rem;font-weight:600;margin:0.8rem 0">Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução </div>
+              
+      <div class="progress-container">
+          <div class="progress-bar">
+              <div class="progress-fill" style="width:0%;"></div>
+              <div class="progress-ideal" style="left:100%;"></div>
+          </div>
+          <div class="progress-labels">
+              <span>0% real</span>
+              <span>100% ideal</span>
+          </div>
       </div>
+              <div style="margin-top:0.8rem;color:#991b1b;font-weight:600">Atrasada – Acionar Plano de Recuperação</div>
+          </div>
+          <div class="atividade" style="border-left-color:#92400e">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
+                  <strong>#2.01.01 • Atividade</strong>
+                  <span class="badge" style="background:#fee2e2;color:#991b1b">CRÍTICA</span>
+              </div>
+              <div style="font-size:1.2rem;font-weight:600;margin:0.8rem 0">Planialtimétrico do Terreno / Georreferenciamento </div>
+              
+      <div class="progress-container">
+          <div class="progress-bar">
+              <div class="progress-fill" style="width:0%;"></div>
+              <div class="progress-ideal" style="left:100%;"></div>
+          </div>
+          <div class="progress-labels">
+              <span>0% real</span>
+              <span>100% ideal</span>
+          </div>
+      </div>
+              <div style="margin-top:0.8rem;color:#991b1b;font-weight:600">Atrasada – Acionar Plano de Recuperação</div>
+          </div>
+          <div class="atividade" style="border-left-color:#92400e">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
+                  <strong>#2.02.01 • Atividade</strong>
+                  <span class="badge" style="background:#fee2e2;color:#991b1b">CRÍTICA</span>
+              </div>
+              <div style="font-size:1.2rem;font-weight:600;margin:0.8rem 0">LAYOUT - Usina </div>
+              
+      <div class="progress-container">
+          <div class="progress-bar">
+              <div class="progress-fill" style="width:70%;"></div>
+              <div class="progress-ideal" style="left:90%;"></div>
+          </div>
+          <div class="progress-labels">
+              <span>70% real</span>
+              <span>90% ideal</span>
+          </div>
+      </div>
+              <div style="margin-top:0.8rem;color:#991b1b;font-weight:600">Em atraso de produtividade</div>
+          </div>
+          <div class="atividade" style="border-left-color:#92400e">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
+                  <strong>#2.02.02 • Atividade</strong>
+                  <span class="badge" style="background:#fee2e2;color:#991b1b">CRÍTICA</span>
+              </div>
+              <div style="font-size:1.2rem;font-weight:600;margin:0.8rem 0">LAYOUT - Canteiro </div>
+              
+      <div class="progress-container">
+          <div class="progress-bar">
+              <div class="progress-fill" style="width:50%;"></div>
+              <div class="progress-ideal" style="left:90%;"></div>
+          </div>
+          <div class="progress-labels">
+              <span>50% real</span>
+              <span>90% ideal</span>
+          </div>
+      </div>
+              <div style="margin-top:0.8rem;color:#991b1b;font-weight:600">Em atraso de produtividade</div>
+          </div>
+          <div class="atividade" style="border-left-color:#92400e">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
+                  <strong>#2.03.01 • Atividade</strong>
+                  <span class="badge" style="background:#fee2e2;color:#991b1b">CRÍTICA</span>
+              </div>
+              <div style="font-size:1.2rem;font-weight:600;margin:0.8rem 0">SKID </div>
+              
+      <div class="progress-container">
+          <div class="progress-bar">
+              <div class="progress-fill" style="width:70%;"></div>
+              <div class="progress-ideal" style="left:90%;"></div>
+          </div>
+          <div class="progress-labels">
+              <span>70% real</span>
+              <span>90% ideal</span>
+          </div>
+      </div>
+              <div style="margin-top:0.8rem;color:#991b1b;font-weight:600">Em atraso de produtividade</div>
+          </div></div>
+  <div class="tabs">
+      <div class="tab active" onclick="openTab('atrasadas')">Atrasadas (2)</div>
+      <div class="tab" onclick="openTab('execucao')">Em Execução (3)</div>
+      <div class="tab" onclick="openTab('proximas')">Próximas 15 dias (1)</div>
+      <div class="tab" onclick="openTab('concluidas')">Concluídas (2)</div>
   </div>
 
   <script>
-  const atividades = "[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]";
-  const criticasList = "[object Object],[object Object],[object Object],[object Object],[object Object]";
-
-  new Chart(document.getElementById('pizza'), {
-      type: 'doughnut',
-      data: { labels: ['Atrasadas','Em execução','Próximos 15 dias','Concluídas','Outras'],
-          datasets: [{ data: [2,3,1,2,249],
-              backgroundColor: ['#e74c3c','#3498db','#f39c12','#27ae60','#95a5a6'] }]
-      },
-      options: { plugins: { title: { display:true, text:'Distribuição por Status' } } }
-  });
-
-  new Chart(document.getElementById('linha'), {
-      type: 'bar',
-      data: { labels: ['Planejado','Executado','Restante'],
-          datasets: [{ label: 'Valor (R$)', data: [0.0,0.0,0.0],
-              backgroundColor: ['#3498db','#27ae60','#e74c3c'] }]
-      },
-      options: { plugins: { title: { display:true, text:'Progresso Financeiro' } } }
-  });
-
-  function render(lista) {
-      const c = document.getElementById('lista');
-      c.innerHTML = '';
-      if (!lista.length) { c.innerHTML = '<p style="text-align:center;padding:80px;color:#95a5a6;font-size:1.2rem">Nenhuma atividade encontrada</p>'; return; }
-      lista.forEach(a => {
-          const classe = a.status_andamento === 'Atrasadas' ? 'atrasada' :
-                         a.status_andamento === 'Em execução' ? 'exec' :
-                         a.status_andamento === 'Previstas (15 dias)' ? 'prox' :
-                         a.status_andamento === 'Concluídas' ? 'concluida' : '';
-          const corBarra = a.status_andamento === 'Atrasadas' ? '#e74c3c' :
-                           a.status_andamento === 'Concluídas' ? '#27ae60' : '#3498db';
-          const div = document.createElement('div');
-          div.className = `atividade ${classe}`;
-          div.innerHTML = `
-              <div class="atividade-header">
-                  <div class="atividade-title">#${a.codigo} • ${a.nivel} • ${a.setor || '-'}</div>
-                  <span class="badge" style="background:${a.status_andamento==='Atrasadas'?'#fee2e2':a.status_andamento==='Concluídas'?'#dcfce7':'#dbeafe'};color:${a.status_andamento==='Atrasadas'?'#991b1b':a.status_andamento==='Concluídas'?'#166534':'#1e40af'}">${a.status_andamento}</span>
+  function openTab(id){
+      document.querySelectorAll('.tab-content').forEach(e=>e.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(e=>e.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      event.target.classList.add('active');
+  }
+  </script><div id="atrasadas" class="tab-content active">
+              <div class="atividade atrasada" style="border-left-color:var(--d)">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
+                      <div><strong>#1.01.01 • Atividade • Gestão</strong></div>
+                      <span class="badge atrasada">Atrasadas</span>
+                  </div>
+                  <div style="font-size:1.15rem;font-weight:600;margin:0.8rem 0">Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</div>
+                  <div style="color:#64748b;margin-bottom:0.8rem">
+                      Planejado: 03/11/2025 → 10/11/2025
+                  </div>
+                  
+      <div class="progress-container">
+          <div class="progress-bar">
+              <div class="progress-fill" style="width:0%;"></div>
+              <div class="progress-ideal" style="left:100%;"></div>
+          </div>
+          <div class="progress-labels">
+              <span>0% real</span>
+              <span>100% ideal</span>
+          </div>
+      </div>
+                  
+                  <div style="margin-top:12px;border:2px solid #7c3aed;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Sucessores (9)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.05.03 – Emissão da Licença - Ambientais</div><div style="padding:6px 0;border-left:4px solid #16a34a;padding-left:10px;margin:4px 0">#1.01.02 – Contratação dos Seguros - Contratuais</div><div style="padding:6px 0;border-left:4px solid #dc2626;padding-left:10px;margin:4px 0">#2.01.01 – Planialtimétrico do Terreno / Georreferenciamento</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.01.02 – Estudos Geológico - SPT</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.01.03 – Estudos Geológico - SEV</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.02.01 – LAYOUT - Usina</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.03.01 – SKID</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.10 – Inversores</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.15 – Módulos Fotovoltaicos</div></div></div>
               </div>
-              <div style="font-size:1.3rem;font-weight:600;margin:10px 0">${a.atividade}${a.is_milestone ? ' (Milestone)' : ''}</div>
-              <div style="color:#636e72;margin-bottom:10px">Planejado: ${a.inicio_planejado || '-'} → ${a.termino_planejado || '-'}</div>
-              <div class="progress">
-                  <div class="progress-bar" style="width:${a.pct_concluida}%;background:${corBarra}"></div>
-                  <div class="progress-ideal" style="left:${a.pct_ideal_ate_hoje}%"></div>
+              <div class="atividade atrasada" style="border-left-color:var(--d)">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
+                      <div><strong>#2.01.01 • Atividade • Estudo</strong></div>
+                      <span class="badge atrasada">Atrasadas</span>
+                  </div>
+                  <div style="font-size:1.15rem;font-weight:600;margin:0.8rem 0">Planialtimétrico do Terreno / Georreferenciamento</div>
+                  <div style="color:#64748b;margin-bottom:0.8rem">
+                      Planejado: 03/11/2025 → 02/12/2025
+                  </div>
+                  
+      <div class="progress-container">
+          <div class="progress-bar">
+              <div class="progress-fill" style="width:0%;"></div>
+              <div class="progress-ideal" style="left:100%;"></div>
+          </div>
+          <div class="progress-labels">
+              <span>0% real</span>
+              <span>100% ideal</span>
+          </div>
+      </div>
+                  <div style="margin-top:12px;border:2px solid #dc2626;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Predecessores (1)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #dc2626;padding-left:10px;margin:4px 0">#1.01.01 – Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</div></div></div>
+                  <div style="margin-top:12px;border:2px solid #7c3aed;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Sucessores (4)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#4.01.01.01 – Limpeza e Nivelamento do Terreno</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#4.02.01.01 – Demarcação da Via - Acesso</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#4.02.02.01 – Limpeza / Corte Isolados</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#4.03.02.01 – Perfurações</div></div></div>
+              </div></div><div id="execucao" class="tab-content">
+              <div class="atividade exec" style="border-left-color:var(--i)">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
+                      <div><strong>#2.02.01 • Atividade • Proj. Básico</strong></div>
+                      <span class="badge exec">Execucao</span>
+                  </div>
+                  <div style="font-size:1.15rem;font-weight:600;margin:0.8rem 0">LAYOUT - Usina</div>
+                  <div style="color:#64748b;margin-bottom:0.8rem">
+                      Planejado: 21/11/2025 → 04/12/2025
+                  </div>
+                  
+      <div class="progress-container">
+          <div class="progress-bar">
+              <div class="progress-fill" style="width:70%;"></div>
+              <div class="progress-ideal" style="left:90%;"></div>
+          </div>
+          <div class="progress-labels">
+              <span>70% real</span>
+              <span>90% ideal</span>
+          </div>
+      </div>
+                  <div style="margin-top:12px;border:2px solid #3b82f6;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Predecessores (1)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #dc2626;padding-left:10px;margin:4px 0">#1.01.01 – Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</div></div></div>
+                  <div style="margin-top:12px;border:2px solid #7c3aed;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Sucessores (22)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.02.02 – LAYOUT - Canteiro</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.05.03 – Emissão da Licença - Ambientais</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.10 – Inversores</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.11 – Abrigos de Inversores</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.12 – Estruturas - Automação</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.15 – Módulos Fotovoltaicos</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.16 – Estação Solarimétrica</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#4.02.01.01 – Demarcação da Via - Acesso</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#4.02.02.01 – Limpeza / Corte Isolados</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.03.01 – SKID</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.01 – Estruturas - Estacas</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.02 – Estruturas - Peças / Eixos / Mesas</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.03 – Cabos - Malha de Aterramento</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.04 – Cabos - BT / CC</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.05 – Cabos -BT / CA</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.06 – Cabos - MT / CA</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.07 – Cabos - MT / Rede Aérea</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.08 – Cabos - MT / Poste de Transição</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.17 – Sistema de Segurança - Equipamentos</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#4.04.09.01 – Abertura de Valas - Segurança</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#4.03.01.01 – Locação de Pontos - Estaca</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.04.03 – Cravação / Tracker</div></div></div>
               </div>
-              <div style="text-align:right;font-size:0.9rem;color:#636e72">Real: ${a.pct_concluida}% | Ideal: ${a.pct_ideal_ate_hoje}%</div>`;
-          div.onclick = () => openModal(a);
-          c.appendChild(div);
-      });
-  }
-
-  function openModal(a) {
-      document.getElementById('modalTitulo').innerHTML = `#${a.codigo} - ${a.atividade}`;
-      let html = `<p><strong>Nível:</strong> ${a.nivel}</p>
-                  <p><strong>Status:</strong> ${a.status_andamento}</p>
-                  <p><strong>Alerta:</strong> <span style="color:#8B4513;font-weight:600">${a.alerta_produtividade || 'Nenhum'}</span></p>`;
-      if (a.predecessores && a.predecessores.length) {
-          html += `<div style="margin-top:20px"><div class="deps-title">Predecessores</div>`;
-          a.predecessores.forEach(p => {
-              const cor = p.status === 'Concluídas' ? '#27ae60' : p.status === 'Atrasadas' ? '#e74c3c' : '#3498db';
-              html += `<div class="dep-item ${p.status==='Atrasadas'?'atrasada':p.status==='Concluídas'?'concluida':''}" style="border-left-color:${cor}">#${p.item || '?'} - ${p.nome || 'Sem nome'}</div>`;
-          });
-          html += `</div>`;
-      }
-      if (a.sucessores && a.sucessores.length) {
-          html += `<div style="margin-top:15px"><div class="deps-title">Sucessores</div>`;
-          a.sucessores.forEach(s => {
-              const cor = s.status === 'Concluídas' ? '#27ae60' : s.status === 'Atrasadas' ? '#e74c3c' : '#3498db';
-              html += `<div class="dep-item ${s.status==='Atrasadas'?'atrasada':s.status==='Concluídas'?'concluida':''}" style="border-left-color:${cor}">#${s.item || '?'} - ${s.nome || 'Sem nome'}</div>`;
-          });
-          html += `</div>`;
-      }
-      document.getElementById('modalCorpo').innerHTML = html;
-      document.getElementById('modal').style.display = 'flex';
-  }
-
-  function filtra(tipo) {
-      if (tipo === 'total') render(atividades);
-      else if (tipo === 'critica') render(criticasList);
-      else render(atividades.filter(a => a.status_andamento === tipo));
-  }
-
-  function buscar() {
-      const termo = document.getElementById('busca').value.toLowerCase();
-      render(atividades.filter(a => 
-          String(a.codigo || '').toLowerCase().includes(termo) || 
-          String(a.atividade || '').toLowerCase().includes(termo)
-      ));
-  }
-
-  render(atividades);
-  </script>
-
-  <footer>Gerado automaticamente via n8n — 03/12/2025</footer>
-  </body>
-  </html>
+              <div class="atividade exec" style="border-left-color:var(--i)">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
+                      <div><strong>#2.02.02 • Atividade • Proj. Básico</strong></div>
+                      <span class="badge exec">Execucao</span>
+                  </div>
+                  <div style="font-size:1.15rem;font-weight:600;margin:0.8rem 0">LAYOUT - Canteiro</div>
+                  <div style="color:#64748b;margin-bottom:0.8rem">
+                      Planejado: 21/11/2025 → 04/12/2025
+                  </div>
+                  
+      <div class="progress-container">
+          <div class="progress-bar">
+              <div class="progress-fill" style="width:50%;"></div>
+              <div class="progress-ideal" style="left:90%;"></div>
+          </div>
+          <div class="progress-labels">
+              <span>50% real</span>
+              <span>90% ideal</span>
+          </div>
+      </div>
+                  <div style="margin-top:12px;border:2px solid #3b82f6;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Predecessores (1)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.02.01 – LAYOUT - Usina</div></div></div>
+                  <div style="margin-top:12px;border:2px solid #7c3aed;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Sucessores (2)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.04.01 – Terraplanagem</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#4.01.01.01 – Limpeza e Nivelamento do Terreno</div></div></div>
+              </div>
+              <div class="atividade exec" style="border-left-color:var(--i)">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
+                      <div><strong>#2.03.01 • Atividade • Proj. Executivo / MDT</strong></div>
+                      <span class="badge exec">Execucao</span>
+                  </div>
+                  <div style="font-size:1.15rem;font-weight:600;margin:0.8rem 0">SKID</div>
+                  <div style="color:#64748b;margin-bottom:0.8rem">
+                      Planejado: 21/11/2025 → 04/12/2025
+                  </div>
+                  
+      <div class="progress-container">
+          <div class="progress-bar">
+              <div class="progress-fill" style="width:70%;"></div>
+              <div class="progress-ideal" style="left:90%;"></div>
+          </div>
+          <div class="progress-labels">
+              <span>70% real</span>
+              <span>90% ideal</span>
+          </div>
+      </div>
+                  <div style="margin-top:12px;border:2px solid #3b82f6;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Predecessores (3)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #dc2626;padding-left:10px;margin:4px 0">#1.01.01 – Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</div><div style="padding:6px 0;border-left:4px solid #16a34a;padding-left:10px;margin:4px 0">#1.01.02 – Contratação dos Seguros - Contratuais</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.02.01 – LAYOUT - Usina</div></div></div>
+                  <div style="margin-top:12px;border:2px solid #7c3aed;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Sucessores (3)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #16a34a;padding-left:10px;margin:4px 0">#2.03.02 – CMP</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.03.03 – Diagramas - Unifilar / Trifilar</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.13 – Subestação - SKID</div></div></div>
+              </div></div><div id="proximas" class="tab-content">
+              <div class="atividade exec" style="border-left-color:#d97706">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
+                      <div><strong>#2.01.02 • Atividade • Estudo</strong></div>
+                      <span class="badge exec">Proximas</span>
+                  </div>
+                  <div style="font-size:1.15rem;font-weight:600;margin:0.8rem 0">Estudos Geológico - SPT</div>
+                  <div style="color:#64748b;margin-bottom:0.8rem">
+                      Planejado: 04/12/2025 → 19/12/2025
+                  </div>
+                  
+      <div class="progress-container">
+          <div class="progress-bar">
+              <div class="progress-fill" style="width:0%;"></div>
+              <div class="progress-ideal" style="left:0%;"></div>
+          </div>
+          <div class="progress-labels">
+              <span>0% real</span>
+              <span>0% ideal</span>
+          </div>
+      </div>
+                  <div style="margin-top:12px;border:2px solid #3b82f6;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Predecessores (1)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #dc2626;padding-left:10px;margin:4px 0">#1.01.01 – Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</div></div></div>
+                  <div style="margin-top:12px;border:2px solid #7c3aed;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Sucessores (2)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.01 – Estruturas - Estacas</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.02 – Estruturas - Peças / Eixos / Mesas</div></div></div>
+              </div></div><div id="concluidas" class="tab-content">
+              <div class="atividade concluida" style="border-left-color:var(--s)">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
+                      <div><strong>#1.01.02 • Atividade • Gestão</strong></div>
+                      <span class="badge concluida">Concluidas</span>
+                  </div>
+                  <div style="font-size:1.15rem;font-weight:600;margin:0.8rem 0">Contratação dos Seguros - Contratuais</div>
+                  <div style="color:#64748b;margin-bottom:0.8rem">
+                      Planejado: 03/11/2025 → 10/11/2025
+                  </div>
+                  
+      <div class="progress-container">
+          <div class="progress-bar">
+              <div class="progress-fill" style="width:100%;"></div>
+              <div class="progress-ideal" style="left:100%;"></div>
+          </div>
+          <div class="progress-labels">
+              <span>100% real</span>
+              <span>100% ideal</span>
+          </div>
+      </div>
+                  <div style="margin-top:12px;border:2px solid #3b82f6;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Predecessores (1)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #dc2626;padding-left:10px;margin:4px 0">#1.01.01 – Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</div></div></div>
+                  <div style="margin-top:12px;border:2px solid #7c3aed;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Sucessores (1)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.03.01 – SKID</div></div></div>
+              </div>
+              <div class="atividade concluida" style="border-left-color:var(--s)">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
+                      <div><strong>#2.03.02 • Atividade • Proj. Executivo / MDT</strong></div>
+                      <span class="badge concluida">Concluidas</span>
+                  </div>
+                  <div style="font-size:1.15rem;font-weight:600;margin:0.8rem 0">CMP</div>
+                  <div style="color:#64748b;margin-bottom:0.8rem">
+                      Planejado: 03/11/2025 → 10/11/2025
+                  </div>
+                  
+      <div class="progress-container">
+          <div class="progress-bar">
+              <div class="progress-fill" style="width:100%;"></div>
+              <div class="progress-ideal" style="left:100%;"></div>
+          </div>
+          <div class="progress-labels">
+              <span>100% real</span>
+              <span>100% ideal</span>
+          </div>
+      </div>
+                  <div style="margin-top:12px;border:2px solid #3b82f6;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Predecessores (1)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.03.01 – SKID</div></div></div>
+                  <div style="margin-top:12px;border:2px solid #7c3aed;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Sucessores (3)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.03.03 – Diagramas - Unifilar / Trifilar</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.14 – Subestação - CMP</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#4.04.02.01 – Montagem - Armadura / Caixaria</div></div></div>
+              </div></div><footer>Relatório gerado automaticamente via n8n • 03/12/2025</footer></div></body></html>
