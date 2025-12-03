@@ -1,365 +1,2369 @@
 <!DOCTYPE html>
   <html lang="pt-BR">
   <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard Usina Solar Fotovoltaica</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-      :root { --p:#1d4ed8; --s:#16a34a; --d:#dc2626; --w:#d97706; --i:#2563eb; }
-      * { margin:0; padding:0; box-sizing:border-box; }
-      body { font-family:'Inter',sans-serif; background:#eef2ff; color:#1e293b; padding:20px; line-height:1.5; }
-      .container { max-width:1600px; margin:0 auto; background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 25px 50px rgba(0,0,0,0.12); }
-      header { background:linear-gradient(135deg,#1e40af,#2563eb); color:#fff; padding:3rem 2rem; text-align:center; }
-      header h1 { font-size:2.8rem; font-weight:700; }
-      .kpi { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; padding:2rem; }
-      .card { background:#fff; padding:1.8rem; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.08); border-left:6px solid var(--p); text-align:center; transition:transform .3s; }
-      .card:hover { transform:translateY(-8px); }
-      .card h3 { font-size:2.8rem; font-weight:700; margin:0.5rem 0; }
-      .card p { color:#64748b; font-size:0.95rem; text-transform:uppercase; letter-spacing:1px; }
-      .card.atrasadas { border-color:var(--d); }
-      .card.exec { border-color:var(--i); }
-      .card.concluidas { border-color:var(--s); }
-      .card.criticas { border-color:#92400e; }
-      .finance { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.5rem; padding:0 2rem 2rem; }
-      .finance-card { background:linear-gradient(135deg,#dbeafe,#c7d2fe); padding:2rem; border-radius:12px; text-align:center; }
-      .finance-card strong { font-size:2.4rem; display:block; margin-top:0.5rem; }
-      .tabs { display:flex; margin:2rem; border-radius:12px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.1); }
-      .tab { flex:1; padding:1.2rem; text-align:center; background:#e2e8f0; cursor:pointer; font-weight:600; transition:.3s; }
-      .tab.active { background:var(--p); color:#fff; }
-      .tab-content { display:none; padding:0 2rem 2rem; }
-      .tab-content.active { display:block; }
-      .atividade { background:#fff; padding:1.6rem; margin-bottom:1.2rem; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.06); border-left:6px solid var(--p); }
-      .atividade.atrasada { border-left-color:var(--d); }
-      .atividade.exec { border-left-color:var(--i); }
-      .atividade.concluida { border-left-color:var(--s); }
-      .badge { padding:0.4rem 1rem; border-radius:50px; font-size:0.85rem; font-weight:600; }
-      .badge.atrasada { background:#fee2e2; color:#991b1b; }
-      .badge.exec { background:#dbeafe; color:#1e40af; }
-      .badge.concluida { background:#dcfce7; color:#166534; }
-      .progress-container { margin:1rem 0; }
-      .progress-bar { height:12px; background:#e2e8f0; border-radius:6px; overflow:hidden; position:relative; }
-      .progress-fill { height:100%; background:var(--p); border-radius:6px; transition:width .6s ease; }
-      .progress-ideal { position:absolute; top:0; width:4px; height:100%; background:#1e293b; opacity:0.7; }
-      .progress-labels { display:flex; justify-content:space-between; margin-top:0.5rem; font-size:0.9rem; color:#64748b; }
-      footer { text-align:center; padding:2rem; color:#64748b; font-size:0.9rem; }
-  </style>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Dashboard de Controle - Usina Solar Fotovoltaica</title>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+      <style>
+          :root {
+              --primary: #1d4ed8;
+              --primary-light: #3b82f6;
+              --success: #10b981;
+              --danger: #ef4444;
+              --warning: #f59e0b;
+              --info: #8b5cf6;
+              --dark: #1e293b;
+              --gray-700: #374151;
+              --gray-600: #4b5563;
+              --gray-500: #6b7280;
+              --gray-400: #9ca3af;
+              --gray-300: #d1d5db;
+              --gray-200: #e5e7eb;
+              --gray-100: #f3f4f6;
+              --gray-50: #f9fafb;
+          }
+
+          * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+          }
+
+          body {
+              font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+              background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+              color: var(--dark);
+              line-height: 1.6;
+              min-height: 100vh;
+          }
+
+          .container {
+              max-width: 1800px;
+              margin: 0 auto;
+              padding: 20px;
+          }
+
+          /* HEADER */
+          .header {
+              background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+              color: white;
+              padding: 40px;
+              border-radius: 20px;
+              margin-bottom: 30px;
+              box-shadow: 0 10px 30px rgba(30, 64, 175, 0.2);
+              position: relative;
+              overflow: hidden;
+          }
+
+          .header::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              right: 0;
+              width: 300px;
+              height: 300px;
+              background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+          }
+
+          .header h1 {
+              font-size: 2.8rem;
+              font-weight: 800;
+              margin-bottom: 10px;
+              display: flex;
+              align-items: center;
+              gap: 15px;
+          }
+
+          .header h1 i {
+              color: #fbbf24;
+              background: rgba(255, 255, 255, 0.1);
+              padding: 15px;
+              border-radius: 15px;
+          }
+
+          .header-subtitle {
+              font-size: 1.4rem;
+              opacity: 0.9;
+              margin-bottom: 5px;
+          }
+
+          .header-date {
+              font-size: 1.1rem;
+              opacity: 0.8;
+              display: flex;
+              align-items: center;
+              gap: 10px;
+          }
+
+          /* KPI CARDS */
+          .kpi-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+              gap: 25px;
+              margin-bottom: 30px;
+          }
+
+          .kpi-card {
+              background: white;
+              padding: 25px;
+              border-radius: 16px;
+              box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+              transition: all 0.3s ease;
+              position: relative;
+              overflow: hidden;
+              border-top: 5px solid var(--primary);
+          }
+
+          .kpi-card:hover {
+              transform: translateY(-8px);
+              box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+          }
+
+          .kpi-card.danger {
+              border-color: var(--danger);
+          }
+
+          .kpi-card.success {
+              border-color: var(--success);
+          }
+
+          .kpi-card.warning {
+              border-color: var(--warning);
+          }
+
+          .kpi-card.info {
+              border-color: var(--info);
+          }
+
+          .kpi-icon {
+              position: absolute;
+              top: 25px;
+              right: 25px;
+              font-size: 2.5rem;
+              opacity: 0.1;
+          }
+
+          .kpi-value {
+              font-size: 2.8rem;
+              font-weight: 800;
+              margin: 10px 0 5px;
+              color: var(--dark);
+          }
+
+          .kpi-label {
+              font-size: 0.95rem;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              color: var(--gray-600);
+              font-weight: 600;
+          }
+
+          .kpi-subtitle {
+              font-size: 0.85rem;
+              color: var(--gray-500);
+              margin-top: 8px;
+          }
+
+          /* FINANCEIRO */
+          .finance-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+              gap: 25px;
+              margin-bottom: 40px;
+          }
+
+          .finance-card {
+              background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+              padding: 30px;
+              border-radius: 16px;
+              box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+              border: 2px solid #bfdbfe;
+          }
+
+          .finance-card.positive {
+              background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+              border-color: #a7f3d0;
+          }
+
+          .finance-card.negative {
+              background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+              border-color: #fecaca;
+          }
+
+          .finance-label {
+              font-size: 1rem;
+              color: var(--gray-700);
+              margin-bottom: 10px;
+              font-weight: 600;
+          }
+
+          .finance-value {
+              font-size: 2.5rem;
+              font-weight: 800;
+              margin: 10px 0;
+          }
+
+          .finance-value.positive {
+              color: var(--success);
+          }
+
+          .finance-value.negative {
+              color: var(--danger);
+          }
+
+          .finance-progress {
+              margin-top: 20px;
+          }
+
+          .progress-total {
+              height: 8px;
+              background: var(--gray-200);
+              border-radius: 4px;
+              overflow: hidden;
+              margin-bottom: 8px;
+          }
+
+          .progress-executado {
+              height: 100%;
+              background: var(--success);
+              border-radius: 4px;
+              transition: width 0.6s ease;
+          }
+
+          /* CRITICAL ACTIVITIES */
+          .critical-section {
+              background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+              border: 2px solid #fecaca;
+              border-radius: 16px;
+              padding: 30px;
+              margin-bottom: 40px;
+          }
+
+          .section-title {
+              font-size: 1.8rem;
+              font-weight: 700;
+              margin-bottom: 25px;
+              color: var(--danger);
+              display: flex;
+              align-items: center;
+              gap: 12px;
+          }
+
+          /* TABS */
+          .tabs-container {
+              background: white;
+              border-radius: 16px;
+              overflow: hidden;
+              box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+              margin-bottom: 40px;
+          }
+
+          .tabs-header {
+              display: flex;
+              background: var(--gray-50);
+              border-bottom: 2px solid var(--gray-200);
+              overflow-x: auto;
+          }
+
+          .tab {
+              padding: 20px 30px;
+              font-weight: 600;
+              cursor: pointer;
+              transition: all 0.3s;
+              white-space: nowrap;
+              border-bottom: 3px solid transparent;
+              color: var(--gray-600);
+              display: flex;
+              align-items: center;
+              gap: 10px;
+          }
+
+          .tab:hover {
+              background: var(--gray-100);
+              color: var(--primary);
+          }
+
+          .tab.active {
+              background: white;
+              color: var(--primary);
+              border-bottom-color: var(--primary);
+          }
+
+          .tab-badge {
+              background: var(--gray-300);
+              color: var(--dark);
+              padding: 4px 10px;
+              border-radius: 20px;
+              font-size: 0.8rem;
+              font-weight: 700;
+          }
+
+          .tab.active .tab-badge {
+              background: var(--primary);
+              color: white;
+          }
+
+          .tabs-content {
+              padding: 0;
+          }
+
+          .tab-pane {
+              display: none;
+              padding: 30px;
+          }
+
+          .tab-pane.active {
+              display: block;
+          }
+
+          /* ATIVIDADE CARD */
+          .atividade-card {
+              background: white;
+              padding: 25px;
+              border-radius: 12px;
+              margin-bottom: 20px;
+              box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+              border-left: 6px solid var(--primary);
+              transition: all 0.3s ease;
+          }
+
+          .atividade-card:hover {
+              transform: translateX(5px);
+              box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+          }
+
+          .atividade-header {
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+              margin-bottom: 15px;
+              flex-wrap: wrap;
+              gap: 15px;
+          }
+
+          .atividade-codigo {
+              font-size: 1.1rem;
+              font-weight: 700;
+              color: var(--dark);
+              display: flex;
+              align-items: center;
+              gap: 8px;
+          }
+
+          .atividade-nivel {
+              background: var(--gray-100);
+              padding: 4px 12px;
+              border-radius: 20px;
+              font-size: 0.8rem;
+              font-weight: 600;
+              color: var(--gray-700);
+          }
+
+          .badge {
+              padding: 8px 16px;
+              border-radius: 20px;
+              font-size: 0.85rem;
+              font-weight: 700;
+              display: inline-flex;
+              align-items: center;
+              gap: 6px;
+          }
+
+          .badge-atrasada {
+              background: #fee2e2;
+              color: #991b1b;
+          }
+
+          .badge-execucao {
+              background: #dbeafe;
+              color: #1e40af;
+          }
+
+          .badge-concluida {
+              background: #d1fae5;
+              color: #065f46;
+          }
+
+          .badge-prevista {
+              background: #fef3c7;
+              color: #92400e;
+          }
+
+          .badge-planejada {
+              background: #f3f4f6;
+              color: #4b5563;
+          }
+
+          .badge-adiantada {
+              background: #ede9fe;
+              color: #5b21b6;
+          }
+
+          .badge-critical {
+              background: #fecaca;
+              color: #991b1b;
+              animation: pulse 2s infinite;
+          }
+
+          @keyframes pulse {
+              0% { opacity: 1; }
+              50% { opacity: 0.7; }
+              100% { opacity: 1; }
+          }
+
+          .milestone-badge {
+              background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+              color: white;
+              padding: 4px 10px;
+              border-radius: 12px;
+              font-size: 0.75rem;
+              font-weight: 700;
+              display: inline-flex;
+              align-items: center;
+              gap: 4px;
+          }
+
+          .atividade-title {
+              font-size: 1.4rem;
+              font-weight: 600;
+              margin: 15px 0;
+              color: var(--dark);
+              line-height: 1.4;
+          }
+
+          .atividade-meta {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 20px;
+              margin: 20px 0;
+              color: var(--gray-600);
+              font-size: 0.95rem;
+          }
+
+          .meta-item {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+          }
+
+          .meta-item i {
+              color: var(--primary);
+              width: 20px;
+          }
+
+          /* PROGRESS BAR */
+          .progress-container {
+              margin: 25px 0;
+          }
+
+          .progress-bar {
+              height: 12px;
+              background: var(--gray-200);
+              border-radius: 6px;
+              overflow: hidden;
+              position: relative;
+              margin-bottom: 8px;
+          }
+
+          .progress-fill {
+              height: 100%;
+              border-radius: 6px;
+              transition: width 0.6s ease;
+          }
+
+          .progress-ideal {
+              position: absolute;
+              top: 0;
+              width: 4px;
+              height: 100%;
+              background: var(--dark);
+              opacity: 0.7;
+              transform: translateX(-50%);
+          }
+
+          .progress-labels {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              font-size: 0.9rem;
+              color: var(--gray-600);
+          }
+
+          .progress-labels .diff {
+              font-weight: 700;
+          }
+
+          .diff.positivo {
+              color: var(--success);
+          }
+
+          .diff.negativo {
+              color: var(--danger);
+          }
+
+          /* DEPENDÊNCIAS */
+          .dependencias-box {
+              margin-top: 20px;
+              border: 2px solid;
+              border-radius: 12px;
+              overflow: hidden;
+          }
+
+          .dependencias-header {
+              padding: 12px 20px;
+              font-weight: 700;
+              font-size: 0.95rem;
+              border-left: 4px solid;
+          }
+
+          .dependencias-content {
+              padding: 15px;
+              background: var(--gray-50);
+          }
+
+          .dep-item {
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+              padding: 10px 0;
+              border-bottom: 1px solid var(--gray-200);
+          }
+
+          .dep-item:last-child {
+              border-bottom: none;
+          }
+
+          .dep-icon {
+              font-size: 1.2rem;
+              margin-top: 2px;
+          }
+
+          .dep-content {
+              flex: 1;
+          }
+
+          .dep-codigo {
+              font-weight: 600;
+              color: var(--dark);
+              margin-bottom: 2px;
+          }
+
+          .dep-nivel {
+              font-size: 0.8rem;
+              color: var(--gray-500);
+              font-weight: normal;
+          }
+
+          .dep-nome {
+              font-size: 0.9rem;
+              color: var(--gray-700);
+              margin-bottom: 4px;
+          }
+
+          .dep-status {
+              font-size: 0.8rem;
+              font-weight: 600;
+          }
+
+          .dep-extra {
+              text-align: center;
+              padding: 10px;
+              color: var(--gray-500);
+              font-size: 0.9rem;
+              font-style: italic;
+          }
+
+          /* CHARTS SECTION */
+          .charts-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+              gap: 30px;
+              margin-bottom: 40px;
+          }
+
+          .chart-container {
+              background: white;
+              padding: 25px;
+              border-radius: 16px;
+              box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+          }
+
+          .chart-title {
+              font-size: 1.4rem;
+              font-weight: 700;
+              margin-bottom: 20px;
+              color: var(--dark);
+              display: flex;
+              align-items: center;
+              gap: 10px;
+          }
+
+          .chart-placeholder {
+              height: 300px;
+              background: var(--gray-50);
+              border-radius: 12px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: var(--gray-500);
+              font-size: 1.1rem;
+          }
+
+          /* FOOTER */
+          .footer {
+              text-align: center;
+              padding: 30px;
+              color: var(--gray-600);
+              font-size: 0.95rem;
+              border-top: 1px solid var(--gray-200);
+              margin-top: 40px;
+          }
+
+          .footer a {
+              color: var(--primary);
+              text-decoration: none;
+              font-weight: 600;
+          }
+
+          /* RESPONSIVO */
+          @media (max-width: 1200px) {
+              .container {
+                  padding: 15px;
+              }
+
+              .header h1 {
+                  font-size: 2.2rem;
+              }
+
+              .kpi-grid {
+                  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+              }
+          }
+
+          @media (max-width: 768px) {
+              .header {
+                  padding: 25px;
+              }
+
+              .header h1 {
+                  font-size: 1.8rem;
+              }
+
+              .tabs-header {
+                  flex-direction: column;
+              }
+
+              .tab {
+                  justify-content: center;
+                  border-bottom: 1px solid var(--gray-200);
+              }
+
+              .tab.active {
+                  border-bottom: 3px solid var(--primary);
+              }
+
+              .atividade-header {
+                  flex-direction: column;
+                  align-items: flex-start;
+              }
+
+              .charts-grid {
+                  grid-template-columns: 1fr;
+              }
+          }
+
+          /* EMPTY STATE */
+          .empty-state {
+              text-align: center;
+              padding: 60px 30px;
+              color: var(--gray-500);
+          }
+
+          .empty-state i {
+              font-size: 4rem;
+              margin-bottom: 20px;
+              opacity: 0.3;
+          }
+
+          .empty-state h3 {
+              font-size: 1.5rem;
+              margin-bottom: 10px;
+              color: var(--gray-600);
+          }
+      </style>
   </head>
   <body>
-  <div class="container">
-  <header>
-      <h1>Dashboard Controle de Obra</h1>
-      <p style="font-size:1.5rem;margin-top:0.8rem;opacity:0.9;">Usina Solar Fotovoltaica • 03/12/2025</p>
-  </header>
-
-  <div class="kpi">
-      <div class="card"><p>Total de Atividades</p><h3>257</h3></div>
-      <div class="card atrasadas"><p>Atrasadas</p><h3>2</h3></div>
-      <div class="card exec"><p>Em Execução</p><h3>3</h3></div>
-      <div class="card concluidas"><p>Concluídas</p><h3>2</h3></div>
-      <div class="card criticas"><p>Críticas</p><h3>5</h3></div>
-      <div class="card"><p>Progresso Financeiro</p><h3>0%</h3></div>
-  </div>
-
-  <div class="finance">
-      <div class="finance-card"><div>Orçamento Planejado</div><strong>R$ 0,00</strong></div>
-      <div class="finance-card"><div>Executado</div><strong style="color:#166534">R$ 0,00</strong></div>
-      <div class="finance-card"><div>Restante</div><strong style="color:#991b1b">R$ 0,00</strong></div>
-  </div>
-
-  <!-- ATIVIDADES CRÍTICAS -->
-  <div style="padding:0 2rem"><h2 style="color:#92400e;margin:1.5rem 0">ATIVIDADES CRÍTICAS</h2>
-          <div class="atividade" style="border-left-color:#92400e">
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
-                  <strong>#1.01.01 • Atividade</strong>
-                  <span class="badge" style="background:#fee2e2;color:#991b1b">CRÍTICA</span>
+      <div class="container">
+          <!-- HEADER -->
+          <header class="header">
+              <h1><i class="fas fa-solar-panel"></i> Dashboard de Controle - Usina Solar Fotovoltaica</h1>
+              <div class="header-subtitle">Monitoramento de Atividades e Progresso da Obra</div>
+              <div class="header-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  Relatório atualizado em: 03/12/2025
               </div>
-              <div style="font-size:1.2rem;font-weight:600;margin:0.8rem 0">Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução </div>
-              
+          </header>
+
+          <!-- KPI CARDS -->
+          <div class="kpi-grid">
+              <div class="kpi-card">
+                  <div class="kpi-icon"><i class="fas fa-tasks"></i></div>
+                  <div class="kpi-label">Total de Atividades</div>
+                  <div class="kpi-value">257</div>
+                  <div class="kpi-subtitle">Monitoradas</div>
+              </div>
+
+              <div class="kpi-card danger">
+                  <div class="kpi-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                  <div class="kpi-label">Atividades Atrasadas</div>
+                  <div class="kpi-value">2</div>
+                  <div class="kpi-subtitle">Necessitam atenção</div>
+              </div>
+
+              <div class="kpi-card">
+                  <div class="kpi-icon"><i class="fas fa-play-circle"></i></div>
+                  <div class="kpi-label">Em Execução</div>
+                  <div class="kpi-value">3</div>
+                  <div class="kpi-subtitle">Ativas no momento</div>
+              </div>
+
+              <div class="kpi-card success">
+                  <div class="kpi-icon"><i class="fas fa-check-circle"></i></div>
+                  <div class="kpi-label">Concluídas</div>
+                  <div class="kpi-value">2</div>
+                  <div class="kpi-subtitle">0.8% do total</div>
+              </div>
+
+              <div class="kpi-card warning">
+                  <div class="kpi-icon"><i class="fas fa-flag"></i></div>
+                  <div class="kpi-label">Milestones</div>
+                  <div class="kpi-value">9</div>
+                  <div class="kpi-subtitle">0 concluídos</div>
+              </div>
+
+              <div class="kpi-card info">
+                  <div class="kpi-icon"><i class="fas fa-chart-line"></i></div>
+                  <div class="kpi-label">Progresso Físico</div>
+                  <div class="kpi-value">1.5%</div>
+                  <div class="kpi-subtitle">Média de conclusão</div>
+              </div>
+          </div>
+
+          <!-- FINANCEIRO -->
+          <div class="finance-grid">
+              <div class="finance-card">
+                  <div class="finance-label">Orçamento Total Planejado</div>
+                  <div class="finance-value">R$ 0,00</div>
+                  <div class="finance-progress">
+                      <div class="progress-total">
+                          <div class="progress-executado" style="width: 0%"></div>
+                      </div>
+                      <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--gray-600);">
+                          <span>Executado: R$ 0,00</span>
+                          <span>0%</span>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="finance-card positive">
+                  <div class="finance-label">Valor Executado</div>
+                  <div class="finance-value positive">R$ 0,00</div>
+                  <div class="kpi-subtitle">Realizado até o momento</div>
+              </div>
+
+              <div class="finance-card negative">
+                  <div class="finance-label">Valor Restante</div>
+                  <div class="finance-value negative">R$ 0,00</div>
+                  <div class="kpi-subtitle">A ser executado</div>
+              </div>
+          </div>
+
+          <!-- ATIVIDADES CRÍTICAS -->
+  
+          <div class="critical-section">
+              <div class="section-title">
+                  <i class="fas fa-fire"></i>
+                  ATIVIDADES CRÍTICAS - AÇÃO IMEDIATA REQUERIDA
+              </div>
+      
+              <div class="atividade-card" style="border-left-color: #ef4444;">
+                  <div class="atividade-header">
+                      <div>
+                          <div class="atividade-codigo">
+                              #1.01.01
+                              <span class="atividade-nivel">Atividade</span>
+                              
+                          </div>
+                      </div>
+                      <span class="badge badge-critical">
+                          <i class="fas fa-exclamation-circle"></i>
+                          Atrasada – Acionar Plano de Recuperação
+                           (23 dias de atraso)
+                      </span>
+                  </div>
+
+                  <div class="atividade-title">Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</div>
+
+                  <div class="atividade-meta">
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-check"></i>
+                          <span>Início: 03/11/2025 </span>
+                      </div>
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-times"></i>
+                          <span>Término: 10/11/2025 </span>
+                      </div>
+                      <div class="meta-item">
+                          <i class="fas fa-bolt"></i>
+                          <span>Ritmo necessário: N/A%/dia</span>
+                      </div>
+                  </div>
+
+                  
       <div class="progress-container">
           <div class="progress-bar">
-              <div class="progress-fill" style="width:0%;"></div>
+              <div class="progress-fill" style="width:0%; background-color:#ef4444;"></div>
               <div class="progress-ideal" style="left:100%;"></div>
           </div>
           <div class="progress-labels">
               <span>0% real</span>
+              <span class="diff negativo">-100.0%</span>
               <span>100% ideal</span>
           </div>
       </div>
-              <div style="margin-top:0.8rem;color:#991b1b;font-weight:600">Atrasada – Acionar Plano de Recuperação</div>
-          </div>
-          <div class="atividade" style="border-left-color:#92400e">
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
-                  <strong>#2.01.01 • Atividade</strong>
-                  <span class="badge" style="background:#fee2e2;color:#991b1b">CRÍTICA</span>
+
+                  <div style="margin-top: 20px; padding: 15px; background: #fef2f2; border-radius: 8px; border-left: 4px solid #ef4444;">
+                      <strong style="color: #991b1b; display: block; margin-bottom: 5px;">
+                          <i class="fas fa-exclamation-triangle"></i> Ação Recomendada:
+                      </strong>
+                      <span style="color: #991b1b;">
+                          Acionar Plano de Recuperação Imediatamente
+                      </span>
+                  </div>
               </div>
-              <div style="font-size:1.2rem;font-weight:600;margin:0.8rem 0">Planialtimétrico do Terreno / Georreferenciamento </div>
-              
+          
+              <div class="atividade-card" style="border-left-color: #ef4444;">
+                  <div class="atividade-header">
+                      <div>
+                          <div class="atividade-codigo">
+                              #2.01.01
+                              <span class="atividade-nivel">Atividade</span>
+                              
+                          </div>
+                      </div>
+                      <span class="badge badge-critical">
+                          <i class="fas fa-exclamation-circle"></i>
+                          Atrasada – Acionar Plano de Recuperação
+                           (1 dias de atraso)
+                      </span>
+                  </div>
+
+                  <div class="atividade-title">Planialtimétrico do Terreno / Georreferenciamento</div>
+
+                  <div class="atividade-meta">
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-check"></i>
+                          <span>Início: 03/11/2025 </span>
+                      </div>
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-times"></i>
+                          <span>Término: 02/12/2025 </span>
+                      </div>
+                      <div class="meta-item">
+                          <i class="fas fa-bolt"></i>
+                          <span>Ritmo necessário: N/A%/dia</span>
+                      </div>
+                  </div>
+
+                  
       <div class="progress-container">
           <div class="progress-bar">
-              <div class="progress-fill" style="width:0%;"></div>
+              <div class="progress-fill" style="width:0%; background-color:#ef4444;"></div>
               <div class="progress-ideal" style="left:100%;"></div>
           </div>
           <div class="progress-labels">
               <span>0% real</span>
+              <span class="diff negativo">-100.0%</span>
               <span>100% ideal</span>
           </div>
       </div>
-              <div style="margin-top:0.8rem;color:#991b1b;font-weight:600">Atrasada – Acionar Plano de Recuperação</div>
-          </div>
-          <div class="atividade" style="border-left-color:#92400e">
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
-                  <strong>#2.02.01 • Atividade</strong>
-                  <span class="badge" style="background:#fee2e2;color:#991b1b">CRÍTICA</span>
+
+                  <div style="margin-top: 20px; padding: 15px; background: #fef2f2; border-radius: 8px; border-left: 4px solid #ef4444;">
+                      <strong style="color: #991b1b; display: block; margin-bottom: 5px;">
+                          <i class="fas fa-exclamation-triangle"></i> Ação Recomendada:
+                      </strong>
+                      <span style="color: #991b1b;">
+                          Acionar Plano de Recuperação Imediatamente
+                      </span>
+                  </div>
               </div>
-              <div style="font-size:1.2rem;font-weight:600;margin:0.8rem 0">LAYOUT - Usina </div>
-              
+          
+              <div class="atividade-card" style="border-left-color: #ef4444;">
+                  <div class="atividade-header">
+                      <div>
+                          <div class="atividade-codigo">
+                              #2.02.01
+                              <span class="atividade-nivel">Atividade</span>
+                              
+                          </div>
+                      </div>
+                      <span class="badge badge-critical">
+                          <i class="fas fa-exclamation-circle"></i>
+                          Em atraso de produtividade
+                          
+                      </span>
+                  </div>
+
+                  <div class="atividade-title">LAYOUT - Usina</div>
+
+                  <div class="atividade-meta">
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-check"></i>
+                          <span>Início: 21/11/2025 → Real: 21/11/2025</span>
+                      </div>
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-times"></i>
+                          <span>Término: 04/12/2025 </span>
+                      </div>
+                      <div class="meta-item">
+                          <i class="fas fa-bolt"></i>
+                          <span>Ritmo necessário: 30%/dia</span>
+                      </div>
+                  </div>
+
+                  
       <div class="progress-container">
           <div class="progress-bar">
-              <div class="progress-fill" style="width:70%;"></div>
+              <div class="progress-fill" style="width:70%; background-color:#ef4444;"></div>
               <div class="progress-ideal" style="left:90%;"></div>
           </div>
           <div class="progress-labels">
               <span>70% real</span>
+              <span class="diff negativo">-20.0%</span>
               <span>90% ideal</span>
           </div>
       </div>
-              <div style="margin-top:0.8rem;color:#991b1b;font-weight:600">Em atraso de produtividade</div>
-          </div>
-          <div class="atividade" style="border-left-color:#92400e">
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
-                  <strong>#2.02.02 • Atividade</strong>
-                  <span class="badge" style="background:#fee2e2;color:#991b1b">CRÍTICA</span>
+
+                  <div style="margin-top: 20px; padding: 15px; background: #fef2f2; border-radius: 8px; border-left: 4px solid #ef4444;">
+                      <strong style="color: #991b1b; display: block; margin-bottom: 5px;">
+                          <i class="fas fa-exclamation-triangle"></i> Ação Recomendada:
+                      </strong>
+                      <span style="color: #991b1b;">
+                          Monitoramento intensivo e replanejamento necessário
+                      </span>
+                  </div>
               </div>
-              <div style="font-size:1.2rem;font-weight:600;margin:0.8rem 0">LAYOUT - Canteiro </div>
-              
+          
+              <div class="atividade-card" style="border-left-color: #ef4444;">
+                  <div class="atividade-header">
+                      <div>
+                          <div class="atividade-codigo">
+                              #2.02.02
+                              <span class="atividade-nivel">Atividade</span>
+                              
+                          </div>
+                      </div>
+                      <span class="badge badge-critical">
+                          <i class="fas fa-exclamation-circle"></i>
+                          Em atraso de produtividade
+                          
+                      </span>
+                  </div>
+
+                  <div class="atividade-title">LAYOUT - Canteiro</div>
+
+                  <div class="atividade-meta">
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-check"></i>
+                          <span>Início: 21/11/2025 → Real: 21/11/2025</span>
+                      </div>
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-times"></i>
+                          <span>Término: 04/12/2025 </span>
+                      </div>
+                      <div class="meta-item">
+                          <i class="fas fa-bolt"></i>
+                          <span>Ritmo necessário: 50%/dia</span>
+                      </div>
+                  </div>
+
+                  
       <div class="progress-container">
           <div class="progress-bar">
-              <div class="progress-fill" style="width:50%;"></div>
+              <div class="progress-fill" style="width:50%; background-color:#ef4444;"></div>
               <div class="progress-ideal" style="left:90%;"></div>
           </div>
           <div class="progress-labels">
               <span>50% real</span>
+              <span class="diff negativo">-40.0%</span>
               <span>90% ideal</span>
           </div>
       </div>
-              <div style="margin-top:0.8rem;color:#991b1b;font-weight:600">Em atraso de produtividade</div>
-          </div>
-          <div class="atividade" style="border-left-color:#92400e">
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
-                  <strong>#2.03.01 • Atividade</strong>
-                  <span class="badge" style="background:#fee2e2;color:#991b1b">CRÍTICA</span>
-              </div>
-              <div style="font-size:1.2rem;font-weight:600;margin:0.8rem 0">SKID </div>
-              
-      <div class="progress-container">
-          <div class="progress-bar">
-              <div class="progress-fill" style="width:70%;"></div>
-              <div class="progress-ideal" style="left:90%;"></div>
-          </div>
-          <div class="progress-labels">
-              <span>70% real</span>
-              <span>90% ideal</span>
-          </div>
-      </div>
-              <div style="margin-top:0.8rem;color:#991b1b;font-weight:600">Em atraso de produtividade</div>
-          </div></div>
-  <div class="tabs">
-      <div class="tab active" onclick="openTab('atrasadas')">Atrasadas (2)</div>
-      <div class="tab" onclick="openTab('execucao')">Em Execução (3)</div>
-      <div class="tab" onclick="openTab('proximas')">Próximas 15 dias (1)</div>
-      <div class="tab" onclick="openTab('concluidas')">Concluídas (2)</div>
-  </div>
 
-  <script>
-  function openTab(id){
-      document.querySelectorAll('.tab-content').forEach(e=>e.classList.remove('active'));
-      document.querySelectorAll('.tab').forEach(e=>e.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-      event.target.classList.add('active');
-  }
-  </script><div id="atrasadas" class="tab-content active">
-              <div class="atividade atrasada" style="border-left-color:var(--d)">
-                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
-                      <div><strong>#1.01.01 • Atividade • Gestão</strong></div>
-                      <span class="badge atrasada">Atrasadas</span>
+                  <div style="margin-top: 20px; padding: 15px; background: #fef2f2; border-radius: 8px; border-left: 4px solid #ef4444;">
+                      <strong style="color: #991b1b; display: block; margin-bottom: 5px;">
+                          <i class="fas fa-exclamation-triangle"></i> Ação Recomendada:
+                      </strong>
+                      <span style="color: #991b1b;">
+                          Monitoramento intensivo e replanejamento necessário
+                      </span>
                   </div>
-                  <div style="font-size:1.15rem;font-weight:600;margin:0.8rem 0">Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</div>
-                  <div style="color:#64748b;margin-bottom:0.8rem">
-                      Planejado: 03/11/2025 → 10/11/2025
-                  </div>
-                  
-      <div class="progress-container">
-          <div class="progress-bar">
-              <div class="progress-fill" style="width:0%;"></div>
-              <div class="progress-ideal" style="left:100%;"></div>
-          </div>
-          <div class="progress-labels">
-              <span>0% real</span>
-              <span>100% ideal</span>
-          </div>
-      </div>
-                  
-                  <div style="margin-top:12px;border:2px solid #7c3aed;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Sucessores (9)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.05.03 – Emissão da Licença - Ambientais</div><div style="padding:6px 0;border-left:4px solid #16a34a;padding-left:10px;margin:4px 0">#1.01.02 – Contratação dos Seguros - Contratuais</div><div style="padding:6px 0;border-left:4px solid #dc2626;padding-left:10px;margin:4px 0">#2.01.01 – Planialtimétrico do Terreno / Georreferenciamento</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.01.02 – Estudos Geológico - SPT</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.01.03 – Estudos Geológico - SEV</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.02.01 – LAYOUT - Usina</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.03.01 – SKID</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.10 – Inversores</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.15 – Módulos Fotovoltaicos</div></div></div>
               </div>
-              <div class="atividade atrasada" style="border-left-color:var(--d)">
-                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
-                      <div><strong>#2.01.01 • Atividade • Estudo</strong></div>
-                      <span class="badge atrasada">Atrasadas</span>
+          
+              <div class="atividade-card" style="border-left-color: #ef4444;">
+                  <div class="atividade-header">
+                      <div>
+                          <div class="atividade-codigo">
+                              #2.03.01
+                              <span class="atividade-nivel">Atividade</span>
+                              
+                          </div>
+                      </div>
+                      <span class="badge badge-critical">
+                          <i class="fas fa-exclamation-circle"></i>
+                          Em atraso de produtividade
+                          
+                      </span>
                   </div>
-                  <div style="font-size:1.15rem;font-weight:600;margin:0.8rem 0">Planialtimétrico do Terreno / Georreferenciamento</div>
-                  <div style="color:#64748b;margin-bottom:0.8rem">
-                      Planejado: 03/11/2025 → 02/12/2025
+
+                  <div class="atividade-title">SKID</div>
+
+                  <div class="atividade-meta">
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-check"></i>
+                          <span>Início: 21/11/2025 → Real: 21/11/2025</span>
+                      </div>
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-times"></i>
+                          <span>Término: 04/12/2025 </span>
+                      </div>
+                      <div class="meta-item">
+                          <i class="fas fa-bolt"></i>
+                          <span>Ritmo necessário: 30%/dia</span>
+                      </div>
                   </div>
+
                   
       <div class="progress-container">
           <div class="progress-bar">
-              <div class="progress-fill" style="width:0%;"></div>
-              <div class="progress-ideal" style="left:100%;"></div>
-          </div>
-          <div class="progress-labels">
-              <span>0% real</span>
-              <span>100% ideal</span>
-          </div>
-      </div>
-                  <div style="margin-top:12px;border:2px solid #dc2626;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Predecessores (1)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #dc2626;padding-left:10px;margin:4px 0">#1.01.01 – Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</div></div></div>
-                  <div style="margin-top:12px;border:2px solid #7c3aed;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Sucessores (4)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#4.01.01.01 – Limpeza e Nivelamento do Terreno</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#4.02.01.01 – Demarcação da Via - Acesso</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#4.02.02.01 – Limpeza / Corte Isolados</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#4.03.02.01 – Perfurações</div></div></div>
-              </div></div><div id="execucao" class="tab-content">
-              <div class="atividade exec" style="border-left-color:var(--i)">
-                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
-                      <div><strong>#2.02.01 • Atividade • Proj. Básico</strong></div>
-                      <span class="badge exec">Execucao</span>
-                  </div>
-                  <div style="font-size:1.15rem;font-weight:600;margin:0.8rem 0">LAYOUT - Usina</div>
-                  <div style="color:#64748b;margin-bottom:0.8rem">
-                      Planejado: 21/11/2025 → 04/12/2025
-                  </div>
-                  
-      <div class="progress-container">
-          <div class="progress-bar">
-              <div class="progress-fill" style="width:70%;"></div>
+              <div class="progress-fill" style="width:70%; background-color:#ef4444;"></div>
               <div class="progress-ideal" style="left:90%;"></div>
           </div>
           <div class="progress-labels">
               <span>70% real</span>
+              <span class="diff negativo">-20.0%</span>
               <span>90% ideal</span>
           </div>
       </div>
-                  <div style="margin-top:12px;border:2px solid #3b82f6;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Predecessores (1)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #dc2626;padding-left:10px;margin:4px 0">#1.01.01 – Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</div></div></div>
-                  <div style="margin-top:12px;border:2px solid #7c3aed;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Sucessores (22)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.02.02 – LAYOUT - Canteiro</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.05.03 – Emissão da Licença - Ambientais</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.10 – Inversores</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.11 – Abrigos de Inversores</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.12 – Estruturas - Automação</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.15 – Módulos Fotovoltaicos</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.16 – Estação Solarimétrica</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#4.02.01.01 – Demarcação da Via - Acesso</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#4.02.02.01 – Limpeza / Corte Isolados</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.03.01 – SKID</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.01 – Estruturas - Estacas</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.02 – Estruturas - Peças / Eixos / Mesas</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.03 – Cabos - Malha de Aterramento</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.04 – Cabos - BT / CC</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.05 – Cabos -BT / CA</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.06 – Cabos - MT / CA</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.07 – Cabos - MT / Rede Aérea</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.08 – Cabos - MT / Poste de Transição</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.17 – Sistema de Segurança - Equipamentos</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#4.04.09.01 – Abertura de Valas - Segurança</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#4.03.01.01 – Locação de Pontos - Estaca</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.04.03 – Cravação / Tracker</div></div></div>
+
+                  <div style="margin-top: 20px; padding: 15px; background: #fef2f2; border-radius: 8px; border-left: 4px solid #ef4444;">
+                      <strong style="color: #991b1b; display: block; margin-bottom: 5px;">
+                          <i class="fas fa-exclamation-triangle"></i> Ação Recomendada:
+                      </strong>
+                      <span style="color: #991b1b;">
+                          Monitoramento intensivo e replanejamento necessário
+                      </span>
+                  </div>
               </div>
-              <div class="atividade exec" style="border-left-color:var(--i)">
-                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
-                      <div><strong>#2.02.02 • Atividade • Proj. Básico</strong></div>
-                      <span class="badge exec">Execucao</span>
+          </div>
+          <!-- TABS DE NAVEGAÇÃO -->
+          <div class="tabs-container">
+              <div class="tabs-header">
+                  <div class="tab active" onclick="openTab('atrasadas', this)">
+                      <i class="fas fa-clock"></i>
+                      Atrasadas
+                      <span class="tab-badge">2</span>
                   </div>
-                  <div style="font-size:1.15rem;font-weight:600;margin:0.8rem 0">LAYOUT - Canteiro</div>
-                  <div style="color:#64748b;margin-bottom:0.8rem">
-                      Planejado: 21/11/2025 → 04/12/2025
+                  <div class="tab" onclick="openTab('execucao', this)">
+                      <i class="fas fa-play-circle"></i>
+                      Em Execução
+                      <span class="tab-badge">3</span>
                   </div>
+                  <div class="tab" onclick="openTab('proximas', this)">
+                      <i class="fas fa-calendar-week"></i>
+                      Próximas 15 Dias
+                      <span class="tab-badge">1</span>
+                  </div>
+                  <div class="tab" onclick="openTab('concluidas', this)">
+                      <i class="fas fa-check-circle"></i>
+                      Concluídas
+                      <span class="tab-badge">2</span>
+                  </div>
+                  <div class="tab" onclick="openTab('planejadas', this)">
+                      <i class="fas fa-calendar-alt"></i>
+                      Planejadas
+                      <span class="tab-badge">2</span>
+                  </div>
+              </div>
+
+              <div class="tabs-content">
+  <div id="atrasadas" class="tab-pane active">
+              <div class="atividade-card" style="border-left-color: #ef4444;">
+                  <div class="atividade-header">
+                      <div>
+                          <div class="atividade-codigo">
+                              #1.01.01
+                              <span class="atividade-nivel">Atividade</span>
+                              
+                          </div>
+                          <div style="font-size: 0.9rem; color: var(--gray-500); margin-top: 5px;">
+                              Gestão • %
+                          </div>
+                      </div>
+                      <span class="badge badge-atrasada">
+                          <i class="fas fa-clock"></i>
+                          Atrasada – Acionar Plano de Recuperação
+                      </span>
+                  </div>
+
+                  <div class="atividade-title">Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</div>
+
+                  <div class="atividade-meta">
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-check"></i>
+                          <span>Início: 03/11/2025 </span>
+                      </div>
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-times"></i>
+                          <span>Término: 10/11/2025 </span>
+                      </div>
+                      
+                      
+                  </div>
+
                   
       <div class="progress-container">
           <div class="progress-bar">
-              <div class="progress-fill" style="width:50%;"></div>
+              <div class="progress-fill" style="width:0%; background-color:#ef4444;"></div>
+              <div class="progress-ideal" style="left:100%;"></div>
+          </div>
+          <div class="progress-labels">
+              <span>0% real</span>
+              <span class="diff negativo">-100.0%</span>
+              <span>100% ideal</span>
+          </div>
+      </div>
+
+                  <!-- Dependências -->
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
+                      
+                      
+      <div class="dependencias-box" style="border-color:#7c3aed">
+          <div class="dependencias-header" style="background:#7c3aed20; border-left-color:#7c3aed">
+              <span>Sucessores (9)</span>
+          </div>
+          <div class="dependencias-content">
+              
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#2.05.03 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Emissão da Licença - Ambientais</div>
+                  <div class="dep-status" style="color:#4b5563">Sem classificação</div>
+              </div>
+          </div>
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#16a34a">✓</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#1.01.02 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Contratação dos Seguros - Contratuais</div>
+                  <div class="dep-status" style="color:#16a34a">Concluídas</div>
+              </div>
+          </div>
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#dc2626">⚠</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#2.01.01 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Planialtimétrico do Terreno / Georreferenciamento</div>
+                  <div class="dep-status" style="color:#dc2626">Atrasadas</div>
+              </div>
+          </div>
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#2.01.02 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Estudos Geológico - SPT</div>
+                  <div class="dep-status" style="color:#4b5563">Previstas (15 dias)</div>
+              </div>
+          </div>
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#2.01.03 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Estudos Geológico - SEV</div>
+                  <div class="dep-status" style="color:#4b5563">Planejadas</div>
+              </div>
+          </div>
+              <div class="dep-extra">+ 4 mais</div>
+          </div>
+      </div>
+                  </div>
+
+                  <!-- Observações -->
+                  
+              </div>
+              
+              <div class="atividade-card" style="border-left-color: #ef4444;">
+                  <div class="atividade-header">
+                      <div>
+                          <div class="atividade-codigo">
+                              #2.01.01
+                              <span class="atividade-nivel">Atividade</span>
+                              
+                          </div>
+                          <div style="font-size: 0.9rem; color: var(--gray-500); margin-top: 5px;">
+                              Estudo • %
+                          </div>
+                      </div>
+                      <span class="badge badge-atrasada">
+                          <i class="fas fa-clock"></i>
+                          Atrasada – Acionar Plano de Recuperação
+                      </span>
+                  </div>
+
+                  <div class="atividade-title">Planialtimétrico do Terreno / Georreferenciamento</div>
+
+                  <div class="atividade-meta">
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-check"></i>
+                          <span>Início: 03/11/2025 </span>
+                      </div>
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-times"></i>
+                          <span>Término: 02/12/2025 </span>
+                      </div>
+                      
+                      
+                  </div>
+
+                  
+      <div class="progress-container">
+          <div class="progress-bar">
+              <div class="progress-fill" style="width:0%; background-color:#ef4444;"></div>
+              <div class="progress-ideal" style="left:100%;"></div>
+          </div>
+          <div class="progress-labels">
+              <span>0% real</span>
+              <span class="diff negativo">-100.0%</span>
+              <span>100% ideal</span>
+          </div>
+      </div>
+
+                  <!-- Dependências -->
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
+                      
+      <div class="dependencias-box" style="border-color:#dc2626">
+          <div class="dependencias-header" style="background:#dc262620; border-left-color:#dc2626">
+              <span>Predecessores (1)</span>
+          </div>
+          <div class="dependencias-content">
+              
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#dc2626">⚠</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#1.01.01 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</div>
+                  <div class="dep-status" style="color:#dc2626">Atrasadas</div>
+              </div>
+          </div>
+              
+          </div>
+      </div>
+                      
+      <div class="dependencias-box" style="border-color:#7c3aed">
+          <div class="dependencias-header" style="background:#7c3aed20; border-left-color:#7c3aed">
+              <span>Sucessores (4)</span>
+          </div>
+          <div class="dependencias-content">
+              
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#4.01.01.01 <span class="dep-nivel">(SubAtividade)</span></div>
+                  <div class="dep-nome">Limpeza e Nivelamento do Terreno</div>
+                  <div class="dep-status" style="color:#4b5563">Sem classificação</div>
+              </div>
+          </div>
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#4.02.01.01 <span class="dep-nivel">(SubAtividade)</span></div>
+                  <div class="dep-nome">Demarcação da Via - Acesso</div>
+                  <div class="dep-status" style="color:#4b5563">Sem classificação</div>
+              </div>
+          </div>
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#4.02.02.01 <span class="dep-nivel">(SubAtividade)</span></div>
+                  <div class="dep-nome">Limpeza / Corte Isolados</div>
+                  <div class="dep-status" style="color:#4b5563">Sem classificação</div>
+              </div>
+          </div>
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#4.03.02.01 <span class="dep-nivel">(SubAtividade)</span></div>
+                  <div class="dep-nome">Perfurações</div>
+                  <div class="dep-status" style="color:#4b5563">Sem classificação</div>
+              </div>
+          </div>
+              
+          </div>
+      </div>
+                  </div>
+
+                  <!-- Observações -->
+                  
+              </div>
+              </div><div id="execucao" class="tab-pane">
+              <div class="atividade-card" style="border-left-color: #ef4444;">
+                  <div class="atividade-header">
+                      <div>
+                          <div class="atividade-codigo">
+                              #2.02.01
+                              <span class="atividade-nivel">Atividade</span>
+                              
+                          </div>
+                          <div style="font-size: 0.9rem; color: var(--gray-500); margin-top: 5px;">
+                              Proj. Básico • %
+                          </div>
+                      </div>
+                      <span class="badge badge-atrasada">
+                          <i class="fas fa-play-circle"></i>
+                          Em atraso de produtividade
+                      </span>
+                  </div>
+
+                  <div class="atividade-title">LAYOUT - Usina</div>
+
+                  <div class="atividade-meta">
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-check"></i>
+                          <span>Início: 21/11/2025 → Real: 21/11/2025</span>
+                      </div>
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-times"></i>
+                          <span>Término: 04/12/2025 </span>
+                      </div>
+                      <div class="meta-item"><i class="fas fa-bolt"></i><span>Ritmo: 30%/dia</span></div>
+                      
+                  </div>
+
+                  
+      <div class="progress-container">
+          <div class="progress-bar">
+              <div class="progress-fill" style="width:70%; background-color:#ef4444;"></div>
+              <div class="progress-ideal" style="left:90%;"></div>
+          </div>
+          <div class="progress-labels">
+              <span>70% real</span>
+              <span class="diff negativo">-20.0%</span>
+              <span>90% ideal</span>
+          </div>
+      </div>
+
+                  <!-- Dependências -->
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
+                      
+      <div class="dependencias-box" style="border-color:#dc2626">
+          <div class="dependencias-header" style="background:#dc262620; border-left-color:#dc2626">
+              <span>Predecessores (1)</span>
+          </div>
+          <div class="dependencias-content">
+              
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#dc2626">⚠</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#1.01.01 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</div>
+                  <div class="dep-status" style="color:#dc2626">Atrasadas</div>
+              </div>
+          </div>
+              
+          </div>
+      </div>
+                      
+      <div class="dependencias-box" style="border-color:#7c3aed">
+          <div class="dependencias-header" style="background:#7c3aed20; border-left-color:#7c3aed">
+              <span>Sucessores (22)</span>
+          </div>
+          <div class="dependencias-content">
+              
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#2.02.02 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">LAYOUT - Canteiro</div>
+                  <div class="dep-status" style="color:#4b5563">Em execução</div>
+              </div>
+          </div>
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#2.05.03 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Emissão da Licença - Ambientais</div>
+                  <div class="dep-status" style="color:#4b5563">Sem classificação</div>
+              </div>
+          </div>
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#3.01.10 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Inversores</div>
+                  <div class="dep-status" style="color:#4b5563">Sem classificação</div>
+              </div>
+          </div>
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#3.01.11 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Abrigos de Inversores</div>
+                  <div class="dep-status" style="color:#4b5563">Sem classificação</div>
+              </div>
+          </div>
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#3.01.12 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Estruturas - Automação</div>
+                  <div class="dep-status" style="color:#4b5563">Sem classificação</div>
+              </div>
+          </div>
+              <div class="dep-extra">+ 17 mais</div>
+          </div>
+      </div>
+                  </div>
+
+                  <!-- Observações -->
+                  
+              </div>
+              
+              <div class="atividade-card" style="border-left-color: #ef4444;">
+                  <div class="atividade-header">
+                      <div>
+                          <div class="atividade-codigo">
+                              #2.02.02
+                              <span class="atividade-nivel">Atividade</span>
+                              
+                          </div>
+                          <div style="font-size: 0.9rem; color: var(--gray-500); margin-top: 5px;">
+                              Proj. Básico • %
+                          </div>
+                      </div>
+                      <span class="badge badge-atrasada">
+                          <i class="fas fa-play-circle"></i>
+                          Em atraso de produtividade
+                      </span>
+                  </div>
+
+                  <div class="atividade-title">LAYOUT - Canteiro</div>
+
+                  <div class="atividade-meta">
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-check"></i>
+                          <span>Início: 21/11/2025 → Real: 21/11/2025</span>
+                      </div>
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-times"></i>
+                          <span>Término: 04/12/2025 </span>
+                      </div>
+                      <div class="meta-item"><i class="fas fa-bolt"></i><span>Ritmo: 50%/dia</span></div>
+                      
+                  </div>
+
+                  
+      <div class="progress-container">
+          <div class="progress-bar">
+              <div class="progress-fill" style="width:50%; background-color:#ef4444;"></div>
               <div class="progress-ideal" style="left:90%;"></div>
           </div>
           <div class="progress-labels">
               <span>50% real</span>
+              <span class="diff negativo">-40.0%</span>
               <span>90% ideal</span>
           </div>
       </div>
-                  <div style="margin-top:12px;border:2px solid #3b82f6;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Predecessores (1)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.02.01 – LAYOUT - Usina</div></div></div>
-                  <div style="margin-top:12px;border:2px solid #7c3aed;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Sucessores (2)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.04.01 – Terraplanagem</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#4.01.01.01 – Limpeza e Nivelamento do Terreno</div></div></div>
+
+                  <!-- Dependências -->
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
+                      
+      <div class="dependencias-box" style="border-color:#dc2626">
+          <div class="dependencias-header" style="background:#dc262620; border-left-color:#dc2626">
+              <span>Predecessores (1)</span>
+          </div>
+          <div class="dependencias-content">
+              
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#2.02.01 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">LAYOUT - Usina</div>
+                  <div class="dep-status" style="color:#4b5563">Em execução</div>
               </div>
-              <div class="atividade exec" style="border-left-color:var(--i)">
-                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
-                      <div><strong>#2.03.01 • Atividade • Proj. Executivo / MDT</strong></div>
-                      <span class="badge exec">Execucao</span>
+          </div>
+              
+          </div>
+      </div>
+                      
+      <div class="dependencias-box" style="border-color:#7c3aed">
+          <div class="dependencias-header" style="background:#7c3aed20; border-left-color:#7c3aed">
+              <span>Sucessores (2)</span>
+          </div>
+          <div class="dependencias-content">
+              
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#2.04.01 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Terraplanagem</div>
+                  <div class="dep-status" style="color:#4b5563">Sem classificação</div>
+              </div>
+          </div>
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#4.01.01.01 <span class="dep-nivel">(SubAtividade)</span></div>
+                  <div class="dep-nome">Limpeza e Nivelamento do Terreno</div>
+                  <div class="dep-status" style="color:#4b5563">Sem classificação</div>
+              </div>
+          </div>
+              
+          </div>
+      </div>
                   </div>
-                  <div style="font-size:1.15rem;font-weight:600;margin:0.8rem 0">SKID</div>
-                  <div style="color:#64748b;margin-bottom:0.8rem">
-                      Planejado: 21/11/2025 → 04/12/2025
+
+                  <!-- Observações -->
+                  
+              </div>
+              
+              <div class="atividade-card" style="border-left-color: #ef4444;">
+                  <div class="atividade-header">
+                      <div>
+                          <div class="atividade-codigo">
+                              #2.03.01
+                              <span class="atividade-nivel">Atividade</span>
+                              
+                          </div>
+                          <div style="font-size: 0.9rem; color: var(--gray-500); margin-top: 5px;">
+                              Proj. Executivo / MDT • %
+                          </div>
+                      </div>
+                      <span class="badge badge-atrasada">
+                          <i class="fas fa-play-circle"></i>
+                          Em atraso de produtividade
+                      </span>
                   </div>
+
+                  <div class="atividade-title">SKID</div>
+
+                  <div class="atividade-meta">
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-check"></i>
+                          <span>Início: 21/11/2025 → Real: 21/11/2025</span>
+                      </div>
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-times"></i>
+                          <span>Término: 04/12/2025 </span>
+                      </div>
+                      <div class="meta-item"><i class="fas fa-bolt"></i><span>Ritmo: 30%/dia</span></div>
+                      
+                  </div>
+
                   
       <div class="progress-container">
           <div class="progress-bar">
-              <div class="progress-fill" style="width:70%;"></div>
+              <div class="progress-fill" style="width:70%; background-color:#ef4444;"></div>
               <div class="progress-ideal" style="left:90%;"></div>
           </div>
           <div class="progress-labels">
               <span>70% real</span>
+              <span class="diff negativo">-20.0%</span>
               <span>90% ideal</span>
           </div>
       </div>
-                  <div style="margin-top:12px;border:2px solid #3b82f6;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Predecessores (3)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #dc2626;padding-left:10px;margin:4px 0">#1.01.01 – Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</div><div style="padding:6px 0;border-left:4px solid #16a34a;padding-left:10px;margin:4px 0">#1.01.02 – Contratação dos Seguros - Contratuais</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.02.01 – LAYOUT - Usina</div></div></div>
-                  <div style="margin-top:12px;border:2px solid #7c3aed;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Sucessores (3)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #16a34a;padding-left:10px;margin:4px 0">#2.03.02 – CMP</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.03.03 – Diagramas - Unifilar / Trifilar</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.13 – Subestação - SKID</div></div></div>
-              </div></div><div id="proximas" class="tab-content">
-              <div class="atividade exec" style="border-left-color:#d97706">
-                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
-                      <div><strong>#2.01.02 • Atividade • Estudo</strong></div>
-                      <span class="badge exec">Proximas</span>
+
+                  <!-- Dependências -->
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
+                      
+      <div class="dependencias-box" style="border-color:#dc2626">
+          <div class="dependencias-header" style="background:#dc262620; border-left-color:#dc2626">
+              <span>Predecessores (3)</span>
+          </div>
+          <div class="dependencias-content">
+              
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#dc2626">⚠</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#1.01.01 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</div>
+                  <div class="dep-status" style="color:#dc2626">Atrasadas</div>
+              </div>
+          </div>
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#16a34a">✓</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#1.01.02 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Contratação dos Seguros - Contratuais</div>
+                  <div class="dep-status" style="color:#16a34a">Concluídas</div>
+              </div>
+          </div>
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#2.02.01 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">LAYOUT - Usina</div>
+                  <div class="dep-status" style="color:#4b5563">Em execução</div>
+              </div>
+          </div>
+              
+          </div>
+      </div>
+                      
+      <div class="dependencias-box" style="border-color:#7c3aed">
+          <div class="dependencias-header" style="background:#7c3aed20; border-left-color:#7c3aed">
+              <span>Sucessores (3)</span>
+          </div>
+          <div class="dependencias-content">
+              
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#16a34a">✓</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#2.03.02 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">CMP</div>
+                  <div class="dep-status" style="color:#16a34a">Concluídas</div>
+              </div>
+          </div>
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#2.03.03 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Diagramas - Unifilar / Trifilar</div>
+                  <div class="dep-status" style="color:#4b5563">Planejadas</div>
+              </div>
+          </div>
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#3.01.13 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Subestação - SKID</div>
+                  <div class="dep-status" style="color:#4b5563">Sem classificação</div>
+              </div>
+          </div>
+              
+          </div>
+      </div>
                   </div>
-                  <div style="font-size:1.15rem;font-weight:600;margin:0.8rem 0">Estudos Geológico - SPT</div>
-                  <div style="color:#64748b;margin-bottom:0.8rem">
-                      Planejado: 04/12/2025 → 19/12/2025
+
+                  <!-- Observações -->
+                  
+              </div>
+              </div><div id="proximas" class="tab-pane">
+              <div class="atividade-card" style="border-left-color: #f59e0b;">
+                  <div class="atividade-header">
+                      <div>
+                          <div class="atividade-codigo">
+                              #2.01.02
+                              <span class="atividade-nivel">Atividade</span>
+                              
+                          </div>
+                          <div style="font-size: 0.9rem; color: var(--gray-500); margin-top: 5px;">
+                              Estudo • %
+                          </div>
+                      </div>
+                      <span class="badge badge-prevista">
+                          <i class="fas fa-calendar-week"></i>
+                          Planejada
+                      </span>
                   </div>
+
+                  <div class="atividade-title">Estudos Geológico - SPT</div>
+
+                  <div class="atividade-meta">
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-check"></i>
+                          <span>Início: 04/12/2025 </span>
+                      </div>
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-times"></i>
+                          <span>Término: 19/12/2025 </span>
+                      </div>
+                      <div class="meta-item"><i class="fas fa-bolt"></i><span>Ritmo: 8.33%/dia</span></div>
+                      
+                  </div>
+
                   
       <div class="progress-container">
           <div class="progress-bar">
-              <div class="progress-fill" style="width:0%;"></div>
+              <div class="progress-fill" style="width:0%; background-color:#8b5cf6;"></div>
               <div class="progress-ideal" style="left:0%;"></div>
           </div>
           <div class="progress-labels">
               <span>0% real</span>
+              <span class="diff positivo"></span>
               <span>0% ideal</span>
           </div>
       </div>
-                  <div style="margin-top:12px;border:2px solid #3b82f6;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Predecessores (1)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #dc2626;padding-left:10px;margin:4px 0">#1.01.01 – Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</div></div></div>
-                  <div style="margin-top:12px;border:2px solid #7c3aed;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Sucessores (2)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.01 – Estruturas - Estacas</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.02 – Estruturas - Peças / Eixos / Mesas</div></div></div>
-              </div></div><div id="concluidas" class="tab-content">
-              <div class="atividade concluida" style="border-left-color:var(--s)">
-                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
-                      <div><strong>#1.01.02 • Atividade • Gestão</strong></div>
-                      <span class="badge concluida">Concluidas</span>
-                  </div>
-                  <div style="font-size:1.15rem;font-weight:600;margin:0.8rem 0">Contratação dos Seguros - Contratuais</div>
-                  <div style="color:#64748b;margin-bottom:0.8rem">
-                      Planejado: 03/11/2025 → 10/11/2025
-                  </div>
-                  
-      <div class="progress-container">
-          <div class="progress-bar">
-              <div class="progress-fill" style="width:100%;"></div>
-              <div class="progress-ideal" style="left:100%;"></div>
+
+                  <!-- Dependências -->
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
+                      
+      <div class="dependencias-box" style="border-color:#dc2626">
+          <div class="dependencias-header" style="background:#dc262620; border-left-color:#dc2626">
+              <span>Predecessores (1)</span>
           </div>
-          <div class="progress-labels">
-              <span>100% real</span>
-              <span>100% ideal</span>
-          </div>
-      </div>
-                  <div style="margin-top:12px;border:2px solid #3b82f6;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Predecessores (1)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #dc2626;padding-left:10px;margin:4px 0">#1.01.01 – Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</div></div></div>
-                  <div style="margin-top:12px;border:2px solid #7c3aed;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Sucessores (1)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.03.01 – SKID</div></div></div>
+          <div class="dependencias-content">
+              
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#dc2626">⚠</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#1.01.01 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</div>
+                  <div class="dep-status" style="color:#dc2626">Atrasadas</div>
               </div>
-              <div class="atividade concluida" style="border-left-color:var(--s)">
-                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
-                      <div><strong>#2.03.02 • Atividade • Proj. Executivo / MDT</strong></div>
-                      <span class="badge concluida">Concluidas</span>
+          </div>
+              
+          </div>
+      </div>
+                      
+      <div class="dependencias-box" style="border-color:#7c3aed">
+          <div class="dependencias-header" style="background:#7c3aed20; border-left-color:#7c3aed">
+              <span>Sucessores (2)</span>
+          </div>
+          <div class="dependencias-content">
+              
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#3.01.01 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Estruturas - Estacas</div>
+                  <div class="dep-status" style="color:#4b5563">Sem classificação</div>
+              </div>
+          </div>
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#3.01.02 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Estruturas - Peças / Eixos / Mesas</div>
+                  <div class="dep-status" style="color:#4b5563">Sem classificação</div>
+              </div>
+          </div>
+              
+          </div>
+      </div>
                   </div>
-                  <div style="font-size:1.15rem;font-weight:600;margin:0.8rem 0">CMP</div>
-                  <div style="color:#64748b;margin-bottom:0.8rem">
-                      Planejado: 03/11/2025 → 10/11/2025
+
+                  <!-- Observações -->
+                  
+              </div>
+              </div><div id="concluidas" class="tab-pane">
+              <div class="atividade-card" style="border-left-color: #10b981;">
+                  <div class="atividade-header">
+                      <div>
+                          <div class="atividade-codigo">
+                              #1.01.02
+                              <span class="atividade-nivel">Atividade</span>
+                              
+                          </div>
+                          <div style="font-size: 0.9rem; color: var(--gray-500); margin-top: 5px;">
+                              Gestão • %
+                          </div>
+                      </div>
+                      <span class="badge badge-concluida">
+                          <i class="fas fa-check-circle"></i>
+                          Concluída
+                      </span>
                   </div>
+
+                  <div class="atividade-title">Contratação dos Seguros - Contratuais</div>
+
+                  <div class="atividade-meta">
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-check"></i>
+                          <span>Início: 03/11/2025 → Real: 03/11/2025</span>
+                      </div>
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-times"></i>
+                          <span>Término: 10/11/2025 → Real: 10/11/2025</span>
+                      </div>
+                      
+                      
+                  </div>
+
                   
       <div class="progress-container">
           <div class="progress-bar">
-              <div class="progress-fill" style="width:100%;"></div>
+              <div class="progress-fill" style="width:100%; background-color:#10b981;"></div>
               <div class="progress-ideal" style="left:100%;"></div>
           </div>
           <div class="progress-labels">
               <span>100% real</span>
+              <span class="diff positivo"></span>
               <span>100% ideal</span>
           </div>
       </div>
-                  <div style="margin-top:12px;border:2px solid #3b82f6;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Predecessores (1)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.03.01 – SKID</div></div></div>
-                  <div style="margin-top:12px;border:2px solid #7c3aed;border-radius:8px;overflow:hidden"><div style="background:#f8fafc;padding:8px 12px;font-weight:600;font-size:0.9rem;border-bottom:1px solid #eee">Sucessores (3)</div><div style="padding:8px"><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#2.03.03 – Diagramas - Unifilar / Trifilar</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#3.01.14 – Subestação - CMP</div><div style="padding:6px 0;border-left:4px solid #2563eb;padding-left:10px;margin:4px 0">#4.04.02.01 – Montagem - Armadura / Caixaria</div></div></div>
-              </div></div><footer>Relatório gerado automaticamente via n8n • 03/12/2025</footer></div></body></html>
+
+                  <!-- Dependências -->
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
+                      
+      <div class="dependencias-box" style="border-color:#dc2626">
+          <div class="dependencias-header" style="background:#dc262620; border-left-color:#dc2626">
+              <span>Predecessores (1)</span>
+          </div>
+          <div class="dependencias-content">
+              
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#dc2626">⚠</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#1.01.01 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</div>
+                  <div class="dep-status" style="color:#dc2626">Atrasadas</div>
+              </div>
+          </div>
+              
+          </div>
+      </div>
+                      
+      <div class="dependencias-box" style="border-color:#7c3aed">
+          <div class="dependencias-header" style="background:#7c3aed20; border-left-color:#7c3aed">
+              <span>Sucessores (1)</span>
+          </div>
+          <div class="dependencias-content">
+              
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#2.03.01 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">SKID</div>
+                  <div class="dep-status" style="color:#4b5563">Em execução</div>
+              </div>
+          </div>
+              
+          </div>
+      </div>
+                  </div>
+
+                  <!-- Observações -->
+                  
+              </div>
+              
+              <div class="atividade-card" style="border-left-color: #10b981;">
+                  <div class="atividade-header">
+                      <div>
+                          <div class="atividade-codigo">
+                              #2.03.02
+                              <span class="atividade-nivel">Atividade</span>
+                              
+                          </div>
+                          <div style="font-size: 0.9rem; color: var(--gray-500); margin-top: 5px;">
+                              Proj. Executivo / MDT • %
+                          </div>
+                      </div>
+                      <span class="badge badge-concluida">
+                          <i class="fas fa-check-circle"></i>
+                          Concluída
+                      </span>
+                  </div>
+
+                  <div class="atividade-title">CMP</div>
+
+                  <div class="atividade-meta">
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-check"></i>
+                          <span>Início: 03/11/2025 → Real: 03/11/2025</span>
+                      </div>
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-times"></i>
+                          <span>Término: 10/11/2025 → Real: 10/11/2025</span>
+                      </div>
+                      
+                      
+                  </div>
+
+                  
+      <div class="progress-container">
+          <div class="progress-bar">
+              <div class="progress-fill" style="width:100%; background-color:#10b981;"></div>
+              <div class="progress-ideal" style="left:100%;"></div>
+          </div>
+          <div class="progress-labels">
+              <span>100% real</span>
+              <span class="diff positivo"></span>
+              <span>100% ideal</span>
+          </div>
+      </div>
+
+                  <!-- Dependências -->
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
+                      
+      <div class="dependencias-box" style="border-color:#dc2626">
+          <div class="dependencias-header" style="background:#dc262620; border-left-color:#dc2626">
+              <span>Predecessores (1)</span>
+          </div>
+          <div class="dependencias-content">
+              
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#2.03.01 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">SKID</div>
+                  <div class="dep-status" style="color:#4b5563">Em execução</div>
+              </div>
+          </div>
+              
+          </div>
+      </div>
+                      
+      <div class="dependencias-box" style="border-color:#7c3aed">
+          <div class="dependencias-header" style="background:#7c3aed20; border-left-color:#7c3aed">
+              <span>Sucessores (3)</span>
+          </div>
+          <div class="dependencias-content">
+              
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#2.03.03 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Diagramas - Unifilar / Trifilar</div>
+                  <div class="dep-status" style="color:#4b5563">Planejadas</div>
+              </div>
+          </div>
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#3.01.14 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Subestação - CMP</div>
+                  <div class="dep-status" style="color:#4b5563">Sem classificação</div>
+              </div>
+          </div>
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#4.04.02.01 <span class="dep-nivel">(SubAtividade)</span></div>
+                  <div class="dep-nome">Montagem - Armadura / Caixaria</div>
+                  <div class="dep-status" style="color:#4b5563">Sem classificação</div>
+              </div>
+          </div>
+              
+          </div>
+      </div>
+                  </div>
+
+                  <!-- Observações -->
+                  
+              </div>
+              </div><div id="planejadas" class="tab-pane">
+              <div class="atividade-card" style="border-left-color: #d1d5db;">
+                  <div class="atividade-header">
+                      <div>
+                          <div class="atividade-codigo">
+                              #2.01.03
+                              <span class="atividade-nivel">Atividade</span>
+                              
+                          </div>
+                          <div style="font-size: 0.9rem; color: var(--gray-500); margin-top: 5px;">
+                              Estudo • %
+                          </div>
+                      </div>
+                      <span class="badge badge-planejada">
+                          <i class="fas fa-calendar-alt"></i>
+                          Planejada
+                      </span>
+                  </div>
+
+                  <div class="atividade-title">Estudos Geológico - SEV</div>
+
+                  <div class="atividade-meta">
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-check"></i>
+                          <span>Início: 14/01/2026 </span>
+                      </div>
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-times"></i>
+                          <span>Término: 22/03/2026 </span>
+                      </div>
+                      <div class="meta-item"><i class="fas fa-bolt"></i><span>Ritmo: 1.3%/dia</span></div>
+                      
+                  </div>
+
+                  
+      <div class="progress-container">
+          <div class="progress-bar">
+              <div class="progress-fill" style="width:0%; background-color:#8b5cf6;"></div>
+              <div class="progress-ideal" style="left:0%;"></div>
+          </div>
+          <div class="progress-labels">
+              <span>0% real</span>
+              <span class="diff positivo"></span>
+              <span>0% ideal</span>
+          </div>
+      </div>
+
+                  <!-- Dependências -->
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
+                      
+      <div class="dependencias-box" style="border-color:#dc2626">
+          <div class="dependencias-header" style="background:#dc262620; border-left-color:#dc2626">
+              <span>Predecessores (1)</span>
+          </div>
+          <div class="dependencias-content">
+              
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#dc2626">⚠</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#1.01.01 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</div>
+                  <div class="dep-status" style="color:#dc2626">Atrasadas</div>
+              </div>
+          </div>
+              
+          </div>
+      </div>
+                      
+      <div class="dependencias-box" style="border-color:#7c3aed">
+          <div class="dependencias-header" style="background:#7c3aed20; border-left-color:#7c3aed">
+              <span>Sucessores (2)</span>
+          </div>
+          <div class="dependencias-content">
+              
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#2.03.10 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Aterramento</div>
+                  <div class="dep-status" style="color:#4b5563">Sem classificação</div>
+              </div>
+          </div>
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#3.01.03 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Cabos - Malha de Aterramento</div>
+                  <div class="dep-status" style="color:#4b5563">Sem classificação</div>
+              </div>
+          </div>
+              
+          </div>
+      </div>
+                  </div>
+
+                  <!-- Observações -->
+                  
+              </div>
+              
+              <div class="atividade-card" style="border-left-color: #d1d5db;">
+                  <div class="atividade-header">
+                      <div>
+                          <div class="atividade-codigo">
+                              #2.03.03
+                              <span class="atividade-nivel">Atividade</span>
+                              
+                          </div>
+                          <div style="font-size: 0.9rem; color: var(--gray-500); margin-top: 5px;">
+                              Proj. Executivo / MDT • %
+                          </div>
+                      </div>
+                      <span class="badge badge-planejada">
+                          <i class="fas fa-calendar-alt"></i>
+                          Planejada
+                      </span>
+                  </div>
+
+                  <div class="atividade-title">Diagramas - Unifilar / Trifilar</div>
+
+                  <div class="atividade-meta">
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-check"></i>
+                          <span>Início: 27/01/2026 </span>
+                      </div>
+                      <div class="meta-item">
+                          <i class="fas fa-calendar-times"></i>
+                          <span>Término: 02/02/2026 </span>
+                      </div>
+                      <div class="meta-item"><i class="fas fa-bolt"></i><span>Ritmo: 2.33%/dia</span></div>
+                      
+                  </div>
+
+                  
+      <div class="progress-container">
+          <div class="progress-bar">
+              <div class="progress-fill" style="width:0%; background-color:#8b5cf6;"></div>
+              <div class="progress-ideal" style="left:0%;"></div>
+          </div>
+          <div class="progress-labels">
+              <span>0% real</span>
+              <span class="diff positivo"></span>
+              <span>0% ideal</span>
+          </div>
+      </div>
+
+                  <!-- Dependências -->
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
+                      
+      <div class="dependencias-box" style="border-color:#dc2626">
+          <div class="dependencias-header" style="background:#dc262620; border-left-color:#dc2626">
+              <span>Predecessores (2)</span>
+          </div>
+          <div class="dependencias-content">
+              
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#2.03.01 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">SKID</div>
+                  <div class="dep-status" style="color:#4b5563">Em execução</div>
+              </div>
+          </div>
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#16a34a">✓</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#2.03.02 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">CMP</div>
+                  <div class="dep-status" style="color:#16a34a">Concluídas</div>
+              </div>
+          </div>
+              
+          </div>
+      </div>
+                      
+      <div class="dependencias-box" style="border-color:#7c3aed">
+          <div class="dependencias-header" style="background:#7c3aed20; border-left-color:#7c3aed">
+              <span>Sucessores (4)</span>
+          </div>
+          <div class="dependencias-content">
+              
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#2.03.04 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Cabeamento - BT-CC</div>
+                  <div class="dep-status" style="color:#4b5563">Sem classificação</div>
+              </div>
+          </div>
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#2.03.08 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Segurança Equipamentos / Rede</div>
+                  <div class="dep-status" style="color:#4b5563">Sem classificação</div>
+              </div>
+          </div>
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#2.03.12 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">Estação Solarimétrica</div>
+                  <div class="dep-status" style="color:#4b5563">Sem classificação</div>
+              </div>
+          </div>
+          <div class="dep-item">
+              <span class="dep-icon" style="color:#4b5563">•</span>
+              <div class="dep-content">
+                  <div class="dep-codigo">#2.03.13 <span class="dep-nivel">(Atividade)</span></div>
+                  <div class="dep-nome">ADM Elétrica</div>
+                  <div class="dep-status" style="color:#4b5563">Sem classificação</div>
+              </div>
+          </div>
+              
+          </div>
+      </div>
+                  </div>
+
+                  <!-- Observações -->
+                  
+              </div>
+              </div>
+              </div>
+          </div>
+
+          <!-- GRÁFICOS E RESUMOS -->
+          <div class="charts-grid">
+              <div class="chart-container">
+                  <div class="chart-title">
+                      <i class="fas fa-chart-pie"></i>
+                      Distribuição por Nível
+                  </div>
+                  <div class="chart-placeholder">
+                      <div style="text-align: center;">
+                          <div style="font-size: 2rem; margin-bottom: 10px;">
+                              <i class="fas fa-chart-bar"></i>
+                          </div>
+                          <div>Total de Atividades por Nível</div>
+                          <div style="margin-top: 20px; text-align: left; max-width: 300px; margin: 20px auto;">
+  
+                              <div style="display: flex; justify-content: space-between; margin-bottom: 10px; padding: 8px; background: var(--gray-50); border-radius: 6px;">
+                                  <span>SubAtividade</span>
+                                  <span style="font-weight: 700;">119 <span style="color: var(--gray-500);">(46.3%)</span></span>
+                              </div>
+      
+                              <div style="display: flex; justify-content: space-between; margin-bottom: 10px; padding: 8px; background: var(--gray-50); border-radius: 6px;">
+                                  <span>Atividade</span>
+                                  <span style="font-weight: 700;">107 <span style="color: var(--gray-500);">(41.6%)</span></span>
+                              </div>
+      
+                              <div style="display: flex; justify-content: space-between; margin-bottom: 10px; padding: 8px; background: var(--gray-50); border-radius: 6px;">
+                                  <span>Etapa</span>
+                                  <span style="font-weight: 700;">21 <span style="color: var(--gray-500);">(8.2%)</span></span>
+                              </div>
+      
+                              <div style="display: flex; justify-content: space-between; margin-bottom: 10px; padding: 8px; background: var(--gray-50); border-radius: 6px;">
+                                  <span>Fase</span>
+                                  <span style="font-weight: 700;">9 <span style="color: var(--gray-500);">(3.5%)</span></span>
+                              </div>
+      
+                              <div style="display: flex; justify-content: space-between; margin-bottom: 10px; padding: 8px; background: var(--gray-50); border-radius: 6px;">
+                                  <span>Não Classificado</span>
+                                  <span style="font-weight: 700;">1 <span style="color: var(--gray-500);">(0.4%)</span></span>
+                              </div>
+      
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="chart-container">
+                  <div class="chart-title">
+                      <i class="fas fa-chart-bar"></i>
+                      Status de Andamento
+                  </div>
+                  <div class="chart-placeholder">
+                      <div style="text-align: center;">
+                          <div style="font-size: 2rem; margin-bottom: 10px;">
+                              <i class="fas fa-tasks"></i>
+                          </div>
+                          <div>Distribuição por Status</div>
+                          <div style="margin-top: 20px; text-align: left; max-width: 300px; margin: 20px auto;">
+  
+                              <div style="margin-bottom: 12px;">
+                                  <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                      <span>Sem classificação</span>
+                                      <span style="font-weight: 700;">247</span>
+                                  </div>
+                                  <div style="height: 8px; background: var(--gray-200); border-radius: 4px; overflow: hidden;">
+                                      <div style="height: 100%; width: 96.10894941634241%; background: var(--gray-400); border-radius: 4px;"></div>
+                                  </div>
+                              </div>
+      
+                              <div style="margin-bottom: 12px;">
+                                  <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                      <span>Em execução</span>
+                                      <span style="font-weight: 700;">3</span>
+                                  </div>
+                                  <div style="height: 8px; background: var(--gray-200); border-radius: 4px; overflow: hidden;">
+                                      <div style="height: 100%; width: 1.1673151750972763%; background: var(--primary-light); border-radius: 4px;"></div>
+                                  </div>
+                              </div>
+      
+                              <div style="margin-bottom: 12px;">
+                                  <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                      <span>Atrasadas</span>
+                                      <span style="font-weight: 700;">2</span>
+                                  </div>
+                                  <div style="height: 8px; background: var(--gray-200); border-radius: 4px; overflow: hidden;">
+                                      <div style="height: 100%; width: 0.7782101167315175%; background: var(--danger); border-radius: 4px;"></div>
+                                  </div>
+                              </div>
+      
+                              <div style="margin-bottom: 12px;">
+                                  <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                      <span>Concluídas</span>
+                                      <span style="font-weight: 700;">2</span>
+                                  </div>
+                                  <div style="height: 8px; background: var(--gray-200); border-radius: 4px; overflow: hidden;">
+                                      <div style="height: 100%; width: 0.7782101167315175%; background: var(--success); border-radius: 4px;"></div>
+                                  </div>
+                              </div>
+      
+                              <div style="margin-bottom: 12px;">
+                                  <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                      <span>Planejadas</span>
+                                      <span style="font-weight: 700;">2</span>
+                                  </div>
+                                  <div style="height: 8px; background: var(--gray-200); border-radius: 4px; overflow: hidden;">
+                                      <div style="height: 100%; width: 0.7782101167315175%; background: var(--gray-400); border-radius: 4px;"></div>
+                                  </div>
+                              </div>
+      
+                              <div style="margin-bottom: 12px;">
+                                  <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                      <span>Previstas (15 dias)</span>
+                                      <span style="font-weight: 700;">1</span>
+                                  </div>
+                                  <div style="height: 8px; background: var(--gray-200); border-radius: 4px; overflow: hidden;">
+                                      <div style="height: 100%; width: 0.38910505836575876%; background: var(--warning); border-radius: 4px;"></div>
+                                  </div>
+                              </div>
+      
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- FOOTER -->
+          <div class="footer">
+              <p>
+                  <i class="fas fa-bolt"></i>
+                  <strong>Dashboard de Controle de Obra - Usina Solar Fotovoltaica</strong>
+              </p>
+              <p>
+                  Relatório gerado automaticamente via n8n em 03/12/2025 |
+                  Total de 257 atividades monitoradas |
+                  0% do orçamento executado
+              </p>
+              <p style="margin-top: 15px; font-size: 0.85rem; color: var(--gray-500);">
+                  <i class="fas fa-info-circle"></i>
+                  Para mais detalhes ou ajustes, consulte o gestor do projeto.
+              </p>
+          </div>
+      </div>
+
+      <script>
+          // Função para alternar entre tabs
+          function openTab(tabId, element) {
+              // Esconder todas as tabs
+              document.querySelectorAll('.tab-pane').forEach(tab => {
+                  tab.classList.remove('active');
+              });
+
+              // Remover classe active de todas as tabs header
+              document.querySelectorAll('.tab').forEach(tab => {
+                  tab.classList.remove('active');
+              });
+
+              // Mostrar tab selecionada
+              document.getElementById(tabId).classList.add('active');
+
+              // Ativar tab header
+              element.classList.add('active');
+          }
+
+          // Função para expandir/retrair dependências
+          document.addEventListener('click', function(e) {
+              if (e.target.classList.contains('dep-extra')) {
+                  const box = e.target.closest('.dependencias-box');
+                  const items = box.querySelectorAll('.dep-item');
+                  items.forEach(item => item.style.display = 'flex');
+                  e.target.style.display = 'none';
+              }
+          });
+
+          // Função para ordenar atividades (exemplo)
+          function sortActivities(criteria) {
+              alert('Funcionalidade de ordenação por ' + criteria + ' será implementada na próxima versão.');
+          }
+
+          // Adicionar tooltips
+          document.addEventListener('DOMContentLoaded', function() {
+              // Adicionar tooltips simples
+              const badges = document.querySelectorAll('.badge');
+              badges.forEach(badge => {
+                  badge.title = badge.textContent.trim();
+              });
+          });
+      </script>
+  </body>
+  </html>
+  
