@@ -1,0 +1,1945 @@
+<!DOCTYPE html>
+  <html lang="pt-BR">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Relatório Diário de Obra - Usina Solar</title>
+      <style>
+          * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          }
+
+          body {
+              background-color: #f5f7fa;
+              color: #333;
+              padding: 20px;
+              line-height: 1.6;
+          }
+
+          .container {
+              max-width: 1400px;
+              margin: 0 auto;
+              background: white;
+              border-radius: 12px;
+              box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+              overflow: hidden;
+          }
+
+          .header {
+              background: linear-gradient(135deg, #2c3e50, #34495e);
+              color: white;
+              padding: 25px 40px;
+              text-align: center;
+              border-bottom: 4px solid #3498db;
+          }
+
+          .header h1 {
+              font-size: 28px;
+              margin-bottom: 8px;
+              font-weight: 600;
+          }
+
+          .header .date {
+              font-size: 16px;
+              opacity: 0.9;
+              background: rgba(255, 255, 255, 0.1);
+              display: inline-block;
+              padding: 6px 15px;
+              border-radius: 20px;
+              margin-top: 5px;
+          }
+
+          /* Cards principais */
+          .main-stats {
+              display: grid;
+              grid-template-columns: 2fr 1fr;
+              gap: 20px;
+              padding: 30px;
+              background: #f8f9fa;
+          }
+
+          .stats-container {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+              gap: 15px;
+          }
+
+          .stat-card {
+              background: white;
+              padding: 20px;
+              border-radius: 10px;
+              box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+              text-align: center;
+              transition: transform 0.3s, box-shadow 0.3s;
+          }
+
+          .stat-card:hover {
+              transform: translateY(-5px);
+              box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+          }
+
+          .stat-card h3 {
+              font-size: 12px;
+              color: #7f8c8d;
+              margin-bottom: 10px;
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+          }
+
+          .stat-value {
+              font-size: 28px;
+              font-weight: 700;
+              margin-bottom: 5px;
+          }
+
+          .stat-sub {
+              font-size: 12px;
+              color: #95a5a6;
+          }
+
+          .stat-card.atrasadas { border-top: 4px solid #e74c3c; }
+          .stat-card.em-execucao { border-top: 4px solid #3498db; }
+          .stat-card.proximas { border-top: 4px solid #f39c12; }
+          .stat-card.concluidas { border-top: 4px solid #27ae60; }
+          .stat-card.planejadas { border-top: 4px solid #9b59b6; }
+          .stat-card.total { border-top: 4px solid #2c3e50; }
+          .stat-card.atraso-prod { border-top: 4px solid #e67e22; }
+          .stat-card.adiantadas { border-top: 4px solid #2ecc71; }
+
+          /* Métricas financeiras */
+          .finance-metrics {
+              display: flex;
+              flex-direction: column;
+              gap: 15px;
+          }
+
+          .finance-card {
+              background: white;
+              padding: 20px;
+              border-radius: 10px;
+              box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+              border-left: 4px solid #3498db;
+          }
+
+          .finance-title {
+              font-size: 12px;
+              color: #7f8c8d;
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+              margin-bottom: 8px;
+          }
+
+          .finance-value {
+              font-size: 24px;
+              font-weight: 700;
+              color: #2c3e50;
+          }
+
+          .finance-sub {
+              font-size: 12px;
+              color: #27ae60;
+              margin-top: 5px;
+          }
+
+          /* Seções de status */
+          .tables-container {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+              gap: 25px;
+              padding: 30px;
+          }
+
+          .status-section {
+              background: white;
+              border-radius: 10px;
+              overflow: hidden;
+              box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+          }
+
+          .section-header {
+              padding: 18px 25px;
+              color: white;
+              font-weight: 600;
+              font-size: 18px;
+          }
+
+          .section-header.atrasadas { background: #e74c3c; }
+          .section-header.em-execucao { background: #3498db; }
+          .section-header.proximas { background: #f39c12; }
+          .section-header.concluidas { background: #27ae60; }
+          .section-header.planejadas { background: #9b59b6; }
+
+          .activities-list {
+              max-height: 500px;
+              overflow-y: auto;
+              padding: 0;
+          }
+
+          .activity-item {
+              padding: 18px 25px;
+              border-bottom: 1px solid #eee;
+              transition: background 0.2s;
+          }
+
+          .activity-item:hover {
+              background: #f9f9f9;
+          }
+
+          .activity-header {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-bottom: 8px;
+          }
+
+          .activity-code {
+              font-weight: 600;
+              color: #2c3e50;
+              font-size: 14px;
+          }
+
+          .activity-level {
+              font-size: 11px;
+              background: #ecf0f1;
+              padding: 2px 8px;
+              border-radius: 10px;
+              color: #7f8c8d;
+          }
+
+          .activity-setor {
+              font-size: 11px;
+              background: #e8f4fc;
+              padding: 2px 8px;
+              border-radius: 10px;
+              color: #3498db;
+          }
+
+          .activity-name {
+              color: #555;
+              margin-bottom: 10px;
+              font-size: 14px;
+              font-weight: 500;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+          }
+
+          .milestone-star {
+              color: #f1c40f;
+              font-size: 16px;
+              animation: pulse 2s infinite;
+          }
+
+          @keyframes pulse {
+              0% { opacity: 1; transform: scale(1); }
+              50% { opacity: 0.7; transform: scale(1.1); }
+              100% { opacity: 1; transform: scale(1); }
+          }
+
+          .activity-dates {
+              display: flex;
+              justify-content: space-between;
+              font-size: 12px;
+              color: #7f8c8d;
+              margin-bottom: 10px;
+          }
+
+          .additional-info {
+              display: flex;
+              gap: 15px;
+              font-size: 12px;
+              margin-bottom: 10px;
+              flex-wrap: wrap;
+          }
+
+          .info-label {
+              color: #7f8c8d;
+          }
+
+          .info-value {
+              color: #2c3e50;
+              font-weight: 500;
+          }
+
+          .status-future-task { color: #3498db; }
+          .status-in-progress { color: #f39c12; }
+          .status-completed { color: #27ae60; }
+
+          /* Barra de progresso */
+          .activity-progress {
+              margin: 12px 0;
+          }
+
+          .progress-labels {
+              display: flex;
+              justify-content: space-between;
+              font-size: 11px;
+              color: #7f8c8d;
+              margin-bottom: 5px;
+          }
+
+          .progress-bar {
+              height: 8px;
+              background: #ecf0f1;
+              border-radius: 4px;
+              overflow: hidden;
+              position: relative;
+          }
+
+          .progress-fill {
+              height: 100%;
+              border-radius: 4px;
+              transition: width 0.3s ease;
+          }
+
+          .progress-ideal {
+              position: absolute;
+              top: 0;
+              width: 2px;
+              height: 100%;
+              background: #2c3e50;
+              opacity: 0.5;
+          }
+
+          .progress-fill.atrasada { background: #e74c3c; }
+          .progress-fill.em-execucao { background: #3498db; }
+          .progress-fill.adientada { background: #27ae60; }
+          .progress-fill.concluida { background: #2ecc71; }
+
+          /* Dependências - NOVO ESTILO COM SCROLL */
+          .dependents-list {
+              margin-top: 12px;
+              padding: 10px;
+              background: #f8f9fa;
+              border-radius: 6px;
+              border-left: 4px solid #3498db;
+              font-size: 12px;
+          }
+
+          .dependents-header {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 5px 0;
+              color: #2c3e50;
+              font-weight: 500;
+              margin-bottom: 8px;
+              border-bottom: 1px solid #e0e0e0;
+              padding-bottom: 5px;
+          }
+
+          .dependents-content {
+              max-height: 150px;
+              overflow-y: auto;
+              padding-right: 5px;
+          }
+
+          /* Estilização da scrollbar */
+          .dependents-content::-webkit-scrollbar {
+              width: 6px;
+          }
+
+          .dependents-content::-webkit-scrollbar-track {
+              background: #f1f1f1;
+              border-radius: 3px;
+          }
+
+          .dependents-content::-webkit-scrollbar-thumb {
+              background: #c1c1c1;
+              border-radius: 3px;
+          }
+
+          .dependents-content::-webkit-scrollbar-thumb:hover {
+              background: #a8a8a8;
+          }
+
+          .dependent-item {
+              padding: 8px;
+              margin: 4px 0;
+              background: white;
+              border-radius: 4px;
+              border-left: 3px solid #3498db;
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 11px;
+          }
+
+          .dependent-item.status-atrasada {
+              border-left-color: #e74c3c;
+              background: #fff5f5;
+          }
+
+          .dependent-item.status-concluida {
+              border-left-color: #27ae60;
+              background: #f0fff4;
+          }
+
+          .dependent-item.status-execucao {
+              border-left-color: #3498db;
+              background: #f0f8ff;
+          }
+
+          .dependent-item.status-planejada {
+              border-left-color: #9b59b6;
+              background: #f9f0ff;
+          }
+
+          .dep-icon {
+              font-size: 10px;
+          }
+
+          .dep-code {
+              font-weight: 600;
+              color: #2c3e50;
+              min-width: 60px;
+          }
+
+          .dep-name {
+              flex: 1;
+              color: #555;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+          }
+
+          .dep-status {
+              font-size: 9px;
+              padding: 2px 6px;
+              border-radius: 3px;
+              background: #ecf0f1;
+              color: #7f8c8d;
+              min-width: 70px;
+              text-align: center;
+          }
+
+          /* Atividades críticas - MUDADO PARA MARROM */
+          .critical-section {
+              background: #fdf6e3;
+              margin: 0 30px 30px;
+              border-radius: 10px;
+              border: 2px solid #8B4513;
+              overflow: hidden;
+          }
+
+          .critical-header {
+              background: #8B4513;
+              color: white;
+              padding: 15px 25px;
+              font-weight: 600;
+              font-size: 18px;
+              display: flex;
+              align-items: center;
+              gap: 10px;
+          }
+
+          .critical-list {
+              padding: 20px;
+          }
+
+          .critical-item {
+              padding: 15px;
+              background: white;
+              margin-bottom: 10px;
+              border-radius: 8px;
+              border-left: 4px solid #8B4513;
+          }
+
+          .critical-alert {
+              color: #8B4513;
+              font-weight: 600;
+              margin-top: 10px;
+              font-size: 14px;
+              padding: 8px;
+              background: #f5e6d3;
+              border-radius: 4px;
+          }
+
+          .finance-info {
+              display: flex;
+              gap: 15px;
+              font-size: 12px;
+              margin: 8px 0;
+              flex-wrap: wrap;
+          }
+
+          .finance-label {
+              color: #7f8c8d;
+          }
+
+          .finance-value-small {
+              color: #2c3e50;
+              font-weight: 500;
+          }
+
+          .no-activities {
+              padding: 40px 20px;
+              text-align: center;
+              color: #95a5a6;
+              font-style: italic;
+          }
+
+          .footer {
+              padding: 20px;
+              text-align: center;
+              color: #7f8c8d;
+              font-size: 12px;
+              border-top: 1px solid #eee;
+              background: #f8f9fa;
+          }
+
+          /* Responsividade */
+          @media (max-width: 1024px) {
+              .main-stats {
+                  grid-template-columns: 1fr;
+              }
+
+              .tables-container {
+                  grid-template-columns: 1fr;
+              }
+          }
+
+          @media (max-width: 768px) {
+              .stats-container {
+                  grid-template-columns: repeat(2, 1fr);
+              }
+
+              .header {
+                  padding: 20px;
+              }
+
+              .header h1 {
+                  font-size: 22px;
+              }
+
+              .activity-header,
+              .activity-dates,
+              .additional-info,
+              .finance-info {
+                  flex-direction: column;
+                  gap: 5px;
+              }
+
+              .dependent-item {
+                  flex-wrap: wrap;
+                  gap: 5px;
+              }
+
+              .dep-name {
+                  min-width: 100%;
+                  order: 3;
+              }
+
+              .dep-status {
+                  order: 2;
+              }
+          }
+
+          @media (max-width: 480px) {
+              .stats-container {
+                  grid-template-columns: 1fr;
+              }
+
+              .section-header {
+                  font-size: 16px;
+                  padding: 15px;
+              }
+          }
+      </style>
+  </head>
+  <body>
+      <div class="container">
+          <div class="header">
+              <h1>📊 Relatório Diário de Obra - Usina Solar</h1>
+              <div class="date">Data da análise: 03/12/2025</div>
+          </div>
+          <div class="main-stats">
+              <div class="stats-container">
+                  <div class="stat-card total">
+                      <h3>Total de Atividades</h3>
+                      <div class="stat-value">257</div>
+                      <div class="stat-sub">119 subatividade, 107 atividade, 21 etapa</div>
+                  </div>
+
+                  <div class="stat-card atrasadas">
+                      <h3>Atrasadas</h3>
+                      <div class="stat-value">2</div>
+                      <div class="stat-sub">0.8% do total</div>
+                  </div>
+
+                  <div class="stat-card em-execucao">
+                      <h3>Em execução</h3>
+                      <div class="stat-value">3</div>
+                      <div class="stat-sub">1.2% do total</div>
+                  </div>
+
+                  <div class="stat-card proximas">
+                      <h3>Próximos 15 dias</h3>
+                      <div class="stat-value">1</div>
+                  </div>
+
+                  <div class="stat-card concluidas">
+                      <h3>Concluídas</h3>
+                      <div class="stat-value">2</div>
+                      <div class="stat-sub">0.8% do total</div>
+                  </div>
+
+                  <div class="stat-card atraso-prod">
+                      <h3>Em atraso prod.</h3>
+                      <div class="stat-value">3</div>
+                      <div class="stat-sub">Produtividade abaixo do ideal</div>
+                  </div>
+
+                  <div class="stat-card adiantadas">
+                      <h3>Adiantadas</h3>
+                      <div class="stat-value">0</div>
+                      <div class="stat-sub">Produtividade acima do ideal</div>
+                  </div>
+              </div>
+
+              <div class="finance-metrics">
+                  <div class="finance-card">
+                      <div class="finance-title">💰 Orçamento Planejado</div>
+                      <div class="finance-value">R$ 0,00</div>
+                  </div>
+                  <div class="finance-card">
+                      <div class="finance-title">📈 Executado</div>
+                      <div class="finance-value">R$ 0,00</div>
+                      <div class="finance-sub">0.0% do total</div>
+                  </div>
+                  <div class="finance-card">
+                      <div class="finance-title">📉 Restante</div>
+                      <div class="finance-value">R$ 0,00</div>
+                  </div>
+              </div>
+          </div>
+          <div class="critical-section">
+              <div class="critical-header">
+                  ⚠️ ATIVIDADES CRÍTICAS (5)
+              </div>
+              <div class="critical-list">
+              <div class="critical-item">
+                  <div class="activity-header">
+                      <span class="activity-code">#1.01.01 - Atividade</span>
+                      <span class="activity-setor">Gestão</span>
+                  </div>
+                  <div class="activity-name">
+                      
+                      <span class="milestone-star"></span>
+                      Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução
+                  </div>
+                  <div class="activity-dates">
+                      <span>📅 Início: 03/11/2025</span>
+                      <span>🏁 Término: 10/11/2025</span>
+                      <span>📊 Concluído: 0%</span>
+                  </div>
+                  
+                  <div class="critical-alert">🔴 Atrasada – Acionar Plano de Recuperação</div>
+                  
+      <div class="dependents-list" style="border-left-color: #D2691E;">
+          <div class="dependents-header">
+              <strong>Sucessores (9)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">2.05.03</span>
+              <span class="dep-name">Emissão da Licença - Ambientais</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-concluida">
+              <span class="dep-icon">✅</span>
+              <span class="dep-code">1.01.02</span>
+              <span class="dep-name">Contratação dos Seguros - Contratuais</span>
+              <span class="dep-status">Concluídas</span>
+          </div>
+          <div class="dependent-item status-atrasada">
+              <span class="dep-icon">⚠️</span>
+              <span class="dep-code">2.01.01</span>
+              <span class="dep-name">Planialtimétrico do Terreno / Georreferenciamento</span>
+              <span class="dep-status">Atrasadas</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">2.01.02</span>
+              <span class="dep-name">Estudos Geológico - SPT</span>
+              <span class="dep-status">Previstas (15 dias)</span>
+          </div>
+          <div class="dependent-item status-planejada">
+              <span class="dep-icon">📅</span>
+              <span class="dep-code">2.01.03</span>
+              <span class="dep-name">Estudos Geológico - SEV</span>
+              <span class="dep-status">Planejadas</span>
+          </div>
+          <div class="dependent-item status-execucao">
+              <span class="dep-icon">⚡</span>
+              <span class="dep-code">2.02.01</span>
+              <span class="dep-name">LAYOUT - Usina</span>
+              <span class="dep-status">Em execução</span>
+          </div>
+          <div class="dependent-item status-execucao">
+              <span class="dep-icon">⚡</span>
+              <span class="dep-code">2.03.01</span>
+              <span class="dep-name">SKID</span>
+              <span class="dep-status">Em execução</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.10</span>
+              <span class="dep-name">Inversores</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.15</span>
+              <span class="dep-name">Módulos Fotovoltaicos</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          </div>
+      </div>
+              </div>
+              <div class="critical-item">
+                  <div class="activity-header">
+                      <span class="activity-code">#2.01.01 - Atividade</span>
+                      <span class="activity-setor">Estudo</span>
+                  </div>
+                  <div class="activity-name">
+                      
+                      <span class="milestone-star"></span>
+                      Planialtimétrico do Terreno / Georreferenciamento
+                  </div>
+                  <div class="activity-dates">
+                      <span>📅 Início: 03/11/2025</span>
+                      <span>🏁 Término: 02/12/2025</span>
+                      <span>📊 Concluído: 0%</span>
+                  </div>
+                  
+                  <div class="critical-alert">🔴 Atrasada – Acionar Plano de Recuperação</div>
+                  
+      <div class="dependents-list" style="border-left-color: #8B4513;">
+          <div class="dependents-header">
+              <strong>Predecessores (1)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-atrasada">
+              <span class="dep-icon">⚠️</span>
+              <span class="dep-code">1.01.01</span>
+              <span class="dep-name">Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</span>
+              <span class="dep-status">Atrasadas</span>
+          </div>
+          </div>
+      </div>
+      <div class="dependents-list" style="border-left-color: #D2691E;">
+          <div class="dependents-header">
+              <strong>Sucessores (4)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">4.01.01.01</span>
+              <span class="dep-name">Limpeza e Nivelamento do Terreno</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">4.02.01.01</span>
+              <span class="dep-name">Demarcação da Via - Acesso</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">4.02.02.01</span>
+              <span class="dep-name">Limpeza / Corte Isolados</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">4.03.02.01</span>
+              <span class="dep-name">Perfurações</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          </div>
+      </div>
+              </div>
+              <div class="critical-item">
+                  <div class="activity-header">
+                      <span class="activity-code">#2.02.01 - Atividade</span>
+                      <span class="activity-setor">Proj. Básico</span>
+                  </div>
+                  <div class="activity-name">
+                      
+                      <span class="milestone-star"></span>
+                      LAYOUT - Usina
+                  </div>
+                  <div class="activity-dates">
+                      <span>📅 Início: 21/11/2025</span>
+                      <span>🏁 Término: 04/12/2025</span>
+                      <span>📊 Concluído: 70%</span>
+                  </div>
+                  
+                  <div class="critical-alert">🔴 Em atraso de produtividade</div>
+                  
+      <div class="dependents-list" style="border-left-color: #8B4513;">
+          <div class="dependents-header">
+              <strong>Predecessores (1)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-atrasada">
+              <span class="dep-icon">⚠️</span>
+              <span class="dep-code">1.01.01</span>
+              <span class="dep-name">Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</span>
+              <span class="dep-status">Atrasadas</span>
+          </div>
+          </div>
+      </div>
+      <div class="dependents-list" style="border-left-color: #D2691E;">
+          <div class="dependents-header">
+              <strong>Sucessores (22)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-execucao">
+              <span class="dep-icon">⚡</span>
+              <span class="dep-code">2.02.02</span>
+              <span class="dep-name">LAYOUT - Canteiro</span>
+              <span class="dep-status">Em execução</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">2.05.03</span>
+              <span class="dep-name">Emissão da Licença - Ambientais</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.10</span>
+              <span class="dep-name">Inversores</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.11</span>
+              <span class="dep-name">Abrigos de Inversores</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.12</span>
+              <span class="dep-name">Estruturas - Automação</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.15</span>
+              <span class="dep-name">Módulos Fotovoltaicos</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.16</span>
+              <span class="dep-name">Estação Solarimétrica</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">4.02.01.01</span>
+              <span class="dep-name">Demarcação da Via - Acesso</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">4.02.02.01</span>
+              <span class="dep-name">Limpeza / Corte Isolados</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-execucao">
+              <span class="dep-icon">⚡</span>
+              <span class="dep-code">2.03.01</span>
+              <span class="dep-name">SKID</span>
+              <span class="dep-status">Em execução</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.01</span>
+              <span class="dep-name">Estruturas - Estacas</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.02</span>
+              <span class="dep-name">Estruturas - Peças / Eixos / Mesas</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.03</span>
+              <span class="dep-name">Cabos - Malha de Aterramento</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.04</span>
+              <span class="dep-name">Cabos - BT / CC</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.05</span>
+              <span class="dep-name">Cabos -BT / CA</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.06</span>
+              <span class="dep-name">Cabos - MT / CA</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.07</span>
+              <span class="dep-name">Cabos - MT / Rede Aérea</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.08</span>
+              <span class="dep-name">Cabos - MT / Poste de Transição</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.17</span>
+              <span class="dep-name">Sistema de Segurança - Equipamentos</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">4.04.09.01</span>
+              <span class="dep-name">Abertura de Valas - Segurança</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">4.03.01.01</span>
+              <span class="dep-name">Locação de Pontos - Estaca</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">2.04.03</span>
+              <span class="dep-name">Cravação / Tracker</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          </div>
+      </div>
+              </div>
+              <div class="critical-item">
+                  <div class="activity-header">
+                      <span class="activity-code">#2.02.02 - Atividade</span>
+                      <span class="activity-setor">Proj. Básico</span>
+                  </div>
+                  <div class="activity-name">
+                      
+                      <span class="milestone-star"></span>
+                      LAYOUT - Canteiro
+                  </div>
+                  <div class="activity-dates">
+                      <span>📅 Início: 21/11/2025</span>
+                      <span>🏁 Término: 04/12/2025</span>
+                      <span>📊 Concluído: 50%</span>
+                  </div>
+                  
+                  <div class="critical-alert">🔴 Em atraso de produtividade</div>
+                  
+      <div class="dependents-list" style="border-left-color: #8B4513;">
+          <div class="dependents-header">
+              <strong>Predecessores (1)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-execucao">
+              <span class="dep-icon">⚡</span>
+              <span class="dep-code">2.02.01</span>
+              <span class="dep-name">LAYOUT - Usina</span>
+              <span class="dep-status">Em execução</span>
+          </div>
+          </div>
+      </div>
+      <div class="dependents-list" style="border-left-color: #D2691E;">
+          <div class="dependents-header">
+              <strong>Sucessores (2)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">2.04.01</span>
+              <span class="dep-name">Terraplanagem</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">4.01.01.01</span>
+              <span class="dep-name">Limpeza e Nivelamento do Terreno</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          </div>
+      </div>
+              </div>
+              <div class="critical-item">
+                  <div class="activity-header">
+                      <span class="activity-code">#2.03.01 - Atividade</span>
+                      <span class="activity-setor">Proj. Executivo / MDT</span>
+                  </div>
+                  <div class="activity-name">
+                      
+                      <span class="milestone-star"></span>
+                      SKID
+                  </div>
+                  <div class="activity-dates">
+                      <span>📅 Início: 21/11/2025</span>
+                      <span>🏁 Término: 04/12/2025</span>
+                      <span>📊 Concluído: 70%</span>
+                  </div>
+                  
+                  <div class="critical-alert">🔴 Em atraso de produtividade</div>
+                  
+      <div class="dependents-list" style="border-left-color: #8B4513;">
+          <div class="dependents-header">
+              <strong>Predecessores (3)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-atrasada">
+              <span class="dep-icon">⚠️</span>
+              <span class="dep-code">1.01.01</span>
+              <span class="dep-name">Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</span>
+              <span class="dep-status">Atrasadas</span>
+          </div>
+          <div class="dependent-item status-concluida">
+              <span class="dep-icon">✅</span>
+              <span class="dep-code">1.01.02</span>
+              <span class="dep-name">Contratação dos Seguros - Contratuais</span>
+              <span class="dep-status">Concluídas</span>
+          </div>
+          <div class="dependent-item status-execucao">
+              <span class="dep-icon">⚡</span>
+              <span class="dep-code">2.02.01</span>
+              <span class="dep-name">LAYOUT - Usina</span>
+              <span class="dep-status">Em execução</span>
+          </div>
+          </div>
+      </div>
+      <div class="dependents-list" style="border-left-color: #D2691E;">
+          <div class="dependents-header">
+              <strong>Sucessores (3)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-concluida">
+              <span class="dep-icon">✅</span>
+              <span class="dep-code">2.03.02</span>
+              <span class="dep-name">CMP</span>
+              <span class="dep-status">Concluídas</span>
+          </div>
+          <div class="dependent-item status-planejada">
+              <span class="dep-icon">📅</span>
+              <span class="dep-code">2.03.03</span>
+              <span class="dep-name">Diagramas - Unifilar / Trifilar</span>
+              <span class="dep-status">Planejadas</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.13</span>
+              <span class="dep-name">Subestação - SKID</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          </div>
+      </div>
+              </div>
+              </div>
+          </div>
+          <div class="tables-container">
+              <div class="status-section">
+                  <div class="section-header atrasadas">
+                      Atrasadas (2)
+                  </div>
+                  <div class="activities-list">
+                  <div class="activity-item">
+                      <div class="activity-header">
+                          <span class="activity-code">#1.01.01 - Atividade</span>
+                          <span class="activity-setor">Gestão</span>
+                      </div>
+                      <div class="activity-name">
+                          
+                          <span class="milestone-star"></span>
+                          Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução
+                      </div>
+                      <div class="activity-dates">
+                          <span>📅 Planejado: 03/11/2025 a 10/11/2025</span>
+                          
+                      </div>
+                      
+                      <div class="additional-info">
+                          <span class="info-label">📋 Status:</span>
+                          <span class="info-value status-future-task">Future Task</span>
+                      </div>
+                      
+                      <div class="activity-progress">
+                          <div class="progress-labels">
+                              <span>Concluído: 0%</span>
+                              <span>Ideal: 100%</span>
+                              
+                          </div>
+                          <div class="progress-bar">
+                              <div class="progress-fill atrasada" style="width: 0%"></div>
+                              <div class="progress-ideal" style="left: 100%"></div>
+                          </div>
+                      </div>
+                      
+      <div class="dependents-list" style="border-left-color: #9b59b6;">
+          <div class="dependents-header">
+              <strong>Sucessores (9)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">2.05.03</span>
+              <span class="dep-name">Emissão da Licença - Ambientais</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-concluida">
+              <span class="dep-icon">✅</span>
+              <span class="dep-code">1.01.02</span>
+              <span class="dep-name">Contratação dos Seguros - Contratuais</span>
+              <span class="dep-status">Concluídas</span>
+          </div>
+          <div class="dependent-item status-atrasada">
+              <span class="dep-icon">⚠️</span>
+              <span class="dep-code">2.01.01</span>
+              <span class="dep-name">Planialtimétrico do Terreno / Georreferenciamento</span>
+              <span class="dep-status">Atrasadas</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">2.01.02</span>
+              <span class="dep-name">Estudos Geológico - SPT</span>
+              <span class="dep-status">Previstas (15 dias)</span>
+          </div>
+          <div class="dependent-item status-planejada">
+              <span class="dep-icon">📅</span>
+              <span class="dep-code">2.01.03</span>
+              <span class="dep-name">Estudos Geológico - SEV</span>
+              <span class="dep-status">Planejadas</span>
+          </div>
+          <div class="dependent-item status-execucao">
+              <span class="dep-icon">⚡</span>
+              <span class="dep-code">2.02.01</span>
+              <span class="dep-name">LAYOUT - Usina</span>
+              <span class="dep-status">Em execução</span>
+          </div>
+          <div class="dependent-item status-execucao">
+              <span class="dep-icon">⚡</span>
+              <span class="dep-code">2.03.01</span>
+              <span class="dep-name">SKID</span>
+              <span class="dep-status">Em execução</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.10</span>
+              <span class="dep-name">Inversores</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.15</span>
+              <span class="dep-name">Módulos Fotovoltaicos</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          </div>
+      </div>
+                  </div>
+                  <div class="activity-item">
+                      <div class="activity-header">
+                          <span class="activity-code">#2.01.01 - Atividade</span>
+                          <span class="activity-setor">Estudo</span>
+                      </div>
+                      <div class="activity-name">
+                          
+                          <span class="milestone-star"></span>
+                          Planialtimétrico do Terreno / Georreferenciamento
+                      </div>
+                      <div class="activity-dates">
+                          <span>📅 Planejado: 03/11/2025 a 02/12/2025</span>
+                          
+                      </div>
+                      
+                      <div class="additional-info">
+                          <span class="info-label">📋 Status:</span>
+                          <span class="info-value status-future-task">Future Task</span>
+                      </div>
+                      
+                      <div class="activity-progress">
+                          <div class="progress-labels">
+                              <span>Concluído: 0%</span>
+                              <span>Ideal: 100%</span>
+                              
+                          </div>
+                          <div class="progress-bar">
+                              <div class="progress-fill atrasada" style="width: 0%"></div>
+                              <div class="progress-ideal" style="left: 100%"></div>
+                          </div>
+                      </div>
+                      
+      <div class="dependents-list" style="border-left-color: #e74c3c;">
+          <div class="dependents-header">
+              <strong>Predecessores (1)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-atrasada">
+              <span class="dep-icon">⚠️</span>
+              <span class="dep-code">1.01.01</span>
+              <span class="dep-name">Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</span>
+              <span class="dep-status">Atrasadas</span>
+          </div>
+          </div>
+      </div>
+      <div class="dependents-list" style="border-left-color: #9b59b6;">
+          <div class="dependents-header">
+              <strong>Sucessores (4)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">4.01.01.01</span>
+              <span class="dep-name">Limpeza e Nivelamento do Terreno</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">4.02.01.01</span>
+              <span class="dep-name">Demarcação da Via - Acesso</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">4.02.02.01</span>
+              <span class="dep-name">Limpeza / Corte Isolados</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">4.03.02.01</span>
+              <span class="dep-name">Perfurações</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          </div>
+      </div>
+                  </div>
+                  </div>
+              </div>
+              <div class="status-section">
+                  <div class="section-header em-execucao">
+                      Em execução (3)
+                  </div>
+                  <div class="activities-list">
+                  <div class="activity-item">
+                      <div class="activity-header">
+                          <span class="activity-code">#2.02.01 - Atividade</span>
+                          <span class="activity-setor">Proj. Básico</span>
+                      </div>
+                      <div class="activity-name">
+                          
+                          <span class="milestone-star"></span>
+                          LAYOUT - Usina
+                      </div>
+                      <div class="activity-dates">
+                          <span>📅 Planejado: 21/11/2025 a 04/12/2025</span>
+                          <span>✅ Real: 21/11/2025 a -</span>
+                      </div>
+                      
+                      <div class="additional-info">
+                          <span class="info-label">📋 Status:</span>
+                          <span class="info-value status-future-task">Future Task</span>
+                      </div>
+                      
+                      <div class="activity-progress">
+                          <div class="progress-labels">
+                              <span>Concluído: 70%</span>
+                              <span>Ideal: 90%</span>
+                              <span>Ritmo: 30%/dia</span>
+                          </div>
+                          <div class="progress-bar">
+                              <div class="progress-fill em-execucao" style="width: 70%"></div>
+                              <div class="progress-ideal" style="left: 90%"></div>
+                          </div>
+                      </div>
+                      
+      <div class="dependents-list" style="border-left-color: #3498db;">
+          <div class="dependents-header">
+              <strong>Predecessores (1)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-atrasada">
+              <span class="dep-icon">⚠️</span>
+              <span class="dep-code">1.01.01</span>
+              <span class="dep-name">Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</span>
+              <span class="dep-status">Atrasadas</span>
+          </div>
+          </div>
+      </div>
+      <div class="dependents-list" style="border-left-color: #2ecc71;">
+          <div class="dependents-header">
+              <strong>Sucessores (22)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-execucao">
+              <span class="dep-icon">⚡</span>
+              <span class="dep-code">2.02.02</span>
+              <span class="dep-name">LAYOUT - Canteiro</span>
+              <span class="dep-status">Em execução</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">2.05.03</span>
+              <span class="dep-name">Emissão da Licença - Ambientais</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.10</span>
+              <span class="dep-name">Inversores</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.11</span>
+              <span class="dep-name">Abrigos de Inversores</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.12</span>
+              <span class="dep-name">Estruturas - Automação</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.15</span>
+              <span class="dep-name">Módulos Fotovoltaicos</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.16</span>
+              <span class="dep-name">Estação Solarimétrica</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">4.02.01.01</span>
+              <span class="dep-name">Demarcação da Via - Acesso</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">4.02.02.01</span>
+              <span class="dep-name">Limpeza / Corte Isolados</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-execucao">
+              <span class="dep-icon">⚡</span>
+              <span class="dep-code">2.03.01</span>
+              <span class="dep-name">SKID</span>
+              <span class="dep-status">Em execução</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.01</span>
+              <span class="dep-name">Estruturas - Estacas</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.02</span>
+              <span class="dep-name">Estruturas - Peças / Eixos / Mesas</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.03</span>
+              <span class="dep-name">Cabos - Malha de Aterramento</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.04</span>
+              <span class="dep-name">Cabos - BT / CC</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.05</span>
+              <span class="dep-name">Cabos -BT / CA</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.06</span>
+              <span class="dep-name">Cabos - MT / CA</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.07</span>
+              <span class="dep-name">Cabos - MT / Rede Aérea</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.08</span>
+              <span class="dep-name">Cabos - MT / Poste de Transição</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.17</span>
+              <span class="dep-name">Sistema de Segurança - Equipamentos</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">4.04.09.01</span>
+              <span class="dep-name">Abertura de Valas - Segurança</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">4.03.01.01</span>
+              <span class="dep-name">Locação de Pontos - Estaca</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">2.04.03</span>
+              <span class="dep-name">Cravação / Tracker</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          </div>
+      </div>
+                  </div>
+                  <div class="activity-item">
+                      <div class="activity-header">
+                          <span class="activity-code">#2.02.02 - Atividade</span>
+                          <span class="activity-setor">Proj. Básico</span>
+                      </div>
+                      <div class="activity-name">
+                          
+                          <span class="milestone-star"></span>
+                          LAYOUT - Canteiro
+                      </div>
+                      <div class="activity-dates">
+                          <span>📅 Planejado: 21/11/2025 a 04/12/2025</span>
+                          <span>✅ Real: 21/11/2025 a -</span>
+                      </div>
+                      
+                      <div class="additional-info">
+                          <span class="info-label">📋 Status:</span>
+                          <span class="info-value status-future-task">Future Task</span>
+                      </div>
+                      
+                      <div class="activity-progress">
+                          <div class="progress-labels">
+                              <span>Concluído: 50%</span>
+                              <span>Ideal: 90%</span>
+                              <span>Ritmo: 50%/dia</span>
+                          </div>
+                          <div class="progress-bar">
+                              <div class="progress-fill em-execucao" style="width: 50%"></div>
+                              <div class="progress-ideal" style="left: 90%"></div>
+                          </div>
+                      </div>
+                      
+      <div class="dependents-list" style="border-left-color: #3498db;">
+          <div class="dependents-header">
+              <strong>Predecessores (1)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-execucao">
+              <span class="dep-icon">⚡</span>
+              <span class="dep-code">2.02.01</span>
+              <span class="dep-name">LAYOUT - Usina</span>
+              <span class="dep-status">Em execução</span>
+          </div>
+          </div>
+      </div>
+      <div class="dependents-list" style="border-left-color: #2ecc71;">
+          <div class="dependents-header">
+              <strong>Sucessores (2)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">2.04.01</span>
+              <span class="dep-name">Terraplanagem</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">4.01.01.01</span>
+              <span class="dep-name">Limpeza e Nivelamento do Terreno</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          </div>
+      </div>
+                  </div>
+                  <div class="activity-item">
+                      <div class="activity-header">
+                          <span class="activity-code">#2.03.01 - Atividade</span>
+                          <span class="activity-setor">Proj. Executivo / MDT</span>
+                      </div>
+                      <div class="activity-name">
+                          
+                          <span class="milestone-star"></span>
+                          SKID
+                      </div>
+                      <div class="activity-dates">
+                          <span>📅 Planejado: 21/11/2025 a 04/12/2025</span>
+                          <span>✅ Real: 21/11/2025 a -</span>
+                      </div>
+                      
+                      <div class="additional-info">
+                          <span class="info-label">📋 Status:</span>
+                          <span class="info-value status-future-task">Future Task</span>
+                      </div>
+                      
+                      <div class="activity-progress">
+                          <div class="progress-labels">
+                              <span>Concluído: 70%</span>
+                              <span>Ideal: 90%</span>
+                              <span>Ritmo: 30%/dia</span>
+                          </div>
+                          <div class="progress-bar">
+                              <div class="progress-fill em-execucao" style="width: 70%"></div>
+                              <div class="progress-ideal" style="left: 90%"></div>
+                          </div>
+                      </div>
+                      
+      <div class="dependents-list" style="border-left-color: #3498db;">
+          <div class="dependents-header">
+              <strong>Predecessores (3)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-atrasada">
+              <span class="dep-icon">⚠️</span>
+              <span class="dep-code">1.01.01</span>
+              <span class="dep-name">Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</span>
+              <span class="dep-status">Atrasadas</span>
+          </div>
+          <div class="dependent-item status-concluida">
+              <span class="dep-icon">✅</span>
+              <span class="dep-code">1.01.02</span>
+              <span class="dep-name">Contratação dos Seguros - Contratuais</span>
+              <span class="dep-status">Concluídas</span>
+          </div>
+          <div class="dependent-item status-execucao">
+              <span class="dep-icon">⚡</span>
+              <span class="dep-code">2.02.01</span>
+              <span class="dep-name">LAYOUT - Usina</span>
+              <span class="dep-status">Em execução</span>
+          </div>
+          </div>
+      </div>
+      <div class="dependents-list" style="border-left-color: #2ecc71;">
+          <div class="dependents-header">
+              <strong>Sucessores (3)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-concluida">
+              <span class="dep-icon">✅</span>
+              <span class="dep-code">2.03.02</span>
+              <span class="dep-name">CMP</span>
+              <span class="dep-status">Concluídas</span>
+          </div>
+          <div class="dependent-item status-planejada">
+              <span class="dep-icon">📅</span>
+              <span class="dep-code">2.03.03</span>
+              <span class="dep-name">Diagramas - Unifilar / Trifilar</span>
+              <span class="dep-status">Planejadas</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.13</span>
+              <span class="dep-name">Subestação - SKID</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          </div>
+      </div>
+                  </div>
+                  </div>
+              </div>
+              <div class="status-section">
+                  <div class="section-header proximas">
+                      Previstas (15 dias) (1)
+                  </div>
+                  <div class="activities-list">
+                  <div class="activity-item">
+                      <div class="activity-header">
+                          <span class="activity-code">#2.01.02 - Atividade</span>
+                          <span class="activity-setor">Estudo</span>
+                      </div>
+                      <div class="activity-name">
+                          
+                          <span class="milestone-star"></span>
+                          Estudos Geológico - SPT
+                      </div>
+                      <div class="activity-dates">
+                          <span>📅 Planejado: 04/12/2025 a 19/12/2025</span>
+                          
+                      </div>
+                      
+                      <div class="additional-info">
+                          <span class="info-label">📋 Status:</span>
+                          <span class="info-value status-future-task">Future Task</span>
+                      </div>
+                      
+                      
+      <div class="dependents-list" style="border-left-color: #3498db;">
+          <div class="dependents-header">
+              <strong>Predecessores (1)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-atrasada">
+              <span class="dep-icon">⚠️</span>
+              <span class="dep-code">1.01.01</span>
+              <span class="dep-name">Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</span>
+              <span class="dep-status">Atrasadas</span>
+          </div>
+          </div>
+      </div>
+      <div class="dependents-list" style="border-left-color: #2ecc71;">
+          <div class="dependents-header">
+              <strong>Sucessores (2)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.01</span>
+              <span class="dep-name">Estruturas - Estacas</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.02</span>
+              <span class="dep-name">Estruturas - Peças / Eixos / Mesas</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          </div>
+      </div>
+                  </div>
+                  </div>
+              </div>
+              <div class="status-section">
+                  <div class="section-header concluidas">
+                      Concluídas (2)
+                  </div>
+                  <div class="activities-list">
+                  <div class="activity-item">
+                      <div class="activity-header">
+                          <span class="activity-code">#1.01.02 - Atividade</span>
+                          <span class="activity-setor">Gestão</span>
+                      </div>
+                      <div class="activity-name">
+                          
+                          <span class="milestone-star"></span>
+                          Contratação dos Seguros - Contratuais
+                      </div>
+                      <div class="activity-dates">
+                          <span>📅 Planejado: 03/11/2025 a 10/11/2025</span>
+                          <span>✅ Real: 03/11/2025 a 10/11/2025</span>
+                      </div>
+                      
+                      <div class="additional-info">
+                          <span class="info-label">📋 Status:</span>
+                          <span class="info-value status-future-task">Future Task</span>
+                      </div>
+                      
+                      <div class="activity-progress">
+                          <div class="progress-labels">
+                              <span>Concluído: 100%</span>
+                              <span>Ideal: 100%</span>
+                              
+                          </div>
+                          <div class="progress-bar">
+                              <div class="progress-fill concluida" style="width: 100%"></div>
+                              <div class="progress-ideal" style="left: 100%"></div>
+                          </div>
+                      </div>
+                      
+      <div class="dependents-list" style="border-left-color: #3498db;">
+          <div class="dependents-header">
+              <strong>Predecessores (1)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-atrasada">
+              <span class="dep-icon">⚠️</span>
+              <span class="dep-code">1.01.01</span>
+              <span class="dep-name">Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</span>
+              <span class="dep-status">Atrasadas</span>
+          </div>
+          </div>
+      </div>
+      <div class="dependents-list" style="border-left-color: #2ecc71;">
+          <div class="dependents-header">
+              <strong>Sucessores (1)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-execucao">
+              <span class="dep-icon">⚡</span>
+              <span class="dep-code">2.03.01</span>
+              <span class="dep-name">SKID</span>
+              <span class="dep-status">Em execução</span>
+          </div>
+          </div>
+      </div>
+                  </div>
+                  <div class="activity-item">
+                      <div class="activity-header">
+                          <span class="activity-code">#2.03.02 - Atividade</span>
+                          <span class="activity-setor">Proj. Executivo / MDT</span>
+                      </div>
+                      <div class="activity-name">
+                          
+                          <span class="milestone-star"></span>
+                          CMP
+                      </div>
+                      <div class="activity-dates">
+                          <span>📅 Planejado: 03/11/2025 a 10/11/2025</span>
+                          <span>✅ Real: 03/11/2025 a 10/11/2025</span>
+                      </div>
+                      
+                      <div class="additional-info">
+                          <span class="info-label">📋 Status:</span>
+                          <span class="info-value status-future-task">Future Task</span>
+                      </div>
+                      
+                      <div class="activity-progress">
+                          <div class="progress-labels">
+                              <span>Concluído: 100%</span>
+                              <span>Ideal: 100%</span>
+                              
+                          </div>
+                          <div class="progress-bar">
+                              <div class="progress-fill concluida" style="width: 100%"></div>
+                              <div class="progress-ideal" style="left: 100%"></div>
+                          </div>
+                      </div>
+                      
+      <div class="dependents-list" style="border-left-color: #3498db;">
+          <div class="dependents-header">
+              <strong>Predecessores (1)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-execucao">
+              <span class="dep-icon">⚡</span>
+              <span class="dep-code">2.03.01</span>
+              <span class="dep-name">SKID</span>
+              <span class="dep-status">Em execução</span>
+          </div>
+          </div>
+      </div>
+      <div class="dependents-list" style="border-left-color: #2ecc71;">
+          <div class="dependents-header">
+              <strong>Sucessores (3)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-planejada">
+              <span class="dep-icon">📅</span>
+              <span class="dep-code">2.03.03</span>
+              <span class="dep-name">Diagramas - Unifilar / Trifilar</span>
+              <span class="dep-status">Planejadas</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.14</span>
+              <span class="dep-name">Subestação - CMP</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">4.04.02.01</span>
+              <span class="dep-name">Montagem - Armadura / Caixaria</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          </div>
+      </div>
+                  </div>
+                  </div>
+              </div>
+              <div class="status-section">
+                  <div class="section-header planejadas">
+                      Planejadas (2)
+                  </div>
+                  <div class="activities-list">
+                  <div class="activity-item">
+                      <div class="activity-header">
+                          <span class="activity-code">#2.01.03 - Atividade</span>
+                          <span class="activity-setor">Estudo</span>
+                      </div>
+                      <div class="activity-name">
+                          
+                          <span class="milestone-star"></span>
+                          Estudos Geológico - SEV
+                      </div>
+                      <div class="activity-dates">
+                          <span>📅 Planejado: 14/01/2026 a 22/03/2026</span>
+                          
+                      </div>
+                      
+                      <div class="additional-info">
+                          <span class="info-label">📋 Status:</span>
+                          <span class="info-value status-future-task">Future Task</span>
+                      </div>
+                      
+                      
+      <div class="dependents-list" style="border-left-color: #3498db;">
+          <div class="dependents-header">
+              <strong>Predecessores (1)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-atrasada">
+              <span class="dep-icon">⚠️</span>
+              <span class="dep-code">1.01.01</span>
+              <span class="dep-name">Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</span>
+              <span class="dep-status">Atrasadas</span>
+          </div>
+          </div>
+      </div>
+      <div class="dependents-list" style="border-left-color: #2ecc71;">
+          <div class="dependents-header">
+              <strong>Sucessores (2)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">2.03.10</span>
+              <span class="dep-name">Aterramento</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">3.01.03</span>
+              <span class="dep-name">Cabos - Malha de Aterramento</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          </div>
+      </div>
+                  </div>
+                  <div class="activity-item">
+                      <div class="activity-header">
+                          <span class="activity-code">#2.03.03 - Atividade</span>
+                          <span class="activity-setor">Proj. Executivo / MDT</span>
+                      </div>
+                      <div class="activity-name">
+                          
+                          <span class="milestone-star"></span>
+                          Diagramas - Unifilar / Trifilar
+                      </div>
+                      <div class="activity-dates">
+                          <span>📅 Planejado: 27/01/2026 a 02/02/2026</span>
+                          
+                      </div>
+                      
+                      <div class="additional-info">
+                          <span class="info-label">📋 Status:</span>
+                          <span class="info-value status-future-task">Future Task</span>
+                      </div>
+                      
+                      
+      <div class="dependents-list" style="border-left-color: #3498db;">
+          <div class="dependents-header">
+              <strong>Predecessores (2)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-execucao">
+              <span class="dep-icon">⚡</span>
+              <span class="dep-code">2.03.01</span>
+              <span class="dep-name">SKID</span>
+              <span class="dep-status">Em execução</span>
+          </div>
+          <div class="dependent-item status-concluida">
+              <span class="dep-icon">✅</span>
+              <span class="dep-code">2.03.02</span>
+              <span class="dep-name">CMP</span>
+              <span class="dep-status">Concluídas</span>
+          </div>
+          </div>
+      </div>
+      <div class="dependents-list" style="border-left-color: #2ecc71;">
+          <div class="dependents-header">
+              <strong>Sucessores (4)</strong>
+          </div>
+          <div class="dependents-content">
+              
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">2.03.04</span>
+              <span class="dep-name">Cabeamento - BT-CC</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">2.03.08</span>
+              <span class="dep-name">Segurança Equipamentos / Rede</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">2.03.12</span>
+              <span class="dep-name">Estação Solarimétrica</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          <div class="dependent-item status-normal">
+              <span class="dep-icon">🔗</span>
+              <span class="dep-code">2.03.13</span>
+              <span class="dep-name">ADM Elétrica</span>
+              <span class="dep-status">Sem classificação</span>
+          </div>
+          </div>
+      </div>
+                  </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="footer">
+              📋 Relatório gerado automaticamente • 🔄 Atualizado em tempo real • 💼 Total de 257 atividades • 📅 Data: 03/12/2025
+          </div>
+      </div>
+  </body>
+  </html>
