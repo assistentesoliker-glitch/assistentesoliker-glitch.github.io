@@ -569,6 +569,12 @@
               margin-top: 30px;
           }
 
+          .financeiro-info {
+              font-size: 0.8rem;
+              color: var(--gray-500);
+              margin-top: 5px;
+          }
+
           /* OVERLAY */
           .overlay {
               position: fixed;
@@ -685,6 +691,7 @@
                   <div class="chart-title">
                       <i class="fas fa-chart-bar"></i>
                       Resumo Financeiro
+                      <div class="financeiro-info">Fonte: Linha 2 da planilha (resumo oficial - convertido corretamente)</div>
                   </div>
                   <div class="chart-wrapper">
                       <canvas id="financeiroChart"></canvas>
@@ -19740,6 +19747,11 @@
                   Total: 256 atividades | 
                   Execução financeira: 92.4%
               </p>
+              <p class="financeiro-info">
+                  Valores financeiros: R$ 2.539.280,23 planejado | 
+                  R$ 2.345.616,90 executado | 
+                  R$ 6.399.343,10 restante
+              </p>
           </div>
 
           <!-- SIDEBAR DE ATIVIDADES -->
@@ -19782,9 +19794,9 @@
               datasets: [{
                   label: 'Valores (R$)',
                   data: [
-                      5078560.47,
-                      4691233.8,
-                      12798686.2
+                      2539280.23,
+                      2345616.9,
+                      6399343.1
                   ],
                   backgroundColor: [
                       '#3b82f6',
