@@ -344,6 +344,24 @@
               display: block;
           }
 
+          /* FILTRO NOTICE NAS TABS */
+          .tab-filter-notice {
+              background: #f0f9ff;
+              border-left: 4px solid var(--primary);
+              padding: 12px 20px;
+              margin-bottom: 20px;
+              border-radius: 8px;
+              font-size: 0.9rem;
+              color: var(--gray-700);
+              display: flex;
+              align-items: center;
+              gap: 10px;
+          }
+
+          .tab-filter-notice i {
+              color: var(--primary);
+          }
+
           /* ATIVIDADE CARD */
           .atividade-card {
               background: white;
@@ -493,7 +511,7 @@
           .valor.planejado { color: var(--primary); }
           .valor.executado { color: var(--success); }
 
-          /* ACORDEÃO DE DEPENDÊNCIAS - CORRIGIDO */
+          /* ACORDEÃO DE DEPENDÊNCIAS */
           .accordion {
               margin: 20px 0;
           }
@@ -537,7 +555,7 @@
 
           .accordion-content.active {
               padding: 15px;
-              max-height: 400px; /* Altura com scroll */
+              max-height: 400px;
               overflow-y: auto;
           }
 
@@ -704,10 +722,10 @@
       <div class="container">
           <!-- HEADER -->
           <header class="header">
-              <h1>Relatório Diário de Obra - UFV MINEIROS </h1>
+              <h1>Relatório Diário de Obra - UFV Mineiros</h1>
               <div class="header-subtitle">
                   <i class="fas fa-calendar-alt"></i>
-                  Relatório atualizado em: 05/12/2025
+                  Relatório atualizado em: 08/12/2025
               </div>
           </header>
 
@@ -794,7 +812,7 @@
                   <div class="tab" onclick="openTab('execucao', this)">
                       <i class="fas fa-play-circle"></i>
                       Em Execução
-                      <span class="tab-badge">55</span>
+                      <span class="tab-badge">41</span>
                   </div>
                   <div class="tab" onclick="openTab('proximas', this)">
                       <i class="fas fa-calendar-week"></i>
@@ -804,17 +822,22 @@
                   <div class="tab" onclick="openTab('concluidas', this)">
                       <i class="fas fa-check-circle"></i>
                       Concluídas
-                      <span class="tab-badge">18</span>
+                      <span class="tab-badge">16</span>
                   </div>
                   <div class="tab" onclick="openTab('planejadas', this)">
                       <i class="fas fa-calendar-alt"></i>
                       Planejadas
-                      <span class="tab-badge">161</span>
+                      <span class="tab-badge">146</span>
                   </div>
               </div>
 
               <div class="tabs-content">
   <div class="tab-pane active" id="atrasadas">
+          <div class="tab-filter-notice">
+              <i class="fas fa-filter"></i>
+              Exibindo apenas atividades de nível: Atividade e SubAtividade
+          </div>
+          
               <div class="atividade-card" style="border-left-color: #ef4444;">
                   <div class="atividade-header">
                       <div>
@@ -1543,7 +1566,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 50.7%)</span>
+                          <span>Progresso: 0% (Ideal: 51.8%)</span>
                       </div>
                   </div>
 
@@ -1751,7 +1774,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 65.4%)</span>
+                          <span>Progresso: 0% (Ideal: 66.4%)</span>
                       </div>
                   </div>
 
@@ -1898,7 +1921,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 39.6%)</span>
+                          <span>Progresso: 0% (Ideal: 40.5%)</span>
                       </div>
                   </div>
 
@@ -2016,7 +2039,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 27.9%)</span>
+                          <span>Progresso: 0% (Ideal: 28.5%)</span>
                       </div>
                   </div>
 
@@ -2220,7 +2243,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 27.9%)</span>
+                          <span>Progresso: 0% (Ideal: 28.5%)</span>
                       </div>
                   </div>
 
@@ -2405,7 +2428,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 27.9%)</span>
+                          <span>Progresso: 0% (Ideal: 28.5%)</span>
                       </div>
                   </div>
 
@@ -2628,7 +2651,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 30.6%)</span>
+                          <span>Progresso: 0% (Ideal: 31.2%)</span>
                       </div>
                   </div>
 
@@ -2794,7 +2817,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 20.9%)</span>
+                          <span>Progresso: 0% (Ideal: 21.3%)</span>
                       </div>
                   </div>
 
@@ -2941,7 +2964,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 33.8%)</span>
+                          <span>Progresso: 0% (Ideal: 34.3%)</span>
                       </div>
                   </div>
 
@@ -3069,7 +3092,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 26.7%)</span>
+                          <span>Progresso: 0% (Ideal: 27.1%)</span>
                       </div>
                   </div>
 
@@ -3178,7 +3201,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 37.9%)</span>
+                          <span>Progresso: 0% (Ideal: 38.5%)</span>
                       </div>
                   </div>
 
@@ -3258,7 +3281,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 65.7%)</span>
+                          <span>Progresso: 0% (Ideal: 66.8%)</span>
                       </div>
                   </div>
 
@@ -3386,7 +3409,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 25.8%)</span>
+                          <span>Progresso: 0% (Ideal: 26.3%)</span>
                       </div>
                   </div>
 
@@ -3504,7 +3527,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 22.8%)</span>
+                          <span>Progresso: 0% (Ideal: 23.2%)</span>
                       </div>
                   </div>
 
@@ -3613,7 +3636,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 17.9%)</span>
+                          <span>Progresso: 0% (Ideal: 18.2%)</span>
                       </div>
                   </div>
 
@@ -3732,159 +3755,11 @@
                   </div>
               </div>
               </div><div class="tab-pane" id="execucao">
-              <div class="atividade-card" style="border-left-color: #8b5cf6;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
-                              #nan
-                              <span class="atividade-nivel">Não Classificado</span>
-                              
-                          </div>
-                      </div>
-                      <span class="badge badge-execucao">
-                          <i class="fas fa-play-circle"></i>
-                          Em execução
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">00-UF_UFV_[NOME] - REV: 00</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 20/08/2025 → Real: 20/08/2025</span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 13/05/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 20% (Ideal: 16.3%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 2.539.280,23</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 2.345.616,90</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #8b5cf6;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
-                              #2
-                              <span class="atividade-nivel">Fase</span>
-                              <span class="milestone-badge"><i class="fas fa-flag"></i> MILESTONE</span>
-                          </div>
-                      </div>
-                      <span class="badge badge-execucao">
-                          <i class="fas fa-play-circle"></i>
-                          Em execução
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">TÉCNICA PROJETOS</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 20/08/2025 → Real: 20/08/2025</span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 15/01/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 55% (Ideal: 53.2%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 445.907,49</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 294.180,46</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #8b5cf6;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
-                              #2.01
-                              <span class="atividade-nivel">Etapa</span>
-                              
-                          </div>
-                      </div>
-                      <span class="badge badge-execucao">
-                          <i class="fas fa-play-circle"></i>
-                          Em execução
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">ESTUDOS PRELIMINAR</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 28/08/2025 → Real: 28/08/2025</span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 15/01/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 90% (Ideal: 50.6%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 82.360,07</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 103.496,61</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
-                  </div>
-              </div>
-              
+          <div class="tab-filter-notice">
+              <i class="fas fa-filter"></i>
+              Exibindo apenas atividades de nível: Atividade e SubAtividade
+          </div>
+          
               <div class="atividade-card" style="border-left-color: #8b5cf6;">
                   <div class="atividade-header">
                       <div>
@@ -3913,7 +3788,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 90% (Ideal: 50.6%)</span>
+                          <span>Progresso: 90% (Ideal: 51.3%)</span>
                       </div>
                   </div>
 
@@ -4079,7 +3954,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 90% (Ideal: 50.4%)</span>
+                          <span>Progresso: 90% (Ideal: 51.1%)</span>
                       </div>
                   </div>
 
@@ -4207,7 +4082,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 90% (Ideal: 50.4%)</span>
+                          <span>Progresso: 90% (Ideal: 51.1%)</span>
                       </div>
                   </div>
 
@@ -4285,57 +4160,6 @@
                       </div>
                   </div>
                   
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #8b5cf6;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
-                              #2.02
-                              <span class="atividade-nivel">Etapa</span>
-                              
-                          </div>
-                      </div>
-                      <span class="badge badge-execucao">
-                          <i class="fas fa-play-circle"></i>
-                          Em execução
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">PROJETOS BÁSICOS</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 22/08/2025 → Real: 22/08/2025</span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 04/09/2025 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 90% (Ideal: 100%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 61.214,72</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 55.093,25</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
                   </div>
               </div>
               
@@ -5010,57 +4834,6 @@
                       </div>
                   </div>
                   
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #8b5cf6;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
-                              #2.03
-                              <span class="atividade-nivel">Etapa</span>
-                              
-                          </div>
-                      </div>
-                      <span class="badge badge-execucao">
-                          <i class="fas fa-play-circle"></i>
-                          Em execução
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">PROJETOS EXECUTIVOS / MDT / QNT - ELÉTRICA</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 04/09/2025 → Real: 04/09/2025</span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 02/10/2025 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 51% (Ideal: 100%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 165.279,74</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 94.882,81</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
                   </div>
               </div>
               
@@ -7141,57 +6914,6 @@
                   <div class="atividade-header">
                       <div>
                           <div class="atividade-codigo">
-                              #2.04
-                              <span class="atividade-nivel">Etapa</span>
-                              
-                          </div>
-                      </div>
-                      <span class="badge badge-execucao">
-                          <i class="fas fa-play-circle"></i>
-                          Em execução
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">PROJETOS EXECUTIVOS / MDT / QNT - CIVIL</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 04/09/2025 → Real: 04/09/2025</span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 02/10/2025 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 39% (Ideal: 100%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 113.684,48</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 40.707,79</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #8b5cf6;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
                               #2.04.01
                               <span class="atividade-nivel">Atividade</span>
                               
@@ -8468,261 +8190,6 @@
                   <div class="atividade-header">
                       <div>
                           <div class="atividade-codigo">
-                              #2.05
-                              <span class="atividade-nivel">Etapa</span>
-                              
-                          </div>
-                      </div>
-                      <span class="badge badge-execucao">
-                          <i class="fas fa-play-circle"></i>
-                          Em execução
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">TRATATIVAS TÉCNCIAS DE PROJETOS</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 20/08/2025 → Real: 20/08/2025</span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 30/12/2025 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 65.7%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 23.368,47</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 0,00</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #8b5cf6;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
-                              #3
-                              <span class="atividade-nivel">Fase</span>
-                              <span class="milestone-badge"><i class="fas fa-flag"></i> MILESTONE</span>
-                          </div>
-                      </div>
-                      <span class="badge badge-execucao">
-                          <i class="fas fa-play-circle"></i>
-                          Em execução
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">LOGISTICA</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 29/08/2025 → Real: 29/08/2025</span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 16/03/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 24.5%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 159.690,78</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 0,00</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #8b5cf6;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
-                              #3.01
-                              <span class="atividade-nivel">Etapa</span>
-                              
-                          </div>
-                      </div>
-                      <span class="badge badge-execucao">
-                          <i class="fas fa-play-circle"></i>
-                          Em execução
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">GESTÃO DE ACOMPANHAMENTO DA PRODUÇÃO / ENTREGA</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 29/08/2025 → Real: 29/08/2025</span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 16/03/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 24.5%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 159.690,78</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 0,00</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #8b5cf6;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
-                              #4
-                              <span class="atividade-nivel">Fase</span>
-                              <span class="milestone-badge"><i class="fas fa-flag"></i> MILESTONE</span>
-                          </div>
-                      </div>
-                      <span class="badge badge-execucao">
-                          <i class="fas fa-play-circle"></i>
-                          Em execução
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">CONSTRUÇÃO - USINA</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 17/09/2025 → Real: 17/09/2025</span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 11/05/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 33% (Ideal: 11%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 1.059.185,97</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 1.176.940,44</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #8b5cf6;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
-                              #4.01
-                              <span class="atividade-nivel">Etapa</span>
-                              
-                          </div>
-                      </div>
-                      <span class="badge badge-execucao">
-                          <i class="fas fa-play-circle"></i>
-                          Em execução
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">MOBILIZAÇÃO TÉCNICA</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 26/09/2025 → Real: 26/09/2025</span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 10/12/2025 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 98% (Ideal: 74.6%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 167.418,70</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 171.182,59</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #8b5cf6;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
                               #4.01.01
                               <span class="atividade-nivel">Atividade</span>
                               
@@ -8747,7 +8214,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 98% (Ideal: 74.6%)</span>
+                          <span>Progresso: 98% (Ideal: 76.1%)</span>
                       </div>
                   </div>
 
@@ -8798,7 +8265,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 95% (Ideal: 72.3%)</span>
+                          <span>Progresso: 95% (Ideal: 73.9%)</span>
                       </div>
                   </div>
 
@@ -8907,7 +8374,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 99% (Ideal: 78.3%)</span>
+                          <span>Progresso: 99% (Ideal: 80%)</span>
                       </div>
                   </div>
 
@@ -8992,57 +8459,6 @@
                   <div class="atividade-header">
                       <div>
                           <div class="atividade-codigo">
-                              #4.02
-                              <span class="atividade-nivel">Etapa</span>
-                              
-                          </div>
-                      </div>
-                      <span class="badge badge-execucao">
-                          <i class="fas fa-play-circle"></i>
-                          Em execução
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">SERVIÇOS - SOLO</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 17/09/2025 → Real: 17/09/2025</span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 29/01/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 70% (Ideal: 34.7%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 891.767,27</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 904.666,11</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #8b5cf6;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
                               #4.02.02
                               <span class="atividade-nivel">Atividade</span>
                               
@@ -9067,7 +8483,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 87% (Ideal: 34.7%)</span>
+                          <span>Progresso: 87% (Ideal: 35.3%)</span>
                       </div>
                   </div>
 
@@ -9118,7 +8534,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 80% (Ideal: 15.4%)</span>
+                          <span>Progresso: 80% (Ideal: 15.9%)</span>
                       </div>
                   </div>
 
@@ -9198,7 +8614,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 65% (Ideal: 20.3%)</span>
+                          <span>Progresso: 65% (Ideal: 21%)</span>
                       </div>
                   </div>
 
@@ -9249,7 +8665,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 51% (Ideal: 8.1%)</span>
+                          <span>Progresso: 51% (Ideal: 8.6%)</span>
                       </div>
                   </div>
 
@@ -9358,7 +8774,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 49% (Ideal: 39.4%)</span>
+                          <span>Progresso: 49% (Ideal: 40.1%)</span>
                       </div>
                   </div>
 
@@ -9409,7 +8825,7 @@
                       </div>
                       <div class="meta-item">
                           <i class="fas fa-percentage"></i>
-                          <span>Progresso: 39% (Ideal: 32%)</span>
+                          <span>Progresso: 39% (Ideal: 32.7%)</span>
                       </div>
                   </div>
 
@@ -9457,57 +8873,6 @@
                       </div>
                   </div>
                   
-                      
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #8b5cf6;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
-                              #4.03
-                              <span class="atividade-nivel">Etapa</span>
-                              
-                          </div>
-                      </div>
-                      <span class="badge badge-execucao">
-                          <i class="fas fa-play-circle"></i>
-                          Em execução
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">PRELIMINARES</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 15/01/2026 → Real: 15/01/2026</span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 04/03/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 26% (Ideal: 0%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 0,00</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 87.449,60</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
                       
                   </div>
               </div>
@@ -9854,57 +9219,6 @@
                       </div>
                   </div>
                   
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #8b5cf6;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
-                              #4.04
-                              <span class="atividade-nivel">Etapa</span>
-                              
-                          </div>
-                      </div>
-                      <span class="badge badge-execucao">
-                          <i class="fas fa-play-circle"></i>
-                          Em execução
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">INFRAESTRUTURAS CIVIL</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 26/01/2026 → Real: 26/01/2026</span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 04/05/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 1% (Ideal: 0%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 0,00</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 13.642,14</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
                   </div>
               </div>
               
@@ -10560,6 +9874,10 @@
               </div>
               </div>
           <div class="tab-pane" id="proximas">
+              <div class="tab-filter-notice">
+                  <i class="fas fa-filter"></i>
+                  Exibindo apenas atividades de nível: Atividade, SubAtividade e SubSubAtividade
+              </div>
               <div style="text-align: center; padding: 60px 30px; color: var(--gray-500);">
                   <i class="fas fa-calendar-week" style="font-size: 3rem; margin-bottom: 20px; opacity: 0.3;"></i>
                   <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: var(--gray-600);">
@@ -10569,108 +9887,11 @@
               </div>
           </div>
           <div class="tab-pane" id="concluidas">
-              <div class="atividade-card" style="border-left-color: #10b981;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
-                              #1
-                              <span class="atividade-nivel">Fase</span>
-                              <span class="milestone-badge"><i class="fas fa-flag"></i> MILESTONE</span>
-                          </div>
-                      </div>
-                      <span class="badge badge-concluida">
-                          <i class="fas fa-check-circle"></i>
-                          Concluídas
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">PLANEJAMENTO KICKOFF</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 20/08/2025 → Real: 20/08/2025</span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 13/11/2025 → Real: 13/11/2025</span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 100% (Ideal: 100%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 874.496,00</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 874.496,00</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #10b981;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
-                              #1.01
-                              <span class="atividade-nivel">Etapa</span>
-                              
-                          </div>
-                      </div>
-                      <span class="badge badge-concluida">
-                          <i class="fas fa-check-circle"></i>
-                          Concluídas
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">BRIEFING DE START</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 20/08/2025 → Real: 20/08/2025</span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 13/11/2025 → Real: 13/11/2025</span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 100% (Ideal: 100%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 874.496,00</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 874.496,00</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
-                  </div>
-              </div>
-              
+          <div class="tab-filter-notice">
+              <i class="fas fa-filter"></i>
+              Exibindo apenas atividades de nível: Atividade e SubAtividade
+          </div>
+          
               <div class="atividade-card" style="border-left-color: #10b981;">
                   <div class="atividade-header">
                       <div>
@@ -12754,6 +11975,11 @@
                   </div>
               </div>
               </div><div class="tab-pane" id="planejadas">
+          <div class="tab-filter-notice">
+              <i class="fas fa-filter"></i>
+              Exibindo apenas atividades de nível: Atividade e SubAtividade
+          </div>
+          
               <div class="atividade-card" style="border-left-color: #94a3b8;">
                   <div class="atividade-header">
                       <div>
@@ -17890,57 +17116,6 @@
                   <div class="atividade-header">
                       <div>
                           <div class="atividade-codigo">
-                              #4.05
-                              <span class="atividade-nivel">Etapa</span>
-                              
-                          </div>
-                      </div>
-                      <span class="badge badge-planejada">
-                          <i class="fas fa-calendar-alt"></i>
-                          Planejadas
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">MONTAGENS MECÂNICA</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 06/02/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 01/04/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 0%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 0,00</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 0,00</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #94a3b8;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
                               #4.05.01
                               <span class="atividade-nivel">Atividade</span>
                               
@@ -19661,57 +18836,6 @@
                       </div>
                   </div>
                   
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #94a3b8;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
-                              #4.06
-                              <span class="atividade-nivel">Etapa</span>
-                              
-                          </div>
-                      </div>
-                      <span class="badge badge-planejada">
-                          <i class="fas fa-calendar-alt"></i>
-                          Planejadas
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">FECHAMENTOS ELÉTRICA</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 13/03/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 11/05/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 0%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 0,00</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 0,00</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
                   </div>
               </div>
               
@@ -23427,57 +22551,6 @@
                   <div class="atividade-header">
                       <div>
                           <div class="atividade-codigo">
-                              #4.07
-                              <span class="atividade-nivel">Etapa</span>
-                              
-                          </div>
-                      </div>
-                      <span class="badge badge-planejada">
-                          <i class="fas fa-calendar-alt"></i>
-                          Planejadas
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">PRÉ-COMISSIONAMENTO</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 26/03/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 24/04/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 0%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 0,00</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 0,00</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #94a3b8;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
                               #4.07.01
                               <span class="atividade-nivel">Atividade</span>
                               
@@ -24944,57 +24017,6 @@
                   <div class="atividade-header">
                       <div>
                           <div class="atividade-codigo">
-                              #4.08
-                              <span class="atividade-nivel">Etapa</span>
-                              
-                          </div>
-                      </div>
-                      <span class="badge badge-planejada">
-                          <i class="fas fa-calendar-alt"></i>
-                          Planejadas
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">SERVIÇOS DE FINALIZAÇÃO</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 23/03/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 08/05/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 0%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 0,00</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 0,00</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #94a3b8;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
                               #4.08.01
                               <span class="atividade-nivel">Atividade</span>
                               
@@ -25770,108 +24792,6 @@
                   <div class="atividade-header">
                       <div>
                           <div class="atividade-codigo">
-                              #5
-                              <span class="atividade-nivel">Fase</span>
-                              <span class="milestone-badge"><i class="fas fa-flag"></i> MILESTONE</span>
-                          </div>
-                      </div>
-                      <span class="badge badge-planejada">
-                          <i class="fas fa-calendar-alt"></i>
-                          Planejadas
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">CONSTRUÇÃO - REDE</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 02/03/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 02/04/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 0%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 0,00</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 0,00</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #94a3b8;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
-                              #5.01
-                              <span class="atividade-nivel">Etapa</span>
-                              
-                          </div>
-                      </div>
-                      <span class="badge badge-planejada">
-                          <i class="fas fa-calendar-alt"></i>
-                          Planejadas
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">SERVIÇOS - REDE</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 02/03/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 02/04/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 0%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 0,00</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 0,00</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #94a3b8;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
                               #5.01.01
                               <span class="atividade-nivel">Atividade</span>
                               
@@ -26627,108 +25547,6 @@
                   <div class="atividade-header">
                       <div>
                           <div class="atividade-codigo">
-                              #6
-                              <span class="atividade-nivel">Fase</span>
-                              <span class="milestone-badge"><i class="fas fa-flag"></i> MILESTONE</span>
-                          </div>
-                      </div>
-                      <span class="badge badge-planejada">
-                          <i class="fas fa-calendar-alt"></i>
-                          Planejadas
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">ENERGIZAÇÃO</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 06/04/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 08/04/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 0%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 0,00</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 0,00</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #94a3b8;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
-                              #6.01
-                              <span class="atividade-nivel">Etapa</span>
-                              
-                          </div>
-                      </div>
-                      <span class="badge badge-planejada">
-                          <i class="fas fa-calendar-alt"></i>
-                          Planejadas
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">FORMALIZAÇÃO BUROCRÁTICA</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 06/04/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 08/04/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 0%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 0,00</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 0,00</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #94a3b8;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
                               #6.01.01
                               <span class="atividade-nivel">Atividade</span>
                               
@@ -26959,108 +25777,6 @@
                       </div>
                   </div>
                   
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #94a3b8;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
-                              #7
-                              <span class="atividade-nivel">Fase</span>
-                              <span class="milestone-badge"><i class="fas fa-flag"></i> MILESTONE</span>
-                          </div>
-                      </div>
-                      <span class="badge badge-planejada">
-                          <i class="fas fa-calendar-alt"></i>
-                          Planejadas
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">START - TÉCNICO</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 02/04/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 11/05/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 0%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 0,00</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 0,00</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #94a3b8;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
-                              #7.01
-                              <span class="atividade-nivel">Etapa</span>
-                              
-                          </div>
-                      </div>
-                      <span class="badge badge-planejada">
-                          <i class="fas fa-calendar-alt"></i>
-                          Planejadas
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">AS BUILT - PROJETOS</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 02/04/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 07/05/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 0%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 0,00</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 0,00</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
                   </div>
               </div>
               
@@ -27395,57 +26111,6 @@
                   <div class="atividade-header">
                       <div>
                           <div class="atividade-codigo">
-                              #7.02
-                              <span class="atividade-nivel">Etapa</span>
-                              
-                          </div>
-                      </div>
-                      <span class="badge badge-planejada">
-                          <i class="fas fa-calendar-alt"></i>
-                          Planejadas
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">VISTORIA TÉCNICA - CLIENTE</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 08/05/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 11/05/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 0%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 0,00</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 0,00</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #94a3b8;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
                               #7.02.01
                               <span class="atividade-nivel">Atividade</span>
                               
@@ -27605,108 +26270,6 @@
                       </div>
                   </div>
                   
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #94a3b8;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
-                              #8
-                              <span class="atividade-nivel">Fase</span>
-                              <span class="milestone-badge"><i class="fas fa-flag"></i> MILESTONE</span>
-                          </div>
-                      </div>
-                      <span class="badge badge-planejada">
-                          <i class="fas fa-calendar-alt"></i>
-                          Planejadas
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">COMISSIONAMENTO</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 09/04/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 06/05/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 0%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 0,00</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 0,00</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #94a3b8;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
-                              #8.01
-                              <span class="atividade-nivel">Etapa</span>
-                              
-                          </div>
-                      </div>
-                      <span class="badge badge-planejada">
-                          <i class="fas fa-calendar-alt"></i>
-                          Planejadas
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">COMISSIONAMENTO - EQUIPAMENTOS</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 09/04/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 06/05/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 0%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 0,00</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 0,00</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
                   </div>
               </div>
               
@@ -28259,108 +26822,6 @@
                   <div class="atividade-header">
                       <div>
                           <div class="atividade-codigo">
-                              #9
-                              <span class="atividade-nivel">Fase</span>
-                              <span class="milestone-badge"><i class="fas fa-flag"></i> MILESTONE</span>
-                          </div>
-                      </div>
-                      <span class="badge badge-planejada">
-                          <i class="fas fa-calendar-alt"></i>
-                          Planejadas
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">START - COMERCIAL</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 11/05/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 13/05/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 0%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 0,00</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 0,00</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #94a3b8;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
-                              #9.01
-                              <span class="atividade-nivel">Etapa</span>
-                              
-                          </div>
-                      </div>
-                      <span class="badge badge-planejada">
-                          <i class="fas fa-calendar-alt"></i>
-                          Planejadas
-                      </span>
-                  </div>
-
-                  <div class="atividade-title">FINALIZAÇÃO DE OBRA</div>
-
-                  <div class="atividade-meta">
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-check"></i>
-                          <span>Início: 11/05/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-calendar-times"></i>
-                          <span>Término: 13/05/2026 </span>
-                      </div>
-                      <div class="meta-item">
-                          <i class="fas fa-percentage"></i>
-                          <span>Progresso: 0% (Ideal: 0%)</span>
-                      </div>
-                  </div>
-
-                  <!-- Valores Financeiros da Atividade -->
-                  <div class="atividade-valores">
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Planejado</span>
-                          <span class="valor planejado">R$ 0,00</span>
-                      </div>
-                      <div class="valor-item">
-                          <span class="valor-label">Valor Executado</span>
-                          <span class="valor executado">R$ 0,00</span>
-                      </div>
-                  </div>
-
-                  <!-- Acordeão de Dependências -->
-                  <div class="accordion">
-                      
-                      
-                  </div>
-              </div>
-              
-              <div class="atividade-card" style="border-left-color: #94a3b8;">
-                  <div class="atividade-header">
-                      <div>
-                          <div class="atividade-codigo">
                               #9.01.01
                               <span class="atividade-nivel">Atividade</span>
                               
@@ -28575,7 +27036,7 @@
                   <strong>Relatório Diário de Obra - UFV XX</strong>
               </p>
               <p>
-                  Gerado automaticamente em 05/12/2025 | 
+                  Gerado automaticamente em 08/12/2025 | 
                   Total: 256 atividades | 
                   Execução financeira: 92.4%
               </p>
@@ -28646,7 +27107,7 @@
               }]
           };
 
-          // Dados das atividades para o sidebar
+          // Dados das atividades para o sidebar (TODAS as atividades)
           const todasAtividades = [{"codigo": "nan", "nome": "00-UF_UFV_[NOME] - REV: 00", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "1", "nome": "PLANEJAMENTO KICKOFF", "status": "Conclu\u00eddas"}, {"codigo": "1.01", "nome": "BRIEFING DE START", "status": "Conclu\u00eddas"}, {"codigo": "1.01.01", "nome": "Reuni\u00e3o T\u00e9cnica - Fluxograma / Estudos / Projetos / Planejamento / Execu\u00e7\u00e3o", "status": "Conclu\u00eddas"}, {"codigo": "1.01.02", "nome": "Contrata\u00e7\u00e3o dos Seguros - Contratuais", "status": "Conclu\u00eddas"}, {"codigo": "2", "nome": "T\u00c9CNICA PROJETOS", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.01", "nome": "ESTUDOS PRELIMINAR", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.01.01", "nome": "Planialtim\u00e9trico do Terreno / Georreferenciamento", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.01.02", "nome": "Estudos Geol\u00f3gico - SPT", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.01.03", "nome": "Estudos Geol\u00f3gico - SEV", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.02", "nome": "PROJETOS B\u00c1SICOS", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.02.01", "nome": "LAYOUT - Usina", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.02.02", "nome": "LAYOUT - Canteiro", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.03", "nome": "PROJETOS EXECUTIVOS / MDT / QNT - EL\u00c9TRICA", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.03.01", "nome": "SKID", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.03.02", "nome": "CMP", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.03.03", "nome": "Diagramas - Unifilar / Trifilar", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.03.04", "nome": "Cabeamento - BT-CC", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.03.05", "nome": "Cabeamento - BT-CA", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.03.06", "nome": "Cabeamento - MT-CA", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.03.07", "nome": "Estrutura\u00e7\u00e3o Strings / Fechamentos", "status": "Atrasadas"}, {"codigo": "2.03.08", "nome": "Seguran\u00e7a Equipamentos / Rede", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.03.09", "nome": "Estrutura\u00e7\u00e3o - Encaminhamento de Cabos", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.03.10", "nome": "Aterramento", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.03.11", "nome": "SPDA", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.03.12", "nome": "Esta\u00e7\u00e3o Solarim\u00e9trica", "status": "Conclu\u00eddas"}, {"codigo": "2.03.13", "nome": "ADM El\u00e9trica", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.03.14", "nome": "Estudo de Prote\u00e7\u00e3o", "status": "Atrasadas"}, {"codigo": "2.03.15", "nome": "Rede a\u00e9rea - Fornecedor", "status": "Conclu\u00eddas"}, {"codigo": "2.04", "nome": "PROJETOS EXECUTIVOS / MDT / QNT - CIVIL", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.04.01", "nome": "Terraplanagem", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.04.02", "nome": "Cercamento", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.04.03", "nome": "Crava\u00e7\u00e3o / Tracker", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.04.04", "nome": "Constru\u00e7\u00e3o Funda\u00e7\u00e3o / Infraestrutura - CMP", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.04.05", "nome": "Valas CA / CC / Seguran\u00e7a", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.04.06", "nome": "Combate a Inc\u00eandio", "status": "Atrasadas"}, {"codigo": "2.04.07", "nome": "Constru\u00e7\u00e3o Funda\u00e7\u00e3o / Infraestrutura - SKID", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.04.08", "nome": "Constru\u00e7\u00e3o Funda\u00e7\u00e3o / Infraestrutura - ADM", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.04.09", "nome": "Drenagem", "status": "Atrasadas"}, {"codigo": "2.04.10", "nome": "Arquitetura Construtiva - ADM", "status": "Atrasadas"}, {"codigo": "2.05", "nome": "TRATATIVAS T\u00c9CNCIAS DE PROJETOS", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "2.05.01", "nome": "Atualiza\u00e7\u00e3o Projetos na Concession\u00e1ria - Transformador / Equipamentos", "status": "Atrasadas"}, {"codigo": "2.05.02", "nome": "Emiss\u00e3o da Licen\u00e7a - CBM / AVCB", "status": "Atrasadas"}, {"codigo": "2.05.03", "nome": "Emiss\u00e3o da Licen\u00e7a - Ambientais", "status": "Conclu\u00eddas"}, {"codigo": "3", "nome": "LOGISTICA", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "3.01", "nome": "GEST\u00c3O DE ACOMPANHAMENTO DA PRODU\u00c7\u00c3O / ENTREGA", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "3.01.01", "nome": "Estruturas - Estacas", "status": "Atrasadas"}, {"codigo": "3.01.02", "nome": "Estruturas - Pe\u00e7as / Eixos / Mesas", "status": "Atrasadas"}, {"codigo": "3.01.03", "nome": "Cabos - Malha de Aterramento", "status": "Atrasadas"}, {"codigo": "3.01.04", "nome": "Cabos - BT / CC", "status": "Atrasadas"}, {"codigo": "3.01.05", "nome": "Cabos -BT / CA", "status": "Atrasadas"}, {"codigo": "3.01.06", "nome": "Cabos - MT / CA", "status": "Atrasadas"}, {"codigo": "3.01.07", "nome": "Cabos - MT / Rede A\u00e9rea", "status": "Conclu\u00eddas"}, {"codigo": "3.01.08", "nome": "Cabos - MT / Poste de Transi\u00e7\u00e3o", "status": "Atrasadas"}, {"codigo": "3.01.09", "nome": "Cabos - Comunica\u00e7\u00e3o de Inversores", "status": "Atrasadas"}, {"codigo": "3.01.10", "nome": "Inversores", "status": "Atrasadas"}, {"codigo": "3.01.11", "nome": "Abrigos de Inversores", "status": "Conclu\u00eddas"}, {"codigo": "3.01.12", "nome": "Estruturas - Automa\u00e7\u00e3o", "status": "Atrasadas"}, {"codigo": "3.01.13", "nome": "Subesta\u00e7\u00e3o - SKID", "status": "Atrasadas"}, {"codigo": "3.01.14", "nome": "Subesta\u00e7\u00e3o - CMP", "status": "Atrasadas"}, {"codigo": "3.01.15", "nome": "M\u00f3dulos Fotovoltaicos", "status": "Atrasadas"}, {"codigo": "3.01.16", "nome": "Esta\u00e7\u00e3o Solarim\u00e9trica", "status": "Atrasadas"}, {"codigo": "3.01.17", "nome": "Sistema de Seguran\u00e7a - Equipamentos", "status": "Atrasadas"}, {"codigo": "4", "nome": "CONSTRU\u00c7\u00c3O - USINA", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "4.01", "nome": "MOBILIZA\u00c7\u00c3O T\u00c9CNICA", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "4.01.01", "nome": "Montagem - Canteiro de Obras", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "4.01.01.01", "nome": "Limpeza e Nivelamento do Terreno", "status": "Conclu\u00eddas"}, {"codigo": "4.01.01.02", "nome": "Cria\u00e7\u00e3o da Infraestrutura dos Espa\u00e7os", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "4.01.01.03", "nome": "Instala\u00e7\u00e3o dos Containers", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "4.02", "nome": "SERVI\u00c7OS - SOLO", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "4.02.01", "nome": "Estrutura\u00e7\u00e3o - Via de Tr\u00e1fego Principal", "status": "Conclu\u00eddas"}, {"codigo": "4.02.01.01", "nome": "Demarca\u00e7\u00e3o da Via - Acesso", "status": "Conclu\u00eddas"}, {"codigo": "4.02.01.02", "nome": "Abertura de Via - Acesso", "status": "Conclu\u00eddas"}, {"codigo": "4.02.02", "nome": "Supress\u00e3o - Vegeta\u00e7\u00e3o", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "4.02.02.01", "nome": "Limpeza / Corte Isolados", "status": "Conclu\u00eddas"}, {"codigo": "4.02.02.02", "nome": "Separa\u00e7\u00e3o de Indiv\u00edduos Arb\u00f3reos", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "4.02.03", "nome": "Terraplenagem - Limpeza / Nivelamento", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "4.02.03.01", "nome": "Georreferenciamento Inicial - Corte / Aterro", "status": "Conclu\u00eddas"}, {"codigo": "4.02.03.02", "nome": "Execu\u00e7\u00e3o Inicial - Corte / Aterro", "status": "Conclu\u00eddas"}, {"codigo": "4.02.03.03", "nome": "Georreferenciamento Confer\u00eancia de \u00c1reas", "status": "Conclu\u00eddas"}, {"codigo": "4.02.03.04", "nome": "Finaliza\u00e7\u00e3o / Ajustes Finais", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "4.02.04", "nome": "Estrutura\u00e7\u00e3o - Vias de Tr\u00e1fego Internas", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "4.02.04.01", "nome": "Demarca\u00e7\u00e3o da Via - Interna", "status": "Conclu\u00eddas"}, {"codigo": "4.02.04.02", "nome": "Abertura de Via - Interna", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "4.03", "nome": "PRELIMINARES", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "4.03.01", "nome": "Georreferenciamento Geral", "status": "Planejadas"}, {"codigo": "4.03.01.01", "nome": "Loca\u00e7\u00e3o de Pontos - Estaca", "status": "Planejadas"}, {"codigo": "4.03.01.02", "nome": "Loca\u00e7\u00e3o de Pontos - Geral", "status": "Planejadas"}, {"codigo": "4.03.02", "nome": "Cercamento Perimetral", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "4.03.02.01", "nome": "Perfura\u00e7\u00f5es", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "4.03.02.02", "nome": "Instala\u00e7\u00e3o - Mour\u00f5es", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "4.03.02.03", "nome": "Instala\u00e7\u00e3o - Tela / Arame Liso e Farpado", "status": "Planejadas"}, {"codigo": "4.03.02.04", "nome": "Instala\u00e7\u00e3o - Port\u00e3o", "status": "Planejadas"}, {"codigo": "4.04", "nome": "INFRAESTRUTURAS CIVIL", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "4.04.01", "nome": "Fixa\u00e7\u00e3o - Estacas Estrutura", "status": "Planejadas"}, {"codigo": "4.04.01.01", "nome": "Perfura\u00e7\u00e3o", "status": "Planejadas"}, {"codigo": "4.04.01.02", "nome": "Alinhamento", "status": "Planejadas"}, {"codigo": "4.04.01.03", "nome": "Concretagem", "status": "Planejadas"}, {"codigo": "4.04.02", "nome": "Constru\u00e7\u00e3o - CMP", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "4.04.02.01", "nome": "Montagem - Armadura / Caixaria", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "4.04.02.02", "nome": "Concretagem", "status": "Planejadas"}, {"codigo": "4.04.02.03", "nome": "Desforma e limpeza", "status": "Planejadas"}, {"codigo": "4.04.02.04", "nome": "Instala\u00e7\u00e3o - Mour\u00f5es", "status": "Planejadas"}, {"codigo": "4.04.02.05", "nome": "Instala\u00e7\u00e3o - Tela / Arame Liso e Farpado", "status": "Planejadas"}, {"codigo": "4.04.02.06", "nome": "Instala\u00e7\u00e3o - Port\u00e3o", "status": "Planejadas"}, {"codigo": "4.04.03", "nome": "Constru\u00e7\u00e3o - SKID", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "4.04.03.01", "nome": "Montagem - Armadura / Caixaria", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "4.04.03.02", "nome": "Concretagem", "status": "Planejadas"}, {"codigo": "4.04.03.03", "nome": "Desforma e limpeza", "status": "Planejadas"}, {"codigo": "4.04.04", "nome": "Constru\u00e7\u00e3o - Abrigos Inversores", "status": "Planejadas"}, {"codigo": "4.04.04.01", "nome": "Montagem - Armadura / Caixaria", "status": "Planejadas"}, {"codigo": "4.04.04.02", "nome": "Concretagem", "status": "Planejadas"}, {"codigo": "4.04.04.03", "nome": "Desforma e limpeza", "status": "Planejadas"}, {"codigo": "4.04.04.04", "nome": "Torqueamento - Geral", "status": "Planejadas"}, {"codigo": "4.04.05", "nome": "Constru\u00e7\u00e3o - ADM", "status": "Planejadas"}, {"codigo": "4.04.05.01", "nome": "Funda\u00e7\u00f5es", "status": "Planejadas"}, {"codigo": "4.04.05.02", "nome": "Infraestrutura - Hidrossanit\u00e1rio", "status": "Planejadas"}, {"codigo": "4.04.05.03", "nome": "Infraestrutura - El\u00e9trica / Dados", "status": "Planejadas"}, {"codigo": "4.04.05.04", "nome": "Fornecimento - Container", "status": "Planejadas"}, {"codigo": "4.04.05.05", "nome": "Adequa\u00e7\u00e3o - Container", "status": "Planejadas"}, {"codigo": "4.04.06", "nome": "Execu\u00e7\u00e3o de Valas - Aterramento", "status": "Planejadas"}, {"codigo": "4.04.06.01", "nome": "Abertura de Valas - Aterramento", "status": "Planejadas"}, {"codigo": "4.04.06.02", "nome": "Lan\u00e7amento Cabos - Aterramento", "status": "Planejadas"}, {"codigo": "4.04.06.03", "nome": "Realiza\u00e7\u00e3o Solda Exot\u00e9rmica - Aterramento", "status": "Planejadas"}, {"codigo": "4.04.06.04", "nome": "Fixa\u00e7\u00e3o Estaca - Aterramento", "status": "Planejadas"}, {"codigo": "4.04.06.05", "nome": "Fechamento de Valas - Aterramento", "status": "Planejadas"}, {"codigo": "4.04.07", "nome": "Execu\u00e7\u00e3o de Valas - CC", "status": "Planejadas"}, {"codigo": "4.04.07.01", "nome": "Abertura de Valas - CC", "status": "Planejadas"}, {"codigo": "4.04.07.02", "nome": "Lan\u00e7amento Infraestrutura - CC", "status": "Planejadas"}, {"codigo": "4.04.07.03", "nome": "Caixas de Passagem - CC", "status": "Planejadas"}, {"codigo": "4.04.07.04", "nome": "Fechamento de Valas - CC", "status": "Planejadas"}, {"codigo": "4.04.08", "nome": "Execu\u00e7\u00e3o de Valas - CA", "status": "Planejadas"}, {"codigo": "4.04.08.01", "nome": "Abertura de Valas - CA", "status": "Planejadas"}, {"codigo": "4.04.08.02", "nome": "Lan\u00e7amento Infraestrutura - CA", "status": "Planejadas"}, {"codigo": "4.04.08.03", "nome": "Caixas de Passagem - CA", "status": "Planejadas"}, {"codigo": "4.04.08.04", "nome": "Fechamento de Valas - CA", "status": "Planejadas"}, {"codigo": "4.04.09", "nome": "Execu\u00e7\u00e3o de Valas - Seguran\u00e7a", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "4.04.09.01", "nome": "Abertura de Valas - Seguran\u00e7a", "status": "Em execu\u00e7\u00e3o"}, {"codigo": "4.04.09.02", "nome": "Lan\u00e7amento Infraestrutura - Seguran\u00e7a", "status": "Planejadas"}, {"codigo": "4.04.08.03", "nome": "Caixas de Passagem - Seguran\u00e7a", "status": "Planejadas"}, {"codigo": "4.04.09.04", "nome": "Instala\u00e7\u00e3o dos Postes - Perimetral / Dome", "status": "Planejadas"}, {"codigo": "4.04.09.05", "nome": "Fechamento de Valas - Seguran\u00e7a", "status": "Planejadas"}, {"codigo": "4.05", "nome": "MONTAGENS MEC\u00c2NICA", "status": "Planejadas"}, {"codigo": "4.05.01", "nome": "Montagem Estruturas", "status": "Planejadas"}, {"codigo": "4.05.01.01", "nome": "Montagem - Pe\u00e7as", "status": "Planejadas"}, {"codigo": "4.05.01.02", "nome": "Montagem - Eixos / Mesas", "status": "Planejadas"}, {"codigo": "4.05.01.03", "nome": "Torqueamento - Geral", "status": "Planejadas"}, {"codigo": "4.05.02", "nome": "Montagem - Inversores", "status": "Planejadas"}, {"codigo": "4.05.02.01", "nome": "Loca\u00e7\u00e3o - Inversores", "status": "Planejadas"}, {"codigo": "4.05.02.02", "nome": "Adequa\u00e7\u00e3o - Infraestrutura", "status": "Planejadas"}, {"codigo": "4.05.03", "nome": "Montagem Subesta\u00e7\u00e3o - CMP", "status": "Planejadas"}, {"codigo": "4.05.03.01", "nome": "Loca\u00e7\u00e3o - CMP", "status": "Planejadas"}, {"codigo": "4.05.03.02", "nome": "Montagem - CMP", "status": "Planejadas"}, {"codigo": "4.05.03.03", "nome": "Adequa\u00e7\u00e3o - Infraestrutura", "status": "Planejadas"}, {"codigo": "4.05.04", "nome": "Montagem Subesta\u00e7\u00e3o - SKID", "status": "Planejadas"}, {"codigo": "4.05.04.01", "nome": "Loca\u00e7\u00e3o - SKID", "status": "Planejadas"}, {"codigo": "4.05.04.02", "nome": "Montagem - SKID", "status": "Planejadas"}, {"codigo": "4.05.04.03", "nome": "Adequa\u00e7\u00e3o - Infraestrutura", "status": "Planejadas"}, {"codigo": "4.05.05", "nome": "Montagem - M\u00f3dulos", "status": "Planejadas"}, {"codigo": "4.05.05.01", "nome": "Instala\u00e7\u00e3o - M\u00f3dulo", "status": "Planejadas"}, {"codigo": "4.05.05.02", "nome": "Torqueamento - Geral", "status": "Planejadas"}, {"codigo": "4.06", "nome": "FECHAMENTOS EL\u00c9TRICA", "status": "Planejadas"}, {"codigo": "4.06.01", "nome": "Execu\u00e7\u00e3o de Cabeamento - CA", "status": "Planejadas"}, {"codigo": "4.06.01.01", "nome": "Lan\u00e7amento Cabos - CA", "status": "Planejadas"}, {"codigo": "4.06.01.02", "nome": "Teste T\u00e9cnicos - CA", "status": "Planejadas"}, {"codigo": "4.06.01.03", "nome": "Fechamento dos Cabos - CA", "status": "Planejadas"}, {"codigo": "4.06.01.04", "nome": "Torqueamento / Identifica\u00e7\u00e3o TAG", "status": "Planejadas"}, {"codigo": "4.06.02", "nome": "Execu\u00e7\u00e3o de Cabeamento - CC", "status": "Planejadas"}, {"codigo": "4.06.02.01", "nome": "Lan\u00e7amento Cabos - CC", "status": "Planejadas"}, {"codigo": "4.06.02.02", "nome": "Fechamento dos Cabos - CC", "status": "Planejadas"}, {"codigo": "4.06.02.03", "nome": "Teste T\u00e9cnicos - CC", "status": "Planejadas"}, {"codigo": "4.06.02.04", "nome": "Identifica\u00e7\u00e3o TAG", "status": "Planejadas"}, {"codigo": "4.06.03", "nome": "Execu\u00e7\u00e3o de Cabeamento - Inversores", "status": "Planejadas"}, {"codigo": "4.06.03.01", "nome": "Lan\u00e7amento Cabos - Comunica\u00e7\u00e3o", "status": "Planejadas"}, {"codigo": "4.06.03.02", "nome": "Fechamento dos Cabos - Comunica\u00e7\u00e3o", "status": "Planejadas"}, {"codigo": "4.06.04", "nome": "Conex\u00e3o - CMP", "status": "Planejadas"}, {"codigo": "4.06.04.01", "nome": "Lan\u00e7amento Cabos - MT / CA", "status": "Planejadas"}, {"codigo": "4.06.04.02", "nome": "Fechamento Cabos - MT / CA", "status": "Planejadas"}, {"codigo": "4.06.04.03", "nome": "Fechamento dos Cabos - Comunica\u00e7\u00e3o", "status": "Planejadas"}, {"codigo": "4.06.05", "nome": "Conex\u00e3o - SKID", "status": "Planejadas"}, {"codigo": "4.06.05.01", "nome": "Lan\u00e7amento Cabos - MT / CA", "status": "Planejadas"}, {"codigo": "4.06.05.02", "nome": "Fechamento dos Cabos - MT / CA", "status": "Planejadas"}, {"codigo": "4.06.05.03", "nome": "Fechamento dos Cabos - Comunica\u00e7\u00e3o", "status": "Planejadas"}, {"codigo": "4.06.06", "nome": "Execu\u00e7\u00e3o de Cabeamento - Fibra / Cabo PP", "status": "Planejadas"}, {"codigo": "4.06.06.01", "nome": "Lan\u00e7amento Cabos - Fibra / Cabo PP", "status": "Planejadas"}, {"codigo": "4.06.06.02", "nome": "Fechamento dos Cabos - Fibra / Cabo PP", "status": "Planejadas"}, {"codigo": "4.06.07", "nome": "Conex\u00e3o - Sistema de Seguran\u00e7a", "status": "Planejadas"}, {"codigo": "4.06.07.01", "nome": "Fechamento dos Cabos - Fibra / Cabo PP", "status": "Planejadas"}, {"codigo": "4.06.07.02", "nome": "Instala\u00e7\u00e3o - Equipamentos Externos", "status": "Planejadas"}, {"codigo": "4.06.07.03", "nome": "Instala\u00e7\u00e3o - Equipamentos Internos", "status": "Planejadas"}, {"codigo": "4.06.08", "nome": "Montagem - Esta\u00e7\u00e3o Solarim\u00e9trica", "status": "Planejadas"}, {"codigo": "4.06.08.01", "nome": "Execu\u00e7\u00e3o - Base / Infraestrutura", "status": "Planejadas"}, {"codigo": "4.06.08.02", "nome": "Montagem - Equipamento", "status": "Planejadas"}, {"codigo": "4.06.09", "nome": "Conex\u00e3o -Automa\u00e7\u00e3o Estrutura", "status": "Planejadas"}, {"codigo": "4.06.09.01", "nome": "Instala\u00e7\u00e3o - NCU / RSU", "status": "Planejadas"}, {"codigo": "4.06.10", "nome": "Conex\u00e3o - Sistema de Scada", "status": "Planejadas"}, {"codigo": "4.06.10.01", "nome": "Instala\u00e7\u00e3o - Supervis\u00f3rio SCADA", "status": "Planejadas"}, {"codigo": "4.07", "nome": "PR\u00c9-COMISSIONAMENTO", "status": "Planejadas"}, {"codigo": "4.07.01", "nome": "M\u00f3dulos", "status": "Planejadas"}, {"codigo": "4.07.01.01", "nome": "Inspe\u00e7\u00e3o - Visual", "status": "Planejadas"}, {"codigo": "4.07.02", "nome": "Cabos", "status": "Planejadas"}, {"codigo": "4.07.02.01", "nome": "Cabos - BT / CC", "status": "Planejadas"}, {"codigo": "4.07.02.02", "nome": "Cabos - BT / CA", "status": "Planejadas"}, {"codigo": "4.07.02.03", "nome": "Cabos - MT / CA", "status": "Planejadas"}, {"codigo": "4.07.02.04", "nome": "Cabos - Aterramento", "status": "Planejadas"}, {"codigo": "4.07.03", "nome": "Inversores", "status": "Planejadas"}, {"codigo": "4.07.03.01", "nome": "Cria\u00e7\u00e3o - Planta Virtual", "status": "Planejadas"}, {"codigo": "4.07.03.02", "nome": "Inspe\u00e7\u00e3o - Visual", "status": "Planejadas"}, {"codigo": "4.07.04", "nome": "Subesta\u00e7\u00e3o - CMP", "status": "Planejadas"}, {"codigo": "4.07.04.01", "nome": "Parametriza\u00e7\u00e3o - Rel\u00e9", "status": "Planejadas"}, {"codigo": "4.07.04.02", "nome": "Check List - Padr\u00e3o Concession\u00e1ria", "status": "Planejadas"}, {"codigo": "4.07.04.03", "nome": "Inspe\u00e7\u00e3o - Visual", "status": "Planejadas"}, {"codigo": "4.07.05", "nome": "Subesta\u00e7\u00e3o - SKID", "status": "Planejadas"}, {"codigo": "4.07.05.01", "nome": "Teste -Espira de Transformador", "status": "Planejadas"}, {"codigo": "4.07.05.02", "nome": "Inspe\u00e7\u00e3o - Visual", "status": "Planejadas"}, {"codigo": "4.08", "nome": "SERVI\u00c7OS DE FINALIZA\u00c7\u00c3O", "status": "Planejadas"}, {"codigo": "4.08.01", "nome": "Estrutura\u00e7\u00e3o - Drenagem", "status": "Planejadas"}, {"codigo": "4.08.01.01", "nome": "Canaletas - Abertura de Valas", "status": "Planejadas"}, {"codigo": "4.08.01.02", "nome": "Canaletas - Concretagem", "status": "Planejadas"}, {"codigo": "4.08.01.03", "nome": "Constru\u00e7\u00e3o Dissipador", "status": "Planejadas"}, {"codigo": "4.08.02", "nome": "CIVIL - Limpeza Final - Vistoria", "status": "Planejadas"}, {"codigo": "4.08.02.01", "nome": "Retirada - Entulhos de Baia", "status": "Planejadas"}, {"codigo": "4.08.02.02", "nome": "Retirada - Entulhos de Obra", "status": "Planejadas"}, {"codigo": "4.08.02.03", "nome": "Ro\u00e7agem Interna / Aceiro", "status": "Planejadas"}, {"codigo": "5", "nome": "CONSTRU\u00c7\u00c3O - REDE", "status": "Planejadas"}, {"codigo": "5.01", "nome": "SERVI\u00c7OS - REDE", "status": "Planejadas"}, {"codigo": "5.01.01", "nome": "Execu\u00e7\u00e3o dos Postes", "status": "Planejadas"}, {"codigo": "5.01.01.01", "nome": "Perfura\u00e7\u00f5es", "status": "Planejadas"}, {"codigo": "5.01.01.02", "nome": "Instala\u00e7\u00e3o - Postes", "status": "Planejadas"}, {"codigo": "5.01.02", "nome": "Execu\u00e7\u00e3o de Cabeamento - Rede", "status": "Planejadas"}, {"codigo": "5.01.02.01", "nome": "Lan\u00e7amento Cabos - Rede", "status": "Planejadas"}, {"codigo": "5.01.02.02", "nome": "Fechamento - Conex\u00f5es", "status": "Planejadas"}, {"codigo": "5.01.03", "nome": "Comissionamento da Rede", "status": "Planejadas"}, {"codigo": "5.01.03.01", "nome": "Realiza\u00e7\u00e3o dos Ensaios / Testes", "status": "Planejadas"}, {"codigo": "6", "nome": "ENERGIZA\u00c7\u00c3O", "status": "Planejadas"}, {"codigo": "6.01", "nome": "FORMALIZA\u00c7\u00c3O BUROCR\u00c1TICA", "status": "Planejadas"}, {"codigo": "6.01.01", "nome": "Solicita\u00e7\u00e3o de Vistoria", "status": "Planejadas"}, {"codigo": "6.01.02", "nome": "Energiza\u00e7\u00e3o T\u00e9cnica", "status": "Planejadas"}, {"codigo": "7", "nome": "START - T\u00c9CNICO", "status": "Planejadas"}, {"codigo": "7.01", "nome": "AS BUILT - PROJETOS", "status": "Planejadas"}, {"codigo": "7.01.01", "nome": "Projetos / MDT / QNT - Civil", "status": "Planejadas"}, {"codigo": "7.01.02", "nome": "Projetos / MDT / QNT - El\u00e9trica", "status": "Planejadas"}, {"codigo": "7.01.03", "nome": "Projetos / MDT / QNT - Rede", "status": "Planejadas"}, {"codigo": "7.02", "nome": "VISTORIA T\u00c9CNICA - CLIENTE", "status": "Planejadas"}, {"codigo": "7.02.01", "nome": "Check List - Emiss\u00e3o CAP", "status": "Planejadas"}, {"codigo": "8", "nome": "COMISSIONAMENTO", "status": "Planejadas"}, {"codigo": "8.01", "nome": "COMISSIONAMENTO - EQUIPAMENTOS", "status": "Planejadas"}, {"codigo": "8.01.01", "nome": "Comissionamento - Trackers", "status": "Planejadas"}, {"codigo": "8.01.02", "nome": "Comissionamento - M\u00f3dulos", "status": "Planejadas"}, {"codigo": "8.01.03", "nome": "Comissionamento - Inversores / Cabos", "status": "Planejadas"}, {"codigo": "8.01.04", "nome": "Comissionamento - CMP", "status": "Planejadas"}, {"codigo": "8.01.05", "nome": "Comissionamento - SKID", "status": "Planejadas"}, {"codigo": "9", "nome": "START - COMERCIAL", "status": "Planejadas"}, {"codigo": "9.01", "nome": "FINALIZA\u00c7\u00c3O DE OBRA", "status": "Planejadas"}, {"codigo": "9.01.01", "nome": "Desmobiliza\u00e7\u00e3o T\u00e9cnica", "status": "Planejadas"}, {"codigo": "9.01.02", "nome": "Reten\u00e7\u00e3o T\u00e9cnica - Emiss\u00e3o CAF", "status": "Planejadas"}];
 
           // Mapa de cores para sidebar
@@ -28787,7 +27248,7 @@
           }
 
           function showActivitiesByStatus(status) {
-              // Filtrar atividades pelo status
+              // Filtrar atividades pelo status (TODAS as atividades)
               const atividadesFiltradas = todasAtividades.filter(a => a.status === status);
 
               // Determinar cor do sidebar
@@ -28862,7 +27323,7 @@
               element.classList.add('active');
           }
 
-          // ===================== FUNÇÕES DO ACORDEÃO - CORRIGIDAS =====================
+          // ===================== FUNÇÕES DO ACORDEÃO =====================
           function toggleAccordion(header) {
               const content = header.nextElementSibling;
               const isActive = header.classList.contains('active');
