@@ -362,7 +362,7 @@
               color: var(--primary);
           }
 
-          /* ACORDEÃO DE ATIVIDADES (NOVO) */
+          /* ACORDEÃO DE ATIVIDADES */
           .atividades-accordion {
               padding: 30px;
           }
@@ -400,6 +400,48 @@
               background: var(--gray-50);
               border-left-color: var(--warning);
           }
+
+          /* ========== CORES DAS BORDAS POR STATUS ========== */
+          .atividade-accordion-header.status-atrasada {
+              border-left-color: var(--danger) !important;
+          }
+
+          .atividade-accordion-header.status-atrasada.active {
+              border-left-color: #dc2626 !important;
+          }
+
+          .atividade-accordion-header.status-execucao {
+              border-left-color: var(--execucao) !important;
+          }
+
+          .atividade-accordion-header.status-execucao.active {
+              border-left-color: #7c3aed !important;
+          }
+
+          .atividade-accordion-header.status-concluida {
+              border-left-color: var(--success) !important;
+          }
+
+          .atividade-accordion-header.status-concluida.active {
+              border-left-color: #059669 !important;
+          }
+
+          .atividade-accordion-header.status-prevista {
+              border-left-color: var(--warning) !important;
+          }
+
+          .atividade-accordion-header.status-prevista.active {
+              border-left-color: #d97706 !important;
+          }
+
+          .atividade-accordion-header.status-planejada {
+              border-left-color: var(--planejadas) !important;
+          }
+
+          .atividade-accordion-header.status-planejada.active {
+              border-left-color: #64748b !important;
+          }
+          /* ========== FIM DAS CORES POR STATUS ========== */
 
           .atividade-header-content {
               display: flex;
@@ -1135,7 +1177,7 @@
           <div class="tab-pane active" id="atrasadas">
               <div class="tab-filter-notice">
                   <i class="fas fa-filter"></i>
-                  Exibindo apenas atividades de nível: Atividade e SubAtividade
+                  Exibindo apenas atividades de nível: Atividade, SubAtividade e SubSubAtividade
               </div>
 
               <div class="expansion-controls">
@@ -1152,7 +1194,7 @@
               <div class="atividades-accordion" id="accordion-atrasadas">
           
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-atrasada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.03.07</div>
                           <div class="accordion-titulo">Estruturação Strings / Fechamentos</div>
@@ -1443,7 +1485,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-atrasada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.03.14</div>
                           <div class="accordion-titulo">Estudo de Proteção</div>
@@ -1620,7 +1662,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-atrasada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.04.06</div>
                           <div class="accordion-titulo">Combate a Incêndio</div>
@@ -1797,7 +1839,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-atrasada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.04.09</div>
                           <div class="accordion-titulo">Drenagem</div>
@@ -1945,7 +1987,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-atrasada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.04.10</div>
                           <div class="accordion-titulo">Arquitetura Construtiva - ADM</div>
@@ -2141,7 +2183,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-atrasada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.05.01</div>
                           <div class="accordion-titulo">Atualização Projetos na Concessionária - Transformador / Equipamentos</div>
@@ -2260,7 +2302,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-atrasada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.05.02</div>
                           <div class="accordion-titulo">Emissão da Licença - CBM / AVCB</div>
@@ -2408,7 +2450,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-atrasada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#3.01.01</div>
                           <div class="accordion-titulo">Estruturas - Estacas</div>
@@ -2604,7 +2646,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-atrasada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#3.01.02</div>
                           <div class="accordion-titulo">Estruturas - Peças / Eixos / Mesas</div>
@@ -2819,7 +2861,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-atrasada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#3.01.03</div>
                           <div class="accordion-titulo">Cabos - Malha de Aterramento</div>
@@ -3005,7 +3047,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-atrasada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#3.01.04</div>
                           <div class="accordion-titulo">Cabos - BT / CC</div>
@@ -3277,7 +3319,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-atrasada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#3.01.05</div>
                           <div class="accordion-titulo">Cabos -BT / CA</div>
@@ -3530,7 +3572,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-atrasada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#3.01.06</div>
                           <div class="accordion-titulo">Cabos - MT / CA</div>
@@ -3821,7 +3863,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-atrasada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#3.01.08</div>
                           <div class="accordion-titulo">Cabos - MT / Poste de Transição</div>
@@ -4055,7 +4097,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-atrasada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#3.01.09</div>
                           <div class="accordion-titulo">Cabos - Comunicação de Inversores</div>
@@ -4270,7 +4312,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-atrasada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#3.01.10</div>
                           <div class="accordion-titulo">Inversores</div>
@@ -4466,7 +4508,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-atrasada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#3.01.12</div>
                           <div class="accordion-titulo">Estruturas - Automação</div>
@@ -4643,7 +4685,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-atrasada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#3.01.13</div>
                           <div class="accordion-titulo">Subestação - SKID</div>
@@ -4791,7 +4833,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-atrasada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#3.01.14</div>
                           <div class="accordion-titulo">Subestação - CMP</div>
@@ -4987,7 +5029,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-atrasada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#3.01.15</div>
                           <div class="accordion-titulo">Módulos Fotovoltaicos</div>
@@ -5173,7 +5215,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-atrasada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#3.01.16</div>
                           <div class="accordion-titulo">Estação Solarimétrica</div>
@@ -5350,7 +5392,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-atrasada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#3.01.17</div>
                           <div class="accordion-titulo">Sistema de Segurança - Equipamentos</div>
@@ -5570,7 +5612,7 @@
           <div class="tab-pane" id="execucao">
               <div class="tab-filter-notice">
                   <i class="fas fa-filter"></i>
-                  Exibindo apenas atividades de nível: Atividade e SubAtividade
+                  Exibindo apenas atividades de nível: Atividade, SubAtividade e SubSubAtividade
               </div>
 
               <div class="expansion-controls">
@@ -5587,7 +5629,7 @@
               <div class="atividades-accordion" id="accordion-execucao">
           
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.01.01</div>
                           <div class="accordion-titulo">Planialtimétrico do Terreno / Georreferenciamento</div>
@@ -5821,7 +5863,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.01.02</div>
                           <div class="accordion-titulo">Estudos Geológico - SPT</div>
@@ -6017,7 +6059,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.01.03</div>
                           <div class="accordion-titulo">Estudos Geológico - SEV</div>
@@ -6194,7 +6236,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.02.01</div>
                           <div class="accordion-titulo">LAYOUT - Usina</div>
@@ -6808,7 +6850,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.02.02</div>
                           <div class="accordion-titulo">LAYOUT - Canteiro</div>
@@ -7004,7 +7046,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.03.01</div>
                           <div class="accordion-titulo">SKID</div>
@@ -7314,7 +7356,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.03.02</div>
                           <div class="accordion-titulo">CMP</div>
@@ -7567,7 +7609,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.03.03</div>
                           <div class="accordion-titulo">Diagramas - Unifilar / Trifilar</div>
@@ -7820,7 +7862,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.03.04</div>
                           <div class="accordion-titulo">Cabeamento - BT-CC</div>
@@ -8092,7 +8134,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.03.05</div>
                           <div class="accordion-titulo">Cabeamento - BT-CA</div>
@@ -8326,7 +8368,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.03.06</div>
                           <div class="accordion-titulo">Cabeamento - MT-CA</div>
@@ -8598,7 +8640,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.03.08</div>
                           <div class="accordion-titulo">Segurança Equipamentos / Rede</div>
@@ -8832,7 +8874,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.03.09</div>
                           <div class="accordion-titulo">Estruturação - Encaminhamento de Cabos</div>
@@ -9161,7 +9203,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.03.10</div>
                           <div class="accordion-titulo">Aterramento</div>
@@ -9395,7 +9437,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.03.11</div>
                           <div class="accordion-titulo">SPDA</div>
@@ -9591,7 +9633,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.03.13</div>
                           <div class="accordion-titulo">ADM Elétrica</div>
@@ -9825,7 +9867,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.04.01</div>
                           <div class="accordion-titulo">Terraplanagem</div>
@@ -10078,7 +10120,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.04.02</div>
                           <div class="accordion-titulo">Cercamento</div>
@@ -10274,7 +10316,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.04.03</div>
                           <div class="accordion-titulo">Cravação / Tracker</div>
@@ -10565,7 +10607,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.04.04</div>
                           <div class="accordion-titulo">Construção Fundação / Infraestrutura - CMP</div>
@@ -10780,7 +10822,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.04.05</div>
                           <div class="accordion-titulo">Valas CA / CC / Segurança</div>
@@ -11147,7 +11189,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.04.07</div>
                           <div class="accordion-titulo">Construção Fundação / Infraestrutura - SKID</div>
@@ -11362,7 +11404,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.04.08</div>
                           <div class="accordion-titulo">Construção Fundação / Infraestrutura - ADM</div>
@@ -11577,7 +11619,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.01.01</div>
                           <div class="accordion-titulo">Montagem - Canteiro de Obras</div>
@@ -11696,7 +11738,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.01.01.02</div>
                           <div class="accordion-titulo">Criação da Infraestrutura dos Espaços</div>
@@ -11873,7 +11915,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.01.01.03</div>
                           <div class="accordion-titulo">Instalação dos Containers</div>
@@ -12050,7 +12092,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.02.02</div>
                           <div class="accordion-titulo">Supressão - Vegetação</div>
@@ -12169,7 +12211,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.02.02.02</div>
                           <div class="accordion-titulo">Separação de Indivíduos Arbóreos</div>
@@ -12317,7 +12359,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.02.03</div>
                           <div class="accordion-titulo">Terraplenagem - Limpeza / Nivelamento</div>
@@ -12436,7 +12478,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.02.03.04</div>
                           <div class="accordion-titulo">Finalização / Ajustes Finais</div>
@@ -12613,7 +12655,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.02.04</div>
                           <div class="accordion-titulo">Estruturação - Vias de Tráfego Internas</div>
@@ -12732,7 +12774,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.02.04.02</div>
                           <div class="accordion-titulo">Abertura de Via - Interna</div>
@@ -12880,7 +12922,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.03.02</div>
                           <div class="accordion-titulo">Cercamento Perimetral</div>
@@ -12999,7 +13041,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.03.02.01</div>
                           <div class="accordion-titulo">Perfurações</div>
@@ -13252,7 +13294,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.03.02.02</div>
                           <div class="accordion-titulo">Instalação - Mourões</div>
@@ -13429,7 +13471,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.02</div>
                           <div class="accordion-titulo">Construção - CMP</div>
@@ -13548,7 +13590,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.02.01</div>
                           <div class="accordion-titulo">Montagem - Armadura / Caixaria</div>
@@ -13782,7 +13824,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.03</div>
                           <div class="accordion-titulo">Construção - SKID</div>
@@ -13901,7 +13943,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.03.01</div>
                           <div class="accordion-titulo">Montagem - Armadura / Caixaria</div>
@@ -14116,7 +14158,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.09</div>
                           <div class="accordion-titulo">Execução de Valas - Segurança</div>
@@ -14235,7 +14277,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-execucao" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.09.01</div>
                           <div class="accordion-titulo">Abertura de Valas - Segurança</div>
@@ -14493,7 +14535,7 @@
           <div class="tab-pane" id="proximas">
               <div class="tab-filter-notice">
                   <i class="fas fa-filter"></i>
-                  Exibindo apenas atividades de nível: Atividade e SubAtividade
+                  Exibindo apenas atividades de nível: Atividade, SubAtividade e SubSubAtividade
               </div>
 
               <div class="expansion-controls">
@@ -14510,7 +14552,7 @@
               <div class="atividades-accordion" id="accordion-proximas">
           
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-prevista" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#9.01.01</div>
                           <div class="accordion-titulo">Desmobilização Técnica</div>
@@ -14706,7 +14748,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-prevista" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#9.01.02</div>
                           <div class="accordion-titulo">Retenção Técnica - Emissão CAF</div>
@@ -14859,7 +14901,7 @@
           <div class="tab-pane" id="concluidas">
               <div class="tab-filter-notice">
                   <i class="fas fa-filter"></i>
-                  Exibindo apenas atividades de nível: Atividade e SubAtividade
+                  Exibindo apenas atividades de nível: Atividade, SubAtividade e SubSubAtividade
               </div>
 
               <div class="expansion-controls">
@@ -14876,7 +14918,7 @@
               <div class="atividades-accordion" id="accordion-concluidas">
           
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-concluida" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#1.01.01</div>
                           <div class="accordion-titulo">Reunião Técnica - Fluxograma / Estudos / Projetos / Planejamento / Execução</div>
@@ -15195,7 +15237,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-concluida" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#1.01.02</div>
                           <div class="accordion-titulo">Contratação dos Seguros - Contratuais</div>
@@ -15372,7 +15414,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-concluida" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.03.12</div>
                           <div class="accordion-titulo">Estação Solarimétrica</div>
@@ -15568,7 +15610,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-concluida" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.03.15</div>
                           <div class="accordion-titulo">Rede aérea - Fornecedor</div>
@@ -15783,7 +15825,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-concluida" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#2.05.03</div>
                           <div class="accordion-titulo">Emissão da Licença - Ambientais</div>
@@ -15950,7 +15992,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-concluida" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#3.01.07</div>
                           <div class="accordion-titulo">Cabos - MT / Rede Aérea</div>
@@ -16155,7 +16197,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-concluida" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#3.01.11</div>
                           <div class="accordion-titulo">Abrigos de Inversores</div>
@@ -16332,7 +16374,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-concluida" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.01.01.01</div>
                           <div class="accordion-titulo">Limpeza e Nivelamento do Terreno</div>
@@ -16585,7 +16627,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-concluida" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.02.01</div>
                           <div class="accordion-titulo">Estruturação - Via de Tráfego Principal</div>
@@ -16704,7 +16746,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-concluida" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.02.01.01</div>
                           <div class="accordion-titulo">Demarcação da Via - Acesso</div>
@@ -16957,7 +16999,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-concluida" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.02.01.02</div>
                           <div class="accordion-titulo">Abertura de Via - Acesso</div>
@@ -17105,7 +17147,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-concluida" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.02.02.01</div>
                           <div class="accordion-titulo">Limpeza / Corte Isolados</div>
@@ -17320,7 +17362,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-concluida" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.02.03.01</div>
                           <div class="accordion-titulo">Georreferenciamento Inicial - Corte / Aterro</div>
@@ -17516,7 +17558,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-concluida" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.02.03.02</div>
                           <div class="accordion-titulo">Execução Inicial - Corte / Aterro</div>
@@ -17693,7 +17735,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-concluida" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.02.03.03</div>
                           <div class="accordion-titulo">Georreferenciamento Conferência de Áreas</div>
@@ -17870,7 +17912,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-concluida" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.02.04.01</div>
                           <div class="accordion-titulo">Demarcação da Via - Interna</div>
@@ -18052,7 +18094,7 @@
           <div class="tab-pane" id="planejadas">
               <div class="tab-filter-notice">
                   <i class="fas fa-filter"></i>
-                  Exibindo apenas atividades de nível: Atividade e SubAtividade
+                  Exibindo apenas atividades de nível: Atividade, SubAtividade e SubSubAtividade
               </div>
 
               <div class="expansion-controls">
@@ -18069,7 +18111,7 @@
               <div class="atividades-accordion" id="accordion-planejadas">
           
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.03.01</div>
                           <div class="accordion-titulo">Georreferenciamento Geral</div>
@@ -18188,7 +18230,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.03.01.01</div>
                           <div class="accordion-titulo">Locação de Pontos - Estaca</div>
@@ -18422,7 +18464,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.03.01.02</div>
                           <div class="accordion-titulo">Locação de Pontos - Geral</div>
@@ -18656,7 +18698,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.03.02.03</div>
                           <div class="accordion-titulo">Instalação - Tela / Arame Liso e Farpado</div>
@@ -18833,7 +18875,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.03.02.04</div>
                           <div class="accordion-titulo">Instalação - Portão</div>
@@ -18981,7 +19023,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.01</div>
                           <div class="accordion-titulo">Fixação - Estacas Estrutura</div>
@@ -19100,7 +19142,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.01.01</div>
                           <div class="accordion-titulo">Perfuração</div>
@@ -19315,7 +19357,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.01.02</div>
                           <div class="accordion-titulo">Alinhamento</div>
@@ -19511,7 +19553,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.01.03</div>
                           <div class="accordion-titulo">Concretagem</div>
@@ -19688,7 +19730,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.02.02</div>
                           <div class="accordion-titulo">Concretagem</div>
@@ -19884,7 +19926,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.02.03</div>
                           <div class="accordion-titulo">Desforma e limpeza</div>
@@ -20061,7 +20103,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.02.04</div>
                           <div class="accordion-titulo">Instalação - Mourões</div>
@@ -20238,7 +20280,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.02.05</div>
                           <div class="accordion-titulo">Instalação - Tela / Arame Liso e Farpado</div>
@@ -20453,7 +20495,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.02.06</div>
                           <div class="accordion-titulo">Instalação - Portão</div>
@@ -20630,7 +20672,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.03.02</div>
                           <div class="accordion-titulo">Concretagem</div>
@@ -20807,7 +20849,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.03.03</div>
                           <div class="accordion-titulo">Desforma e limpeza</div>
@@ -21003,7 +21045,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.04</div>
                           <div class="accordion-titulo">Construção - Abrigos Inversores</div>
@@ -21122,7 +21164,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.04.01</div>
                           <div class="accordion-titulo">Montagem - Armadura / Caixaria</div>
@@ -21337,7 +21379,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.04.02</div>
                           <div class="accordion-titulo">Concretagem</div>
@@ -21514,7 +21556,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.04.03</div>
                           <div class="accordion-titulo">Desforma e limpeza</div>
@@ -21710,7 +21752,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.04.04</div>
                           <div class="accordion-titulo">Torqueamento - Geral</div>
@@ -21858,7 +21900,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.05</div>
                           <div class="accordion-titulo">Construção - ADM</div>
@@ -21977,7 +22019,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.05.01</div>
                           <div class="accordion-titulo">Fundações</div>
@@ -22230,7 +22272,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.05.02</div>
                           <div class="accordion-titulo">Infraestrutura - Hidrossanitário</div>
@@ -22407,7 +22449,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.05.03</div>
                           <div class="accordion-titulo">Infraestrutura - Elétrica / Dados</div>
@@ -22555,7 +22597,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.05.04</div>
                           <div class="accordion-titulo">Fornecimento - Container</div>
@@ -22732,7 +22774,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.05.05</div>
                           <div class="accordion-titulo">Adequação - Container</div>
@@ -22880,7 +22922,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.06</div>
                           <div class="accordion-titulo">Execução de Valas - Aterramento</div>
@@ -22999,7 +23041,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.06.01</div>
                           <div class="accordion-titulo">Abertura de Valas - Aterramento</div>
@@ -23233,7 +23275,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.06.02</div>
                           <div class="accordion-titulo">Lançamento Cabos - Aterramento</div>
@@ -23410,7 +23452,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.06.03</div>
                           <div class="accordion-titulo">Realização Solda Exotérmica - Aterramento</div>
@@ -23587,7 +23629,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.06.04</div>
                           <div class="accordion-titulo">Fixação Estaca - Aterramento</div>
@@ -23764,7 +23806,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.06.05</div>
                           <div class="accordion-titulo">Fechamento de Valas - Aterramento</div>
@@ -23912,7 +23954,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.07</div>
                           <div class="accordion-titulo">Execução de Valas - CC</div>
@@ -24031,7 +24073,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.07.01</div>
                           <div class="accordion-titulo">Abertura de Valas - CC</div>
@@ -24284,7 +24326,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.07.02</div>
                           <div class="accordion-titulo">Lançamento Infraestrutura - CC</div>
@@ -24461,7 +24503,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.07.03</div>
                           <div class="accordion-titulo">Caixas de Passagem - CC</div>
@@ -24638,7 +24680,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.07.04</div>
                           <div class="accordion-titulo">Fechamento de Valas - CC</div>
@@ -24815,7 +24857,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.08</div>
                           <div class="accordion-titulo">Execução de Valas - CA</div>
@@ -24934,7 +24976,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.08.01</div>
                           <div class="accordion-titulo">Abertura de Valas - CA</div>
@@ -25168,7 +25210,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.08.02</div>
                           <div class="accordion-titulo">Lançamento Infraestrutura - CA</div>
@@ -25345,7 +25387,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.08.03</div>
                           <div class="accordion-titulo">Caixas de Passagem - CA</div>
@@ -25541,7 +25583,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.08.04</div>
                           <div class="accordion-titulo">Fechamento de Valas - CA</div>
@@ -25756,7 +25798,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.09.02</div>
                           <div class="accordion-titulo">Lançamento Infraestrutura - Segurança</div>
@@ -25914,7 +25956,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.08.03</div>
                           <div class="accordion-titulo">Caixas de Passagem - Segurança</div>
@@ -26091,7 +26133,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.09.04</div>
                           <div class="accordion-titulo">Instalação dos Postes - Perimetral / Dome</div>
@@ -26249,7 +26291,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.04.09.05</div>
                           <div class="accordion-titulo">Fechamento de Valas - Segurança</div>
@@ -26397,7 +26439,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.05.01</div>
                           <div class="accordion-titulo">Montagem Estruturas</div>
@@ -26516,7 +26558,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.05.01.01</div>
                           <div class="accordion-titulo">Montagem - Peças</div>
@@ -26702,7 +26744,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.05.01.02</div>
                           <div class="accordion-titulo">Montagem - Eixos / Mesas</div>
@@ -26898,7 +26940,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.05.01.03</div>
                           <div class="accordion-titulo">Torqueamento - Geral</div>
@@ -27046,7 +27088,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.05.02</div>
                           <div class="accordion-titulo">Montagem - Inversores</div>
@@ -27165,7 +27207,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.05.02.01</div>
                           <div class="accordion-titulo">Locação - Inversores</div>
@@ -27361,7 +27403,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.05.02.02</div>
                           <div class="accordion-titulo">Adequação - Infraestrutura</div>
@@ -27509,7 +27551,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.05.03</div>
                           <div class="accordion-titulo">Montagem Subestação - CMP</div>
@@ -27628,7 +27670,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.05.03.01</div>
                           <div class="accordion-titulo">Locação - CMP</div>
@@ -27843,7 +27885,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.05.03.02</div>
                           <div class="accordion-titulo">Montagem - CMP</div>
@@ -28039,7 +28081,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.05.03.03</div>
                           <div class="accordion-titulo">Adequação - Infraestrutura</div>
@@ -28216,7 +28258,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.05.04</div>
                           <div class="accordion-titulo">Montagem Subestação - SKID</div>
@@ -28335,7 +28377,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.05.04.01</div>
                           <div class="accordion-titulo">Locação - SKID</div>
@@ -28550,7 +28592,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.05.04.02</div>
                           <div class="accordion-titulo">Montagem - SKID</div>
@@ -28727,7 +28769,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.05.04.03</div>
                           <div class="accordion-titulo">Adequação - Infraestrutura</div>
@@ -28875,7 +28917,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.05.05</div>
                           <div class="accordion-titulo">Montagem - Módulos</div>
@@ -28994,7 +29036,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.05.05.01</div>
                           <div class="accordion-titulo">Instalação - Módulo</div>
@@ -29171,7 +29213,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.05.05.02</div>
                           <div class="accordion-titulo">Torqueamento - Geral</div>
@@ -29348,7 +29390,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.01</div>
                           <div class="accordion-titulo">Execução de Cabeamento - CA</div>
@@ -29467,7 +29509,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.01.01</div>
                           <div class="accordion-titulo">Lançamento Cabos - CA</div>
@@ -29720,7 +29762,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.01.02</div>
                           <div class="accordion-titulo">Teste Técnicos - CA</div>
@@ -29916,7 +29958,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.01.03</div>
                           <div class="accordion-titulo">Fechamento dos Cabos - CA</div>
@@ -30112,7 +30154,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.01.04</div>
                           <div class="accordion-titulo">Torqueamento / Identificação TAG</div>
@@ -30308,7 +30350,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.02</div>
                           <div class="accordion-titulo">Execução de Cabeamento - CC</div>
@@ -30427,7 +30469,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.02.01</div>
                           <div class="accordion-titulo">Lançamento Cabos - CC</div>
@@ -30651,7 +30693,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.02.02</div>
                           <div class="accordion-titulo">Fechamento dos Cabos - CC</div>
@@ -30828,7 +30870,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.02.03</div>
                           <div class="accordion-titulo">Teste Técnicos - CC</div>
@@ -30976,7 +31018,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.02.04</div>
                           <div class="accordion-titulo">Identificação TAG</div>
@@ -31153,7 +31195,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.03</div>
                           <div class="accordion-titulo">Execução de Cabeamento - Inversores</div>
@@ -31272,7 +31314,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.03.01</div>
                           <div class="accordion-titulo">Lançamento Cabos - Comunicação</div>
@@ -31506,7 +31548,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.03.02</div>
                           <div class="accordion-titulo">Fechamento dos Cabos - Comunicação</div>
@@ -31654,7 +31696,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.04</div>
                           <div class="accordion-titulo">Conexão - CMP</div>
@@ -31773,7 +31815,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.04.01</div>
                           <div class="accordion-titulo">Lançamento Cabos - MT / CA</div>
@@ -32026,7 +32068,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.04.02</div>
                           <div class="accordion-titulo">Fechamento Cabos - MT / CA</div>
@@ -32222,7 +32264,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.04.03</div>
                           <div class="accordion-titulo">Fechamento dos Cabos - Comunicação</div>
@@ -32399,7 +32441,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.05</div>
                           <div class="accordion-titulo">Conexão - SKID</div>
@@ -32518,7 +32560,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.05.01</div>
                           <div class="accordion-titulo">Lançamento Cabos - MT / CA</div>
@@ -32771,7 +32813,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.05.02</div>
                           <div class="accordion-titulo">Fechamento dos Cabos - MT / CA</div>
@@ -32967,7 +33009,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.05.03</div>
                           <div class="accordion-titulo">Fechamento dos Cabos - Comunicação</div>
@@ -33144,7 +33186,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.06</div>
                           <div class="accordion-titulo">Execução de Cabeamento - Fibra / Cabo PP</div>
@@ -33263,7 +33305,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.06.01</div>
                           <div class="accordion-titulo">Lançamento Cabos - Fibra / Cabo PP</div>
@@ -33440,7 +33482,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.06.02</div>
                           <div class="accordion-titulo">Fechamento dos Cabos - Fibra / Cabo PP</div>
@@ -33617,7 +33659,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.07</div>
                           <div class="accordion-titulo">Conexão - Sistema de Segurança</div>
@@ -33736,7 +33778,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.07.01</div>
                           <div class="accordion-titulo">Fechamento dos Cabos - Fibra / Cabo PP</div>
@@ -33989,7 +34031,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.07.02</div>
                           <div class="accordion-titulo">Instalação - Equipamentos Externos</div>
@@ -34166,7 +34208,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.07.03</div>
                           <div class="accordion-titulo">Instalação - Equipamentos Internos</div>
@@ -34343,7 +34385,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.08</div>
                           <div class="accordion-titulo">Montagem - Estação Solarimétrica</div>
@@ -34462,7 +34504,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.08.01</div>
                           <div class="accordion-titulo">Execução - Base / Infraestrutura</div>
@@ -34677,7 +34719,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.08.02</div>
                           <div class="accordion-titulo">Montagem - Equipamento</div>
@@ -34854,7 +34896,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.09</div>
                           <div class="accordion-titulo">Conexão -Automação Estrutura</div>
@@ -34973,7 +35015,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.09.01</div>
                           <div class="accordion-titulo">Instalação - NCU / RSU</div>
@@ -35169,7 +35211,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.10</div>
                           <div class="accordion-titulo">Conexão - Sistema de Scada</div>
@@ -35288,7 +35330,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.06.10.01</div>
                           <div class="accordion-titulo">Instalação - Supervisório SCADA</div>
@@ -35436,7 +35478,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.07.01</div>
                           <div class="accordion-titulo">Módulos</div>
@@ -35555,7 +35597,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.07.01.01</div>
                           <div class="accordion-titulo">Inspeção - Visual</div>
@@ -35703,7 +35745,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.07.02</div>
                           <div class="accordion-titulo">Cabos</div>
@@ -35822,7 +35864,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.07.02.01</div>
                           <div class="accordion-titulo">Cabos - BT / CC</div>
@@ -35970,7 +36012,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.07.02.02</div>
                           <div class="accordion-titulo">Cabos - BT / CA</div>
@@ -36118,7 +36160,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.07.02.03</div>
                           <div class="accordion-titulo">Cabos - MT / CA</div>
@@ -36295,7 +36337,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.07.02.04</div>
                           <div class="accordion-titulo">Cabos - Aterramento</div>
@@ -36472,7 +36514,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.07.03</div>
                           <div class="accordion-titulo">Inversores</div>
@@ -36591,7 +36633,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.07.03.01</div>
                           <div class="accordion-titulo">Criação - Planta Virtual</div>
@@ -36768,7 +36810,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.07.03.02</div>
                           <div class="accordion-titulo">Inspeção - Visual</div>
@@ -36916,7 +36958,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.07.04</div>
                           <div class="accordion-titulo">Subestação - CMP</div>
@@ -37035,7 +37077,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.07.04.01</div>
                           <div class="accordion-titulo">Parametrização - Relé</div>
@@ -37212,7 +37254,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.07.04.02</div>
                           <div class="accordion-titulo">Check List - Padrão Concessionária</div>
@@ -37389,7 +37431,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.07.04.03</div>
                           <div class="accordion-titulo">Inspeção - Visual</div>
@@ -37566,7 +37608,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.07.05</div>
                           <div class="accordion-titulo">Subestação - SKID</div>
@@ -37685,7 +37727,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.07.05.01</div>
                           <div class="accordion-titulo">Teste -Espira de Transformador</div>
@@ -37862,7 +37904,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.07.05.02</div>
                           <div class="accordion-titulo">Inspeção - Visual</div>
@@ -38058,7 +38100,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.08.01</div>
                           <div class="accordion-titulo">Estruturação - Drenagem</div>
@@ -38177,7 +38219,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.08.01.01</div>
                           <div class="accordion-titulo">Canaletas - Abertura de Valas</div>
@@ -38354,7 +38396,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.08.01.02</div>
                           <div class="accordion-titulo">Canaletas - Concretagem</div>
@@ -38531,7 +38573,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.08.01.03</div>
                           <div class="accordion-titulo">Construção Dissipador</div>
@@ -38727,7 +38769,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.08.02</div>
                           <div class="accordion-titulo">CIVIL - Limpeza Final - Vistoria</div>
@@ -38846,7 +38888,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.08.02.01</div>
                           <div class="accordion-titulo">Retirada - Entulhos de Baia</div>
@@ -39023,7 +39065,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.08.02.02</div>
                           <div class="accordion-titulo">Retirada - Entulhos de Obra</div>
@@ -39200,7 +39242,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#4.08.02.03</div>
                           <div class="accordion-titulo">Roçagem Interna / Aceiro</div>
@@ -39377,7 +39419,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#5.01.01</div>
                           <div class="accordion-titulo">Execução dos Postes</div>
@@ -39496,7 +39538,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#5.01.01.01</div>
                           <div class="accordion-titulo">Perfurações</div>
@@ -39711,7 +39753,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#5.01.01.02</div>
                           <div class="accordion-titulo">Instalação - Postes</div>
@@ -39888,7 +39930,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#5.01.02</div>
                           <div class="accordion-titulo">Execução de Cabeamento - Rede</div>
@@ -40007,7 +40049,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#5.01.02.01</div>
                           <div class="accordion-titulo">Lançamento Cabos - Rede</div>
@@ -40184,7 +40226,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#5.01.02.02</div>
                           <div class="accordion-titulo">Fechamento - Conexões</div>
@@ -40361,7 +40403,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#5.01.03</div>
                           <div class="accordion-titulo">Comissionamento da Rede</div>
@@ -40480,7 +40522,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#5.01.03.01</div>
                           <div class="accordion-titulo">Realização dos Ensaios / Testes</div>
@@ -40676,7 +40718,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#6.01.01</div>
                           <div class="accordion-titulo">Solicitação de Vistoria</div>
@@ -40872,7 +40914,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#6.01.02</div>
                           <div class="accordion-titulo">Energização Técnica</div>
@@ -41049,7 +41091,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#7.01.01</div>
                           <div class="accordion-titulo">Projetos / MDT / QNT - Civil</div>
@@ -41226,7 +41268,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#7.01.02</div>
                           <div class="accordion-titulo">Projetos / MDT / QNT - Elétrica</div>
@@ -41403,7 +41445,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#7.01.03</div>
                           <div class="accordion-titulo">Projetos / MDT / QNT - Rede</div>
@@ -41580,7 +41622,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#7.02.01</div>
                           <div class="accordion-titulo">Check List - Emissão CAP</div>
@@ -41814,7 +41856,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#8.01.01</div>
                           <div class="accordion-titulo">Comissionamento - Trackers</div>
@@ -41991,7 +42033,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#8.01.02</div>
                           <div class="accordion-titulo">Comissionamento - Módulos</div>
@@ -42168,7 +42210,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#8.01.03</div>
                           <div class="accordion-titulo">Comissionamento - Inversores / Cabos</div>
@@ -42345,7 +42387,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#8.01.04</div>
                           <div class="accordion-titulo">Comissionamento - CMP</div>
@@ -42522,7 +42564,7 @@
               </div>
               
               <div class="atividade-accordion-item">
-                  <div class="atividade-accordion-header" onclick="toggleAtividadeAccordion(this)">
+                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordion(this)">
                       <div class="atividade-header-content">
                           <div class="accordion-codigo">#8.01.05</div>
                           <div class="accordion-titulo">Comissionamento - SKID</div>
