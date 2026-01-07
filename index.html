@@ -143055,106 +143055,54 @@
               openTab(tabId, tabElement);
           }
 
-          // ===================== NAVEGAÇÃO ENTRE ATIVIDADES (MELHORADA) =====================
+          // ===================== NAVEGAÇÃO ENTRE ATIVIDADES (CORRIGIDA) =====================
           function navigateToActivity(codigo, event) {
-              // Impedir propagação se veio de uma dependência
               if (event) {
                   event.stopPropagation();
+                  event.preventDefault();
               }
 
-              // Buscar em todas as tabs
-              const todasTabs = ['concluidas', 'atrasadas', 'execucao', 'proximas', 'planejadas', 'criticas'];
-              let atividadeEncontrada = null;
-              let tabIdEncontrada = null;
+              // Encontrar a atividade em qualquer tab
+              const atividadeElement = document.getElementById(`atividade-${codigo}`);
 
-              // Procurar em todas as tabs
-              for (const tabId of todasTabs) {
-                  const atividadeElement = document.getElementById(`atividade-${codigo}`);
-                  if (atividadeElement) {
-                      // Verificar se está na tab atual
-                      const tabPane = atividadeElement.closest('.tab-pane');
-                      if (tabPane && tabPane.id) {
-                          tabIdEncontrada = tabPane.id;
-                          atividadeEncontrada = atividadeElement;
-                          break;
-                      }
+              if (!atividadeElement) {
+                  console.log('Atividade não encontrada:', codigo);
+                  return;
+              }
+
+              // Encontrar a tab pai
+              const tabPane = atividadeElement.closest('.tab-pane');
+              if (!tabPane || !tabPane.id) {
+                  console.log('Não foi possível localizar a tab da atividade:', codigo);
+                  return;
+              }
+
+              const tabId = tabPane.id;
+
+              // Abrir a tab
+              const tabElement = document.querySelector(`.tab[onclick*="${tabId}"]`);
+              if (tabElement) {
+                  openTab(tabId, tabElement);
+              }
+
+              // Aguardar e expandir a atividade
+              setTimeout(() => {
+                  const header = atividadeElement.querySelector('.atividade-accordion-header');
+                  const content = atividadeElement.querySelector('.atividade-accordion-content');
+
+                  if (header && content && !header.classList.contains('active')) {
+                      header.classList.add('active');
+                      content.classList.add('active');
                   }
-              }
 
-              if (atividadeEncontrada && tabIdEncontrada) {
-                  // Abrir a tab onde a atividade está
-                  const tabElement = document.querySelector(`.tab[onclick*="${tabIdEncontrada}"]`);
-                  openTab(tabIdEncontrada, tabElement);
-
-                  // Aguardar a tab abrir e então expandir e destacar
+                  // Scroll e destaque
+                  atividadeElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  atividadeElement.style.boxShadow = '0 0 0 3px rgba(29, 78, 216, 0.5)';
+                  atividadeElement.style.transition = 'box-shadow 0.3s ease';
                   setTimeout(() => {
-                      // Expandir a atividade
-                      const header = atividadeEncontrada.querySelector('.atividade-accordion-header');
-                      const content = atividadeEncontrada.querySelector('.atividade-accordion-content');
-
-                      if (!header.classList.contains('active')) {
-                          header.classList.add('active');
-                          content.classList.add('active');
-                      }
-
-                      // Scroll para a atividade
-                      atividadeEncontrada.scrollIntoView({
-                          behavior: 'smooth',
-                          block: 'center'
-                      });
-
-                      // Destacar a atividade por 2 segundos
-                      atividadeEncontrada.style.boxShadow = '0 0 0 3px rgba(29, 78, 216, 0.5)';
-                      atividadeEncontrada.style.transition = 'box-shadow 0.3s ease';
-                      setTimeout(() => {
-                          atividadeEncontrada.style.boxShadow = '';
-                      }, 2000);
-                  }, 300);
-              } else {
-                  // Se não encontrou, buscar em todas as atividades
-                  const todasAtividades = document.querySelectorAll('.atividade-accordion-item');
-                  for (let atividade of todasAtividades) {
-                      if (atividade.id === `atividade-${codigo}`) {
-                          atividadeEncontrada = atividade;
-                          break;
-                      }
-                  }
-
-                  if (atividadeEncontrada) {
-                      // Encontrar a tab pai
-                      const tabPane = atividadeEncontrada.closest('.tab-pane');
-                      if (tabPane) {
-                          tabIdEncontrada = tabPane.id;
-                          const tabElement = document.querySelector(`.tab[onclick*="${tabIdEncontrada}"]`);
-                          openTab(tabIdEncontrada, tabElement);
-
-                          setTimeout(() => {
-                              // Expandir a atividade
-                              const header = atividadeEncontrada.querySelector('.atividade-accordion-header');
-                              const content = atividadeEncontrada.querySelector('.atividade-accordion-content');
-
-                              if (!header.classList.contains('active')) {
-                                  header.classList.add('active');
-                                  content.classList.add('active');
-                              }
-
-                              // Scroll para a atividade
-                              atividadeEncontrada.scrollIntoView({
-                                  behavior: 'smooth',
-                                  block: 'center'
-                              });
-
-                              // Destacar
-                              atividadeEncontrada.style.boxShadow = '0 0 0 3px rgba(29, 78, 216, 0.5)';
-                              setTimeout(() => {
-                                  atividadeEncontrada.style.boxShadow = '';
-                              }, 2000);
-                          }, 300);
-                      }
-                  } else {
-                      console.log('Atividade não encontrada:', codigo);
-                  }
-              }
+                      atividadeElement.style.boxShadow = '';
+                  }, 2000);
+              }, 400);
           }
       </script>
   </body>
