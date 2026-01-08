@@ -340,8 +340,7 @@
           .accordion-badge.planejada { background: #f3f4f6; color: #4b5563; }
           .accordion-badge.critica { background: #fee2e2; color: #991b1b; font-weight: 800; }
 
-          /* ALERTA DE PRODUTIVIDADE EM ATRASO - REMOVIDO DA PARTE PRINCIPAL */
-          /* Mantido apenas no tooltip se necessário */
+          /* REMOVIDO: alerta-triangulo e critica-margem-zero do cabeçalho */
 
           .accordion-toggle {
               color: var(--primary);
@@ -531,7 +530,7 @@
               border: 1px dashed var(--gray-300);
           }
 
-          /* ANÁLISE FÍSICA - SIMPLIFICADA (4x4 grid) */
+          /* ANÁLISE FÍSICA - MANTENDO O LAYOUT ORIGINAL */
           .analise-fisica-grid {
               display: grid;
               grid-template-columns: 1fr 1fr;
@@ -546,43 +545,11 @@
               border-left: 3px solid var(--primary);
           }
 
-          /* NOVO: Layout 4x4 para as 4 informações principais */
-          .progresso-quadro-4x4 {
-              display: grid;
-              grid-template-columns: 1fr 1fr;
-              gap: 10px;
-              margin-top: 10px;
-          }
-
-          .progresso-item-4x4 {
-              background: white;
-              padding: 12px;
-              border-radius: 6px;
-              border: 1px solid var(--gray-200);
-              text-align: center;
-          }
-
-          .progresso-label-4x4 {
-              font-size: 0.75rem;
-              color: var(--gray-600);
-              font-weight: 600;
-              margin-bottom: 6px;
-              text-transform: uppercase;
-              letter-spacing: 0.5px;
-          }
-
-          .progresso-valor-4x4 {
-              font-size: 1.1rem;
-              font-weight: 800;
-              color: var(--dark);
-          }
-
           /* Layout de datas em grid 2x2 */
           .datas-grid {
               display: grid;
               grid-template-columns: 1fr 1fr;
               gap: 12px;
-              margin-bottom: 15px;
           }
 
           .data-item {
@@ -611,7 +578,45 @@
               font-style: italic;
           }
 
-          /* NOVO: QUADRO DE VARIAÇÕES (APENAS VARIAÇÕES E MARGEM) */
+          /* QUADRO DE PROGRESSO - MODIFICADO: grid 2x2 com apenas 4 campos */
+          .progresso-quadro {
+              background: var(--gray-50);
+              padding: 15px;
+              border-radius: 8px;
+              border-left: 3px solid var(--success);
+          }
+
+          /* MODIFICAÇÃO: grid 2x2 para os 4 campos */
+          .progresso-grid-2x2 {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 12px;
+          }
+
+          .progresso-item-2x2 {
+              padding: 10px;
+              background: white;
+              border-radius: 6px;
+              border: 1px solid var(--gray-200);
+              text-align: center;
+          }
+
+          .progresso-label-2x2 {
+              font-size: 0.75rem;
+              color: var(--gray-600);
+              font-weight: 600;
+              margin-bottom: 6px;
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+          }
+
+          .progresso-valor-2x2 {
+              font-size: 1.1rem;
+              font-weight: 800;
+              color: var(--dark);
+          }
+
+          /* QUADRO DE VARIAÇÕES */
           .variacoes-quadro {
               background: var(--gray-50);
               padding: 15px;
@@ -649,7 +654,7 @@
               color: var(--dark);
           }
 
-          /* NOVO: ESTILO PARA MARGEM CRÍTICA (0 dias) */
+          /* ESTILO PARA MARGEM CRÍTICA (0 dias) */
           .margem-critica {
               color: #dc2626 !important;
               font-weight: 800;
@@ -1002,6 +1007,10 @@
               .variacoes-grid {
                   grid-template-columns: repeat(2, 1fr);
               }
+
+              .progresso-grid-2x2 {
+                  grid-template-columns: 1fr;
+              }
           }
 
           @media (max-width: 768px) {
@@ -1176,7 +1185,7 @@
                   <div class="atividade-accordion-content">
                       <div class="atividade-expanded">
               
-                          <!-- ANÁLISE FÍSICA SIMPLIFICADA -->
+                          <!-- ANÁLISE FÍSICA -->
                           <div class="analise-section">
                               <div class="analise-title" onclick="toggleAnaliseSection(this, 'fisica-concluidas-1.01.03')">
                                   <i class="fas fa-chart-line toggle-icon"></i>
@@ -1206,26 +1215,6 @@
                                               </div>
                                           </div>
 
-                                          <!-- NOVO: QUADRO 4x4 COM AS 4 INFORMAÇÕES PRINCIPAIS -->
-                                          <div class="progresso-quadro-4x4">
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Duração Planejada</div>
-                                                  <div class="progresso-valor-4x4">16</div>
-                                              </div>
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Qtd. Diária Planejada</div>
-                                                  <div class="progresso-valor-4x4">12</div>
-                                              </div>
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Progresso Planejado</div>
-                                                  <div class="progresso-valor-4x4">100%</div>
-                                              </div>
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Progresso Real</div>
-                                                  <div class="progresso-valor-4x4">100%</div>
-                                              </div>
-                                          </div>
-
                                           <!-- QUADRO DE VARIAÇÕES E MARGEM -->
                                           <div class="variacoes-quadro">
                                               <div class="variacoes-grid">
@@ -1249,13 +1238,51 @@
                                           </div>
                                       </div>
 
-                                      <!-- Quadro 2: Dados Financeiros -->
+                                      <!-- Quadro 2: Progressos - MODIFICADO: grid 2x2 com apenas 4 campos -->
+                                      <div class="progresso-quadro">
+                                          <div class="progresso-grid-2x2">
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Duração Planejada</div>
+                                                  <div class="progresso-valor-2x2">16</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Qtd. Diária Planejada</div>
+                                                  <div class="progresso-valor-2x2">12 mês</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Progresso Planejado</div>
+                                                  <div class="progresso-valor-2x2">100%</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Progresso Real</div>
+                                                  <div class="progresso-valor-2x2">100%</div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <!-- ANÁLISE FINANCEIRA -->
+                          <div class="analise-section">
+                              <div class="analise-title" onclick="toggleAnaliseSection(this, 'financeira-concluidas-1.01.03')">
+                                  <i class="fas fa-money-bill-wave toggle-icon"></i>
+                                  Análise Financeira
+                              </div>
+
+                              <div class="analise-content" id="financeira-concluidas-1.01.03">
+                                  <div class="analise-financeira-grid">
+                                      <!-- Quadro 1: Valor Total da Execução -->
                                       <div class="financeira-quadro">
-                                          <h4>Dados Financeiros</h4>
+                                          <h4>Valor Total da Execução</h4>
                                           <div class="financeira-item">
-                                              <div class="financeira-label">Valor Total da Execução</div>
                                               <div class="financeira-valor total">R$ 136.640,00</div>
                                           </div>
+                                      </div>
+
+                                      <!-- Quadro 2: Valores da Atividade -->
+                                      <div class="financeira-quadro">
+                                          <h4>Valores da Atividade</h4>
                                           <div class="financeira-item">
                                               <div class="financeira-label">Valor Planejado</div>
                                               <div class="financeira-valor planejado">R$ 40.992,00</div>
@@ -1269,20 +1296,8 @@
                                               <div class="financeira-valor saldo">R$ -40.992,00</div>
                                           </div>
                                       </div>
-                                  </div>
-                              </div>
-                          </div>
 
-                          <!-- ANÁLISE DE CADEIA -->
-                          <div class="analise-section">
-                              <div class="analise-title" onclick="toggleAnaliseSection(this, 'cadeia-concluidas-1.01.03')">
-                                  <i class="fas fa-project-diagram toggle-icon"></i>
-                                  Impacto em Cadeia
-                              </div>
-
-                              <div class="analise-content" id="cadeia-concluidas-1.01.03">
-                                  <div class="analise-financeira-grid">
-                                      <!-- Quadro 1: Valores em Cadeia -->
+                                      <!-- Quadro 3: Valores em Cadeia -->
                                       <div class="financeira-quadro">
                                           <h4>Valores em Cadeia (Sucessoras Diretas)</h4>
                                           <div class="financeira-item">
@@ -1296,48 +1311,6 @@
                                           <div class="financeira-item">
                                               <div class="financeira-label">Saldo em Cadeia</div>
                                               <div class="financeira-valor saldo">R$ 0,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Sucessoras Diretas</div>
-                                              <div class="financeira-valor">0</div>
-                                          </div>
-                                      </div>
-
-                                      <!-- Quadro 2: Impacto Financeiro -->
-                                      <div class="financeira-quadro">
-                                          <h4>Impacto Financeiro</h4>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Valor da Atividade</div>
-                                              <div class="financeira-valor">R$ 40.992,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Valor Sucessoras Diretas</div>
-                                              <div class="financeira-valor">R$ 0,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Impacto Total</div>
-                                              <div class="financeira-valor">R$ 40.992,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Percentual no Projeto</div>
-                                              <div class="financeira-valor">1.3%</div>
-                                          </div>
-                                      </div>
-
-                                      <!-- Quadro 3: Criticidade -->
-                                      <div class="financeira-quadro">
-                                          <h4>Criticidade</h4>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Nível de Criticidade</div>
-                                              <div class="financeira-valor baixa">Baixa</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Predecessoras Diretas</div>
-                                              <div class="financeira-valor">1</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Sucessoras Diretas</div>
-                                              <div class="financeira-valor">0</div>
                                           </div>
                                       </div>
                                   </div>
@@ -1479,7 +1452,7 @@
                   <div class="atividade-accordion-content">
                       <div class="atividade-expanded">
               
-                          <!-- ANÁLISE FÍSICA SIMPLIFICADA -->
+                          <!-- ANÁLISE FÍSICA -->
                           <div class="analise-section">
                               <div class="analise-title" onclick="toggleAnaliseSection(this, 'fisica-atrasadas-1.01.01')">
                                   <i class="fas fa-chart-line toggle-icon"></i>
@@ -1509,26 +1482,6 @@
                                               </div>
                                           </div>
 
-                                          <!-- NOVO: QUADRO 4x4 COM AS 4 INFORMAÇÕES PRINCIPAIS -->
-                                          <div class="progresso-quadro-4x4">
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Duração Planejada</div>
-                                                  <div class="progresso-valor-4x4">24</div>
-                                              </div>
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Qtd. Diária Planejada</div>
-                                                  <div class="progresso-valor-4x4">5</div>
-                                              </div>
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Progresso Planejado</div>
-                                                  <div class="progresso-valor-4x4">50%</div>
-                                              </div>
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Progresso Real</div>
-                                                  <div class="progresso-valor-4x4">0%</div>
-                                              </div>
-                                          </div>
-
                                           <!-- QUADRO DE VARIAÇÕES E MARGEM -->
                                           <div class="variacoes-quadro">
                                               <div class="variacoes-grid">
@@ -1552,13 +1505,51 @@
                                           </div>
                                       </div>
 
-                                      <!-- Quadro 2: Dados Financeiros -->
+                                      <!-- Quadro 2: Progressos - MODIFICADO: grid 2x2 com apenas 4 campos -->
+                                      <div class="progresso-quadro">
+                                          <div class="progresso-grid-2x2">
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Duração Planejada</div>
+                                                  <div class="progresso-valor-2x2">24</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Qtd. Diária Planejada</div>
+                                                  <div class="progresso-valor-2x2">5 %</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Progresso Planejado</div>
+                                                  <div class="progresso-valor-2x2">50%</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Progresso Real</div>
+                                                  <div class="progresso-valor-2x2">0%</div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <!-- ANÁLISE FINANCEIRA -->
+                          <div class="analise-section">
+                              <div class="analise-title" onclick="toggleAnaliseSection(this, 'financeira-atrasadas-1.01.01')">
+                                  <i class="fas fa-money-bill-wave toggle-icon"></i>
+                                  Análise Financeira
+                              </div>
+
+                              <div class="analise-content" id="financeira-atrasadas-1.01.01">
+                                  <div class="analise-financeira-grid">
+                                      <!-- Quadro 1: Valor Total da Execução -->
                                       <div class="financeira-quadro">
-                                          <h4>Dados Financeiros</h4>
+                                          <h4>Valor Total da Execução</h4>
                                           <div class="financeira-item">
-                                              <div class="financeira-label">Valor Total da Execução</div>
                                               <div class="financeira-valor total">R$ 1.147.776,00</div>
                                           </div>
+                                      </div>
+
+                                      <!-- Quadro 2: Valores da Atividade -->
+                                      <div class="financeira-quadro">
+                                          <h4>Valores da Atividade</h4>
                                           <div class="financeira-item">
                                               <div class="financeira-label">Valor Planejado</div>
                                               <div class="financeira-valor planejado">R$ 1.052.128,00</div>
@@ -1572,20 +1563,8 @@
                                               <div class="financeira-valor saldo">R$ -1.052.128,00</div>
                                           </div>
                                       </div>
-                                  </div>
-                              </div>
-                          </div>
 
-                          <!-- ANÁLISE DE CADEIA -->
-                          <div class="analise-section">
-                              <div class="analise-title" onclick="toggleAnaliseSection(this, 'cadeia-atrasadas-1.01.01')">
-                                  <i class="fas fa-project-diagram toggle-icon"></i>
-                                  Impacto em Cadeia
-                              </div>
-
-                              <div class="analise-content" id="cadeia-atrasadas-1.01.01">
-                                  <div class="analise-financeira-grid">
-                                      <!-- Quadro 1: Valores em Cadeia -->
+                                      <!-- Quadro 3: Valores em Cadeia -->
                                       <div class="financeira-quadro">
                                           <h4>Valores em Cadeia (Sucessoras Diretas)</h4>
                                           <div class="financeira-item">
@@ -1599,48 +1578,6 @@
                                           <div class="financeira-item">
                                               <div class="financeira-label">Saldo em Cadeia</div>
                                               <div class="financeira-valor saldo">R$ -1.052.128,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Sucessoras Diretas</div>
-                                              <div class="financeira-valor">22</div>
-                                          </div>
-                                      </div>
-
-                                      <!-- Quadro 2: Impacto Financeiro -->
-                                      <div class="financeira-quadro">
-                                          <h4>Impacto Financeiro</h4>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Valor da Atividade</div>
-                                              <div class="financeira-valor">R$ 1.052.128,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Valor Sucessoras Diretas</div>
-                                              <div class="financeira-valor">R$ 1.052.128,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Impacto Total</div>
-                                              <div class="financeira-valor">R$ 2.104.256,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Percentual no Projeto</div>
-                                              <div class="financeira-valor">66.67%</div>
-                                          </div>
-                                      </div>
-
-                                      <!-- Quadro 3: Criticidade -->
-                                      <div class="financeira-quadro">
-                                          <h4>Criticidade</h4>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Nível de Criticidade</div>
-                                              <div class="financeira-valor crítica">Crítica</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Predecessoras Diretas</div>
-                                              <div class="financeira-valor">0</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Sucessoras Diretas</div>
-                                              <div class="financeira-valor">22</div>
                                           </div>
                                       </div>
                                   </div>
@@ -3000,7 +2937,7 @@
                   <div class="atividade-accordion-content">
                       <div class="atividade-expanded">
               
-                          <!-- ANÁLISE FÍSICA SIMPLIFICADA -->
+                          <!-- ANÁLISE FÍSICA -->
                           <div class="analise-section">
                               <div class="analise-title" onclick="toggleAnaliseSection(this, 'fisica-execucao-1.01.02')">
                                   <i class="fas fa-chart-line toggle-icon"></i>
@@ -3030,26 +2967,6 @@
                                               </div>
                                           </div>
 
-                                          <!-- NOVO: QUADRO 4x4 COM AS 4 INFORMAÇÕES PRINCIPAIS -->
-                                          <div class="progresso-quadro-4x4">
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Duração Planejada</div>
-                                                  <div class="progresso-valor-4x4">16</div>
-                                              </div>
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Qtd. Diária Planejada</div>
-                                                  <div class="progresso-valor-4x4">6</div>
-                                              </div>
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Progresso Planejado</div>
-                                                  <div class="progresso-valor-4x4">100%</div>
-                                              </div>
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Progresso Real</div>
-                                                  <div class="progresso-valor-4x4">0%</div>
-                                              </div>
-                                          </div>
-
                                           <!-- QUADRO DE VARIAÇÕES E MARGEM -->
                                           <div class="variacoes-quadro">
                                               <div class="variacoes-grid">
@@ -3073,13 +2990,51 @@
                                           </div>
                                       </div>
 
-                                      <!-- Quadro 2: Dados Financeiros -->
+                                      <!-- Quadro 2: Progressos - MODIFICADO: grid 2x2 com apenas 4 campos -->
+                                      <div class="progresso-quadro">
+                                          <div class="progresso-grid-2x2">
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Duração Planejada</div>
+                                                  <div class="progresso-valor-2x2">16</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Qtd. Diária Planejada</div>
+                                                  <div class="progresso-valor-2x2">6 %</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Progresso Planejado</div>
+                                                  <div class="progresso-valor-2x2">100%</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Progresso Real</div>
+                                                  <div class="progresso-valor-2x2">0%</div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <!-- ANÁLISE FINANCEIRA -->
+                          <div class="analise-section">
+                              <div class="analise-title" onclick="toggleAnaliseSection(this, 'financeira-execucao-1.01.02')">
+                                  <i class="fas fa-money-bill-wave toggle-icon"></i>
+                                  Análise Financeira
+                              </div>
+
+                              <div class="analise-content" id="financeira-execucao-1.01.02">
+                                  <div class="analise-financeira-grid">
+                                      <!-- Quadro 1: Valor Total da Execução -->
                                       <div class="financeira-quadro">
-                                          <h4>Dados Financeiros</h4>
+                                          <h4>Valor Total da Execução</h4>
                                           <div class="financeira-item">
-                                              <div class="financeira-label">Valor Total da Execução</div>
                                               <div class="financeira-valor total">R$ 1.011.136,00</div>
                                           </div>
+                                      </div>
+
+                                      <!-- Quadro 2: Valores da Atividade -->
+                                      <div class="financeira-quadro">
+                                          <h4>Valores da Atividade</h4>
                                           <div class="financeira-item">
                                               <div class="financeira-label">Valor Planejado</div>
                                               <div class="financeira-valor planejado">R$ 1.011.136,00</div>
@@ -3093,20 +3048,8 @@
                                               <div class="financeira-valor saldo">R$ -1.011.136,00</div>
                                           </div>
                                       </div>
-                                  </div>
-                              </div>
-                          </div>
 
-                          <!-- ANÁLISE DE CADEIA -->
-                          <div class="analise-section">
-                              <div class="analise-title" onclick="toggleAnaliseSection(this, 'cadeia-execucao-1.01.02')">
-                                  <i class="fas fa-project-diagram toggle-icon"></i>
-                                  Impacto em Cadeia
-                              </div>
-
-                              <div class="analise-content" id="cadeia-execucao-1.01.02">
-                                  <div class="analise-financeira-grid">
-                                      <!-- Quadro 1: Valores em Cadeia -->
+                                      <!-- Quadro 3: Valores em Cadeia -->
                                       <div class="financeira-quadro">
                                           <h4>Valores em Cadeia (Sucessoras Diretas)</h4>
                                           <div class="financeira-item">
@@ -3120,48 +3063,6 @@
                                           <div class="financeira-item">
                                               <div class="financeira-label">Saldo em Cadeia</div>
                                               <div class="financeira-valor saldo">R$ 0,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Sucessoras Diretas</div>
-                                              <div class="financeira-valor">0</div>
-                                          </div>
-                                      </div>
-
-                                      <!-- Quadro 2: Impacto Financeiro -->
-                                      <div class="financeira-quadro">
-                                          <h4>Impacto Financeiro</h4>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Valor da Atividade</div>
-                                              <div class="financeira-valor">R$ 1.011.136,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Valor Sucessoras Diretas</div>
-                                              <div class="financeira-valor">R$ 0,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Impacto Total</div>
-                                              <div class="financeira-valor">R$ 1.011.136,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Percentual no Projeto</div>
-                                              <div class="financeira-valor">32.03%</div>
-                                          </div>
-                                      </div>
-
-                                      <!-- Quadro 3: Criticidade -->
-                                      <div class="financeira-quadro">
-                                          <h4>Criticidade</h4>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Nível de Criticidade</div>
-                                              <div class="financeira-valor crítica">Crítica</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Predecessoras Diretas</div>
-                                              <div class="financeira-valor">1</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Sucessoras Diretas</div>
-                                              <div class="financeira-valor">0</div>
                                           </div>
                                       </div>
                                   </div>
@@ -3303,7 +3204,7 @@
                   <div class="atividade-accordion-content">
                       <div class="atividade-expanded">
               
-                          <!-- ANÁLISE FÍSICA SIMPLIFICADA -->
+                          <!-- ANÁLISE FÍSICA -->
                           <div class="analise-section">
                               <div class="analise-title" onclick="toggleAnaliseSection(this, 'fisica-proximas-2.01.01')">
                                   <i class="fas fa-chart-line toggle-icon"></i>
@@ -3333,26 +3234,6 @@
                                               </div>
                                           </div>
 
-                                          <!-- NOVO: QUADRO 4x4 COM AS 4 INFORMAÇÕES PRINCIPAIS -->
-                                          <div class="progresso-quadro-4x4">
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Duração Planejada</div>
-                                                  <div class="progresso-valor-4x4">6</div>
-                                              </div>
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Qtd. Diária Planejada</div>
-                                                  <div class="progresso-valor-4x4">17</div>
-                                              </div>
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Progresso Planejado</div>
-                                                  <div class="progresso-valor-4x4">100%</div>
-                                              </div>
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Progresso Real</div>
-                                                  <div class="progresso-valor-4x4">0%</div>
-                                              </div>
-                                          </div>
-
                                           <!-- QUADRO DE VARIAÇÕES E MARGEM -->
                                           <div class="variacoes-quadro">
                                               <div class="variacoes-grid">
@@ -3376,13 +3257,51 @@
                                           </div>
                                       </div>
 
-                                      <!-- Quadro 2: Dados Financeiros -->
+                                      <!-- Quadro 2: Progressos - MODIFICADO: grid 2x2 com apenas 4 campos -->
+                                      <div class="progresso-quadro">
+                                          <div class="progresso-grid-2x2">
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Duração Planejada</div>
+                                                  <div class="progresso-valor-2x2">6</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Qtd. Diária Planejada</div>
+                                                  <div class="progresso-valor-2x2">17 nan</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Progresso Planejado</div>
+                                                  <div class="progresso-valor-2x2">100%</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Progresso Real</div>
+                                                  <div class="progresso-valor-2x2">0%</div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <!-- ANÁLISE FINANCEIRA -->
+                          <div class="analise-section">
+                              <div class="analise-title" onclick="toggleAnaliseSection(this, 'financeira-proximas-2.01.01')">
+                                  <i class="fas fa-money-bill-wave toggle-icon"></i>
+                                  Análise Financeira
+                              </div>
+
+                              <div class="analise-content" id="financeira-proximas-2.01.01">
+                                  <div class="analise-financeira-grid">
+                                      <!-- Quadro 1: Valor Total da Execução -->
                                       <div class="financeira-quadro">
-                                          <h4>Dados Financeiros</h4>
+                                          <h4>Valor Total da Execução</h4>
                                           <div class="financeira-item">
-                                              <div class="financeira-label">Valor Total da Execução</div>
                                               <div class="financeira-valor total">R$ 0,00</div>
                                           </div>
+                                      </div>
+
+                                      <!-- Quadro 2: Valores da Atividade -->
+                                      <div class="financeira-quadro">
+                                          <h4>Valores da Atividade</h4>
                                           <div class="financeira-item">
                                               <div class="financeira-label">Valor Planejado</div>
                                               <div class="financeira-valor planejado">R$ 0,00</div>
@@ -3396,20 +3315,8 @@
                                               <div class="financeira-valor saldo">R$ 0,00</div>
                                           </div>
                                       </div>
-                                  </div>
-                              </div>
-                          </div>
 
-                          <!-- ANÁLISE DE CADEIA -->
-                          <div class="analise-section">
-                              <div class="analise-title" onclick="toggleAnaliseSection(this, 'cadeia-proximas-2.01.01')">
-                                  <i class="fas fa-project-diagram toggle-icon"></i>
-                                  Impacto em Cadeia
-                              </div>
-
-                              <div class="analise-content" id="cadeia-proximas-2.01.01">
-                                  <div class="analise-financeira-grid">
-                                      <!-- Quadro 1: Valores em Cadeia -->
+                                      <!-- Quadro 3: Valores em Cadeia -->
                                       <div class="financeira-quadro">
                                           <h4>Valores em Cadeia (Sucessoras Diretas)</h4>
                                           <div class="financeira-item">
@@ -3423,48 +3330,6 @@
                                           <div class="financeira-item">
                                               <div class="financeira-label">Saldo em Cadeia</div>
                                               <div class="financeira-valor saldo">R$ 0,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Sucessoras Diretas</div>
-                                              <div class="financeira-valor">0</div>
-                                          </div>
-                                      </div>
-
-                                      <!-- Quadro 2: Impacto Financeiro -->
-                                      <div class="financeira-quadro">
-                                          <h4>Impacto Financeiro</h4>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Valor da Atividade</div>
-                                              <div class="financeira-valor">R$ 0,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Valor Sucessoras Diretas</div>
-                                              <div class="financeira-valor">R$ 0,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Impacto Total</div>
-                                              <div class="financeira-valor">R$ 0,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Percentual no Projeto</div>
-                                              <div class="financeira-valor">0.0%</div>
-                                          </div>
-                                      </div>
-
-                                      <!-- Quadro 3: Criticidade -->
-                                      <div class="financeira-quadro">
-                                          <h4>Criticidade</h4>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Nível de Criticidade</div>
-                                              <div class="financeira-valor baixa">Baixa</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Predecessoras Diretas</div>
-                                              <div class="financeira-valor">0</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Sucessoras Diretas</div>
-                                              <div class="financeira-valor">0</div>
                                           </div>
                                       </div>
                                   </div>
@@ -3548,7 +3413,7 @@
                   <div class="atividade-accordion-content">
                       <div class="atividade-expanded">
               
-                          <!-- ANÁLISE FÍSICA SIMPLIFICADA -->
+                          <!-- ANÁLISE FÍSICA -->
                           <div class="analise-section">
                               <div class="analise-title" onclick="toggleAnaliseSection(this, 'fisica-planejadas-2.01.01.01')">
                                   <i class="fas fa-chart-line toggle-icon"></i>
@@ -3578,26 +3443,6 @@
                                               </div>
                                           </div>
 
-                                          <!-- NOVO: QUADRO 4x4 COM AS 4 INFORMAÇÕES PRINCIPAIS -->
-                                          <div class="progresso-quadro-4x4">
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Duração Planejada</div>
-                                                  <div class="progresso-valor-4x4">20</div>
-                                              </div>
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Qtd. Diária Planejada</div>
-                                                  <div class="progresso-valor-4x4">4</div>
-                                              </div>
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Progresso Planejado</div>
-                                                  <div class="progresso-valor-4x4">100%</div>
-                                              </div>
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Progresso Real</div>
-                                                  <div class="progresso-valor-4x4">0%</div>
-                                              </div>
-                                          </div>
-
                                           <!-- QUADRO DE VARIAÇÕES E MARGEM -->
                                           <div class="variacoes-quadro">
                                               <div class="variacoes-grid">
@@ -3621,13 +3466,51 @@
                                           </div>
                                       </div>
 
-                                      <!-- Quadro 2: Dados Financeiros -->
+                                      <!-- Quadro 2: Progressos - MODIFICADO: grid 2x2 com apenas 4 campos -->
+                                      <div class="progresso-quadro">
+                                          <div class="progresso-grid-2x2">
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Duração Planejada</div>
+                                                  <div class="progresso-valor-2x2">20</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Qtd. Diária Planejada</div>
+                                                  <div class="progresso-valor-2x2">4 %</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Progresso Planejado</div>
+                                                  <div class="progresso-valor-2x2">100%</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Progresso Real</div>
+                                                  <div class="progresso-valor-2x2">0%</div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <!-- ANÁLISE FINANCEIRA -->
+                          <div class="analise-section">
+                              <div class="analise-title" onclick="toggleAnaliseSection(this, 'financeira-planejadas-2.01.01.01')">
+                                  <i class="fas fa-money-bill-wave toggle-icon"></i>
+                                  Análise Financeira
+                              </div>
+
+                              <div class="analise-content" id="financeira-planejadas-2.01.01.01">
+                                  <div class="analise-financeira-grid">
+                                      <!-- Quadro 1: Valor Total da Execução -->
                                       <div class="financeira-quadro">
-                                          <h4>Dados Financeiros</h4>
+                                          <h4>Valor Total da Execução</h4>
                                           <div class="financeira-item">
-                                              <div class="financeira-label">Valor Total da Execução</div>
                                               <div class="financeira-valor total">R$ 0,00</div>
                                           </div>
+                                      </div>
+
+                                      <!-- Quadro 2: Valores da Atividade -->
+                                      <div class="financeira-quadro">
+                                          <h4>Valores da Atividade</h4>
                                           <div class="financeira-item">
                                               <div class="financeira-label">Valor Planejado</div>
                                               <div class="financeira-valor planejado">R$ 0,00</div>
@@ -3641,20 +3524,8 @@
                                               <div class="financeira-valor saldo">R$ 0,00</div>
                                           </div>
                                       </div>
-                                  </div>
-                              </div>
-                          </div>
 
-                          <!-- ANÁLISE DE CADEIA -->
-                          <div class="analise-section">
-                              <div class="analise-title" onclick="toggleAnaliseSection(this, 'cadeia-planejadas-2.01.01.01')">
-                                  <i class="fas fa-project-diagram toggle-icon"></i>
-                                  Impacto em Cadeia
-                              </div>
-
-                              <div class="analise-content" id="cadeia-planejadas-2.01.01.01">
-                                  <div class="analise-financeira-grid">
-                                      <!-- Quadro 1: Valores em Cadeia -->
+                                      <!-- Quadro 3: Valores em Cadeia -->
                                       <div class="financeira-quadro">
                                           <h4>Valores em Cadeia (Sucessoras Diretas)</h4>
                                           <div class="financeira-item">
@@ -3668,48 +3539,6 @@
                                           <div class="financeira-item">
                                               <div class="financeira-label">Saldo em Cadeia</div>
                                               <div class="financeira-valor saldo">R$ 0,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Sucessoras Diretas</div>
-                                              <div class="financeira-valor">2</div>
-                                          </div>
-                                      </div>
-
-                                      <!-- Quadro 2: Impacto Financeiro -->
-                                      <div class="financeira-quadro">
-                                          <h4>Impacto Financeiro</h4>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Valor da Atividade</div>
-                                              <div class="financeira-valor">R$ 0,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Valor Sucessoras Diretas</div>
-                                              <div class="financeira-valor">R$ 0,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Impacto Total</div>
-                                              <div class="financeira-valor">R$ 0,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Percentual no Projeto</div>
-                                              <div class="financeira-valor">0.0%</div>
-                                          </div>
-                                      </div>
-
-                                      <!-- Quadro 3: Criticidade -->
-                                      <div class="financeira-quadro">
-                                          <h4>Criticidade</h4>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Nível de Criticidade</div>
-                                              <div class="financeira-valor baixa">Baixa</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Predecessoras Diretas</div>
-                                              <div class="financeira-valor">1</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Sucessoras Diretas</div>
-                                              <div class="financeira-valor">2</div>
                                           </div>
                                       </div>
                                   </div>
@@ -4074,7 +3903,7 @@
                               </div>
                           </div>
                   
-                          <!-- ANÁLISE FÍSICA SIMPLIFICADA -->
+                          <!-- ANÁLISE FÍSICA -->
                           <div class="analise-section">
                               <div class="analise-title" onclick="toggleAnaliseSection(this, 'fisica-criticas-1.01.01')">
                                   <i class="fas fa-chart-line toggle-icon"></i>
@@ -4104,26 +3933,6 @@
                                               </div>
                                           </div>
 
-                                          <!-- NOVO: QUADRO 4x4 COM AS 4 INFORMAÇÕES PRINCIPAIS -->
-                                          <div class="progresso-quadro-4x4">
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Duração Planejada</div>
-                                                  <div class="progresso-valor-4x4">24</div>
-                                              </div>
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Qtd. Diária Planejada</div>
-                                                  <div class="progresso-valor-4x4">5</div>
-                                              </div>
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Progresso Planejado</div>
-                                                  <div class="progresso-valor-4x4">50%</div>
-                                              </div>
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Progresso Real</div>
-                                                  <div class="progresso-valor-4x4">0%</div>
-                                              </div>
-                                          </div>
-
                                           <!-- QUADRO DE VARIAÇÕES E MARGEM -->
                                           <div class="variacoes-quadro">
                                               <div class="variacoes-grid">
@@ -4147,13 +3956,51 @@
                                           </div>
                                       </div>
 
-                                      <!-- Quadro 2: Dados Financeiros -->
+                                      <!-- Quadro 2: Progressos - MODIFICADO: grid 2x2 com apenas 4 campos -->
+                                      <div class="progresso-quadro">
+                                          <div class="progresso-grid-2x2">
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Duração Planejada</div>
+                                                  <div class="progresso-valor-2x2">24</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Qtd. Diária Planejada</div>
+                                                  <div class="progresso-valor-2x2">5 %</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Progresso Planejado</div>
+                                                  <div class="progresso-valor-2x2">50%</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Progresso Real</div>
+                                                  <div class="progresso-valor-2x2">0%</div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <!-- ANÁLISE FINANCEIRA -->
+                          <div class="analise-section">
+                              <div class="analise-title" onclick="toggleAnaliseSection(this, 'financeira-criticas-1.01.01')">
+                                  <i class="fas fa-money-bill-wave toggle-icon"></i>
+                                  Análise Financeira
+                              </div>
+
+                              <div class="analise-content" id="financeira-criticas-1.01.01">
+                                  <div class="analise-financeira-grid">
+                                      <!-- Quadro 1: Valor Total da Execução -->
                                       <div class="financeira-quadro">
-                                          <h4>Dados Financeiros</h4>
+                                          <h4>Valor Total da Execução</h4>
                                           <div class="financeira-item">
-                                              <div class="financeira-label">Valor Total da Execução</div>
                                               <div class="financeira-valor total">R$ 1.147.776,00</div>
                                           </div>
+                                      </div>
+
+                                      <!-- Quadro 2: Valores da Atividade -->
+                                      <div class="financeira-quadro">
+                                          <h4>Valores da Atividade</h4>
                                           <div class="financeira-item">
                                               <div class="financeira-label">Valor Planejado</div>
                                               <div class="financeira-valor planejado">R$ 1.052.128,00</div>
@@ -4167,20 +4014,8 @@
                                               <div class="financeira-valor saldo">R$ -1.052.128,00</div>
                                           </div>
                                       </div>
-                                  </div>
-                              </div>
-                          </div>
 
-                          <!-- ANÁLISE DE CADEIA -->
-                          <div class="analise-section">
-                              <div class="analise-title" onclick="toggleAnaliseSection(this, 'cadeia-criticas-1.01.01')">
-                                  <i class="fas fa-project-diagram toggle-icon"></i>
-                                  Impacto em Cadeia
-                              </div>
-
-                              <div class="analise-content" id="cadeia-criticas-1.01.01">
-                                  <div class="analise-financeira-grid">
-                                      <!-- Quadro 1: Valores em Cadeia -->
+                                      <!-- Quadro 3: Valores em Cadeia -->
                                       <div class="financeira-quadro">
                                           <h4>Valores em Cadeia (Sucessoras Diretas)</h4>
                                           <div class="financeira-item">
@@ -4194,48 +4029,6 @@
                                           <div class="financeira-item">
                                               <div class="financeira-label">Saldo em Cadeia</div>
                                               <div class="financeira-valor saldo">R$ -1.052.128,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Sucessoras Diretas</div>
-                                              <div class="financeira-valor">22</div>
-                                          </div>
-                                      </div>
-
-                                      <!-- Quadro 2: Impacto Financeiro -->
-                                      <div class="financeira-quadro">
-                                          <h4>Impacto Financeiro</h4>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Valor da Atividade</div>
-                                              <div class="financeira-valor">R$ 1.052.128,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Valor Sucessoras Diretas</div>
-                                              <div class="financeira-valor">R$ 1.052.128,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Impacto Total</div>
-                                              <div class="financeira-valor">R$ 2.104.256,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Percentual no Projeto</div>
-                                              <div class="financeira-valor">66.67%</div>
-                                          </div>
-                                      </div>
-
-                                      <!-- Quadro 3: Criticidade -->
-                                      <div class="financeira-quadro">
-                                          <h4>Criticidade</h4>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Nível de Criticidade</div>
-                                              <div class="financeira-valor crítica">Crítica</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Predecessoras Diretas</div>
-                                              <div class="financeira-valor">0</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Sucessoras Diretas</div>
-                                              <div class="financeira-valor">22</div>
                                           </div>
                                       </div>
                                   </div>
@@ -5680,7 +5473,7 @@
                               </div>
                           </div>
                   
-                          <!-- ANÁLISE FÍSICA SIMPLIFICADA -->
+                          <!-- ANÁLISE FÍSICA -->
                           <div class="analise-section">
                               <div class="analise-title" onclick="toggleAnaliseSection(this, 'fisica-criticas-1.01.02')">
                                   <i class="fas fa-chart-line toggle-icon"></i>
@@ -5710,26 +5503,6 @@
                                               </div>
                                           </div>
 
-                                          <!-- NOVO: QUADRO 4x4 COM AS 4 INFORMAÇÕES PRINCIPAIS -->
-                                          <div class="progresso-quadro-4x4">
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Duração Planejada</div>
-                                                  <div class="progresso-valor-4x4">16</div>
-                                              </div>
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Qtd. Diária Planejada</div>
-                                                  <div class="progresso-valor-4x4">6</div>
-                                              </div>
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Progresso Planejado</div>
-                                                  <div class="progresso-valor-4x4">100%</div>
-                                              </div>
-                                              <div class="progresso-item-4x4">
-                                                  <div class="progresso-label-4x4">Progresso Real</div>
-                                                  <div class="progresso-valor-4x4">0%</div>
-                                              </div>
-                                          </div>
-
                                           <!-- QUADRO DE VARIAÇÕES E MARGEM -->
                                           <div class="variacoes-quadro">
                                               <div class="variacoes-grid">
@@ -5753,13 +5526,51 @@
                                           </div>
                                       </div>
 
-                                      <!-- Quadro 2: Dados Financeiros -->
+                                      <!-- Quadro 2: Progressos - MODIFICADO: grid 2x2 com apenas 4 campos -->
+                                      <div class="progresso-quadro">
+                                          <div class="progresso-grid-2x2">
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Duração Planejada</div>
+                                                  <div class="progresso-valor-2x2">16</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Qtd. Diária Planejada</div>
+                                                  <div class="progresso-valor-2x2">6 %</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Progresso Planejado</div>
+                                                  <div class="progresso-valor-2x2">100%</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Progresso Real</div>
+                                                  <div class="progresso-valor-2x2">0%</div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <!-- ANÁLISE FINANCEIRA -->
+                          <div class="analise-section">
+                              <div class="analise-title" onclick="toggleAnaliseSection(this, 'financeira-criticas-1.01.02')">
+                                  <i class="fas fa-money-bill-wave toggle-icon"></i>
+                                  Análise Financeira
+                              </div>
+
+                              <div class="analise-content" id="financeira-criticas-1.01.02">
+                                  <div class="analise-financeira-grid">
+                                      <!-- Quadro 1: Valor Total da Execução -->
                                       <div class="financeira-quadro">
-                                          <h4>Dados Financeiros</h4>
+                                          <h4>Valor Total da Execução</h4>
                                           <div class="financeira-item">
-                                              <div class="financeira-label">Valor Total da Execução</div>
                                               <div class="financeira-valor total">R$ 1.011.136,00</div>
                                           </div>
+                                      </div>
+
+                                      <!-- Quadro 2: Valores da Atividade -->
+                                      <div class="financeira-quadro">
+                                          <h4>Valores da Atividade</h4>
                                           <div class="financeira-item">
                                               <div class="financeira-label">Valor Planejado</div>
                                               <div class="financeira-valor planejado">R$ 1.011.136,00</div>
@@ -5773,20 +5584,8 @@
                                               <div class="financeira-valor saldo">R$ -1.011.136,00</div>
                                           </div>
                                       </div>
-                                  </div>
-                              </div>
-                          </div>
 
-                          <!-- ANÁLISE DE CADEIA -->
-                          <div class="analise-section">
-                              <div class="analise-title" onclick="toggleAnaliseSection(this, 'cadeia-criticas-1.01.02')">
-                                  <i class="fas fa-project-diagram toggle-icon"></i>
-                                  Impacto em Cadeia
-                              </div>
-
-                              <div class="analise-content" id="cadeia-criticas-1.01.02">
-                                  <div class="analise-financeira-grid">
-                                      <!-- Quadro 1: Valores em Cadeia -->
+                                      <!-- Quadro 3: Valores em Cadeia -->
                                       <div class="financeira-quadro">
                                           <h4>Valores em Cadeia (Sucessoras Diretas)</h4>
                                           <div class="financeira-item">
@@ -5800,48 +5599,6 @@
                                           <div class="financeira-item">
                                               <div class="financeira-label">Saldo em Cadeia</div>
                                               <div class="financeira-valor saldo">R$ 0,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Sucessoras Diretas</div>
-                                              <div class="financeira-valor">0</div>
-                                          </div>
-                                      </div>
-
-                                      <!-- Quadro 2: Impacto Financeiro -->
-                                      <div class="financeira-quadro">
-                                          <h4>Impacto Financeiro</h4>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Valor da Atividade</div>
-                                              <div class="financeira-valor">R$ 1.011.136,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Valor Sucessoras Diretas</div>
-                                              <div class="financeira-valor">R$ 0,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Impacto Total</div>
-                                              <div class="financeira-valor">R$ 1.011.136,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Percentual no Projeto</div>
-                                              <div class="financeira-valor">32.03%</div>
-                                          </div>
-                                      </div>
-
-                                      <!-- Quadro 3: Criticidade -->
-                                      <div class="financeira-quadro">
-                                          <h4>Criticidade</h4>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Nível de Criticidade</div>
-                                              <div class="financeira-valor crítica">Crítica</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Predecessoras Diretas</div>
-                                              <div class="financeira-valor">1</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Sucessoras Diretas</div>
-                                              <div class="financeira-valor">0</div>
                                           </div>
                                       </div>
                                   </div>
