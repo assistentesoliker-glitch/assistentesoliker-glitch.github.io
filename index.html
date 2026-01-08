@@ -3,8 +3,8 @@
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Relatório Diário de Obra - UFV de Teste </title>
-      <link rel = "icon" type="image/png" href="favicon.png"
+      <title>Relatório Diário de Obra - UFV de Teste</title>
+      <link rel="icon" type="image/png" href="favicon.png">
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -310,6 +310,52 @@
               flex: 1;
           }
 
+          /* NOVO: BADGE DE SETOR */
+          .setor-badge {
+              background: rgba(255, 255, 255, 0.9);
+              border: 1px solid var(--gray-300);
+              color: var(--gray-700);
+              padding: 4px 10px;
+              border-radius: 12px;
+              font-size: 0.8rem;
+              font-weight: 600;
+              display: inline-flex;
+              align-items: center;
+              gap: 5px;
+              margin-left: 10px;
+          }
+
+          /* ALERTA DE CRÍTICA MARGEM ZERO - NOVO ESTILO */
+          .critica-margem-zero {
+              display: inline-flex;
+              align-items: center;
+              margin-left: 8px;
+          }
+
+          .critica-icon {
+              color: #dc2626;
+              font-size: 1.1rem;
+              cursor: pointer;
+              position: relative;
+          }
+
+          .critica-icon:hover::after {
+              content: "Atividade Crítica: Margem de atraso zero dias";
+              position: absolute;
+              top: -10px;
+              left: 25px;
+              background: #fee2e2;
+              color: #991b1b;
+              padding: 6px 10px;
+              border-radius: 6px;
+              font-size: 0.75rem;
+              font-weight: 600;
+              white-space: nowrap;
+              z-index: 1000;
+              border: 1px solid #fca5a5;
+              box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+          }
+
           .accordion-badge {
               padding: 6px 12px;
               border-radius: 16px;
@@ -324,7 +370,7 @@
           .accordion-badge.planejada { background: #f3f4f6; color: #4b5563; }
           .accordion-badge.critica { background: #fee2e2; color: #991b1b; font-weight: 800; }
 
-          /* ALERTA DE PRODUTIVIDADE EM ATRASO - NOVO ESTILO */
+          /* ALERTA DE PRODUTIVIDADE EM ATRASO */
           .alerta-triangulo {
               display: inline-flex;
               align-items: center;
@@ -441,7 +487,7 @@
               margin-bottom: 0;
           }
 
-          /* NOVO: CALENDÁRIO SEMANAL (APENAS PARA TAB CRÍTICAS) - MODIFICADO */
+          /* NOVO: CALENDÁRIO SEMANAL (APENAS PARA TAB CRÍTICAS) */
           .calendario-semanal {
               background: var(--gray-50);
               padding: 15px;
@@ -507,12 +553,12 @@
               min-height: 50px;
           }
 
-          /* CORES DO CALENDÁRIO ATUALIZADAS - MAIS BONITAS E COERENTES */
+          /* CORES DO CALENDÁRIO */
           .qtd-planejada {
               font-size: 0.85rem;
               font-weight: 600;
               color: white;
-              background: #3b82f6; /* Azul mais bonito */
+              background: #3b82f6;
               padding: 4px 6px;
               border-radius: 4px;
           }
@@ -521,7 +567,7 @@
               font-size: 0.85rem;
               font-weight: 600;
               color: white;
-              background: #10b981; /* Verde mais bonito */
+              background: #10b981;
               padding: 4px 6px;
               border-radius: 4px;
           }
@@ -530,7 +576,7 @@
               font-size: 0.85rem;
               font-weight: 600;
               color: #1e293b;
-              background: #fbbf24; /* Amarelo mais bonito */
+              background: #fbbf24;
               padding: 4px 6px;
               border-radius: 4px;
           }
@@ -545,7 +591,7 @@
               border: 1px dashed var(--gray-300);
           }
 
-          /* ANÁLISE FÍSICA - PARA TODAS AS TABS */
+          /* ANÁLISE FÍSICA - MODIFICADA PARA INCLUIR NOVOS CAMPOS */
           .analise-fisica-grid {
               display: grid;
               grid-template-columns: 1fr 1fr;
@@ -591,6 +637,85 @@
           .data-value.empty {
               color: var(--gray-400);
               font-style: italic;
+          }
+
+          /* NOVO: QUADRO DE VARIAÇÕES */
+          .variacoes-quadro {
+              background: var(--gray-50);
+              padding: 15px;
+              border-radius: 8px;
+              border-left: 3px solid #8b5cf6;
+              margin-top: 15px;
+          }
+
+          .variacoes-grid {
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+              gap: 12px;
+          }
+
+          .variacao-item {
+              padding: 10px;
+              background: white;
+              border-radius: 6px;
+              border: 1px solid var(--gray-200);
+              text-align: center;
+          }
+
+          .variacao-label {
+              font-size: 0.75rem;
+              color: var(--gray-600);
+              font-weight: 600;
+              margin-bottom: 6px;
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+          }
+
+          .variacao-value {
+              font-size: 1.1rem;
+              font-weight: 800;
+              color: var(--dark);
+          }
+
+          .variacao-value.critica {
+              color: #dc2626;
+          }
+
+          /* NOVO: QUADRO DE LOCAÇÃO DE RECURSOS */
+          .locacao-quadro {
+              background: var(--gray-50);
+              padding: 15px;
+              border-radius: 8px;
+              border-left: 3px solid #10b981;
+              margin-top: 15px;
+          }
+
+          .locacao-header {
+              font-size: 0.9rem;
+              font-weight: 700;
+              color: #065f46;
+              margin-bottom: 12px;
+              padding-bottom: 6px;
+              border-bottom: 1px solid #a7f3d0;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+          }
+
+          .locacao-content {
+              padding: 12px;
+              background: white;
+              border-radius: 6px;
+              border: 1px solid var(--gray-200);
+              font-size: 0.95rem;
+              color: var(--gray-700);
+          }
+
+          .locacao-empty {
+              color: var(--gray-400);
+              font-style: italic;
+              text-align: center;
+              padding: 20px;
           }
 
           /* QUADRO DIREITO - PROGRESSO */
@@ -962,6 +1087,10 @@
               .dias-grid {
                   grid-template-columns: repeat(4, 1fr);
               }
+
+              .variacoes-grid {
+                  grid-template-columns: repeat(2, 1fr);
+              }
           }
 
           @media (max-width: 768px) {
@@ -979,6 +1108,10 @@
 
               .dias-grid {
                   grid-template-columns: repeat(3, 1fr);
+              }
+
+              .variacoes-grid {
+                  grid-template-columns: 1fr;
               }
           }
 
@@ -1120,7 +1253,9 @@
                           <div class="accordion-codigo">#1.01.03</div>
                           <div class="accordion-titulo">
                               Administração Mensal
+                              <span class="setor-badge"><i class="fas fa-building"></i> Gestão</span>
                               
+                              <span class="critica-margem-zero"><i class="fas fa-skull-crossbones critica-icon"></i></span>
                           </div>
                           <span class="accordion-badge concluida">
                               <i class="fas fa-check-circle"></i>
@@ -1133,7 +1268,7 @@
                   <div class="atividade-accordion-content">
                       <div class="atividade-expanded">
               
-                          <!-- ANÁLISE FÍSICA -->
+                          <!-- ANÁLISE FÍSICA COM NOVOS CAMPOS -->
                           <div class="analise-section">
                               <div class="analise-title" onclick="toggleAnaliseSection(this, 'fisica-concluidas-1.01.03')">
                                   <i class="fas fa-chart-line toggle-icon"></i>
@@ -1162,9 +1297,42 @@
                                                   <div class="data-value">05/01/2026</div>
                                               </div>
                                           </div>
+
+                                          <!-- NOVO: QUADRO DE VARIAÇÕES -->
+                                          <div class="variacoes-quadro">
+                                              <div class="variacoes-grid">
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Variação de Início</div>
+                                                      <div class="variacao-value">0 days</div>
+                                                  </div>
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Variação de Término</div>
+                                                      <div class="variacao-value">0 days</div>
+                                                  </div>
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Variação de Duração</div>
+                                                      <div class="variacao-value">15 days</div>
+                                                  </div>
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Margem de Atraso</div>
+                                                      <div class="variacao-value critica"><span style="color: #dc2626; font-weight: 800;">200 days ⚠️</span></div>
+                                                  </div>
+                                              </div>
+                                          </div>
+
+                                          <!-- NOVO: QUADRO DE LOCAÇÃO DE RECURSOS -->
+                                          <div class="locacao-quadro">
+                                              <div class="locacao-header">
+                                                  <i class="fas fa-users"></i>
+                                                  Locação de Recursos
+                                              </div>
+                                              <div class="locacao-content">
+                                                  <div class="locacao-empty">Sem recursos alocados</div>
+                                              </div>
+                                          </div>
                                       </div>
 
-                                      <!-- Quadro 2: Progressos - COM DURAÇÃO PLANEJADA -->
+                                      <!-- Quadro 2: Progressos -->
                                       <div class="progresso-quadro">
                                           <div class="progresso-item">
                                               <div class="progresso-label">Duração Planejada</div>
@@ -1181,6 +1349,14 @@
                                           <div class="progresso-item">
                                               <div class="progresso-label">Progresso Real</div>
                                               <div class="progresso-valor">100%</div>
+                                          </div>
+                                          <div class="progresso-item">
+                                              <div class="progresso-label">Progresso Ideal até Hoje</div>
+                                              <div class="progresso-valor">100%</div>
+                                          </div>
+                                          <div class="progresso-item">
+                                              <div class="progresso-label">Ritmo Necessário</div>
+                                              <div class="progresso-valor">None%/dia</div>
                                           </div>
                                       </div>
                                   </div>
@@ -1363,7 +1539,9 @@
                           <div class="accordion-codigo">#1.01.01</div>
                           <div class="accordion-titulo">
                               Reunião Técnica - Fluxograma, Estudos, Projetos, Planejamento e Execução
+                              <span class="setor-badge"><i class="fas fa-building"></i> Gestão</span>
                               
+                              <span class="critica-margem-zero"><i class="fas fa-skull-crossbones critica-icon"></i></span>
                           </div>
                           <span class="accordion-badge atrasada">
                               <i class="fas fa-clock"></i>
@@ -1376,7 +1554,7 @@
                   <div class="atividade-accordion-content">
                       <div class="atividade-expanded">
               
-                          <!-- ANÁLISE FÍSICA -->
+                          <!-- ANÁLISE FÍSICA COM NOVOS CAMPOS -->
                           <div class="analise-section">
                               <div class="analise-title" onclick="toggleAnaliseSection(this, 'fisica-atrasadas-1.01.01')">
                                   <i class="fas fa-chart-line toggle-icon"></i>
@@ -1405,9 +1583,42 @@
                                                   <div class="data-value empty">-</div>
                                               </div>
                                           </div>
+
+                                          <!-- NOVO: QUADRO DE VARIAÇÕES -->
+                                          <div class="variacoes-quadro">
+                                              <div class="variacoes-grid">
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Variação de Início</div>
+                                                      <div class="variacao-value">18 days</div>
+                                                  </div>
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Variação de Término</div>
+                                                      <div class="variacao-value">0 days</div>
+                                                  </div>
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Variação de Duração</div>
+                                                      <div class="variacao-value">4 days</div>
+                                                  </div>
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Margem de Atraso</div>
+                                                      <div class="variacao-value critica"><span style="color: #dc2626; font-weight: 800;">0 days ⚠️</span></div>
+                                                  </div>
+                                              </div>
+                                          </div>
+
+                                          <!-- NOVO: QUADRO DE LOCAÇÃO DE RECURSOS -->
+                                          <div class="locacao-quadro">
+                                              <div class="locacao-header">
+                                                  <i class="fas fa-users"></i>
+                                                  Locação de Recursos
+                                              </div>
+                                              <div class="locacao-content">
+                                                  <div class="locacao-empty">Sem recursos alocados</div>
+                                              </div>
+                                          </div>
                                       </div>
 
-                                      <!-- Quadro 2: Progressos - COM DURAÇÃO PLANEJADA -->
+                                      <!-- Quadro 2: Progressos -->
                                       <div class="progresso-quadro">
                                           <div class="progresso-item">
                                               <div class="progresso-label">Duração Planejada</div>
@@ -1424,6 +1635,14 @@
                                           <div class="progresso-item">
                                               <div class="progresso-label">Progresso Real</div>
                                               <div class="progresso-valor">0%</div>
+                                          </div>
+                                          <div class="progresso-item">
+                                              <div class="progresso-label">Progresso Ideal até Hoje</div>
+                                              <div class="progresso-valor">0%</div>
+                                          </div>
+                                          <div class="progresso-item">
+                                              <div class="progresso-label">Ritmo Necessário</div>
+                                              <div class="progresso-valor">None%/dia</div>
                                           </div>
                                       </div>
                                   </div>
@@ -2824,7 +3043,9 @@
                           <div class="accordion-codigo">#1.01.02</div>
                           <div class="accordion-titulo">
                               Contratação dos Seguros - Contratuais
+                              <span class="setor-badge"><i class="fas fa-building"></i> Gestão</span>
                               <span class="alerta-triangulo"><i class="fas fa-exclamation-triangle triangulo-icon"></i></span>
+                              <span class="critica-margem-zero"><i class="fas fa-skull-crossbones critica-icon"></i></span>
                           </div>
                           <span class="accordion-badge execucao">
                               <i class="fas fa-play-circle"></i>
@@ -2837,7 +3058,7 @@
                   <div class="atividade-accordion-content">
                       <div class="atividade-expanded">
               
-                          <!-- ANÁLISE FÍSICA -->
+                          <!-- ANÁLISE FÍSICA COM NOVOS CAMPOS -->
                           <div class="analise-section">
                               <div class="analise-title" onclick="toggleAnaliseSection(this, 'fisica-execucao-1.01.02')">
                                   <i class="fas fa-chart-line toggle-icon"></i>
@@ -2866,9 +3087,42 @@
                                                   <div class="data-value empty">-</div>
                                               </div>
                                           </div>
+
+                                          <!-- NOVO: QUADRO DE VARIAÇÕES -->
+                                          <div class="variacoes-quadro">
+                                              <div class="variacoes-grid">
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Variação de Início</div>
+                                                      <div class="variacao-value">18 days</div>
+                                                  </div>
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Variação de Término</div>
+                                                      <div class="variacao-value">3 days</div>
+                                                  </div>
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Variação de Duração</div>
+                                                      <div class="variacao-value">15 days</div>
+                                                  </div>
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Margem de Atraso</div>
+                                                      <div class="variacao-value critica"><span style="color: #dc2626; font-weight: 800;">200 days ⚠️</span></div>
+                                                  </div>
+                                              </div>
+                                          </div>
+
+                                          <!-- NOVO: QUADRO DE LOCAÇÃO DE RECURSOS -->
+                                          <div class="locacao-quadro">
+                                              <div class="locacao-header">
+                                                  <i class="fas fa-users"></i>
+                                                  Locação de Recursos
+                                              </div>
+                                              <div class="locacao-content">
+                                                  <div class="locacao-empty">Sem recursos alocados</div>
+                                              </div>
+                                          </div>
                                       </div>
 
-                                      <!-- Quadro 2: Progressos - COM DURAÇÃO PLANEJADA -->
+                                      <!-- Quadro 2: Progressos -->
                                       <div class="progresso-quadro">
                                           <div class="progresso-item">
                                               <div class="progresso-label">Duração Planejada</div>
@@ -2885,6 +3139,14 @@
                                           <div class="progresso-item">
                                               <div class="progresso-label">Progresso Real</div>
                                               <div class="progresso-valor">0%</div>
+                                          </div>
+                                          <div class="progresso-item">
+                                              <div class="progresso-label">Progresso Ideal até Hoje</div>
+                                              <div class="progresso-valor">0%</div>
+                                          </div>
+                                          <div class="progresso-item">
+                                              <div class="progresso-label">Ritmo Necessário</div>
+                                              <div class="progresso-valor">None%/dia</div>
                                           </div>
                                       </div>
                                   </div>
@@ -3067,6 +3329,8 @@
                           <div class="accordion-codigo">#2.01.01</div>
                           <div class="accordion-titulo">
                               Planialtimétrico do Terreno e Georreferenciamento
+                              <span class="setor-badge"><i class="fas fa-building"></i> nan</span>
+                              
                               
                           </div>
                           <span class="accordion-badge prevista">
@@ -3080,7 +3344,7 @@
                   <div class="atividade-accordion-content">
                       <div class="atividade-expanded">
               
-                          <!-- ANÁLISE FÍSICA -->
+                          <!-- ANÁLISE FÍSICA COM NOVOS CAMPOS -->
                           <div class="analise-section">
                               <div class="analise-title" onclick="toggleAnaliseSection(this, 'fisica-proximas-2.01.01')">
                                   <i class="fas fa-chart-line toggle-icon"></i>
@@ -3109,9 +3373,42 @@
                                                   <div class="data-value empty">-</div>
                                               </div>
                                           </div>
+
+                                          <!-- NOVO: QUADRO DE VARIAÇÕES -->
+                                          <div class="variacoes-quadro">
+                                              <div class="variacoes-grid">
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Variação de Início</div>
+                                                      <div class="variacao-value">0 days</div>
+                                                  </div>
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Variação de Término</div>
+                                                      <div class="variacao-value">0 days</div>
+                                                  </div>
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Variação de Duração</div>
+                                                      <div class="variacao-value">20 days</div>
+                                                  </div>
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Margem de Atraso</div>
+                                                      <div class="variacao-value">6 days</div>
+                                                  </div>
+                                              </div>
+                                          </div>
+
+                                          <!-- NOVO: QUADRO DE LOCAÇÃO DE RECURSOS -->
+                                          <div class="locacao-quadro">
+                                              <div class="locacao-header">
+                                                  <i class="fas fa-users"></i>
+                                                  Locação de Recursos
+                                              </div>
+                                              <div class="locacao-content">
+                                                  <div class="locacao-empty">Sem recursos alocados</div>
+                                              </div>
+                                          </div>
                                       </div>
 
-                                      <!-- Quadro 2: Progressos - COM DURAÇÃO PLANEJADA -->
+                                      <!-- Quadro 2: Progressos -->
                                       <div class="progresso-quadro">
                                           <div class="progresso-item">
                                               <div class="progresso-label">Duração Planejada</div>
@@ -3128,6 +3425,14 @@
                                           <div class="progresso-item">
                                               <div class="progresso-label">Progresso Real</div>
                                               <div class="progresso-valor">0%</div>
+                                          </div>
+                                          <div class="progresso-item">
+                                              <div class="progresso-label">Progresso Ideal até Hoje</div>
+                                              <div class="progresso-valor">0%</div>
+                                          </div>
+                                          <div class="progresso-item">
+                                              <div class="progresso-label">Ritmo Necessário</div>
+                                              <div class="progresso-valor">6.25%/dia</div>
                                           </div>
                                       </div>
                                   </div>
@@ -3252,7 +3557,9 @@
                           <div class="accordion-codigo">#2.01.01.01</div>
                           <div class="accordion-titulo">
                               Execução das Atividades - Georreferenciamento
+                              <span class="setor-badge"><i class="fas fa-building"></i> Estudo</span>
                               
+                              <span class="critica-margem-zero"><i class="fas fa-skull-crossbones critica-icon"></i></span>
                           </div>
                           <span class="accordion-badge planejada">
                               <i class="fas fa-calendar-alt"></i>
@@ -3265,7 +3572,7 @@
                   <div class="atividade-accordion-content">
                       <div class="atividade-expanded">
               
-                          <!-- ANÁLISE FÍSICA -->
+                          <!-- ANÁLISE FÍSICA COM NOVOS CAMPOS -->
                           <div class="analise-section">
                               <div class="analise-title" onclick="toggleAnaliseSection(this, 'fisica-planejadas-2.01.01.01')">
                                   <i class="fas fa-chart-line toggle-icon"></i>
@@ -3294,9 +3601,42 @@
                                                   <div class="data-value empty">-</div>
                                               </div>
                                           </div>
+
+                                          <!-- NOVO: QUADRO DE VARIAÇÕES -->
+                                          <div class="variacoes-quadro">
+                                              <div class="variacoes-grid">
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Variação de Início</div>
+                                                      <div class="variacao-value">0 days</div>
+                                                  </div>
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Variação de Término</div>
+                                                      <div class="variacao-value">0 days</div>
+                                                  </div>
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Variação de Duração</div>
+                                                      <div class="variacao-value">15 days</div>
+                                                  </div>
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Margem de Atraso</div>
+                                                      <div class="variacao-value critica"><span style="color: #dc2626; font-weight: 800;">0 days ⚠️</span></div>
+                                                  </div>
+                                              </div>
+                                          </div>
+
+                                          <!-- NOVO: QUADRO DE LOCAÇÃO DE RECURSOS -->
+                                          <div class="locacao-quadro">
+                                              <div class="locacao-header">
+                                                  <i class="fas fa-users"></i>
+                                                  Locação de Recursos
+                                              </div>
+                                              <div class="locacao-content">
+                                                  <div style="display: flex; flex-direction: column; gap: 4px;"><div>ETT01-Topógrafo</div><div>ETT02-Topógrafo</div></div>
+                                              </div>
+                                          </div>
                                       </div>
 
-                                      <!-- Quadro 2: Progressos - COM DURAÇÃO PLANEJADA -->
+                                      <!-- Quadro 2: Progressos -->
                                       <div class="progresso-quadro">
                                           <div class="progresso-item">
                                               <div class="progresso-label">Duração Planejada</div>
@@ -3313,6 +3653,14 @@
                                           <div class="progresso-item">
                                               <div class="progresso-label">Progresso Real</div>
                                               <div class="progresso-valor">0%</div>
+                                          </div>
+                                          <div class="progresso-item">
+                                              <div class="progresso-label">Progresso Ideal até Hoje</div>
+                                              <div class="progresso-valor">0%</div>
+                                          </div>
+                                          <div class="progresso-item">
+                                              <div class="progresso-label">Ritmo Necessário</div>
+                                              <div class="progresso-valor">4%/dia</div>
                                           </div>
                                       </div>
                                   </div>
@@ -3611,7 +3959,9 @@
                           <div class="accordion-codigo">#1.01.01</div>
                           <div class="accordion-titulo">
                               Reunião Técnica - Fluxograma, Estudos, Projetos, Planejamento e Execução
+                              <span class="setor-badge"><i class="fas fa-building"></i> Gestão</span>
                               
+                              <span class="critica-margem-zero"><i class="fas fa-skull-crossbones critica-icon"></i></span>
                           </div>
                           <span class="accordion-badge critica">
                               <i class="fas fa-exclamation-triangle"></i>
@@ -3731,7 +4081,7 @@
                               </div>
                           </div>
                   
-                          <!-- ANÁLISE FÍSICA -->
+                          <!-- ANÁLISE FÍSICA COM NOVOS CAMPOS -->
                           <div class="analise-section">
                               <div class="analise-title" onclick="toggleAnaliseSection(this, 'fisica-criticas-1.01.01')">
                                   <i class="fas fa-chart-line toggle-icon"></i>
@@ -3760,9 +4110,42 @@
                                                   <div class="data-value empty">-</div>
                                               </div>
                                           </div>
+
+                                          <!-- NOVO: QUADRO DE VARIAÇÕES -->
+                                          <div class="variacoes-quadro">
+                                              <div class="variacoes-grid">
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Variação de Início</div>
+                                                      <div class="variacao-value">18 days</div>
+                                                  </div>
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Variação de Término</div>
+                                                      <div class="variacao-value">0 days</div>
+                                                  </div>
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Variação de Duração</div>
+                                                      <div class="variacao-value">4 days</div>
+                                                  </div>
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Margem de Atraso</div>
+                                                      <div class="variacao-value critica"><span style="color: #dc2626; font-weight: 800;">0 days ⚠️</span></div>
+                                                  </div>
+                                              </div>
+                                          </div>
+
+                                          <!-- NOVO: QUADRO DE LOCAÇÃO DE RECURSOS -->
+                                          <div class="locacao-quadro">
+                                              <div class="locacao-header">
+                                                  <i class="fas fa-users"></i>
+                                                  Locação de Recursos
+                                              </div>
+                                              <div class="locacao-content">
+                                                  <div class="locacao-empty">Sem recursos alocados</div>
+                                              </div>
+                                          </div>
                                       </div>
 
-                                      <!-- Quadro 2: Progressos - COM DURAÇÃO PLANEJADA -->
+                                      <!-- Quadro 2: Progressos -->
                                       <div class="progresso-quadro">
                                           <div class="progresso-item">
                                               <div class="progresso-label">Duração Planejada</div>
@@ -3779,6 +4162,14 @@
                                           <div class="progresso-item">
                                               <div class="progresso-label">Progresso Real</div>
                                               <div class="progresso-valor">0%</div>
+                                          </div>
+                                          <div class="progresso-item">
+                                              <div class="progresso-label">Progresso Ideal até Hoje</div>
+                                              <div class="progresso-valor">0%</div>
+                                          </div>
+                                          <div class="progresso-item">
+                                              <div class="progresso-label">Ritmo Necessário</div>
+                                              <div class="progresso-valor">None%/dia</div>
                                           </div>
                                       </div>
                                   </div>
@@ -5157,7 +5548,9 @@
                           <div class="accordion-codigo">#1.01.02</div>
                           <div class="accordion-titulo">
                               Contratação dos Seguros - Contratuais
+                              <span class="setor-badge"><i class="fas fa-building"></i> Gestão</span>
                               <span class="alerta-triangulo"><i class="fas fa-exclamation-triangle triangulo-icon"></i></span>
+                              <span class="critica-margem-zero"><i class="fas fa-skull-crossbones critica-icon"></i></span>
                           </div>
                           <span class="accordion-badge critica">
                               <i class="fas fa-exclamation-triangle"></i>
@@ -5277,7 +5670,7 @@
                               </div>
                           </div>
                   
-                          <!-- ANÁLISE FÍSICA -->
+                          <!-- ANÁLISE FÍSICA COM NOVOS CAMPOS -->
                           <div class="analise-section">
                               <div class="analise-title" onclick="toggleAnaliseSection(this, 'fisica-criticas-1.01.02')">
                                   <i class="fas fa-chart-line toggle-icon"></i>
@@ -5306,9 +5699,42 @@
                                                   <div class="data-value empty">-</div>
                                               </div>
                                           </div>
+
+                                          <!-- NOVO: QUADRO DE VARIAÇÕES -->
+                                          <div class="variacoes-quadro">
+                                              <div class="variacoes-grid">
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Variação de Início</div>
+                                                      <div class="variacao-value">18 days</div>
+                                                  </div>
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Variação de Término</div>
+                                                      <div class="variacao-value">3 days</div>
+                                                  </div>
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Variação de Duração</div>
+                                                      <div class="variacao-value">15 days</div>
+                                                  </div>
+                                                  <div class="variacao-item">
+                                                      <div class="variacao-label">Margem de Atraso</div>
+                                                      <div class="variacao-value critica"><span style="color: #dc2626; font-weight: 800;">200 days ⚠️</span></div>
+                                                  </div>
+                                              </div>
+                                          </div>
+
+                                          <!-- NOVO: QUADRO DE LOCAÇÃO DE RECURSOS -->
+                                          <div class="locacao-quadro">
+                                              <div class="locacao-header">
+                                                  <i class="fas fa-users"></i>
+                                                  Locação de Recursos
+                                              </div>
+                                              <div class="locacao-content">
+                                                  <div class="locacao-empty">Sem recursos alocados</div>
+                                              </div>
+                                          </div>
                                       </div>
 
-                                      <!-- Quadro 2: Progressos - COM DURAÇÃO PLANEJADA -->
+                                      <!-- Quadro 2: Progressos -->
                                       <div class="progresso-quadro">
                                           <div class="progresso-item">
                                               <div class="progresso-label">Duração Planejada</div>
@@ -5325,6 +5751,14 @@
                                           <div class="progresso-item">
                                               <div class="progresso-label">Progresso Real</div>
                                               <div class="progresso-valor">0%</div>
+                                          </div>
+                                          <div class="progresso-item">
+                                              <div class="progresso-label">Progresso Ideal até Hoje</div>
+                                              <div class="progresso-valor">0%</div>
+                                          </div>
+                                          <div class="progresso-item">
+                                              <div class="progresso-label">Ritmo Necessário</div>
+                                              <div class="progresso-valor">None%/dia</div>
                                           </div>
                                       </div>
                                   </div>
@@ -5566,6 +6000,7 @@
                   clickedElement.closest('.deps-coluna-header') || 
                   clickedElement.closest('.dep-expansivel-header') ||
                   clickedElement.closest('.triangulo-icon') ||
+                  clickedElement.closest('.critica-icon') ||
                   clickedElement.closest('.analise-title');
 
               if (isClickableElement) {
@@ -5667,7 +6102,7 @@
               // Calcular totais para porcentagens
               const totalFisico = graficoFisicoData.datasets[0].data.reduce((a, b) => a + b, 0);
 
-              // Gráfico Físico (Pizza) - MODIFICAÇÃO 1: Números em preto e rótulos na extremidade externa
+              // Gráfico Físico (Pizza)
               const ctxFisico = document.getElementById('fisicoChart').getContext('2d');
               fisicoChart = new Chart(ctxFisico, {
                   type: 'pie',
@@ -5750,8 +6185,7 @@
                                   if (value > 0) {
                                       const percentage = Math.round((value / total) * 100);
 
-                                      // MODIFICAÇÃO 1: POSICIONAR NA EXTREMIDADE EXTERNA
-                                      // Calcular posição mais externa (75% do raio externo)
+                                      // Posicionar na extremidade externa
                                       const angle = slice.startAngle + (slice.endAngle - slice.startAngle) / 2;
                                       const outerRadius = slice.outerRadius;
                                       const innerRadius = slice.innerRadius;
@@ -5760,7 +6194,6 @@
                                       const x = slice.x + Math.cos(angle) * radius;
                                       const y = slice.y + Math.sin(angle) * radius;
 
-                                      // MODIFICAÇÃO 1: COR DO TEXTO SEMPRE PRETA
                                       ctx.fillStyle = '#000000';
                                       ctx.fillText(`${value}`, x, y);
 
@@ -5775,7 +6208,7 @@
                   }]
               });
 
-              // MODIFICAÇÃO 2 e 3: Gráfico Financeiro com rótulos na extremidade superior e tooltips completos
+              // Gráfico Financeiro
               const ctxFinanceiro = document.getElementById('financeiroChart').getContext('2d');
               financeiroChart = new Chart(ctxFinanceiro, {
                   type: 'bar',
@@ -5789,7 +6222,7 @@
                           },
                           tooltip: {
                               callbacks: {
-                                  // MODIFICAÇÃO 3: Valor completo e oficial (R$ 1.052.128,00)
+                                  // Valor completo e oficial (R$ 1.052.128,00)
                                   label: function(context) {
                                       const value = context.raw || 0;
                                       // Formatar como moeda brasileira completa
@@ -5847,8 +6280,7 @@
                                       // Formatar o valor com "M" ou "k" para o rótulo
                                       let formattedValue = formatarValorFinanceiro(value);
 
-                                      // MODIFICAÇÃO 2: POSICIONAR NA EXTREMIDADE SUPERIOR EXTERNA
-                                      // Calcular posição: acima da barra + pequena margem
+                                      // POSICIONAR NA EXTREMIDADE SUPERIOR EXTERNA
                                       const yPosition = bar.y - 10;
 
                                       // Se for valor negativo (saldo negativo), ajustar posição
@@ -5883,7 +6315,7 @@
               }
           }
 
-          // ===================== NOVA FUNÇÃO: FORMATAR MOEDA COMPLETA (R$ 1.052.128,00) - PARA TOOLTIPS =====================
+          // ===================== FUNÇÃO: FORMATAR MOEDA COMPLETA (R$ 1.052.128,00) - PARA TOOLTIPS =====================
           function formatarMoedaCompleta(valor) {
               // Formato brasileiro completo
               return valor.toLocaleString('pt-BR', {
