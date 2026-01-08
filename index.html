@@ -310,7 +310,7 @@
               flex: 1;
           }
 
-          /* BADGE DE SETOR - MODIFICADO: fundo branco transparente */
+          /* BADGE DE SETOR */
           .setor-badge {
               background: rgba(255, 255, 255, 0.85);
               border: 1px solid var(--gray-300);
@@ -326,6 +326,69 @@
               backdrop-filter: blur(2px);
           }
 
+          /* ALERTA DE PRODUTIVIDADE EM ATRASO */
+          .alerta-triangulo {
+              display: inline-flex;
+              align-items: center;
+              margin-left: 10px;
+              position: relative;
+          }
+
+          .triangulo-icon {
+              color: #f59e0b;
+              font-size: 1rem;
+              cursor: pointer;
+              position: relative;
+          }
+
+          .triangulo-icon:hover::after {
+              content: "Produtividade em atraso!";
+              position: absolute;
+              top: -10px;
+              left: 25px;
+              background: #dce6f1;
+              color: #333;
+              padding: 6px 10px;
+              border-radius: 6px;
+              font-size: 0.75rem;
+              font-weight: 600;
+              white-space: nowrap;
+              z-index: 1000;
+              border: 1px solid #a5c0e0;
+              box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+          }
+
+          /* CRÍTICA MARGEM ZERO */
+          .critica-margem-zero {
+              display: inline-flex;
+              align-items: center;
+              margin-left: 8px;
+          }
+
+          .critica-icon {
+              color: #dc2626;
+              font-size: 1.1rem;
+              cursor: pointer;
+              position: relative;
+          }
+
+          .critica-icon:hover::after {
+              content: "Atividade Crítica: Margem de atraso zero dias";
+              position: absolute;
+              top: -10px;
+              left: 25px;
+              background: #fee2e2;
+              color: #991b1b;
+              padding: 6px 10px;
+              border-radius: 6px;
+              font-size: 0.75rem;
+              font-weight: 600;
+              white-space: nowrap;
+              z-index: 1000;
+              border: 1px solid #fca5a5;
+              box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+          }
+
           .accordion-badge {
               padding: 6px 12px;
               border-radius: 16px;
@@ -339,37 +402,6 @@
           .accordion-badge.prevista { background: #fef3c7; color: #92400e; }
           .accordion-badge.planejada { background: #f3f4f6; color: #4b5563; }
           .accordion-badge.critica { background: #fee2e2; color: #991b1b; font-weight: 800; }
-
-          /* REMOVIDO: alerta-triangulo e critica-margem-zero do cabeçalho */
-          /* ALERTA DE PRODUTIVIDADE EM ATRASO*/
-          .alerta-triangulo{
-            display:inline-flex;
-            align-items:center;
-            margin-left:10px;
-            position:relative;
-          }
-          .triangulo-icon{
-            color: #f59e0b;
-            font-size:1rem;
-            cursor:pointer;
-            position:relative;
-          }
-          .triangulo-icon:hover::after{
-            content: "Produtividade em atraso!";
-            position: absolute;
-            top: -10px;
-            left: 25px;
-            background:#dce6f1;
-            color: #333;
-            padding: 6px 10px;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            white-space: nowrap;
-            z-index: 1000;
-            border: 1px solid #a5c0e0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
-          }
 
           .accordion-toggle {
               color: var(--primary);
@@ -559,7 +591,7 @@
               border: 1px dashed var(--gray-300);
           }
 
-          /* ANÁLISE FÍSICA - MANTENDO O LAYOUT ORIGINAL */
+          /* ANÁLISE FÍSICA */
           .analise-fisica-grid {
               display: grid;
               grid-template-columns: 1fr 1fr;
@@ -607,7 +639,7 @@
               font-style: italic;
           }
 
-          /* QUADRO DE PROGRESSO - MODIFICADO: grid 2x2 com apenas 4 campos */
+          /* QUADRO DE PROGRESSO */
           .progresso-quadro {
               background: var(--gray-50);
               padding: 15px;
@@ -683,7 +715,7 @@
               color: var(--dark);
           }
 
-          /* ESTILO PARA MARGEM CRÍTICA (0 dias) */
+          /* ESTILO PARA MARGEM CRÍTICA (0 dias) - COM TOOLTIP BONITINHO */
           .margem-critica {
               color: #dc2626 !important;
               font-weight: 800;
@@ -691,10 +723,29 @@
               display: inline-flex;
               align-items: center;
               gap: 4px;
+              position: relative;
           }
 
           .margem-critica i {
               color: #dc2626;
+          }
+
+          /* TOOLTIP BONITINHO PARA MARGEM CRÍTICA */
+          .margem-critica:hover::after {
+              content: "Atividade Crítica: Margem de atraso zero dias";
+              position: absolute;
+              top: -10px;
+              left: 25px;
+              background: #fee2e2;
+              color: #991b1b;
+              padding: 6px 10px;
+              border-radius: 6px;
+              font-size: 0.75rem;
+              font-weight: 600;
+              white-space: nowrap;
+              z-index: 1000;
+              border: 1px solid #fca5a5;
+              box-shadow: 0 2px 8px rgba(0,0,0,0.1);
           }
 
           .variacao-value.critica {
@@ -1202,6 +1253,8 @@
                           <div class="accordion-titulo">
                               Administração Mensal
                               <span class="setor-badge"><i class="fas fa-building"></i> Gestão</span>
+                              
+                              
                           </div>
                           <span class="accordion-badge concluida">
                               <i class="fas fa-check-circle"></i>
@@ -1469,6 +1522,8 @@
                           <div class="accordion-titulo">
                               Reunião Técnica - Fluxograma, Estudos, Projetos, Planejamento e Execução
                               <span class="setor-badge"><i class="fas fa-building"></i> Gestão</span>
+                              
+                              <span class="critica-margem-zero"><i class="fas fa-skull-crossbones critica-icon"></i></span>
                           </div>
                           <span class="accordion-badge atrasada">
                               <i class="fas fa-clock"></i>
@@ -1528,7 +1583,7 @@
                                                   </div>
                                                   <div class="variacao-item">
                                                       <div class="variacao-label">Margem de Atraso</div>
-                                                      <div class="variacao-value"><span class="margem-critica" title="Atividade Crítica: Margem de atraso zero dias">0 dias <i class="fas fa-exclamation-triangle"></i></span></div>
+                                                      <div class="variacao-value"><span class="margem-critica" title="Atividade Crítica: Margem de atraso zero dias">0 dias <i class="fas fa-skull-crossbones"></i></span></div>
                                                   </div>
                                               </div>
                                           </div>
@@ -2954,6 +3009,8 @@
                           <div class="accordion-titulo">
                               Contratação dos Seguros - Contratuais
                               <span class="setor-badge"><i class="fas fa-building"></i> Gestão</span>
+                              <span class="alerta-triangulo"><i class="fas fa-exclamation-triangle triangulo-icon"></i></span>
+                              
                           </div>
                           <span class="accordion-badge execucao">
                               <i class="fas fa-play-circle"></i>
@@ -3221,6 +3278,8 @@
                           <div class="accordion-titulo">
                               Planialtimétrico do Terreno e Georreferenciamento
                               <span class="setor-badge"><i class="fas fa-building"></i> Estudo</span>
+                              
+                              
                           </div>
                           <span class="accordion-badge prevista">
                               <i class="fas fa-calendar-week"></i>
@@ -3430,6 +3489,8 @@
                           <div class="accordion-titulo">
                               Execução das Atividades - Georreferenciamento
                               <span class="setor-badge"><i class="fas fa-building"></i> Estudo</span>
+                              
+                              <span class="critica-margem-zero"><i class="fas fa-skull-crossbones critica-icon"></i></span>
                           </div>
                           <span class="accordion-badge planejada">
                               <i class="fas fa-calendar-alt"></i>
@@ -3489,7 +3550,7 @@
                                                   </div>
                                                   <div class="variacao-item">
                                                       <div class="variacao-label">Margem de Atraso</div>
-                                                      <div class="variacao-value"><span class="margem-critica" title="Atividade Crítica: Margem de atraso zero dias">0 dias <i class="fas fa-exclamation-triangle"></i></span></div>
+                                                      <div class="variacao-value"><span class="margem-critica" title="Atividade Crítica: Margem de atraso zero dias">0 dias <i class="fas fa-skull-crossbones"></i></span></div>
                                                   </div>
                                               </div>
                                           </div>
@@ -3813,6 +3874,8 @@
                           <div class="accordion-titulo">
                               Reunião Técnica - Fluxograma, Estudos, Projetos, Planejamento e Execução
                               <span class="setor-badge"><i class="fas fa-building"></i> Gestão</span>
+                              
+                              <span class="critica-margem-zero"><i class="fas fa-skull-crossbones critica-icon"></i></span>
                           </div>
                           <span class="accordion-badge critica">
                               <i class="fas fa-exclamation-triangle"></i>
@@ -3979,7 +4042,7 @@
                                                   </div>
                                                   <div class="variacao-item">
                                                       <div class="variacao-label">Margem de Atraso</div>
-                                                      <div class="variacao-value"><span class="margem-critica" title="Atividade Crítica: Margem de atraso zero dias">0 dias <i class="fas fa-exclamation-triangle"></i></span></div>
+                                                      <div class="variacao-value"><span class="margem-critica" title="Atividade Crítica: Margem de atraso zero dias">0 dias <i class="fas fa-skull-crossbones"></i></span></div>
                                                   </div>
                                               </div>
                                           </div>
@@ -5383,6 +5446,8 @@
                           <div class="accordion-titulo">
                               Contratação dos Seguros - Contratuais
                               <span class="setor-badge"><i class="fas fa-building"></i> Gestão</span>
+                              <span class="alerta-triangulo"><i class="fas fa-exclamation-triangle triangulo-icon"></i></span>
+                              
                           </div>
                           <span class="accordion-badge critica">
                               <i class="fas fa-exclamation-triangle"></i>
@@ -5815,7 +5880,11 @@
                   clickedElement.closest('.deps-coluna-header') || 
                   clickedElement.closest('.dep-expansivel-header') ||
                   clickedElement.closest('.analise-title') ||
-                  clickedElement.closest('.margem-critica');
+                  clickedElement.closest('.margem-critica') ||
+                  clickedElement.closest('.triangulo-icon') ||
+                  clickedElement.closest('.alerta-triangulo') ||
+                  clickedElement.closest('.critica-icon') ||
+                  clickedElement.closest('.critica-margem-zero');
 
               if (isClickableElement) {
                   return; // Não fazer nada se foi em um elemento clicável interno
