@@ -341,6 +341,35 @@
           .accordion-badge.critica { background: #fee2e2; color: #991b1b; font-weight: 800; }
 
           /* REMOVIDO: alerta-triangulo e critica-margem-zero do cabeçalho */
+          /* ALERTA DE PRODUTIVIDADE EM ATRASO*/
+          .alerta-triangulo{
+            display:inline-flex;
+            align-items:center;
+            margin-left:10px;
+            position:relative;
+          }
+          .triangulo-icon{
+            color: #f59e0b;
+            font-size:1rem;
+            cursor:pointer;
+            position:relative;
+          }
+          .triangulo-icon:hover::after{
+            content: "Produtividade em atraso!";
+            position: absolute;
+            top: -10px;
+            left: 25px;
+            background:#dce6f1;
+            color: #333;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            white-space: nowrap;
+            z-index: 1000;
+            border: 1px solid #a5c0e0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+          }
 
           .accordion-toggle {
               color: var(--primary);
