@@ -358,37 +358,6 @@
               box-shadow: 0 2px 8px rgba(0,0,0,0.1);
           }
 
-          /* CRÍTICA MARGEM ZERO */
-          .critica-margem-zero {
-              display: inline-flex;
-              align-items: center;
-              margin-left: 8px;
-          }
-
-          .critica-icon {
-              color: #dc2626;
-              font-size: 1.1rem;
-              cursor: pointer;
-              position: relative;
-          }
-
-          .critica-icon:hover::after {
-              content: "Atividade Crítica: Margem de atraso zero dias";
-              position: absolute;
-              top: -10px;
-              left: 25px;
-              background: #fee2e2;
-              color: #991b1b;
-              padding: 6px 10px;
-              border-radius: 6px;
-              font-size: 0.75rem;
-              font-weight: 600;
-              white-space: nowrap;
-              z-index: 1000;
-              border: 1px solid #fca5a5;
-              box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-          }
-
           .accordion-badge {
               padding: 6px 12px;
               border-radius: 16px;
@@ -677,18 +646,25 @@
               color: var(--dark);
           }
 
+          /* NOVO LAYOUT: DATAS E VARIAÇÕES LADO A LADO */
+          .datas-variacoes-grid {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 15px;
+              margin-bottom: 15px;
+          }
+
           /* QUADRO DE VARIAÇÕES */
           .variacoes-quadro {
               background: var(--gray-50);
               padding: 15px;
               border-radius: 8px;
               border-left: 3px solid #8b5cf6;
-              margin-top: 15px;
           }
 
           .variacoes-grid {
               display: grid;
-              grid-template-columns: repeat(4, 1fr);
+              grid-template-columns: 1fr 1fr;
               gap: 12px;
           }
 
@@ -715,42 +691,44 @@
               color: var(--dark);
           }
 
-          /* QUADRO DE LOCAÇÃO DE RECURSOS */
-          .locacao-quadro{
+          /* QUADRO DE LOCAÇÃO DE RECURSOS (AGORA NA PARTE DE BAIXO) */
+          .locacao-quadro {
               background: var(--gray-50);
               padding: 15px;
-              border-radius:8px;
+              border-radius: 8px;
               border-left: 3px solid #10b981;
               margin-top: 15px;
           }
-          .locacao-header{
-             font-size: 0.9rem;
-             font-weight: 700;
-             color: #065f46;
-             margim-bottom: 12px;
-             padding-bottom: 6px;
-             border-bottom: 1px solid #a7f3d0;
-             display: flex;
-             aling-items: center;
-             gap: 8px;
+
+          .locacao-header {
+              font-size: 0.95rem;
+              font-weight: 700;
+              color: #065f46;
+              margin-bottom: 12px;
+              padding-bottom: 6px;
+              border-bottom: 1px solid #a7f3d0;
+              display: flex;
+              align-items: center;
+              gap: 8px;
           }
-          .locacao-content{
-             padding: 12px;
-             background: white;
-             border-radius: 6px;
-             border: 1px solid var (--gray-200);
-             font-size: 0.95rem;
-             color: var(--gray-700);
+
+          .locacao-content {
+              padding: 12px;
+              background: white;
+              border-radius: 6px;
+              border: 1px solid var(--gray-200);
+              font-size: 0.95rem;
+              color: var(--gray-700);
           }
-          .locacao-empty{
+
+          .locacao-empty {
               color: var(--gray-400);
               font-style: italic;
-              text-aling: center;
+              text-align: center;
               padding: 20px;
-
           }
 
-          /* ESTILO PARA MARGEM CRÍTICA (0 dias) - COM TOOLTIP BONITINHO */
+          /* ESTILO PARA MARGEM CRÍTICA (0 dias) - COM ÍCONE DE TRIÂNGULO */
           .margem-critica {
               color: #dc2626 !important;
               font-weight: 800;
@@ -1126,6 +1104,10 @@
               .progresso-grid-2x2 {
                   grid-template-columns: 1fr;
               }
+
+              .datas-variacoes-grid {
+                  grid-template-columns: 1fr;
+              }
           }
 
           @media (max-width: 768px) {
@@ -1146,6 +1128,10 @@
               }
 
               .variacoes-grid {
+                  grid-template-columns: 1fr;
+              }
+
+              .datas-variacoes-grid {
                   grid-template-columns: 1fr;
               }
           }
@@ -1289,7 +1275,6 @@
                               Administração Mensal
                               <span class="setor-badge"><i class="fas fa-building"></i> Gestão</span>
                               
-                              
                           </div>
                           <span class="accordion-badge concluida">
                               <i class="fas fa-check-circle"></i>
@@ -1311,51 +1296,54 @@
 
                               <div class="analise-content" id="fisica-concluidas-1.01.03">
                                   <div class="analise-fisica-grid">
-                                      <!-- Quadro 1: Datas em grid 2x2 -->
+                                      <!-- Quadro 1: Datas, Variações e Locação -->
                                       <div class="fisica-quadro">
-                                          <div class="datas-grid">
-                                              <div class="data-item">
-                                                  <div class="data-label">Início Planejado</div>
-                                                  <div class="data-value">15/12/2026</div>
+                                          <!-- DATAS E VARIAÇÕES LADO A LADO -->
+                                          <div class="datas-variacoes-grid">
+                                              <!-- Datas em grid 2x2 -->
+                                              <div class="datas-grid">
+                                                  <div class="data-item">
+                                                      <div class="data-label">Início Planejado</div>
+                                                      <div class="data-value">15/12/2026</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Término Planejado</div>
+                                                      <div class="data-value">05/01/2026</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Início Real</div>
+                                                      <div class="data-value">15/12/2026</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Término Real</div>
+                                                      <div class="data-value">05/01/2026</div>
+                                                  </div>
                                               </div>
-                                              <div class="data-item">
-                                                  <div class="data-label">Término Planejado</div>
-                                                  <div class="data-value">05/01/2026</div>
-                                              </div>
-                                              <div class="data-item">
-                                                  <div class="data-label">Início Real</div>
-                                                  <div class="data-value">15/12/2026</div>
-                                              </div>
-                                              <div class="data-item">
-                                                  <div class="data-label">Término Real</div>
-                                                  <div class="data-value">05/01/2026</div>
+
+                                              <!-- QUADRO DE VARIAÇÕES E MARGEM -->
+                                              <div class="variacoes-quadro">
+                                                  <div class="variacoes-grid">
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Início</div>
+                                                          <div class="variacao-value">0 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Término</div>
+                                                          <div class="variacao-value">0 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Duração</div>
+                                                          <div class="variacao-value">15 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Margem de Atraso</div>
+                                                          <div class="variacao-value">200 dias</div>
+                                                      </div>
+                                                  </div>
                                               </div>
                                           </div>
 
-
-                                          <!-- QUADRO DE VARIAÇÕES E MARGEM -->
-                                          <div class="variacoes-quadro">
-                                              <div class="variacoes-grid">
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Variação de Início</div>
-                                                      <div class="variacao-value">0 dias</div>
-                                                  </div>
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Variação de Término</div>
-                                                      <div class="variacao-value">0 dias</div>
-                                                  </div>
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Variação de Duração</div>
-                                                      <div class="variacao-value">15 dias</div>
-                                                  </div>
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Margem de Atraso</div>
-                                                      <div class="variacao-value">200 dias</div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                          <!--  QUADRO DE LOCAÇÃO DE RECURSOS -->
+                                          <!-- QUADRO DE LOCAÇÃO DE RECURSOS (NA PARTE DE BAIXO) -->
                                           <div class="locacao-quadro">
                                               <div class="locacao-header">
                                                   <i class="fas fa-users"></i>
@@ -1365,8 +1353,7 @@
                                                   <div class="locacao-empty">Sem recursos alocados</div>
                                               </div>
                                           </div>
-                                      </div>                                    
-
+                                      </div>
 
                                       <!-- Quadro 2: Progressos - MODIFICADO: grid 2x2 com apenas 4 campos -->
                                       <div class="progresso-quadro">
@@ -1571,7 +1558,6 @@
                               Reunião Técnica - Fluxograma, Estudos, Projetos, Planejamento e Execução
                               <span class="setor-badge"><i class="fas fa-building"></i> Gestão</span>
                               
-                              <span class="critica-margem-zero"><i class="fas fa-skull-crossbones critica-icon"></i></span>
                           </div>
                           <span class="accordion-badge atrasada">
                               <i class="fas fa-clock"></i>
@@ -1593,51 +1579,54 @@
 
                               <div class="analise-content" id="fisica-atrasadas-1.01.01">
                                   <div class="analise-fisica-grid">
-                                      <!-- Quadro 1: Datas em grid 2x2 -->
+                                      <!-- Quadro 1: Datas, Variações e Locação -->
                                       <div class="fisica-quadro">
-                                          <div class="datas-grid">
-                                              <div class="data-item">
-                                                  <div class="data-label">Início Planejado</div>
-                                                  <div class="data-value">15/12/2025</div>
+                                          <!-- DATAS E VARIAÇÕES LADO A LADO -->
+                                          <div class="datas-variacoes-grid">
+                                              <!-- Datas em grid 2x2 -->
+                                              <div class="datas-grid">
+                                                  <div class="data-item">
+                                                      <div class="data-label">Início Planejado</div>
+                                                      <div class="data-value">15/12/2025</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Término Planejado</div>
+                                                      <div class="data-value">16/01/2025</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Início Real</div>
+                                                      <div class="data-value empty">-</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Término Real</div>
+                                                      <div class="data-value empty">-</div>
+                                                  </div>
                                               </div>
-                                              <div class="data-item">
-                                                  <div class="data-label">Término Planejado</div>
-                                                  <div class="data-value">16/01/2025</div>
-                                              </div>
-                                              <div class="data-item">
-                                                  <div class="data-label">Início Real</div>
-                                                  <div class="data-value empty">-</div>
-                                              </div>
-                                              <div class="data-item">
-                                                  <div class="data-label">Término Real</div>
-                                                  <div class="data-value empty">-</div>
+
+                                              <!-- QUADRO DE VARIAÇÕES E MARGEM -->
+                                              <div class="variacoes-quadro">
+                                                  <div class="variacoes-grid">
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Início</div>
+                                                          <div class="variacao-value">18 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Término</div>
+                                                          <div class="variacao-value">0 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Duração</div>
+                                                          <div class="variacao-value">4 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Margem de Atraso</div>
+                                                          <div class="variacao-value"><span class="margem-critica" title="Atividade Crítica: Margem de atraso zero dias">0 dias <i class="fas fa-exclamation-triangle"></i></span></div>
+                                                      </div>
+                                                  </div>
                                               </div>
                                           </div>
 
-
-                                          <!-- QUADRO DE VARIAÇÕES E MARGEM -->
-                                          <div class="variacoes-quadro">
-                                              <div class="variacoes-grid">
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Variação de Início</div>
-                                                      <div class="variacao-value">18 dias</div>
-                                                  </div>
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Variação de Término</div>
-                                                      <div class="variacao-value">0 dias</div>
-                                                  </div>
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Variação de Duração</div>
-                                                      <div class="variacao-value">4 dias</div>
-                                                  </div>
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Margem de Atraso</div>
-                                                      <div class="variacao-value"><span class="margem-critica" title="Atividade Crítica: Margem de atraso zero dias">0 dias <i class="fas fa-skull-crossbones"></i></span></div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                          <!--  QUADRO DE LOCAÇÃO DE RECURSOS -->
+                                          <!-- QUADRO DE LOCAÇÃO DE RECURSOS (NA PARTE DE BAIXO) -->
                                           <div class="locacao-quadro">
                                               <div class="locacao-header">
                                                   <i class="fas fa-users"></i>
@@ -1647,8 +1636,7 @@
                                                   <div class="locacao-empty">Sem recursos alocados</div>
                                               </div>
                                           </div>
-                                      </div>                                    
-
+                                      </div>
 
                                       <!-- Quadro 2: Progressos - MODIFICADO: grid 2x2 com apenas 4 campos -->
                                       <div class="progresso-quadro">
@@ -3071,7 +3059,6 @@
                               Contratação dos Seguros - Contratuais
                               <span class="setor-badge"><i class="fas fa-building"></i> Gestão</span>
                               <span class="alerta-triangulo"><i class="fas fa-exclamation-triangle triangulo-icon"></i></span>
-                              
                           </div>
                           <span class="accordion-badge execucao">
                               <i class="fas fa-play-circle"></i>
@@ -3093,51 +3080,54 @@
 
                               <div class="analise-content" id="fisica-execucao-1.01.02">
                                   <div class="analise-fisica-grid">
-                                      <!-- Quadro 1: Datas em grid 2x2 -->
+                                      <!-- Quadro 1: Datas, Variações e Locação -->
                                       <div class="fisica-quadro">
-                                          <div class="datas-grid">
-                                              <div class="data-item">
-                                                  <div class="data-label">Início Planejado</div>
-                                                  <div class="data-value">15/12/2026</div>
+                                          <!-- DATAS E VARIAÇÕES LADO A LADO -->
+                                          <div class="datas-variacoes-grid">
+                                              <!-- Datas em grid 2x2 -->
+                                              <div class="datas-grid">
+                                                  <div class="data-item">
+                                                      <div class="data-label">Início Planejado</div>
+                                                      <div class="data-value">15/12/2026</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Término Planejado</div>
+                                                      <div class="data-value">05/01/2026</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Início Real</div>
+                                                      <div class="data-value">15/12/2026</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Término Real</div>
+                                                      <div class="data-value empty">-</div>
+                                                  </div>
                                               </div>
-                                              <div class="data-item">
-                                                  <div class="data-label">Término Planejado</div>
-                                                  <div class="data-value">05/01/2026</div>
-                                              </div>
-                                              <div class="data-item">
-                                                  <div class="data-label">Início Real</div>
-                                                  <div class="data-value">15/12/2026</div>
-                                              </div>
-                                              <div class="data-item">
-                                                  <div class="data-label">Término Real</div>
-                                                  <div class="data-value empty">-</div>
+
+                                              <!-- QUADRO DE VARIAÇÕES E MARGEM -->
+                                              <div class="variacoes-quadro">
+                                                  <div class="variacoes-grid">
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Início</div>
+                                                          <div class="variacao-value">18 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Término</div>
+                                                          <div class="variacao-value">3 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Duração</div>
+                                                          <div class="variacao-value">15 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Margem de Atraso</div>
+                                                          <div class="variacao-value">200 dias</div>
+                                                      </div>
+                                                  </div>
                                               </div>
                                           </div>
 
-
-                                          <!-- QUADRO DE VARIAÇÕES E MARGEM -->
-                                          <div class="variacoes-quadro">
-                                              <div class="variacoes-grid">
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Variação de Início</div>
-                                                      <div class="variacao-value">18 dias</div>
-                                                  </div>
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Variação de Término</div>
-                                                      <div class="variacao-value">3 dias</div>
-                                                  </div>
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Variação de Duração</div>
-                                                      <div class="variacao-value">15 dias</div>
-                                                  </div>
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Margem de Atraso</div>
-                                                      <div class="variacao-value">200 dias</div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                          <!--  QUADRO DE LOCAÇÃO DE RECURSOS -->
+                                          <!-- QUADRO DE LOCAÇÃO DE RECURSOS (NA PARTE DE BAIXO) -->
                                           <div class="locacao-quadro">
                                               <div class="locacao-header">
                                                   <i class="fas fa-users"></i>
@@ -3147,8 +3137,7 @@
                                                   <div class="locacao-empty">Sem recursos alocados</div>
                                               </div>
                                           </div>
-                                      </div>                                    
-
+                                      </div>
 
                                       <!-- Quadro 2: Progressos - MODIFICADO: grid 2x2 com apenas 4 campos -->
                                       <div class="progresso-quadro">
@@ -3353,7 +3342,6 @@
                               Planialtimétrico do Terreno e Georreferenciamento
                               <span class="setor-badge"><i class="fas fa-building"></i> Estudo</span>
                               
-                              
                           </div>
                           <span class="accordion-badge prevista">
                               <i class="fas fa-calendar-week"></i>
@@ -3375,51 +3363,54 @@
 
                               <div class="analise-content" id="fisica-proximas-2.01.01">
                                   <div class="analise-fisica-grid">
-                                      <!-- Quadro 1: Datas em grid 2x2 -->
+                                      <!-- Quadro 1: Datas, Variações e Locação -->
                                       <div class="fisica-quadro">
-                                          <div class="datas-grid">
-                                              <div class="data-item">
-                                                  <div class="data-label">Início Planejado</div>
-                                                  <div class="data-value">22/01/2026</div>
+                                          <!-- DATAS E VARIAÇÕES LADO A LADO -->
+                                          <div class="datas-variacoes-grid">
+                                              <!-- Datas em grid 2x2 -->
+                                              <div class="datas-grid">
+                                                  <div class="data-item">
+                                                      <div class="data-label">Início Planejado</div>
+                                                      <div class="data-value">22/01/2026</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Término Planejado</div>
+                                                      <div class="data-value">30/01/2026</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Início Real</div>
+                                                      <div class="data-value empty">-</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Término Real</div>
+                                                      <div class="data-value empty">-</div>
+                                                  </div>
                                               </div>
-                                              <div class="data-item">
-                                                  <div class="data-label">Término Planejado</div>
-                                                  <div class="data-value">30/01/2026</div>
-                                              </div>
-                                              <div class="data-item">
-                                                  <div class="data-label">Início Real</div>
-                                                  <div class="data-value empty">-</div>
-                                              </div>
-                                              <div class="data-item">
-                                                  <div class="data-label">Término Real</div>
-                                                  <div class="data-value empty">-</div>
+
+                                              <!-- QUADRO DE VARIAÇÕES E MARGEM -->
+                                              <div class="variacoes-quadro">
+                                                  <div class="variacoes-grid">
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Início</div>
+                                                          <div class="variacao-value">0 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Término</div>
+                                                          <div class="variacao-value">0 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Duração</div>
+                                                          <div class="variacao-value">20 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Margem de Atraso</div>
+                                                          <div class="variacao-value">6 dias</div>
+                                                      </div>
+                                                  </div>
                                               </div>
                                           </div>
 
-
-                                          <!-- QUADRO DE VARIAÇÕES E MARGEM -->
-                                          <div class="variacoes-quadro">
-                                              <div class="variacoes-grid">
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Variação de Início</div>
-                                                      <div class="variacao-value">0 dias</div>
-                                                  </div>
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Variação de Término</div>
-                                                      <div class="variacao-value">0 dias</div>
-                                                  </div>
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Variação de Duração</div>
-                                                      <div class="variacao-value">20 dias</div>
-                                                  </div>
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Margem de Atraso</div>
-                                                      <div class="variacao-value">6 dias</div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                          <!--  QUADRO DE LOCAÇÃO DE RECURSOS -->
+                                          <!-- QUADRO DE LOCAÇÃO DE RECURSOS (NA PARTE DE BAIXO) -->
                                           <div class="locacao-quadro">
                                               <div class="locacao-header">
                                                   <i class="fas fa-users"></i>
@@ -3429,8 +3420,7 @@
                                                   <div class="locacao-empty">Sem recursos alocados</div>
                                               </div>
                                           </div>
-                                      </div>                                    
-
+                                      </div>
 
                                       <!-- Quadro 2: Progressos - MODIFICADO: grid 2x2 com apenas 4 campos -->
                                       <div class="progresso-quadro">
@@ -3577,7 +3567,6 @@
                               Execução das Atividades - Georreferenciamento
                               <span class="setor-badge"><i class="fas fa-building"></i> Estudo</span>
                               
-                              <span class="critica-margem-zero"><i class="fas fa-skull-crossbones critica-icon"></i></span>
                           </div>
                           <span class="accordion-badge planejada">
                               <i class="fas fa-calendar-alt"></i>
@@ -3599,51 +3588,54 @@
 
                               <div class="analise-content" id="fisica-planejadas-2.01.01.01">
                                   <div class="analise-fisica-grid">
-                                      <!-- Quadro 1: Datas em grid 2x2 -->
+                                      <!-- Quadro 1: Datas, Variações e Locação -->
                                       <div class="fisica-quadro">
-                                          <div class="datas-grid">
-                                              <div class="data-item">
-                                                  <div class="data-label">Início Planejado</div>
-                                                  <div class="data-value">22/01/2027</div>
+                                          <!-- DATAS E VARIAÇÕES LADO A LADO -->
+                                          <div class="datas-variacoes-grid">
+                                              <!-- Datas em grid 2x2 -->
+                                              <div class="datas-grid">
+                                                  <div class="data-item">
+                                                      <div class="data-label">Início Planejado</div>
+                                                      <div class="data-value">22/01/2027</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Término Planejado</div>
+                                                      <div class="data-value">12/02/2026</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Início Real</div>
+                                                      <div class="data-value empty">-</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Término Real</div>
+                                                      <div class="data-value empty">-</div>
+                                                  </div>
                                               </div>
-                                              <div class="data-item">
-                                                  <div class="data-label">Término Planejado</div>
-                                                  <div class="data-value">12/02/2026</div>
-                                              </div>
-                                              <div class="data-item">
-                                                  <div class="data-label">Início Real</div>
-                                                  <div class="data-value empty">-</div>
-                                              </div>
-                                              <div class="data-item">
-                                                  <div class="data-label">Término Real</div>
-                                                  <div class="data-value empty">-</div>
+
+                                              <!-- QUADRO DE VARIAÇÕES E MARGEM -->
+                                              <div class="variacoes-quadro">
+                                                  <div class="variacoes-grid">
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Início</div>
+                                                          <div class="variacao-value">0 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Término</div>
+                                                          <div class="variacao-value">0 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Duração</div>
+                                                          <div class="variacao-value">15 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Margem de Atraso</div>
+                                                          <div class="variacao-value"><span class="margem-critica" title="Atividade Crítica: Margem de atraso zero dias">0 dias <i class="fas fa-exclamation-triangle"></i></span></div>
+                                                      </div>
+                                                  </div>
                                               </div>
                                           </div>
 
-
-                                          <!-- QUADRO DE VARIAÇÕES E MARGEM -->
-                                          <div class="variacoes-quadro">
-                                              <div class="variacoes-grid">
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Variação de Início</div>
-                                                      <div class="variacao-value">0 dias</div>
-                                                  </div>
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Variação de Término</div>
-                                                      <div class="variacao-value">0 dias</div>
-                                                  </div>
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Variação de Duração</div>
-                                                      <div class="variacao-value">15 dias</div>
-                                                  </div>
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Margem de Atraso</div>
-                                                      <div class="variacao-value"><span class="margem-critica" title="Atividade Crítica: Margem de atraso zero dias">0 dias <i class="fas fa-skull-crossbones"></i></span></div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                          <!--  QUADRO DE LOCAÇÃO DE RECURSOS -->
+                                          <!-- QUADRO DE LOCAÇÃO DE RECURSOS (NA PARTE DE BAIXO) -->
                                           <div class="locacao-quadro">
                                               <div class="locacao-header">
                                                   <i class="fas fa-users"></i>
@@ -3653,8 +3645,7 @@
                                                   <div style="display: flex; flex-direction: column; gap: 4px;"><div>ETT01-Topógrafo</div><div>ETT02-Topógrafo</div></div>
                                               </div>
                                           </div>
-                                      </div>                                    
-
+                                      </div>
 
                                       <!-- Quadro 2: Progressos - MODIFICADO: grid 2x2 com apenas 4 campos -->
                                       <div class="progresso-quadro">
@@ -3975,7 +3966,6 @@
                               Reunião Técnica - Fluxograma, Estudos, Projetos, Planejamento e Execução
                               <span class="setor-badge"><i class="fas fa-building"></i> Gestão</span>
                               
-                              <span class="critica-margem-zero"><i class="fas fa-skull-crossbones critica-icon"></i></span>
                           </div>
                           <span class="accordion-badge critica">
                               <i class="fas fa-exclamation-triangle"></i>
@@ -4104,51 +4094,54 @@
 
                               <div class="analise-content" id="fisica-criticas-1.01.01">
                                   <div class="analise-fisica-grid">
-                                      <!-- Quadro 1: Datas em grid 2x2 -->
+                                      <!-- Quadro 1: Datas, Variações e Locação -->
                                       <div class="fisica-quadro">
-                                          <div class="datas-grid">
-                                              <div class="data-item">
-                                                  <div class="data-label">Início Planejado</div>
-                                                  <div class="data-value">15/12/2025</div>
+                                          <!-- DATAS E VARIAÇÕES LADO A LADO -->
+                                          <div class="datas-variacoes-grid">
+                                              <!-- Datas em grid 2x2 -->
+                                              <div class="datas-grid">
+                                                  <div class="data-item">
+                                                      <div class="data-label">Início Planejado</div>
+                                                      <div class="data-value">15/12/2025</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Término Planejado</div>
+                                                      <div class="data-value">16/01/2025</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Início Real</div>
+                                                      <div class="data-value empty">-</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Término Real</div>
+                                                      <div class="data-value empty">-</div>
+                                                  </div>
                                               </div>
-                                              <div class="data-item">
-                                                  <div class="data-label">Término Planejado</div>
-                                                  <div class="data-value">16/01/2025</div>
-                                              </div>
-                                              <div class="data-item">
-                                                  <div class="data-label">Início Real</div>
-                                                  <div class="data-value empty">-</div>
-                                              </div>
-                                              <div class="data-item">
-                                                  <div class="data-label">Término Real</div>
-                                                  <div class="data-value empty">-</div>
+
+                                              <!-- QUADRO DE VARIAÇÕES E MARGEM -->
+                                              <div class="variacoes-quadro">
+                                                  <div class="variacoes-grid">
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Início</div>
+                                                          <div class="variacao-value">18 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Término</div>
+                                                          <div class="variacao-value">0 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Duração</div>
+                                                          <div class="variacao-value">4 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Margem de Atraso</div>
+                                                          <div class="variacao-value"><span class="margem-critica" title="Atividade Crítica: Margem de atraso zero dias">0 dias <i class="fas fa-exclamation-triangle"></i></span></div>
+                                                      </div>
+                                                  </div>
                                               </div>
                                           </div>
 
-
-                                          <!-- QUADRO DE VARIAÇÕES E MARGEM -->
-                                          <div class="variacoes-quadro">
-                                              <div class="variacoes-grid">
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Variação de Início</div>
-                                                      <div class="variacao-value">18 dias</div>
-                                                  </div>
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Variação de Término</div>
-                                                      <div class="variacao-value">0 dias</div>
-                                                  </div>
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Variação de Duração</div>
-                                                      <div class="variacao-value">4 dias</div>
-                                                  </div>
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Margem de Atraso</div>
-                                                      <div class="variacao-value"><span class="margem-critica" title="Atividade Crítica: Margem de atraso zero dias">0 dias <i class="fas fa-skull-crossbones"></i></span></div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                          <!--  QUADRO DE LOCAÇÃO DE RECURSOS -->
+                                          <!-- QUADRO DE LOCAÇÃO DE RECURSOS (NA PARTE DE BAIXO) -->
                                           <div class="locacao-quadro">
                                               <div class="locacao-header">
                                                   <i class="fas fa-users"></i>
@@ -4158,8 +4151,7 @@
                                                   <div class="locacao-empty">Sem recursos alocados</div>
                                               </div>
                                           </div>
-                                      </div>                                    
-
+                                      </div>
 
                                       <!-- Quadro 2: Progressos - MODIFICADO: grid 2x2 com apenas 4 campos -->
                                       <div class="progresso-quadro">
@@ -5560,7 +5552,6 @@
                               Contratação dos Seguros - Contratuais
                               <span class="setor-badge"><i class="fas fa-building"></i> Gestão</span>
                               <span class="alerta-triangulo"><i class="fas fa-exclamation-triangle triangulo-icon"></i></span>
-                              
                           </div>
                           <span class="accordion-badge critica">
                               <i class="fas fa-exclamation-triangle"></i>
@@ -5689,51 +5680,54 @@
 
                               <div class="analise-content" id="fisica-criticas-1.01.02">
                                   <div class="analise-fisica-grid">
-                                      <!-- Quadro 1: Datas em grid 2x2 -->
+                                      <!-- Quadro 1: Datas, Variações e Locação -->
                                       <div class="fisica-quadro">
-                                          <div class="datas-grid">
-                                              <div class="data-item">
-                                                  <div class="data-label">Início Planejado</div>
-                                                  <div class="data-value">15/12/2026</div>
+                                          <!-- DATAS E VARIAÇÕES LADO A LADO -->
+                                          <div class="datas-variacoes-grid">
+                                              <!-- Datas em grid 2x2 -->
+                                              <div class="datas-grid">
+                                                  <div class="data-item">
+                                                      <div class="data-label">Início Planejado</div>
+                                                      <div class="data-value">15/12/2026</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Término Planejado</div>
+                                                      <div class="data-value">05/01/2026</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Início Real</div>
+                                                      <div class="data-value">15/12/2026</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Término Real</div>
+                                                      <div class="data-value empty">-</div>
+                                                  </div>
                                               </div>
-                                              <div class="data-item">
-                                                  <div class="data-label">Término Planejado</div>
-                                                  <div class="data-value">05/01/2026</div>
-                                              </div>
-                                              <div class="data-item">
-                                                  <div class="data-label">Início Real</div>
-                                                  <div class="data-value">15/12/2026</div>
-                                              </div>
-                                              <div class="data-item">
-                                                  <div class="data-label">Término Real</div>
-                                                  <div class="data-value empty">-</div>
+
+                                              <!-- QUADRO DE VARIAÇÕES E MARGEM -->
+                                              <div class="variacoes-quadro">
+                                                  <div class="variacoes-grid">
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Início</div>
+                                                          <div class="variacao-value">18 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Término</div>
+                                                          <div class="variacao-value">3 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Duração</div>
+                                                          <div class="variacao-value">15 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Margem de Atraso</div>
+                                                          <div class="variacao-value">200 dias</div>
+                                                      </div>
+                                                  </div>
                                               </div>
                                           </div>
 
-
-                                          <!-- QUADRO DE VARIAÇÕES E MARGEM -->
-                                          <div class="variacoes-quadro">
-                                              <div class="variacoes-grid">
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Variação de Início</div>
-                                                      <div class="variacao-value">18 dias</div>
-                                                  </div>
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Variação de Término</div>
-                                                      <div class="variacao-value">3 dias</div>
-                                                  </div>
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Variação de Duração</div>
-                                                      <div class="variacao-value">15 dias</div>
-                                                  </div>
-                                                  <div class="variacao-item">
-                                                      <div class="variacao-label">Margem de Atraso</div>
-                                                      <div class="variacao-value">200 dias</div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                          <!--  QUADRO DE LOCAÇÃO DE RECURSOS -->
+                                          <!-- QUADRO DE LOCAÇÃO DE RECURSOS (NA PARTE DE BAIXO) -->
                                           <div class="locacao-quadro">
                                               <div class="locacao-header">
                                                   <i class="fas fa-users"></i>
@@ -5743,8 +5737,7 @@
                                                   <div class="locacao-empty">Sem recursos alocados</div>
                                               </div>
                                           </div>
-                                      </div>                                    
-
+                                      </div>
 
                                       <!-- Quadro 2: Progressos - MODIFICADO: grid 2x2 com apenas 4 campos -->
                                       <div class="progresso-quadro">
@@ -6008,9 +6001,7 @@
                   clickedElement.closest('.analise-title') ||
                   clickedElement.closest('.margem-critica') ||
                   clickedElement.closest('.triangulo-icon') ||
-                  clickedElement.closest('.alerta-triangulo') ||
-                  clickedElement.closest('.critica-icon') ||
-                  clickedElement.closest('.critica-margem-zero');
+                  clickedElement.closest('.alerta-triangulo');
 
               if (isClickableElement) {
                   return; // Não fazer nada se foi em um elemento clicável interno
