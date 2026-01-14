@@ -1055,6 +1055,72 @@
               background: #1e40af;
           }
 
+          /* SEÇÃO DE ANÁLISE DE IA */
+          .analise-ia-grid {
+              display: grid;
+              grid-template-columns: 1fr;
+              gap: 15px;
+              margin-bottom: 15px;
+          }
+
+          .ia-quadro {
+              background: var(--gray-50);
+              padding: 15px;
+              border-radius: 8px;
+              border-left: 3px solid #8b5cf6;
+              position: relative;
+          }
+
+          .ia-header {
+              font-size: 0.95rem;
+              font-weight: 700;
+              color: #8b5cf6;
+              margin-bottom: 12px;
+              padding-bottom: 6px;
+              border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+              display: flex;
+              align-items: center;
+              gap: 8px;
+          }
+
+          .ia-coming-soon {
+              text-align: center;
+              padding: 40px 20px;
+              color: var(--gray-600);
+              font-size: 1.1rem;
+          }
+
+          .ia-coming-soon i {
+              font-size: 3rem;
+              margin-bottom: 20px;
+              color: rgba(139, 92, 246, 0.3);
+          }
+
+          .ia-placeholder {
+              background: white;
+              border-radius: 6px;
+              padding: 20px;
+              border: 1px solid var(--gray-200);
+          }
+
+          .ia-placeholder h4 {
+              color: #8b5cf6;
+              font-size: 1rem;
+              margin-bottom: 10px;
+          }
+
+          .ia-placeholder p {
+              color: var(--gray-600);
+              font-size: 0.9rem;
+              margin-bottom: 10px;
+          }
+
+          .ia-placeholder ul {
+              color: var(--gray-600);
+              font-size: 0.85rem;
+              padding-left: 20px;
+          }
+
           /* FOOTER */
           .footer {
               text-align: center;
@@ -1150,7 +1216,7 @@
               <h1>Relatório Diário de Obra - UFV SERRA DO SALITRE</h1>
               <div class="header-subtitle">
                   <i class="fas fa-calendar-alt"></i>
-                  Relatório atualizado em: 14/01/2026 às 07:22
+                  Relatório atualizado em: 14/01/2026 às 13:35
               </div>
           </header>
 
@@ -1243,6 +1309,12 @@
                       <i class="fas fa-exclamation-triangle"></i>
                       Críticas
                       <span class="tab-badge">6</span>
+                  </div>
+                  <!-- NOVA TAB: ANÁLISE DE IA -->
+                  <div class="tab" onclick="openTab('ia', this)">
+                      <i class="fas fa-robot"></i>
+                      Análise de IA
+                      <span class="tab-badge">0</span>
                   </div>
               </div>
 
@@ -162640,6 +162712,83 @@
               </div>
           </div>
           
+          <div class="tab-pane" id="ia">
+              <div class="tab-filter-notice">
+                  <i class="fas fa-robot"></i>
+                  Seção para análise preditiva e recomendações baseadas em IA
+              </div>
+
+              <div class="analise-ia-grid">
+                  <!-- Quadro 1: Recomendações de IA -->
+                  <div class="ia-quadro">
+                      <div class="ia-header">
+                          <i class="fas fa-lightbulb"></i>
+                          Recomendações Inteligentes
+                      </div>
+                      <div class="ia-placeholder">
+                          <h4><i class="fas fa-robot"></i> Seção para Análise de IA</h4>
+                          <p>Esta seção será preenchida com dados externos de análise de IA futuramente.</p>
+                          <p>Recursos planejados para esta seção:</p>
+                          <ul>
+                              <li>Análise preditiva de prazos</li>
+                              <li>Recomendações de otimização de recursos</li>
+                              <li>Alertas proativos de riscos</li>
+                              <li>Sugestões de mitigação baseadas em dados históricos</li>
+                              <li>Análise de tendências de produtividade</li>
+                          </ul>
+                      </div>
+                  </div>
+
+                  <!-- Quadro 2: Insights Analíticos -->
+                  <div class="ia-quadro">
+                      <div class="ia-header">
+                          <i class="fas fa-chart-line"></i>
+                          Insights Analíticos
+                      </div>
+                      <div class="ia-placeholder">
+                          <h4><i class="fas fa-database"></i> Dados para Integração</h4>
+                          <p>Esta área aguarda integração com:</p>
+                          <ul>
+                              <li>Sistemas de machine learning para previsão de cronogramas</li>
+                              <li>Algoritmos de otimização de recursos</li>
+                              <li>Análise de padrões históricos de execução</li>
+                              <li>Recomendações automáticas baseadas em similaridade de projetos</li>
+                          </ul>
+                          <p style="margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--gray-200);">
+                              <i class="fas fa-info-circle"></i>
+                              Esta seção será atualizada automaticamente quando os dados de IA estiverem disponíveis.
+                          </p>
+                      </div>
+                  </div>
+
+                  <!-- Quadro 3: Status da Integração -->
+                  <div class="ia-quadro">
+                      <div class="ia-header">
+                          <i class="fas fa-cogs"></i>
+                          Status da Integração
+                      </div>
+                      <div class="ia-placeholder">
+                          <h4><i class="fas fa-clock"></i> Em Desenvolvimento</h4>
+                          <p>A integração com sistemas de IA está em planejamento.</p>
+                          <p>Próximas etapas:</p>
+                          <ul>
+                              <li>Definição dos modelos de análise</li>
+                              <li>Integração com APIs de IA externas</li>
+                              <li>Configuração do pipeline de dados</li>
+                              <li>Testes e validação dos resultados</li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="expansion-controls">
+                  <button class="expansion-btn" onclick="refreshIAAnalysis()">
+                      <i class="fas fa-sync-alt"></i>
+                      Simular Atualização de IA
+                  </button>
+              </div>
+          </div>
+          
               </div>
           </div>
 
@@ -162650,7 +162799,7 @@
                   <strong>Relatório Diário de Obra - UFV CEMIG</strong>
               </p>
               <p>
-                  Gerado automaticamente em 14/01/2026 às 07:22 | 
+                  Gerado automaticamente em 14/01/2026 às 13:35 | 
                   Atividades monitoradas: 406 | 
                   Progresso financeiro: 0.0%
               </p>
@@ -162820,6 +162969,48 @@
 
               // Impedir propagação para não navegar para a atividade
               event.stopPropagation();
+          }
+
+          // FUNÇÃO PARA ATUALIZAR ANÁLISE DE IA (SIMULAÇÃO)
+          function refreshIAAnalysis() {
+              const iaTab = document.getElementById('ia');
+              const placeholders = iaTab.querySelectorAll('.ia-placeholder');
+
+              // Simular carregamento
+              placeholders.forEach(placeholder => {
+                  placeholder.style.opacity = '0.7';
+                  placeholder.innerHTML = `
+                      <div style="text-align: center; padding: 20px;">
+                          <i class="fas fa-spinner fa-spin fa-2x" style="color: #8b5cf6; margin-bottom: 15px;"></i>
+                          <p>Conectando ao serviço de IA...</p>
+                          <p style="font-size: 0.8rem; color: var(--gray-500);">Esta é uma simulação de integração</p>
+                      </div>
+                  `;
+              });
+
+              // Simular resposta após 2 segundos
+              setTimeout(() => {
+                  placeholders.forEach(placeholder => {
+                      placeholder.style.opacity = '1';
+                      placeholder.innerHTML = `
+                          <h4><i class="fas fa-check-circle" style="color: #10b981;"></i> Análise Completa</h4>
+                          <p>Integração com IA simulada com sucesso!</p>
+                          <p style="font-size: 0.85rem; color: var(--gray-600);">
+                              <i class="fas fa-info-circle"></i>
+                              Quando integrado com dados reais, esta seção mostrará:
+                          </p>
+                          <ul>
+                              <li>Previsões de conclusão baseadas em dados históricos</li>
+                              <li>Recomendações de otimização de recursos</li>
+                              <li>Alertas proativos de possíveis atrasos</li>
+                              <li>Análise de impacto de mudanças no cronograma</li>
+                          </ul>
+                      `;
+                  });
+
+                  // Mostrar notificação
+                  alert('Simulação de análise de IA concluída! Esta é uma demonstração da funcionalidade que será implementada com dados reais.');
+              }, 2000);
           }
 
           // FUNÇÕES DOS GRÁFICOS
