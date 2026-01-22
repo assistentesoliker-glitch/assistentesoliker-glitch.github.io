@@ -1216,7 +1216,7 @@
               <h1>Relatório Diário de Obra - UFV SERRA DO SALITRE</h1>
               <div class="header-subtitle">
                   <i class="fas fa-calendar-alt"></i>
-                  Relatório atualizado em: 21/01/2026 às 12:54
+                  Relatório atualizado em: 22/01/2026 às 07:52
               </div>
           </header>
 
@@ -1244,12 +1244,12 @@
 
               <div class="kpi-card proximas" onclick="openTabFromCard('proximas')">
                   <div class="kpi-label">Próximos 15d</div>
-                  <div class="kpi-value">23</div>
+                  <div class="kpi-value">26</div>
               </div>
 
               <div class="kpi-card planejadas" onclick="openTabFromCard('planejadas')">
                   <div class="kpi-label">Planejadas</div>
-                  <div class="kpi-value">366</div>
+                  <div class="kpi-value">363</div>
               </div>
           </div>
 
@@ -1297,12 +1297,12 @@
                   <div class="tab" onclick="openTab('proximas', this)">
                       <i class="fas fa-calendar-week"></i>
                       Próximas 15 Dias
-                      <span class="tab-badge">23</span>
+                      <span class="tab-badge">26</span>
                   </div>
                   <div class="tab" onclick="openTab('planejadas', this)">
                       <i class="fas fa-calendar-alt"></i>
                       Planejadas
-                      <span class="tab-badge">366</span>
+                      <span class="tab-badge">363</span>
                   </div>
                   <!-- TAB CRÍTICAS -->
                   <div class="tab" onclick="openTab('criticas', this)">
@@ -8249,6 +8249,325 @@
                   </div>
               </div>
               
+              <div class="atividade-accordion-item" id="atividade-2.01.01.03">
+                  <div class="atividade-accordion-header status-prevista" onclick="toggleAtividadeAccordionOnClick(this, event)">
+                      <div class="atividade-header-content">
+                          <div class="accordion-codigo">#2.01.01.03</div>
+                          <div class="accordion-titulo">
+                              Aprovação Técnica - Georreferenciamento
+                              <span class="setor-badge"><i class="fas fa-building"></i> Estudo</span>
+                              
+                          </div>
+                          <span class="accordion-badge prevista">
+                              <i class="fas fa-calendar-week"></i>
+                              Previstas (15 dias)
+                          </span>
+                      </div>
+                      <i class="fas fa-chevron-down accordion-toggle"></i>
+                  </div>
+
+                  <div class="atividade-accordion-content">
+                      <div class="atividade-expanded">
+              
+                          <!-- ANÁLISE FÍSICA -->
+                          <div class="analise-section">
+                              <div class="analise-title" onclick="toggleAnaliseSection(this, 'fisica-proximas-2.01.01.03')">
+                                  <i class="fas fa-chart-line toggle-icon"></i>
+                                  Análise Física
+                              </div>
+
+                              <div class="analise-content" id="fisica-proximas-2.01.01.03">
+                                  <div class="analise-fisica-grid">
+                                      <!-- Quadro 1: Datas, Variações e Locação -->
+                                      <div class="fisica-quadro">
+                                          <!-- DATAS E VARIAÇÕES LADO A LADO -->
+                                          <div class="datas-variacoes-grid">
+                                              <!-- Datas em grid 2x2 -->
+                                              <div class="datas-grid">
+                                                  <div class="data-item">
+                                                      <div class="data-label">Início Planejado</div>
+                                                      <div class="data-value">06/02/2026</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Término Planejado</div>
+                                                      <div class="data-value">06/02/2026</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Início Real</div>
+                                                      <div class="data-value empty">-</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Término Real</div>
+                                                      <div class="data-value empty">-</div>
+                                                  </div>
+                                              </div>
+
+                                              <!-- QUADRO DE VARIAÇÕES E MARGEM -->
+                                              <div class="variacoes-quadro">
+                                                  <div class="variacoes-grid">
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Início</div>
+                                                          <div class="variacao-value">0 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Término</div>
+                                                          <div class="variacao-value">0 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Duração</div>
+                                                          <div class="variacao-value">0 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Margem de Atraso</div>
+                                                          <div class="variacao-value"><span class="margem-critica" title="Atividade Crítica: Margem de atraso zero dias">0 dias <i class="fas fa-exclamation-triangle"></i></span></div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+
+                                          <!-- QUADRO DE LOCAÇÃO DE RECURSOS (NA PARTE DE BAIXO) -->
+                                          <div class="locacao-quadro">
+                                              <div class="locacao-header">
+                                                  <i class="fas fa-users"></i>
+                                                  Locação de Recursos
+                                              </div>
+                                              <div class="locacao-content">
+                                                  <div style="display: flex; flex-direction: column; gap: 4px;"><div>ETT01-Topógrafo</div><div>ETT02-Topógrafo</div></div>
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                      <!-- Quadro 2: Progressos - MODIFICADO: grid 2x2 com apenas 4 campos -->
+                                      <div class="progresso-quadro">
+                                          <div class="progresso-grid-2x2">
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Duração Planejada</div>
+                                                  <div class="progresso-valor-2x2">1 day</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Qtd. Diária Planejada</div>
+                                                  <div class="progresso-valor-2x2">0 atividade</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Progresso Planejado</div>
+                                                  <div class="progresso-valor-2x2">100%</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Progresso Real</div>
+                                                  <div class="progresso-valor-2x2">0%</div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <!-- ANÁLISE FINANCEIRA -->
+                          <div class="analise-section">
+                              <div class="analise-title" onclick="toggleAnaliseSection(this, 'financeira-proximas-2.01.01.03')">
+                                  <i class="fas fa-money-bill-wave toggle-icon"></i>
+                                  Análise Financeira
+                              </div>
+
+                              <div class="analise-content" id="financeira-proximas-2.01.01.03">
+                                  <div class="analise-financeira-grid">
+                                      <!-- Quadro 1: Valor Total da Execução -->
+                                      <div class="financeira-quadro">
+                                          <h4>Valor Total da Execução</h4>
+                                          <div class="financeira-item">
+                                              <div class="financeira-valor total">R$ 721,70</div>
+                                          </div>
+                                      </div>
+
+                                      <!-- Quadro 2: Valores da Atividade -->
+                                      <div class="financeira-quadro">
+                                          <h4>Valores da Atividade</h4>
+                                          <div class="financeira-item">
+                                              <div class="financeira-label">Valor Planejado</div>
+                                              <div class="financeira-valor planejado">R$ 0,00</div>
+                                          </div>
+                                          <div class="financeira-item">
+                                              <div class="financeira-label">Valor Executado</div>
+                                              <div class="financeira-valor executado">R$ 0,00</div>
+                                          </div>
+                                          <div class="financeira-item">
+                                              <div class="financeira-label">Saldo</div>
+                                              <div class="financeira-valor saldo">R$ 0,00</div>
+                                          </div>
+                                      </div>
+
+                                      <!-- Quadro 3: Valores em Cadeia -->
+                                      <div class="financeira-quadro">
+                                          <h4>Valores em Cadeia (Sucessoras Diretas)</h4>
+                                          <div class="financeira-item">
+                                              <div class="financeira-label">R$ Planejado em Cadeia</div>
+                                              <div class="financeira-valor planejado">R$ 0,00</div>
+                                          </div>
+                                          <div class="financeira-item">
+                                              <div class="financeira-label">R$ Real em Cadeia</div>
+                                              <div class="financeira-valor executado">R$ 0,00</div>
+                                          </div>
+                                          <div class="financeira-item">
+                                              <div class="financeira-label">Saldo em Cadeia</div>
+                                              <div class="financeira-valor saldo">R$ 0,00</div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <!-- DEPENDÊNCIAS -->
+                          <div class="dependencias-grid">
+                              <!-- Predecessoras -->
+                              <div class="deps-coluna" id="pred-col-proximas-2.01.01.03">
+                                  <div class="deps-coluna-header" onclick="toggleDepColuna('pred-content-proximas-2.01.01.03')">
+                                      <div class="deps-titulo">
+                                          <i class="fas fa-arrow-left"></i>
+                                          Predecessoras (1)
+                                      </div>
+                                      <i class="fas fa-chevron-down deps-toggle"></i>
+                                  </div>
+
+                                  <div class="deps-content" id="pred-content-proximas-2.01.01.03">
+                                      
+              <div class="dep-expansivel-item">
+                  <div class="dep-expansivel-header" onclick="toggleDepDetails('proximas-2.01.01.03-pred-0')">
+                      <div class="dep-header-main">
+                          <div class="dep-codigo-link" onclick="navigateToActivity('2.01.01.02', event)">#2.01.01.02</div>
+                          <div class="dep-nome" title="Análise Técnica - Georreferenciamento">Análise Técnica - Georreferenciamento</div>
+                          <div class="dep-status-indicator" style="background-color: #f59e0b;"></div>
+                      </div>
+                      <i class="fas fa-chevron-down dep-toggle"></i>
+                  </div>
+
+                  <div class="dep-expansivel-content" id="proximas-2.01.01.03-pred-0">
+                      <div class="dep-details-grid">
+                          <div class="dep-detail-col">
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Início Planejado:</span>
+                                  <span class="dep-detail-value">02/02/2026</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Início Real:</span>
+                                  <span class="dep-detail-value">-</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Qtd. Diária:</span>
+                                  <span class="dep-detail-value">0</span>
+                              </div>
+                          </div>
+                          <div class="dep-detail-col">
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Término Planejado:</span>
+                                  <span class="dep-detail-value">05/02/2026</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Término Real:</span>
+                                  <span class="dep-detail-value">-</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">% Planejada:</span>
+                                  <span class="dep-detail-value">100,0%</span>
+                              </div>
+                          </div>
+                          <div class="dep-detail-col">
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Valor Planejado:</span>
+                                  <span class="dep-detail-value">R$ 0,00</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Valor Executado:</span>
+                                  <span class="dep-detail-value">R$ 0,00</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">% Concluída:</span>
+                                  <span class="dep-detail-value">0,0%</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+                                  </div>
+                              </div>
+
+                              <!-- Sucessoras -->
+                              <div class="deps-coluna" id="suc-col-proximas-2.01.01.03">
+                                  <div class="deps-coluna-header" onclick="toggleDepColuna('suc-content-proximas-2.01.01.03')">
+                                      <div class="deps-titulo">
+                                          <i class="fas fa-arrow-right"></i>
+                                          Sucessoras (1)
+                                      </div>
+                                      <i class="fas fa-chevron-down deps-toggle"></i>
+                                  </div>
+
+                                  <div class="deps-content" id="suc-content-proximas-2.01.01.03">
+                                      
+              <div class="dep-expansivel-item">
+                  <div class="dep-expansivel-header" onclick="toggleDepDetails('proximas-2.01.01.03-suc-0')">
+                      <div class="dep-header-main">
+                          <div class="dep-codigo-link" onclick="navigateToActivity('2.04.01.01', event)">#2.04.01.01</div>
+                          <div class="dep-nome" title="Elaboração - Terraplanagem">Elaboração - Terraplanagem</div>
+                          <div class="dep-status-indicator" style="background-color: #f59e0b;"></div>
+                      </div>
+                      <i class="fas fa-chevron-down dep-toggle"></i>
+                  </div>
+
+                  <div class="dep-expansivel-content" id="proximas-2.01.01.03-suc-0">
+                      <div class="dep-details-grid">
+                          <div class="dep-detail-col">
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Início Planejado:</span>
+                                  <span class="dep-detail-value">09/02/2026</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Início Real:</span>
+                                  <span class="dep-detail-value">-</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Qtd. Diária:</span>
+                                  <span class="dep-detail-value">0</span>
+                              </div>
+                          </div>
+                          <div class="dep-detail-col">
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Término Planejado:</span>
+                                  <span class="dep-detail-value">06/03/2026</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Término Real:</span>
+                                  <span class="dep-detail-value">-</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">% Planejada:</span>
+                                  <span class="dep-detail-value">100,0%</span>
+                              </div>
+                          </div>
+                          <div class="dep-detail-col">
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Valor Planejado:</span>
+                                  <span class="dep-detail-value">R$ 0,00</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Valor Executado:</span>
+                                  <span class="dep-detail-value">R$ 0,00</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">% Concluída:</span>
+                                  <span class="dep-detail-value">0,0%</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
               <div class="atividade-accordion-item" id="atividade-2.01.02.02">
                   <div class="atividade-accordion-header status-prevista" onclick="toggleAtividadeAccordionOnClick(this, event)">
                       <div class="atividade-header-content">
@@ -8568,6 +8887,267 @@
                   </div>
               </div>
               
+              <div class="atividade-accordion-item" id="atividade-2.01.02.03">
+                  <div class="atividade-accordion-header status-prevista" onclick="toggleAtividadeAccordionOnClick(this, event)">
+                      <div class="atividade-header-content">
+                          <div class="accordion-codigo">#2.01.02.03</div>
+                          <div class="accordion-titulo">
+                              Aprovação Técnica - SPT
+                              <span class="setor-badge"><i class="fas fa-building"></i> Estudo</span>
+                              
+                          </div>
+                          <span class="accordion-badge prevista">
+                              <i class="fas fa-calendar-week"></i>
+                              Previstas (15 dias)
+                          </span>
+                      </div>
+                      <i class="fas fa-chevron-down accordion-toggle"></i>
+                  </div>
+
+                  <div class="atividade-accordion-content">
+                      <div class="atividade-expanded">
+              
+                          <!-- ANÁLISE FÍSICA -->
+                          <div class="analise-section">
+                              <div class="analise-title" onclick="toggleAnaliseSection(this, 'fisica-proximas-2.01.02.03')">
+                                  <i class="fas fa-chart-line toggle-icon"></i>
+                                  Análise Física
+                              </div>
+
+                              <div class="analise-content" id="fisica-proximas-2.01.02.03">
+                                  <div class="analise-fisica-grid">
+                                      <!-- Quadro 1: Datas, Variações e Locação -->
+                                      <div class="fisica-quadro">
+                                          <!-- DATAS E VARIAÇÕES LADO A LADO -->
+                                          <div class="datas-variacoes-grid">
+                                              <!-- Datas em grid 2x2 -->
+                                              <div class="datas-grid">
+                                                  <div class="data-item">
+                                                      <div class="data-label">Início Planejado</div>
+                                                      <div class="data-value">06/02/2026</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Término Planejado</div>
+                                                      <div class="data-value">06/02/2026</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Início Real</div>
+                                                      <div class="data-value empty">-</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Término Real</div>
+                                                      <div class="data-value empty">-</div>
+                                                  </div>
+                                              </div>
+
+                                              <!-- QUADRO DE VARIAÇÕES E MARGEM -->
+                                              <div class="variacoes-quadro">
+                                                  <div class="variacoes-grid">
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Início</div>
+                                                          <div class="variacao-value">0 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Término</div>
+                                                          <div class="variacao-value">0 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Duração</div>
+                                                          <div class="variacao-value">0 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Margem de Atraso</div>
+                                                          <div class="variacao-value">190 dias</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+
+                                          <!-- QUADRO DE LOCAÇÃO DE RECURSOS (NA PARTE DE BAIXO) -->
+                                          <div class="locacao-quadro">
+                                              <div class="locacao-header">
+                                                  <i class="fas fa-users"></i>
+                                                  Locação de Recursos
+                                              </div>
+                                              <div class="locacao-content">
+                                                  <div style="display: flex; flex-direction: column; gap: 4px;"><div>ETT04-Téc_SPT</div><div>ETT05-Téc_SPT</div><div>ETT06-Téc_SPT</div></div>
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                      <!-- Quadro 2: Progressos - MODIFICADO: grid 2x2 com apenas 4 campos -->
+                                      <div class="progresso-quadro">
+                                          <div class="progresso-grid-2x2">
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Duração Planejada</div>
+                                                  <div class="progresso-valor-2x2">1 day</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Qtd. Diária Planejada</div>
+                                                  <div class="progresso-valor-2x2">0 atividade</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Progresso Planejado</div>
+                                                  <div class="progresso-valor-2x2">100%</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Progresso Real</div>
+                                                  <div class="progresso-valor-2x2">0%</div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <!-- ANÁLISE FINANCEIRA -->
+                          <div class="analise-section">
+                              <div class="analise-title" onclick="toggleAnaliseSection(this, 'financeira-proximas-2.01.02.03')">
+                                  <i class="fas fa-money-bill-wave toggle-icon"></i>
+                                  Análise Financeira
+                              </div>
+
+                              <div class="analise-content" id="financeira-proximas-2.01.02.03">
+                                  <div class="analise-financeira-grid">
+                                      <!-- Quadro 1: Valor Total da Execução -->
+                                      <div class="financeira-quadro">
+                                          <h4>Valor Total da Execução</h4>
+                                          <div class="financeira-item">
+                                              <div class="financeira-valor total">R$ 565,01</div>
+                                          </div>
+                                      </div>
+
+                                      <!-- Quadro 2: Valores da Atividade -->
+                                      <div class="financeira-quadro">
+                                          <h4>Valores da Atividade</h4>
+                                          <div class="financeira-item">
+                                              <div class="financeira-label">Valor Planejado</div>
+                                              <div class="financeira-valor planejado">R$ 0,00</div>
+                                          </div>
+                                          <div class="financeira-item">
+                                              <div class="financeira-label">Valor Executado</div>
+                                              <div class="financeira-valor executado">R$ 0,00</div>
+                                          </div>
+                                          <div class="financeira-item">
+                                              <div class="financeira-label">Saldo</div>
+                                              <div class="financeira-valor saldo">R$ 0,00</div>
+                                          </div>
+                                      </div>
+
+                                      <!-- Quadro 3: Valores em Cadeia -->
+                                      <div class="financeira-quadro">
+                                          <h4>Valores em Cadeia (Sucessoras Diretas)</h4>
+                                          <div class="financeira-item">
+                                              <div class="financeira-label">R$ Planejado em Cadeia</div>
+                                              <div class="financeira-valor planejado">R$ 0,00</div>
+                                          </div>
+                                          <div class="financeira-item">
+                                              <div class="financeira-label">R$ Real em Cadeia</div>
+                                              <div class="financeira-valor executado">R$ 0,00</div>
+                                          </div>
+                                          <div class="financeira-item">
+                                              <div class="financeira-label">Saldo em Cadeia</div>
+                                              <div class="financeira-valor saldo">R$ 0,00</div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <!-- DEPENDÊNCIAS -->
+                          <div class="dependencias-grid">
+                              <!-- Predecessoras -->
+                              <div class="deps-coluna" id="pred-col-proximas-2.01.02.03">
+                                  <div class="deps-coluna-header" onclick="toggleDepColuna('pred-content-proximas-2.01.02.03')">
+                                      <div class="deps-titulo">
+                                          <i class="fas fa-arrow-left"></i>
+                                          Predecessoras (1)
+                                      </div>
+                                      <i class="fas fa-chevron-down deps-toggle"></i>
+                                  </div>
+
+                                  <div class="deps-content" id="pred-content-proximas-2.01.02.03">
+                                      
+              <div class="dep-expansivel-item">
+                  <div class="dep-expansivel-header" onclick="toggleDepDetails('proximas-2.01.02.03-pred-0')">
+                      <div class="dep-header-main">
+                          <div class="dep-codigo-link" onclick="navigateToActivity('2.01.02.02', event)">#2.01.02.02</div>
+                          <div class="dep-nome" title="Análise Técnica - SPT">Análise Técnica - SPT</div>
+                          <div class="dep-status-indicator" style="background-color: #f59e0b;"></div>
+                      </div>
+                      <i class="fas fa-chevron-down dep-toggle"></i>
+                  </div>
+
+                  <div class="dep-expansivel-content" id="proximas-2.01.02.03-pred-0">
+                      <div class="dep-details-grid">
+                          <div class="dep-detail-col">
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Início Planejado:</span>
+                                  <span class="dep-detail-value">02/02/2026</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Início Real:</span>
+                                  <span class="dep-detail-value">-</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Qtd. Diária:</span>
+                                  <span class="dep-detail-value">0</span>
+                              </div>
+                          </div>
+                          <div class="dep-detail-col">
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Término Planejado:</span>
+                                  <span class="dep-detail-value">05/02/2026</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Término Real:</span>
+                                  <span class="dep-detail-value">-</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">% Planejada:</span>
+                                  <span class="dep-detail-value">100,0%</span>
+                              </div>
+                          </div>
+                          <div class="dep-detail-col">
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Valor Planejado:</span>
+                                  <span class="dep-detail-value">R$ 0,00</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Valor Executado:</span>
+                                  <span class="dep-detail-value">R$ 0,00</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">% Concluída:</span>
+                                  <span class="dep-detail-value">0,0%</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+                                  </div>
+                              </div>
+
+                              <!-- Sucessoras -->
+                              <div class="deps-coluna" id="suc-col-proximas-2.01.02.03">
+                                  <div class="deps-coluna-header" onclick="toggleDepColuna('suc-content-proximas-2.01.02.03')">
+                                      <div class="deps-titulo">
+                                          <i class="fas fa-arrow-right"></i>
+                                          Sucessoras (0)
+                                      </div>
+                                      <i class="fas fa-chevron-down deps-toggle"></i>
+                                  </div>
+
+                                  <div class="deps-content" id="suc-content-proximas-2.01.02.03">
+                                      <div class='deps-empty'>Nenhuma</div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
               <div class="atividade-accordion-item" id="atividade-2.01.03.02">
                   <div class="atividade-accordion-header status-prevista" onclick="toggleAtividadeAccordionOnClick(this, event)">
                       <div class="atividade-header-content">
@@ -8852,6 +9432,325 @@
                               <div class="dep-detail-item">
                                   <span class="dep-detail-label">Término Planejado:</span>
                                   <span class="dep-detail-value">06/02/2026</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Término Real:</span>
+                                  <span class="dep-detail-value">-</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">% Planejada:</span>
+                                  <span class="dep-detail-value">100,0%</span>
+                              </div>
+                          </div>
+                          <div class="dep-detail-col">
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Valor Planejado:</span>
+                                  <span class="dep-detail-value">R$ 0,00</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Valor Executado:</span>
+                                  <span class="dep-detail-value">R$ 0,00</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">% Concluída:</span>
+                                  <span class="dep-detail-value">0,0%</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="atividade-accordion-item" id="atividade-2.01.03.03">
+                  <div class="atividade-accordion-header status-prevista" onclick="toggleAtividadeAccordionOnClick(this, event)">
+                      <div class="atividade-header-content">
+                          <div class="accordion-codigo">#2.01.03.03</div>
+                          <div class="accordion-titulo">
+                              Aprovação Técnica - SEV
+                              <span class="setor-badge"><i class="fas fa-building"></i> Estudo</span>
+                              
+                          </div>
+                          <span class="accordion-badge prevista">
+                              <i class="fas fa-calendar-week"></i>
+                              Previstas (15 dias)
+                          </span>
+                      </div>
+                      <i class="fas fa-chevron-down accordion-toggle"></i>
+                  </div>
+
+                  <div class="atividade-accordion-content">
+                      <div class="atividade-expanded">
+              
+                          <!-- ANÁLISE FÍSICA -->
+                          <div class="analise-section">
+                              <div class="analise-title" onclick="toggleAnaliseSection(this, 'fisica-proximas-2.01.03.03')">
+                                  <i class="fas fa-chart-line toggle-icon"></i>
+                                  Análise Física
+                              </div>
+
+                              <div class="analise-content" id="fisica-proximas-2.01.03.03">
+                                  <div class="analise-fisica-grid">
+                                      <!-- Quadro 1: Datas, Variações e Locação -->
+                                      <div class="fisica-quadro">
+                                          <!-- DATAS E VARIAÇÕES LADO A LADO -->
+                                          <div class="datas-variacoes-grid">
+                                              <!-- Datas em grid 2x2 -->
+                                              <div class="datas-grid">
+                                                  <div class="data-item">
+                                                      <div class="data-label">Início Planejado</div>
+                                                      <div class="data-value">06/02/2026</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Término Planejado</div>
+                                                      <div class="data-value">06/02/2026</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Início Real</div>
+                                                      <div class="data-value empty">-</div>
+                                                  </div>
+                                                  <div class="data-item">
+                                                      <div class="data-label">Término Real</div>
+                                                      <div class="data-value empty">-</div>
+                                                  </div>
+                                              </div>
+
+                                              <!-- QUADRO DE VARIAÇÕES E MARGEM -->
+                                              <div class="variacoes-quadro">
+                                                  <div class="variacoes-grid">
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Início</div>
+                                                          <div class="variacao-value">0 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Término</div>
+                                                          <div class="variacao-value">0 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Variação de Duração</div>
+                                                          <div class="variacao-value">0 dias</div>
+                                                      </div>
+                                                      <div class="variacao-item">
+                                                          <div class="variacao-label">Margem de Atraso</div>
+                                                          <div class="variacao-value"><span class="margem-critica" title="Atividade Crítica: Margem de atraso zero dias">0 dias <i class="fas fa-exclamation-triangle"></i></span></div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+
+                                          <!-- QUADRO DE LOCAÇÃO DE RECURSOS (NA PARTE DE BAIXO) -->
+                                          <div class="locacao-quadro">
+                                              <div class="locacao-header">
+                                                  <i class="fas fa-users"></i>
+                                                  Locação de Recursos
+                                              </div>
+                                              <div class="locacao-content">
+                                                  <div style="display: flex; flex-direction: column; gap: 4px;"><div>ETT07-Téc_SEV</div><div>ETT08-Téc_SEV</div></div>
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                      <!-- Quadro 2: Progressos - MODIFICADO: grid 2x2 com apenas 4 campos -->
+                                      <div class="progresso-quadro">
+                                          <div class="progresso-grid-2x2">
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Duração Planejada</div>
+                                                  <div class="progresso-valor-2x2">1 day</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Qtd. Diária Planejada</div>
+                                                  <div class="progresso-valor-2x2">0 atividade</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Progresso Planejado</div>
+                                                  <div class="progresso-valor-2x2">100%</div>
+                                              </div>
+                                              <div class="progresso-item-2x2">
+                                                  <div class="progresso-label-2x2">Progresso Real</div>
+                                                  <div class="progresso-valor-2x2">0%</div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <!-- ANÁLISE FINANCEIRA -->
+                          <div class="analise-section">
+                              <div class="analise-title" onclick="toggleAnaliseSection(this, 'financeira-proximas-2.01.03.03')">
+                                  <i class="fas fa-money-bill-wave toggle-icon"></i>
+                                  Análise Financeira
+                              </div>
+
+                              <div class="analise-content" id="financeira-proximas-2.01.03.03">
+                                  <div class="analise-financeira-grid">
+                                      <!-- Quadro 1: Valor Total da Execução -->
+                                      <div class="financeira-quadro">
+                                          <h4>Valor Total da Execução</h4>
+                                          <div class="financeira-item">
+                                              <div class="financeira-valor total">R$ 565,01</div>
+                                          </div>
+                                      </div>
+
+                                      <!-- Quadro 2: Valores da Atividade -->
+                                      <div class="financeira-quadro">
+                                          <h4>Valores da Atividade</h4>
+                                          <div class="financeira-item">
+                                              <div class="financeira-label">Valor Planejado</div>
+                                              <div class="financeira-valor planejado">R$ 0,00</div>
+                                          </div>
+                                          <div class="financeira-item">
+                                              <div class="financeira-label">Valor Executado</div>
+                                              <div class="financeira-valor executado">R$ 0,00</div>
+                                          </div>
+                                          <div class="financeira-item">
+                                              <div class="financeira-label">Saldo</div>
+                                              <div class="financeira-valor saldo">R$ 0,00</div>
+                                          </div>
+                                      </div>
+
+                                      <!-- Quadro 3: Valores em Cadeia -->
+                                      <div class="financeira-quadro">
+                                          <h4>Valores em Cadeia (Sucessoras Diretas)</h4>
+                                          <div class="financeira-item">
+                                              <div class="financeira-label">R$ Planejado em Cadeia</div>
+                                              <div class="financeira-valor planejado">R$ 0,00</div>
+                                          </div>
+                                          <div class="financeira-item">
+                                              <div class="financeira-label">R$ Real em Cadeia</div>
+                                              <div class="financeira-valor executado">R$ 0,00</div>
+                                          </div>
+                                          <div class="financeira-item">
+                                              <div class="financeira-label">Saldo em Cadeia</div>
+                                              <div class="financeira-valor saldo">R$ 0,00</div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <!-- DEPENDÊNCIAS -->
+                          <div class="dependencias-grid">
+                              <!-- Predecessoras -->
+                              <div class="deps-coluna" id="pred-col-proximas-2.01.03.03">
+                                  <div class="deps-coluna-header" onclick="toggleDepColuna('pred-content-proximas-2.01.03.03')">
+                                      <div class="deps-titulo">
+                                          <i class="fas fa-arrow-left"></i>
+                                          Predecessoras (1)
+                                      </div>
+                                      <i class="fas fa-chevron-down deps-toggle"></i>
+                                  </div>
+
+                                  <div class="deps-content" id="pred-content-proximas-2.01.03.03">
+                                      
+              <div class="dep-expansivel-item">
+                  <div class="dep-expansivel-header" onclick="toggleDepDetails('proximas-2.01.03.03-pred-0')">
+                      <div class="dep-header-main">
+                          <div class="dep-codigo-link" onclick="navigateToActivity('2.01.03.02', event)">#2.01.03.02</div>
+                          <div class="dep-nome" title="Análise Técnica - SEV">Análise Técnica - SEV</div>
+                          <div class="dep-status-indicator" style="background-color: #f59e0b;"></div>
+                      </div>
+                      <i class="fas fa-chevron-down dep-toggle"></i>
+                  </div>
+
+                  <div class="dep-expansivel-content" id="proximas-2.01.03.03-pred-0">
+                      <div class="dep-details-grid">
+                          <div class="dep-detail-col">
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Início Planejado:</span>
+                                  <span class="dep-detail-value">02/02/2026</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Início Real:</span>
+                                  <span class="dep-detail-value">-</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Qtd. Diária:</span>
+                                  <span class="dep-detail-value">0</span>
+                              </div>
+                          </div>
+                          <div class="dep-detail-col">
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Término Planejado:</span>
+                                  <span class="dep-detail-value">05/02/2026</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Término Real:</span>
+                                  <span class="dep-detail-value">-</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">% Planejada:</span>
+                                  <span class="dep-detail-value">100,0%</span>
+                              </div>
+                          </div>
+                          <div class="dep-detail-col">
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Valor Planejado:</span>
+                                  <span class="dep-detail-value">R$ 0,00</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Valor Executado:</span>
+                                  <span class="dep-detail-value">R$ 0,00</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">% Concluída:</span>
+                                  <span class="dep-detail-value">0,0%</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+                                  </div>
+                              </div>
+
+                              <!-- Sucessoras -->
+                              <div class="deps-coluna" id="suc-col-proximas-2.01.03.03">
+                                  <div class="deps-coluna-header" onclick="toggleDepColuna('suc-content-proximas-2.01.03.03')">
+                                      <div class="deps-titulo">
+                                          <i class="fas fa-arrow-right"></i>
+                                          Sucessoras (1)
+                                      </div>
+                                      <i class="fas fa-chevron-down deps-toggle"></i>
+                                  </div>
+
+                                  <div class="deps-content" id="suc-content-proximas-2.01.03.03">
+                                      
+              <div class="dep-expansivel-item">
+                  <div class="dep-expansivel-header" onclick="toggleDepDetails('proximas-2.01.03.03-suc-0')">
+                      <div class="dep-header-main">
+                          <div class="dep-codigo-link" onclick="navigateToActivity('2.03.09.01', event)">#2.03.09.01</div>
+                          <div class="dep-nome" title="Elaboração - Aterramento">Elaboração - Aterramento</div>
+                          <div class="dep-status-indicator" style="background-color: #f59e0b;"></div>
+                      </div>
+                      <i class="fas fa-chevron-down dep-toggle"></i>
+                  </div>
+
+                  <div class="dep-expansivel-content" id="proximas-2.01.03.03-suc-0">
+                      <div class="dep-details-grid">
+                          <div class="dep-detail-col">
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Início Planejado:</span>
+                                  <span class="dep-detail-value">23/02/2026</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Início Real:</span>
+                                  <span class="dep-detail-value">-</span>
+                              </div>
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Qtd. Diária:</span>
+                                  <span class="dep-detail-value">0</span>
+                              </div>
+                          </div>
+                          <div class="dep-detail-col">
+                              <div class="dep-detail-item">
+                                  <span class="dep-detail-label">Término Planejado:</span>
+                                  <span class="dep-detail-value">27/02/2026</span>
                               </div>
                               <div class="dep-detail-item">
                                   <span class="dep-detail-label">Término Real:</span>
@@ -19697,905 +20596,6 @@
 
               <div class="atividades-accordion" id="accordion-planejadas">
           
-              <div class="atividade-accordion-item" id="atividade-2.01.01.03">
-                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordionOnClick(this, event)">
-                      <div class="atividade-header-content">
-                          <div class="accordion-codigo">#2.01.01.03</div>
-                          <div class="accordion-titulo">
-                              Aprovação Técnica - Georreferenciamento
-                              <span class="setor-badge"><i class="fas fa-building"></i> Estudo</span>
-                              
-                          </div>
-                          <span class="accordion-badge planejada">
-                              <i class="fas fa-calendar-alt"></i>
-                              Planejadas
-                          </span>
-                      </div>
-                      <i class="fas fa-chevron-down accordion-toggle"></i>
-                  </div>
-
-                  <div class="atividade-accordion-content">
-                      <div class="atividade-expanded">
-              
-                          <!-- ANÁLISE FÍSICA -->
-                          <div class="analise-section">
-                              <div class="analise-title" onclick="toggleAnaliseSection(this, 'fisica-planejadas-2.01.01.03')">
-                                  <i class="fas fa-chart-line toggle-icon"></i>
-                                  Análise Física
-                              </div>
-
-                              <div class="analise-content" id="fisica-planejadas-2.01.01.03">
-                                  <div class="analise-fisica-grid">
-                                      <!-- Quadro 1: Datas, Variações e Locação -->
-                                      <div class="fisica-quadro">
-                                          <!-- DATAS E VARIAÇÕES LADO A LADO -->
-                                          <div class="datas-variacoes-grid">
-                                              <!-- Datas em grid 2x2 -->
-                                              <div class="datas-grid">
-                                                  <div class="data-item">
-                                                      <div class="data-label">Início Planejado</div>
-                                                      <div class="data-value">06/02/2026</div>
-                                                  </div>
-                                                  <div class="data-item">
-                                                      <div class="data-label">Término Planejado</div>
-                                                      <div class="data-value">06/02/2026</div>
-                                                  </div>
-                                                  <div class="data-item">
-                                                      <div class="data-label">Início Real</div>
-                                                      <div class="data-value empty">-</div>
-                                                  </div>
-                                                  <div class="data-item">
-                                                      <div class="data-label">Término Real</div>
-                                                      <div class="data-value empty">-</div>
-                                                  </div>
-                                              </div>
-
-                                              <!-- QUADRO DE VARIAÇÕES E MARGEM -->
-                                              <div class="variacoes-quadro">
-                                                  <div class="variacoes-grid">
-                                                      <div class="variacao-item">
-                                                          <div class="variacao-label">Variação de Início</div>
-                                                          <div class="variacao-value">0 dias</div>
-                                                      </div>
-                                                      <div class="variacao-item">
-                                                          <div class="variacao-label">Variação de Término</div>
-                                                          <div class="variacao-value">0 dias</div>
-                                                      </div>
-                                                      <div class="variacao-item">
-                                                          <div class="variacao-label">Variação de Duração</div>
-                                                          <div class="variacao-value">0 dias</div>
-                                                      </div>
-                                                      <div class="variacao-item">
-                                                          <div class="variacao-label">Margem de Atraso</div>
-                                                          <div class="variacao-value"><span class="margem-critica" title="Atividade Crítica: Margem de atraso zero dias">0 dias <i class="fas fa-exclamation-triangle"></i></span></div>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                          </div>
-
-                                          <!-- QUADRO DE LOCAÇÃO DE RECURSOS (NA PARTE DE BAIXO) -->
-                                          <div class="locacao-quadro">
-                                              <div class="locacao-header">
-                                                  <i class="fas fa-users"></i>
-                                                  Locação de Recursos
-                                              </div>
-                                              <div class="locacao-content">
-                                                  <div style="display: flex; flex-direction: column; gap: 4px;"><div>ETT01-Topógrafo</div><div>ETT02-Topógrafo</div></div>
-                                              </div>
-                                          </div>
-                                      </div>
-
-                                      <!-- Quadro 2: Progressos - MODIFICADO: grid 2x2 com apenas 4 campos -->
-                                      <div class="progresso-quadro">
-                                          <div class="progresso-grid-2x2">
-                                              <div class="progresso-item-2x2">
-                                                  <div class="progresso-label-2x2">Duração Planejada</div>
-                                                  <div class="progresso-valor-2x2">1 day</div>
-                                              </div>
-                                              <div class="progresso-item-2x2">
-                                                  <div class="progresso-label-2x2">Qtd. Diária Planejada</div>
-                                                  <div class="progresso-valor-2x2">0 atividade</div>
-                                              </div>
-                                              <div class="progresso-item-2x2">
-                                                  <div class="progresso-label-2x2">Progresso Planejado</div>
-                                                  <div class="progresso-valor-2x2">100%</div>
-                                              </div>
-                                              <div class="progresso-item-2x2">
-                                                  <div class="progresso-label-2x2">Progresso Real</div>
-                                                  <div class="progresso-valor-2x2">0%</div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-
-                          <!-- ANÁLISE FINANCEIRA -->
-                          <div class="analise-section">
-                              <div class="analise-title" onclick="toggleAnaliseSection(this, 'financeira-planejadas-2.01.01.03')">
-                                  <i class="fas fa-money-bill-wave toggle-icon"></i>
-                                  Análise Financeira
-                              </div>
-
-                              <div class="analise-content" id="financeira-planejadas-2.01.01.03">
-                                  <div class="analise-financeira-grid">
-                                      <!-- Quadro 1: Valor Total da Execução -->
-                                      <div class="financeira-quadro">
-                                          <h4>Valor Total da Execução</h4>
-                                          <div class="financeira-item">
-                                              <div class="financeira-valor total">R$ 721,70</div>
-                                          </div>
-                                      </div>
-
-                                      <!-- Quadro 2: Valores da Atividade -->
-                                      <div class="financeira-quadro">
-                                          <h4>Valores da Atividade</h4>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Valor Planejado</div>
-                                              <div class="financeira-valor planejado">R$ 0,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Valor Executado</div>
-                                              <div class="financeira-valor executado">R$ 0,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Saldo</div>
-                                              <div class="financeira-valor saldo">R$ 0,00</div>
-                                          </div>
-                                      </div>
-
-                                      <!-- Quadro 3: Valores em Cadeia -->
-                                      <div class="financeira-quadro">
-                                          <h4>Valores em Cadeia (Sucessoras Diretas)</h4>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">R$ Planejado em Cadeia</div>
-                                              <div class="financeira-valor planejado">R$ 0,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">R$ Real em Cadeia</div>
-                                              <div class="financeira-valor executado">R$ 0,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Saldo em Cadeia</div>
-                                              <div class="financeira-valor saldo">R$ 0,00</div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-
-                          <!-- DEPENDÊNCIAS -->
-                          <div class="dependencias-grid">
-                              <!-- Predecessoras -->
-                              <div class="deps-coluna" id="pred-col-planejadas-2.01.01.03">
-                                  <div class="deps-coluna-header" onclick="toggleDepColuna('pred-content-planejadas-2.01.01.03')">
-                                      <div class="deps-titulo">
-                                          <i class="fas fa-arrow-left"></i>
-                                          Predecessoras (1)
-                                      </div>
-                                      <i class="fas fa-chevron-down deps-toggle"></i>
-                                  </div>
-
-                                  <div class="deps-content" id="pred-content-planejadas-2.01.01.03">
-                                      
-              <div class="dep-expansivel-item">
-                  <div class="dep-expansivel-header" onclick="toggleDepDetails('planejadas-2.01.01.03-pred-0')">
-                      <div class="dep-header-main">
-                          <div class="dep-codigo-link" onclick="navigateToActivity('2.01.01.02', event)">#2.01.01.02</div>
-                          <div class="dep-nome" title="Análise Técnica - Georreferenciamento">Análise Técnica - Georreferenciamento</div>
-                          <div class="dep-status-indicator" style="background-color: #f59e0b;"></div>
-                      </div>
-                      <i class="fas fa-chevron-down dep-toggle"></i>
-                  </div>
-
-                  <div class="dep-expansivel-content" id="planejadas-2.01.01.03-pred-0">
-                      <div class="dep-details-grid">
-                          <div class="dep-detail-col">
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Início Planejado:</span>
-                                  <span class="dep-detail-value">02/02/2026</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Início Real:</span>
-                                  <span class="dep-detail-value">-</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Qtd. Diária:</span>
-                                  <span class="dep-detail-value">0</span>
-                              </div>
-                          </div>
-                          <div class="dep-detail-col">
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Término Planejado:</span>
-                                  <span class="dep-detail-value">05/02/2026</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Término Real:</span>
-                                  <span class="dep-detail-value">-</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">% Planejada:</span>
-                                  <span class="dep-detail-value">100,0%</span>
-                              </div>
-                          </div>
-                          <div class="dep-detail-col">
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Valor Planejado:</span>
-                                  <span class="dep-detail-value">R$ 0,00</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Valor Executado:</span>
-                                  <span class="dep-detail-value">R$ 0,00</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">% Concluída:</span>
-                                  <span class="dep-detail-value">0,0%</span>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              
-                                  </div>
-                              </div>
-
-                              <!-- Sucessoras -->
-                              <div class="deps-coluna" id="suc-col-planejadas-2.01.01.03">
-                                  <div class="deps-coluna-header" onclick="toggleDepColuna('suc-content-planejadas-2.01.01.03')">
-                                      <div class="deps-titulo">
-                                          <i class="fas fa-arrow-right"></i>
-                                          Sucessoras (1)
-                                      </div>
-                                      <i class="fas fa-chevron-down deps-toggle"></i>
-                                  </div>
-
-                                  <div class="deps-content" id="suc-content-planejadas-2.01.01.03">
-                                      
-              <div class="dep-expansivel-item">
-                  <div class="dep-expansivel-header" onclick="toggleDepDetails('planejadas-2.01.01.03-suc-0')">
-                      <div class="dep-header-main">
-                          <div class="dep-codigo-link" onclick="navigateToActivity('2.04.01.01', event)">#2.04.01.01</div>
-                          <div class="dep-nome" title="Elaboração - Terraplanagem">Elaboração - Terraplanagem</div>
-                          <div class="dep-status-indicator" style="background-color: #f59e0b;"></div>
-                      </div>
-                      <i class="fas fa-chevron-down dep-toggle"></i>
-                  </div>
-
-                  <div class="dep-expansivel-content" id="planejadas-2.01.01.03-suc-0">
-                      <div class="dep-details-grid">
-                          <div class="dep-detail-col">
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Início Planejado:</span>
-                                  <span class="dep-detail-value">09/02/2026</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Início Real:</span>
-                                  <span class="dep-detail-value">-</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Qtd. Diária:</span>
-                                  <span class="dep-detail-value">0</span>
-                              </div>
-                          </div>
-                          <div class="dep-detail-col">
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Término Planejado:</span>
-                                  <span class="dep-detail-value">06/03/2026</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Término Real:</span>
-                                  <span class="dep-detail-value">-</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">% Planejada:</span>
-                                  <span class="dep-detail-value">100,0%</span>
-                              </div>
-                          </div>
-                          <div class="dep-detail-col">
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Valor Planejado:</span>
-                                  <span class="dep-detail-value">R$ 0,00</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Valor Executado:</span>
-                                  <span class="dep-detail-value">R$ 0,00</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">% Concluída:</span>
-                                  <span class="dep-detail-value">0,0%</span>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              
-              <div class="atividade-accordion-item" id="atividade-2.01.02.03">
-                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordionOnClick(this, event)">
-                      <div class="atividade-header-content">
-                          <div class="accordion-codigo">#2.01.02.03</div>
-                          <div class="accordion-titulo">
-                              Aprovação Técnica - SPT
-                              <span class="setor-badge"><i class="fas fa-building"></i> Estudo</span>
-                              
-                          </div>
-                          <span class="accordion-badge planejada">
-                              <i class="fas fa-calendar-alt"></i>
-                              Planejadas
-                          </span>
-                      </div>
-                      <i class="fas fa-chevron-down accordion-toggle"></i>
-                  </div>
-
-                  <div class="atividade-accordion-content">
-                      <div class="atividade-expanded">
-              
-                          <!-- ANÁLISE FÍSICA -->
-                          <div class="analise-section">
-                              <div class="analise-title" onclick="toggleAnaliseSection(this, 'fisica-planejadas-2.01.02.03')">
-                                  <i class="fas fa-chart-line toggle-icon"></i>
-                                  Análise Física
-                              </div>
-
-                              <div class="analise-content" id="fisica-planejadas-2.01.02.03">
-                                  <div class="analise-fisica-grid">
-                                      <!-- Quadro 1: Datas, Variações e Locação -->
-                                      <div class="fisica-quadro">
-                                          <!-- DATAS E VARIAÇÕES LADO A LADO -->
-                                          <div class="datas-variacoes-grid">
-                                              <!-- Datas em grid 2x2 -->
-                                              <div class="datas-grid">
-                                                  <div class="data-item">
-                                                      <div class="data-label">Início Planejado</div>
-                                                      <div class="data-value">06/02/2026</div>
-                                                  </div>
-                                                  <div class="data-item">
-                                                      <div class="data-label">Término Planejado</div>
-                                                      <div class="data-value">06/02/2026</div>
-                                                  </div>
-                                                  <div class="data-item">
-                                                      <div class="data-label">Início Real</div>
-                                                      <div class="data-value empty">-</div>
-                                                  </div>
-                                                  <div class="data-item">
-                                                      <div class="data-label">Término Real</div>
-                                                      <div class="data-value empty">-</div>
-                                                  </div>
-                                              </div>
-
-                                              <!-- QUADRO DE VARIAÇÕES E MARGEM -->
-                                              <div class="variacoes-quadro">
-                                                  <div class="variacoes-grid">
-                                                      <div class="variacao-item">
-                                                          <div class="variacao-label">Variação de Início</div>
-                                                          <div class="variacao-value">0 dias</div>
-                                                      </div>
-                                                      <div class="variacao-item">
-                                                          <div class="variacao-label">Variação de Término</div>
-                                                          <div class="variacao-value">0 dias</div>
-                                                      </div>
-                                                      <div class="variacao-item">
-                                                          <div class="variacao-label">Variação de Duração</div>
-                                                          <div class="variacao-value">0 dias</div>
-                                                      </div>
-                                                      <div class="variacao-item">
-                                                          <div class="variacao-label">Margem de Atraso</div>
-                                                          <div class="variacao-value">190 dias</div>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                          </div>
-
-                                          <!-- QUADRO DE LOCAÇÃO DE RECURSOS (NA PARTE DE BAIXO) -->
-                                          <div class="locacao-quadro">
-                                              <div class="locacao-header">
-                                                  <i class="fas fa-users"></i>
-                                                  Locação de Recursos
-                                              </div>
-                                              <div class="locacao-content">
-                                                  <div style="display: flex; flex-direction: column; gap: 4px;"><div>ETT04-Téc_SPT</div><div>ETT05-Téc_SPT</div><div>ETT06-Téc_SPT</div></div>
-                                              </div>
-                                          </div>
-                                      </div>
-
-                                      <!-- Quadro 2: Progressos - MODIFICADO: grid 2x2 com apenas 4 campos -->
-                                      <div class="progresso-quadro">
-                                          <div class="progresso-grid-2x2">
-                                              <div class="progresso-item-2x2">
-                                                  <div class="progresso-label-2x2">Duração Planejada</div>
-                                                  <div class="progresso-valor-2x2">1 day</div>
-                                              </div>
-                                              <div class="progresso-item-2x2">
-                                                  <div class="progresso-label-2x2">Qtd. Diária Planejada</div>
-                                                  <div class="progresso-valor-2x2">0 atividade</div>
-                                              </div>
-                                              <div class="progresso-item-2x2">
-                                                  <div class="progresso-label-2x2">Progresso Planejado</div>
-                                                  <div class="progresso-valor-2x2">100%</div>
-                                              </div>
-                                              <div class="progresso-item-2x2">
-                                                  <div class="progresso-label-2x2">Progresso Real</div>
-                                                  <div class="progresso-valor-2x2">0%</div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-
-                          <!-- ANÁLISE FINANCEIRA -->
-                          <div class="analise-section">
-                              <div class="analise-title" onclick="toggleAnaliseSection(this, 'financeira-planejadas-2.01.02.03')">
-                                  <i class="fas fa-money-bill-wave toggle-icon"></i>
-                                  Análise Financeira
-                              </div>
-
-                              <div class="analise-content" id="financeira-planejadas-2.01.02.03">
-                                  <div class="analise-financeira-grid">
-                                      <!-- Quadro 1: Valor Total da Execução -->
-                                      <div class="financeira-quadro">
-                                          <h4>Valor Total da Execução</h4>
-                                          <div class="financeira-item">
-                                              <div class="financeira-valor total">R$ 565,01</div>
-                                          </div>
-                                      </div>
-
-                                      <!-- Quadro 2: Valores da Atividade -->
-                                      <div class="financeira-quadro">
-                                          <h4>Valores da Atividade</h4>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Valor Planejado</div>
-                                              <div class="financeira-valor planejado">R$ 0,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Valor Executado</div>
-                                              <div class="financeira-valor executado">R$ 0,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Saldo</div>
-                                              <div class="financeira-valor saldo">R$ 0,00</div>
-                                          </div>
-                                      </div>
-
-                                      <!-- Quadro 3: Valores em Cadeia -->
-                                      <div class="financeira-quadro">
-                                          <h4>Valores em Cadeia (Sucessoras Diretas)</h4>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">R$ Planejado em Cadeia</div>
-                                              <div class="financeira-valor planejado">R$ 0,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">R$ Real em Cadeia</div>
-                                              <div class="financeira-valor executado">R$ 0,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Saldo em Cadeia</div>
-                                              <div class="financeira-valor saldo">R$ 0,00</div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-
-                          <!-- DEPENDÊNCIAS -->
-                          <div class="dependencias-grid">
-                              <!-- Predecessoras -->
-                              <div class="deps-coluna" id="pred-col-planejadas-2.01.02.03">
-                                  <div class="deps-coluna-header" onclick="toggleDepColuna('pred-content-planejadas-2.01.02.03')">
-                                      <div class="deps-titulo">
-                                          <i class="fas fa-arrow-left"></i>
-                                          Predecessoras (1)
-                                      </div>
-                                      <i class="fas fa-chevron-down deps-toggle"></i>
-                                  </div>
-
-                                  <div class="deps-content" id="pred-content-planejadas-2.01.02.03">
-                                      
-              <div class="dep-expansivel-item">
-                  <div class="dep-expansivel-header" onclick="toggleDepDetails('planejadas-2.01.02.03-pred-0')">
-                      <div class="dep-header-main">
-                          <div class="dep-codigo-link" onclick="navigateToActivity('2.01.02.02', event)">#2.01.02.02</div>
-                          <div class="dep-nome" title="Análise Técnica - SPT">Análise Técnica - SPT</div>
-                          <div class="dep-status-indicator" style="background-color: #f59e0b;"></div>
-                      </div>
-                      <i class="fas fa-chevron-down dep-toggle"></i>
-                  </div>
-
-                  <div class="dep-expansivel-content" id="planejadas-2.01.02.03-pred-0">
-                      <div class="dep-details-grid">
-                          <div class="dep-detail-col">
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Início Planejado:</span>
-                                  <span class="dep-detail-value">02/02/2026</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Início Real:</span>
-                                  <span class="dep-detail-value">-</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Qtd. Diária:</span>
-                                  <span class="dep-detail-value">0</span>
-                              </div>
-                          </div>
-                          <div class="dep-detail-col">
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Término Planejado:</span>
-                                  <span class="dep-detail-value">05/02/2026</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Término Real:</span>
-                                  <span class="dep-detail-value">-</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">% Planejada:</span>
-                                  <span class="dep-detail-value">100,0%</span>
-                              </div>
-                          </div>
-                          <div class="dep-detail-col">
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Valor Planejado:</span>
-                                  <span class="dep-detail-value">R$ 0,00</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Valor Executado:</span>
-                                  <span class="dep-detail-value">R$ 0,00</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">% Concluída:</span>
-                                  <span class="dep-detail-value">0,0%</span>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              
-                                  </div>
-                              </div>
-
-                              <!-- Sucessoras -->
-                              <div class="deps-coluna" id="suc-col-planejadas-2.01.02.03">
-                                  <div class="deps-coluna-header" onclick="toggleDepColuna('suc-content-planejadas-2.01.02.03')">
-                                      <div class="deps-titulo">
-                                          <i class="fas fa-arrow-right"></i>
-                                          Sucessoras (0)
-                                      </div>
-                                      <i class="fas fa-chevron-down deps-toggle"></i>
-                                  </div>
-
-                                  <div class="deps-content" id="suc-content-planejadas-2.01.02.03">
-                                      <div class='deps-empty'>Nenhuma</div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              
-              <div class="atividade-accordion-item" id="atividade-2.01.03.03">
-                  <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordionOnClick(this, event)">
-                      <div class="atividade-header-content">
-                          <div class="accordion-codigo">#2.01.03.03</div>
-                          <div class="accordion-titulo">
-                              Aprovação Técnica - SEV
-                              <span class="setor-badge"><i class="fas fa-building"></i> Estudo</span>
-                              
-                          </div>
-                          <span class="accordion-badge planejada">
-                              <i class="fas fa-calendar-alt"></i>
-                              Planejadas
-                          </span>
-                      </div>
-                      <i class="fas fa-chevron-down accordion-toggle"></i>
-                  </div>
-
-                  <div class="atividade-accordion-content">
-                      <div class="atividade-expanded">
-              
-                          <!-- ANÁLISE FÍSICA -->
-                          <div class="analise-section">
-                              <div class="analise-title" onclick="toggleAnaliseSection(this, 'fisica-planejadas-2.01.03.03')">
-                                  <i class="fas fa-chart-line toggle-icon"></i>
-                                  Análise Física
-                              </div>
-
-                              <div class="analise-content" id="fisica-planejadas-2.01.03.03">
-                                  <div class="analise-fisica-grid">
-                                      <!-- Quadro 1: Datas, Variações e Locação -->
-                                      <div class="fisica-quadro">
-                                          <!-- DATAS E VARIAÇÕES LADO A LADO -->
-                                          <div class="datas-variacoes-grid">
-                                              <!-- Datas em grid 2x2 -->
-                                              <div class="datas-grid">
-                                                  <div class="data-item">
-                                                      <div class="data-label">Início Planejado</div>
-                                                      <div class="data-value">06/02/2026</div>
-                                                  </div>
-                                                  <div class="data-item">
-                                                      <div class="data-label">Término Planejado</div>
-                                                      <div class="data-value">06/02/2026</div>
-                                                  </div>
-                                                  <div class="data-item">
-                                                      <div class="data-label">Início Real</div>
-                                                      <div class="data-value empty">-</div>
-                                                  </div>
-                                                  <div class="data-item">
-                                                      <div class="data-label">Término Real</div>
-                                                      <div class="data-value empty">-</div>
-                                                  </div>
-                                              </div>
-
-                                              <!-- QUADRO DE VARIAÇÕES E MARGEM -->
-                                              <div class="variacoes-quadro">
-                                                  <div class="variacoes-grid">
-                                                      <div class="variacao-item">
-                                                          <div class="variacao-label">Variação de Início</div>
-                                                          <div class="variacao-value">0 dias</div>
-                                                      </div>
-                                                      <div class="variacao-item">
-                                                          <div class="variacao-label">Variação de Término</div>
-                                                          <div class="variacao-value">0 dias</div>
-                                                      </div>
-                                                      <div class="variacao-item">
-                                                          <div class="variacao-label">Variação de Duração</div>
-                                                          <div class="variacao-value">0 dias</div>
-                                                      </div>
-                                                      <div class="variacao-item">
-                                                          <div class="variacao-label">Margem de Atraso</div>
-                                                          <div class="variacao-value"><span class="margem-critica" title="Atividade Crítica: Margem de atraso zero dias">0 dias <i class="fas fa-exclamation-triangle"></i></span></div>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                          </div>
-
-                                          <!-- QUADRO DE LOCAÇÃO DE RECURSOS (NA PARTE DE BAIXO) -->
-                                          <div class="locacao-quadro">
-                                              <div class="locacao-header">
-                                                  <i class="fas fa-users"></i>
-                                                  Locação de Recursos
-                                              </div>
-                                              <div class="locacao-content">
-                                                  <div style="display: flex; flex-direction: column; gap: 4px;"><div>ETT07-Téc_SEV</div><div>ETT08-Téc_SEV</div></div>
-                                              </div>
-                                          </div>
-                                      </div>
-
-                                      <!-- Quadro 2: Progressos - MODIFICADO: grid 2x2 com apenas 4 campos -->
-                                      <div class="progresso-quadro">
-                                          <div class="progresso-grid-2x2">
-                                              <div class="progresso-item-2x2">
-                                                  <div class="progresso-label-2x2">Duração Planejada</div>
-                                                  <div class="progresso-valor-2x2">1 day</div>
-                                              </div>
-                                              <div class="progresso-item-2x2">
-                                                  <div class="progresso-label-2x2">Qtd. Diária Planejada</div>
-                                                  <div class="progresso-valor-2x2">0 atividade</div>
-                                              </div>
-                                              <div class="progresso-item-2x2">
-                                                  <div class="progresso-label-2x2">Progresso Planejado</div>
-                                                  <div class="progresso-valor-2x2">100%</div>
-                                              </div>
-                                              <div class="progresso-item-2x2">
-                                                  <div class="progresso-label-2x2">Progresso Real</div>
-                                                  <div class="progresso-valor-2x2">0%</div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-
-                          <!-- ANÁLISE FINANCEIRA -->
-                          <div class="analise-section">
-                              <div class="analise-title" onclick="toggleAnaliseSection(this, 'financeira-planejadas-2.01.03.03')">
-                                  <i class="fas fa-money-bill-wave toggle-icon"></i>
-                                  Análise Financeira
-                              </div>
-
-                              <div class="analise-content" id="financeira-planejadas-2.01.03.03">
-                                  <div class="analise-financeira-grid">
-                                      <!-- Quadro 1: Valor Total da Execução -->
-                                      <div class="financeira-quadro">
-                                          <h4>Valor Total da Execução</h4>
-                                          <div class="financeira-item">
-                                              <div class="financeira-valor total">R$ 565,01</div>
-                                          </div>
-                                      </div>
-
-                                      <!-- Quadro 2: Valores da Atividade -->
-                                      <div class="financeira-quadro">
-                                          <h4>Valores da Atividade</h4>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Valor Planejado</div>
-                                              <div class="financeira-valor planejado">R$ 0,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Valor Executado</div>
-                                              <div class="financeira-valor executado">R$ 0,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Saldo</div>
-                                              <div class="financeira-valor saldo">R$ 0,00</div>
-                                          </div>
-                                      </div>
-
-                                      <!-- Quadro 3: Valores em Cadeia -->
-                                      <div class="financeira-quadro">
-                                          <h4>Valores em Cadeia (Sucessoras Diretas)</h4>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">R$ Planejado em Cadeia</div>
-                                              <div class="financeira-valor planejado">R$ 0,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">R$ Real em Cadeia</div>
-                                              <div class="financeira-valor executado">R$ 0,00</div>
-                                          </div>
-                                          <div class="financeira-item">
-                                              <div class="financeira-label">Saldo em Cadeia</div>
-                                              <div class="financeira-valor saldo">R$ 0,00</div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-
-                          <!-- DEPENDÊNCIAS -->
-                          <div class="dependencias-grid">
-                              <!-- Predecessoras -->
-                              <div class="deps-coluna" id="pred-col-planejadas-2.01.03.03">
-                                  <div class="deps-coluna-header" onclick="toggleDepColuna('pred-content-planejadas-2.01.03.03')">
-                                      <div class="deps-titulo">
-                                          <i class="fas fa-arrow-left"></i>
-                                          Predecessoras (1)
-                                      </div>
-                                      <i class="fas fa-chevron-down deps-toggle"></i>
-                                  </div>
-
-                                  <div class="deps-content" id="pred-content-planejadas-2.01.03.03">
-                                      
-              <div class="dep-expansivel-item">
-                  <div class="dep-expansivel-header" onclick="toggleDepDetails('planejadas-2.01.03.03-pred-0')">
-                      <div class="dep-header-main">
-                          <div class="dep-codigo-link" onclick="navigateToActivity('2.01.03.02', event)">#2.01.03.02</div>
-                          <div class="dep-nome" title="Análise Técnica - SEV">Análise Técnica - SEV</div>
-                          <div class="dep-status-indicator" style="background-color: #f59e0b;"></div>
-                      </div>
-                      <i class="fas fa-chevron-down dep-toggle"></i>
-                  </div>
-
-                  <div class="dep-expansivel-content" id="planejadas-2.01.03.03-pred-0">
-                      <div class="dep-details-grid">
-                          <div class="dep-detail-col">
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Início Planejado:</span>
-                                  <span class="dep-detail-value">02/02/2026</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Início Real:</span>
-                                  <span class="dep-detail-value">-</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Qtd. Diária:</span>
-                                  <span class="dep-detail-value">0</span>
-                              </div>
-                          </div>
-                          <div class="dep-detail-col">
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Término Planejado:</span>
-                                  <span class="dep-detail-value">05/02/2026</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Término Real:</span>
-                                  <span class="dep-detail-value">-</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">% Planejada:</span>
-                                  <span class="dep-detail-value">100,0%</span>
-                              </div>
-                          </div>
-                          <div class="dep-detail-col">
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Valor Planejado:</span>
-                                  <span class="dep-detail-value">R$ 0,00</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Valor Executado:</span>
-                                  <span class="dep-detail-value">R$ 0,00</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">% Concluída:</span>
-                                  <span class="dep-detail-value">0,0%</span>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              
-                                  </div>
-                              </div>
-
-                              <!-- Sucessoras -->
-                              <div class="deps-coluna" id="suc-col-planejadas-2.01.03.03">
-                                  <div class="deps-coluna-header" onclick="toggleDepColuna('suc-content-planejadas-2.01.03.03')">
-                                      <div class="deps-titulo">
-                                          <i class="fas fa-arrow-right"></i>
-                                          Sucessoras (1)
-                                      </div>
-                                      <i class="fas fa-chevron-down deps-toggle"></i>
-                                  </div>
-
-                                  <div class="deps-content" id="suc-content-planejadas-2.01.03.03">
-                                      
-              <div class="dep-expansivel-item">
-                  <div class="dep-expansivel-header" onclick="toggleDepDetails('planejadas-2.01.03.03-suc-0')">
-                      <div class="dep-header-main">
-                          <div class="dep-codigo-link" onclick="navigateToActivity('2.03.09.01', event)">#2.03.09.01</div>
-                          <div class="dep-nome" title="Elaboração - Aterramento">Elaboração - Aterramento</div>
-                          <div class="dep-status-indicator" style="background-color: #f59e0b;"></div>
-                      </div>
-                      <i class="fas fa-chevron-down dep-toggle"></i>
-                  </div>
-
-                  <div class="dep-expansivel-content" id="planejadas-2.01.03.03-suc-0">
-                      <div class="dep-details-grid">
-                          <div class="dep-detail-col">
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Início Planejado:</span>
-                                  <span class="dep-detail-value">23/02/2026</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Início Real:</span>
-                                  <span class="dep-detail-value">-</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Qtd. Diária:</span>
-                                  <span class="dep-detail-value">0</span>
-                              </div>
-                          </div>
-                          <div class="dep-detail-col">
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Término Planejado:</span>
-                                  <span class="dep-detail-value">27/02/2026</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Término Real:</span>
-                                  <span class="dep-detail-value">-</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">% Planejada:</span>
-                                  <span class="dep-detail-value">100,0%</span>
-                              </div>
-                          </div>
-                          <div class="dep-detail-col">
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Valor Planejado:</span>
-                                  <span class="dep-detail-value">R$ 0,00</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">Valor Executado:</span>
-                                  <span class="dep-detail-value">R$ 0,00</span>
-                              </div>
-                              <div class="dep-detail-item">
-                                  <span class="dep-detail-label">% Concluída:</span>
-                                  <span class="dep-detail-value">0,0%</span>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              
               <div class="atividade-accordion-item" id="atividade-2.02.02.02">
                   <div class="atividade-accordion-header status-planejada" onclick="toggleAtividadeAccordionOnClick(this, event)">
                       <div class="atividade-header-content">
@@ -160617,7 +160617,7 @@
                               </div>
                           </div>
                           
-                          <div class="dia-cell hoje">
+                          <div class="dia-cell">
                               <div class="dia-header">Qua</div>
                               <div class="dia-data">21</div>
                               <div class="qtd-container">
@@ -160627,7 +160627,7 @@
                               </div>
                           </div>
                           
-                          <div class="dia-cell">
+                          <div class="dia-cell hoje">
                               <div class="dia-header">Qui</div>
                               <div class="dia-data">22</div>
                               <div class="qtd-container">
@@ -160985,7 +160985,7 @@
                               </div>
                           </div>
                           
-                          <div class="dia-cell hoje">
+                          <div class="dia-cell">
                               <div class="dia-header">Qua</div>
                               <div class="dia-data">21</div>
                               <div class="qtd-container">
@@ -160995,7 +160995,7 @@
                               </div>
                           </div>
                           
-                          <div class="dia-cell">
+                          <div class="dia-cell hoje">
                               <div class="dia-header">Qui</div>
                               <div class="dia-data">22</div>
                               <div class="qtd-container">
@@ -161469,7 +161469,7 @@
                               </div>
                           </div>
                           
-                          <div class="dia-cell hoje">
+                          <div class="dia-cell">
                               <div class="dia-header">Qua</div>
                               <div class="dia-data">21</div>
                               <div class="qtd-container">
@@ -161479,7 +161479,7 @@
                               </div>
                           </div>
                           
-                          <div class="dia-cell">
+                          <div class="dia-cell hoje">
                               <div class="dia-header">Qui</div>
                               <div class="dia-data">22</div>
                               <div class="qtd-container">
@@ -161779,7 +161779,7 @@
                               </div>
                           </div>
                           
-                          <div class="dia-cell hoje">
+                          <div class="dia-cell">
                               <div class="dia-header">Qua</div>
                               <div class="dia-data">21</div>
                               <div class="qtd-container">
@@ -161789,7 +161789,7 @@
                               </div>
                           </div>
                           
-                          <div class="dia-cell">
+                          <div class="dia-cell hoje">
                               <div class="dia-header">Qui</div>
                               <div class="dia-data">22</div>
                               <div class="qtd-container">
@@ -162089,7 +162089,7 @@
                               </div>
                           </div>
                           
-                          <div class="dia-cell hoje">
+                          <div class="dia-cell">
                               <div class="dia-header">Qua</div>
                               <div class="dia-data">21</div>
                               <div class="qtd-container">
@@ -162099,7 +162099,7 @@
                               </div>
                           </div>
                           
-                          <div class="dia-cell">
+                          <div class="dia-cell hoje">
                               <div class="dia-header">Qui</div>
                               <div class="dia-data">22</div>
                               <div class="qtd-container">
@@ -162399,7 +162399,7 @@
                               </div>
                           </div>
                           
-                          <div class="dia-cell hoje">
+                          <div class="dia-cell">
                               <div class="dia-header">Qua</div>
                               <div class="dia-data">21</div>
                               <div class="qtd-container">
@@ -162409,7 +162409,7 @@
                               </div>
                           </div>
                           
-                          <div class="dia-cell">
+                          <div class="dia-cell hoje">
                               <div class="dia-header">Qui</div>
                               <div class="dia-data">22</div>
                               <div class="qtd-container">
@@ -162767,7 +162767,7 @@
                               </div>
                           </div>
                           
-                          <div class="dia-cell hoje">
+                          <div class="dia-cell">
                               <div class="dia-header">Qua</div>
                               <div class="dia-data">21</div>
                               <div class="qtd-container">
@@ -162777,7 +162777,7 @@
                               </div>
                           </div>
                           
-                          <div class="dia-cell">
+                          <div class="dia-cell hoje">
                               <div class="dia-header">Qui</div>
                               <div class="dia-data">22</div>
                               <div class="qtd-container">
@@ -163135,7 +163135,7 @@
                               </div>
                           </div>
                           
-                          <div class="dia-cell hoje">
+                          <div class="dia-cell">
                               <div class="dia-header">Qua</div>
                               <div class="dia-data">21</div>
                               <div class="qtd-container">
@@ -163145,7 +163145,7 @@
                               </div>
                           </div>
                           
-                          <div class="dia-cell">
+                          <div class="dia-cell hoje">
                               <div class="dia-header">Qui</div>
                               <div class="dia-data">22</div>
                               <div class="qtd-container">
@@ -163503,7 +163503,7 @@
                               </div>
                           </div>
                           
-                          <div class="dia-cell hoje">
+                          <div class="dia-cell">
                               <div class="dia-header">Qua</div>
                               <div class="dia-data">21</div>
                               <div class="qtd-container">
@@ -163513,7 +163513,7 @@
                               </div>
                           </div>
                           
-                          <div class="dia-cell">
+                          <div class="dia-cell hoje">
                               <div class="dia-header">Qui</div>
                               <div class="dia-data">22</div>
                               <div class="qtd-container">
@@ -163855,7 +163855,7 @@
                   <strong>Relatório Diário de Obra - UFV CEMIG</strong>
               </p>
               <p>
-                  Gerado automaticamente em 21/01/2026 às 12:54 | 
+                  Gerado automaticamente em 22/01/2026 às 07:52 | 
                   Atividades monitoradas: 406 | 
                   Progresso financeiro: 0.0%
               </p>
@@ -163867,7 +163867,7 @@
           const graficoFisicoData = {
               labels: ["Conclu\u00eddas", "Atrasadas", "Em execu\u00e7\u00e3o", "Previstas (15 dias)", "Planejadas"],
               datasets: [{
-                  data: [1, 15, 1, 23, 366],
+                  data: [1, 15, 1, 26, 363],
                   backgroundColor: ["#10b981", "#ef4444", "#38bdf8", "#f59e0b", "#94a3b8"],
                   borderWidth: 2,
                   borderColor: '#ffffff'
