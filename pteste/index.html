@@ -1216,7 +1216,7 @@
               <h1>Relatório Diário de Obra - UFV SERRA DO SALITRE</h1>
               <div class="header-subtitle">
                   <i class="fas fa-calendar-alt"></i>
-                  Relatório atualizado em: 27/01/2026 às 10:23
+                  Relatório atualizado em: 27/01/2026 às 10:27
               </div>
           </header>
 
@@ -163844,281 +163844,305 @@
 .ia-cards-grid { display: flex; flex-direction: column; gap: 20px; }
 .ia-card { background: white; border-radius: 12px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.04); transition: all 0.3s ease; overflow: hidden; cursor: pointer; }
 .ia-card:hover { box-shadow: 0 6px 16px rgba(0,0,0,0.08); border-color: #cbd5e1; }
-/* ... resto do CSS igual ao anterior (header, toggle, content, metadata, etc.) ... */
+.ia-card-header { padding: 18px 20px; background: #f8fafc; display: flex; justify-content: space-between; align-items: center; }
+.ia-card.active .ia-card-header { background: white; border-bottom: 1px solid #e5e7eb; }
+.ia-card-titulo { display: flex; align-items: center; gap: 12px; flex: 1; }
+.ia-card-titulo i { font-size: 1.4rem; color: #8b5cf6; flex-shrink: 0; }
+.ia-card-info { flex: 1; }
+.ia-card-nome { font-weight: 700; color: #1e293b; font-size: 1.05rem; margin-bottom: 4px; }
+.ia-card-direita { display: flex; align-items: center; gap: 15px; }
+.ia-card-badge { padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+.ia-card-badge.tipo-atrasada { background: linear-gradient(135deg, #fee2e2, #ef4444); color: #991b1b; border: 1px solid #fca5a5; }
+.ia-card-badge.tipo-execucao { background: linear-gradient(135deg, #fecaca, #dc2626); color: #7f1d1d; border: 1px solid #f87171; }
+.ia-card-badge.tipo-geral { background: linear-gradient(135deg, #e5e7eb, #d1d5db); color: #4b5563; border: 1px solid #9ca3af; }
+.ia-card-toggle { color: #9ca3af; font-size: 1.1rem; transition: transform 0.3s ease; }
+.ia-card.active .ia-card-toggle { transform: rotate(180deg); color: #1d4ed8; }
+.ia-card-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease, padding 0.3s ease; }
+.ia-card.active .ia-card-content { max-height: 2000px; padding: 20px; }
+.ia-card-metadata { display: flex; gap: 25px; margin-bottom: 25px; padding: 15px; background: #f8fafc; border-radius: 10px; border: 1px solid #e5e7eb; }
+.ia-metadata-item { display: flex; align-items: center; gap: 8px; color: #4b5563; font-size: 0.9rem; }
+.ia-metadata-item i { color: #8b5cf6; }
+.ia-metadata-item strong { color: #1e293b; font-weight: 600; }
+.ia-card-analysis { font-size: 0.95rem; line-height: 1.7; color: #374151; }
+.ia-card-analysis h2, h3, h4 { color: #1d4ed8; margin-top: 1.5em; margin-bottom: 0.8em; }
+.ia-card-analysis ul, ol { margin: 0.8em 0; padding-left: 1.5em; }
+.ia-card-analysis li { margin-bottom: 0.5em; }
+.ia-cards-footer { margin-top: 25px; padding-top: 20px; border-top: 1px solid #e5e7eb; text-align: center; color: #6b7280; font-size: 0.9rem; }
+.ia-cards-footer i { color: #8b5cf6; margin-right: 8px; }
+.ia-empty { text-align: center; padding: 60px 30px; color: #9ca3af; }
+.ia-empty i { font-size: 3rem; margin-bottom: 20px; color: #d1d5db; }
 </style>
 <script>
-function toggleIACard(cardElement) { cardElement.classList.toggle('active'); }
-function expandAllIACards() { document.querySelectorAll('.ia-card').forEach(card => card.classList.add('active')); }
-function collapseAllIACards() { document.querySelectorAll('.ia-card').forEach(card => card.classList.remove('active')); }
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.ia-card').forEach(card => card.classList.remove('active'));
-  document.querySelectorAll('.ia-card-content, .ia-card-badge').forEach(elem => {
-    elem.addEventListener('click', function(e) { e.stopPropagation(); });
+function toggleIACard(card) { card.classList.toggle('active'); }
+function expandAllIACards() { document.querySelectorAll('.ia-card').forEach(c => c.classList.add('active')); }
+function collapseAllIACards() { document.querySelectorAll('.ia-card').forEach(c => c.classList.remove('active')); }
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.ia-card').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.ia-card-content, .ia-card-badge').forEach(el => {
+    el.addEventListener('click', e => e.stopPropagation());
   });
 });
 </script>
 
-  <div class="ia-cards-container">
-    <div class="ia-cards-header">
-      <div class="ia-header-titulo">
-        <i class="fas fa-robot"></i>
-        <div>
-          <h3>Análise de IA - Atividades Críticas</h3>
-          <p>10 atividade(s) analisada(s) - Clique para expandir</p>
-        </div>
-      </div>
-      <div class="ia-header-acoes">
-        <button class="ia-btn ia-btn-expandir" onclick="expandAllIACards()"><i class="fas fa-expand-alt"></i> Expandir Todas</button>
-        <button class="ia-btn ia-btn-recolher" onclick="collapseAllIACards()"><i class="fas fa-compress-alt"></i> Recolher Todas</button>
+<div class="ia-cards-container">
+  <div class="ia-cards-header">
+    <div class="ia-header-titulo">
+      <i class="fas fa-robot"></i>
+      <div>
+        <h3>Análise de IA - Atividades Críticas</h3>
+        <p>10 atividade(s) analisada(s) - Clique para expandir</p>
       </div>
     </div>
-    <div class="ia-cards-grid">
-      
-    <div class="ia-card">
-      <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
-        <div class="ia-card-titulo">
-          <i class="fas fa-play-circle"></i>
-          <div class="ia-card-info">
-            <div class="ia-card-nome">1.01.02 - Contratação dos Seguros - Contratuais</div>
-          </div>
-        </div>
-        <div class="ia-card-direita">
-          <div class="ia-card-badge tipo-execucao">EM EXECUÇÃO</div>
-          <i class="fas fa-chevron-down ia-card-toggle"></i>
-        </div>
-      </div>
-      <div class="ia-card-content">
-        <div class="ia-card-metadata">
-          <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>1.01.02</strong></span></div>
-          <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>1 de 10</strong></span></div>
-          <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>EM EXECUÇÃO</strong></span></div>
-        </div>
-        <div class="ia-card-analysis">
-          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">01.02 - Contratação dos Seguros - Contratuais<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong>: <br>   - Gap entre % planejada e % realmente concluída: 8 pontos percentuais.<br>   - Margem de atraso disponível: 200 dias. <strong style="color:#1e293b;">Há flexibilidade no cronograma.</strong><br>   - Causas prováveis para o atraso/no início: Não especificadas.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong>: <br>   - Valor Planejado a Receber: R$ 0,00.<br>   - Valor Realmente Recebido: R$ 0,00.<br>   - <strong style="color:#1e293b;">SALDO: R$ 0,00 - Neutro.</strong><br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong>: <br>   - Nenhuma sucessora direta.<br><br><strong style="color:#1e293b;">B. Recomendações Ações</strong><br><br>1. <strong style="color:#1e293b;">Ações Imediatas</strong>: Monitorar o progresso para evitar futuros atrasos.<br>2. <strong style="color:#1e293b;">Comunicações Necessárias</strong>: Informar sobre o status atual e necessidade de manter o cronograma.<br>3. <strong style="color:#1e293b;">Prazos Sugeridos</strong>: Manter o cronograma atual.<br><br><strong style="color:#1e293b;">C. Resumo Executivo para Gestores</strong>: <br>- <strong style="color:#1e293b;">Status</strong>: Em execução com produtividade em atraso.<br>- <strong style="color:#1e293b;">Riscos</strong>: Baixo impacto financeiro e de cronograma.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Monitoramento contínuo.<br><br>####</li></div>
-        </div>
-      </div>
-    </div>
-    <div class="ia-card">
-      <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
-        <div class="ia-card-titulo">
-          <i class="fas fa-clock"></i>
-          <div class="ia-card-info">
-            <div class="ia-card-nome">1.01.03 - Administração Mensal</div>
-          </div>
-        </div>
-        <div class="ia-card-direita">
-          <div class="ia-card-badge tipo-atrasada">ATRASADA</div>
-          <i class="fas fa-chevron-down ia-card-toggle"></i>
-        </div>
-      </div>
-      <div class="ia-card-content">
-        <div class="ia-card-metadata">
-          <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>1.01.03</strong></span></div>
-          <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>2 de 10</strong></span></div>
-          <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>ATRASADA</strong></span></div>
-        </div>
-        <div class="ia-card-analysis">
-          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">01.03 - Administração Mensal<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong>: <br>   - Gap entre % planejada e % realmente concluída: 33 pontos percentuais.<br>   - Margem de atraso disponível: 200 dias. <strong style="color:#1e293b;">Há flexibilidade no cronograma.</strong><br>   - Causas prováveis: Não especificadas.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong>: <br>   - Valor Planejado a Receber: R$ 244.204,33.<br>   - Valor Realmente Recebido: R$ 0,00.<br>   - <strong style="color:#1e293b;">SALDO: -R$ 244.204,33 - Preocupante.</strong><br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong>: <br>   - 2 sucessoras diretas.<br><br><strong style="color:#1e293b;">B. Recomendações Ações</strong><br><br>1. <strong style="color:#1e293b;">Ações Imediatas</strong>: Priorizar a conclusão.<br>2. <strong style="color:#1e293b;">Comunicações Necessárias</strong>: Alertar sobre o impacto financeiro e cronograma.<br>3. <strong style="color:#1e293b;">Prazos Sugeridos</strong>: 2 semanas para início.<br><br><strong style="color:#1e293b;">C. Resumo Executivo para Gestores</strong>: <br>- <strong style="color:#1e293b;">Status</strong>: Atrasada no cronograma.<br>- <strong style="color:#1e293b;">Riscos</strong>: Impacto financeiro significativo e cronograma.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Priorizar conclusão.<br><br>####</li></div>
-        </div>
-      </div>
-    </div>
-    <div class="ia-card">
-      <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
-        <div class="ia-card-titulo">
-          <i class="fas fa-clock"></i>
-          <div class="ia-card-info">
-            <div class="ia-card-nome">2.01.01 - Planialtimétrico do Terreno e Georreferenciamento</div>
-          </div>
-        </div>
-        <div class="ia-card-direita">
-          <div class="ia-card-badge tipo-atrasada">ATRASADA</div>
-          <i class="fas fa-chevron-down ia-card-toggle"></i>
-        </div>
-      </div>
-      <div class="ia-card-content">
-        <div class="ia-card-metadata">
-          <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>2.01.01</strong></span></div>
-          <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>3 de 10</strong></span></div>
-          <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>ATRASADA</strong></span></div>
-        </div>
-        <div class="ia-card-analysis">
-          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">01.01 - Planialtimétrico do Terreno e Georreferenciamento<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong>: <br>   - Gap: 100 pontos percentuais.<br>   - Margem de atraso disponível: 6 dias. <strong style="color:#1e293b;">Baixa flexibilidade.</strong><br>   - Causas: Não especificadas.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong>: <br>   - Valor Planejado a Receber: R$ 0,00.<br>   - Valor Realmente Recebido: R$ 0,00.<br>   - <strong style="color:#1e293b;">SALDO: R$ 0,00 - Neutro.</strong><br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong>: <br>   - Nenhuma sucessora direta.<br><br><strong style="color:#1e293b;">B. Recomendações Ações</strong><br><br>1. <strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade.<br>2. <strong style="color:#1e293b;">Comunicações Necessárias</strong>: Informar sobre a urgência.<br>3. <strong style="color:#1e293b;">Prazos Sugeridos</strong>: Imediato.<br><br><strong style="color:#1e293b;">C. Resumo Executivo para Gestores</strong>: <br>- <strong style="color:#1e293b;">Status</strong>: Atrasada.<br>- <strong style="color:#1e293b;">Riscos</strong>: Cronograma crítico.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar imediatamente.<br><br>####</li></div>
-        </div>
-      </div>
-    </div>
-    <div class="ia-card">
-      <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
-        <div class="ia-card-titulo">
-          <i class="fas fa-clock"></i>
-          <div class="ia-card-info">
-            <div class="ia-card-nome">2.01.02 - Estudos Geológico - SPT</div>
-          </div>
-        </div>
-        <div class="ia-card-direita">
-          <div class="ia-card-badge tipo-atrasada">ATRASADA</div>
-          <i class="fas fa-chevron-down ia-card-toggle"></i>
-        </div>
-      </div>
-      <div class="ia-card-content">
-        <div class="ia-card-metadata">
-          <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>2.01.02</strong></span></div>
-          <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>4 de 10</strong></span></div>
-          <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>ATRASADA</strong></span></div>
-        </div>
-        <div class="ia-card-analysis">
-          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">01.02 - Estudos Geológico - SPT<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong>: <br>   - Gap: 100 pontos percentuais.<br>   - Margem de atraso disponível: 66 dias. <strong style="color:#1e293b;">Flexibilidade média.</strong><br>   - Causas: Não especificadas.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong>: <br>   - SALDO: R$ 0,00.<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong>: <br>   - Nenhuma sucessora direta.<br><br><strong style="color:#1e293b;">B. Recomendações Ações</strong><br><br>1. <strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade.<br>2. <strong style="color:#1e293b;">Comunicações Necessárias</strong>: Informar sobre a importância do cronograma.<br>3. <strong style="color:#1e293b;">Prazos Sugeridos</strong>: Breve.<br><br><strong style="color:#1e293b;">C. Resumo Executivo para Gestores</strong>: <br>- <strong style="color:#1e293b;">Status</strong>: Atrasada.<br>- <strong style="color:#1e293b;">Riscos</strong>: Impacto no cronograma.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar atividade.<br><br>####</li></div>
-        </div>
-      </div>
-    </div>
-    <div class="ia-card">
-      <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
-        <div class="ia-card-titulo">
-          <i class="fas fa-clock"></i>
-          <div class="ia-card-info">
-            <div class="ia-card-nome">2.01.03 - Estudos Geológico - SEV</div>
-          </div>
-        </div>
-        <div class="ia-card-direita">
-          <div class="ia-card-badge tipo-atrasada">ATRASADA</div>
-          <i class="fas fa-chevron-down ia-card-toggle"></i>
-        </div>
-      </div>
-      <div class="ia-card-content">
-        <div class="ia-card-metadata">
-          <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>2.01.03</strong></span></div>
-          <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>5 de 10</strong></span></div>
-          <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>ATRASADA</strong></span></div>
-        </div>
-        <div class="ia-card-analysis">
-          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">01.03 - Estudos Geológico - SEV<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong>: <br>   - Gap: 100 pontos percentuais.<br>   - Margem de atraso disponível: 36 dias. <strong style="color:#1e293b;">Baixa flexibilidade.</strong><br>   - Causas: Não especificadas.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong>: <br>   - SALDO: R$ 0,00.<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong>: <br>   - Nenhuma sucessora direta.<br><br><strong style="color:#1e293b;">B. Recomendações Ações</strong><br><br>1. <strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade.<br>2. <strong style="color:#1e293b;">Comunicações Necessárias</strong>: Urgência no início.<br>3. <strong style="color:#1e293b;">Prazos Sugeridos</strong>: Imediato.<br><br><strong style="color:#1e293b;">C. Resumo Executivo para Gestores</strong>: <br>- <strong style="color:#1e293b;">Status</strong>: Atrasada.<br>- <strong style="color:#1e293b;">Riscos</strong>: Cronograma crítico.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar imediatamente.<br><br>####</li></div>
-        </div>
-      </div>
-    </div>
-    <div class="ia-card">
-      <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
-        <div class="ia-card-titulo">
-          <i class="fas fa-clock"></i>
-          <div class="ia-card-info">
-            <div class="ia-card-nome">2.02.01 - LAYOUT - Usina</div>
-          </div>
-        </div>
-        <div class="ia-card-direita">
-          <div class="ia-card-badge tipo-atrasada">ATRASADA</div>
-          <i class="fas fa-chevron-down ia-card-toggle"></i>
-        </div>
-      </div>
-      <div class="ia-card-content">
-        <div class="ia-card-metadata">
-          <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>2.02.01</strong></span></div>
-          <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>6 de 10</strong></span></div>
-          <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>ATRASADA</strong></span></div>
-        </div>
-        <div class="ia-card-analysis">
-          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">02.01 - LAYOUT - Usina<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong>: <br>   - Gap: 100 pontos percentuais.<br>   - Margem de atraso disponível: 0 dias. <strong style="color:#1e293b;">Atividade crítica.</strong><br>   - Causas: Não especificadas.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong>: <br>   - SALDO: R$ 0,00.<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong>: <br>   - 1 sucessora direta.<br><br><strong style="color:#1e293b;">B. Recomendações Ações</strong><br><br>1. <strong style="color:#1e293b;">Ações Imediatas</strong>: Priorizar conclusão.<br>2. <strong style="color:#1e293b;">Comunicações Necessárias</strong>: Alertar sobre criticidade.<br>3. <strong style="color:#1e293b;">Prazos Sugeridos</strong>: Imediato.<br><br><strong style="color:#1e293b;">C. Resumo Executivo para Gestores</strong>: <br>- <strong style="color:#1e293b;">Status</strong>: Atrasada e crítica.<br>- <strong style="color:#1e293b;">Riscos</strong>: Alto impacto no cronograma e projeto.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Concluir imediatamente.<br><br>####</li></div>
-        </div>
-      </div>
-    </div>
-    <div class="ia-card">
-      <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
-        <div class="ia-card-titulo">
-          <i class="fas fa-clock"></i>
-          <div class="ia-card-info">
-            <div class="ia-card-nome">2.03.01 - CMP</div>
-          </div>
-        </div>
-        <div class="ia-card-direita">
-          <div class="ia-card-badge tipo-atrasada">ATRASADA</div>
-          <i class="fas fa-chevron-down ia-card-toggle"></i>
-        </div>
-      </div>
-      <div class="ia-card-content">
-        <div class="ia-card-metadata">
-          <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>2.03.01</strong></span></div>
-          <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>7 de 10</strong></span></div>
-          <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>ATRASADA</strong></span></div>
-        </div>
-        <div class="ia-card-analysis">
-          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">03.01 - CMP<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong>: <br>   - Gap: 100 pontos percentuais.<br>   - Margem de atraso disponível: 15 dias. <strong style="color:#1e293b;">Flexibilidade baixa.</strong><br>   - Causas: Não especificadas.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong>: <br>   - SALDO: R$ 0,00.<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong>: <br>   - 1 sucessora direta.<br><br><strong style="color:#1e293b;">B. Recomendações Ações</strong><br><br>1. <strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade.<br>2. <strong style="color:#1e293b;">Comunicações Necessárias</strong>: Informar sobre importância.<br>3. <strong style="color:#1e293b;">Prazos Sugeridos</strong>: Breve.<br><br><strong style="color:#1e293b;">C. Resumo Executivo para Gestores</strong>: <br>- <strong style="color:#1e293b;">Status</strong>: Atrasada.<br>- <strong style="color:#1e293b;">Riscos</strong>: Impacto no cronograma.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar atividade.<br><br>####</li></div>
-        </div>
-      </div>
-    </div>
-    <div class="ia-card">
-      <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
-        <div class="ia-card-titulo">
-          <i class="fas fa-clock"></i>
-          <div class="ia-card-info">
-            <div class="ia-card-nome">2.03.02 - SKID</div>
-          </div>
-        </div>
-        <div class="ia-card-direita">
-          <div class="ia-card-badge tipo-atrasada">ATRASADA</div>
-          <i class="fas fa-chevron-down ia-card-toggle"></i>
-        </div>
-      </div>
-      <div class="ia-card-content">
-        <div class="ia-card-metadata">
-          <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>2.03.02</strong></span></div>
-          <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>8 de 10</strong></span></div>
-          <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>ATRASADA</strong></span></div>
-        </div>
-        <div class="ia-card-analysis">
-          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">03.02 - SKID<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong>: <br>   - Gap: 100 pontos percentuais.<br>   - Margem de atraso disponível: 15 dias. <strong style="color:#1e293b;">Flexibilidade baixa.</strong><br>   - Causas: Não especificadas.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong>: <br>   - SALDO: R$ 0,00.<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong>: <br>   - 1 sucessora direta.<br><br><strong style="color:#1e293b;">B. Recomendações Ações</strong><br><br>1. <strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade.<br>2. <strong style="color:#1e293b;">Comunicações Necessárias</strong>: Informar sobre a importância.<br>3. <strong style="color:#1e293b;">Prazos Sugeridos</strong>: Breve.<br><br><strong style="color:#1e293b;">C. Resumo Executivo para Gestores</strong>: <br>- <strong style="color:#1e293b;">Status</strong>: Atrasada.<br>- <strong style="color:#1e293b;">Riscos</strong>: Impacto no cronograma.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar atividade.<br><br>####</li></div>
-        </div>
-      </div>
-    </div>
-    <div class="ia-card">
-      <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
-        <div class="ia-card-titulo">
-          <i class="fas fa-clock"></i>
-          <div class="ia-card-info">
-            <div class="ia-card-nome">2.03.03 - Estação Solarimétrica</div>
-          </div>
-        </div>
-        <div class="ia-card-direita">
-          <div class="ia-card-badge tipo-atrasada">ATRASADA</div>
-          <i class="fas fa-chevron-down ia-card-toggle"></i>
-        </div>
-      </div>
-      <div class="ia-card-content">
-        <div class="ia-card-metadata">
-          <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>2.03.03</strong></span></div>
-          <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>9 de 10</strong></span></div>
-          <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>ATRASADA</strong></span></div>
-        </div>
-        <div class="ia-card-analysis">
-          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">03.03 - Estação Solarimétrica<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong>: <br>   - Gap: 100 pontos percentuais.<br>   - Margem de atraso disponível: 84 dias. <strong style="color:#1e293b;">Flexibilidade alta.</strong><br>   - Causas: Não especificadas.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong>: <br>   - SALDO: R$ 0,00.<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong>: <br>   - 1 sucessora direta.<br><br><strong style="color:#1e293b;">B. Recomendações Ações</strong><br><br>1. <strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade.<br>2. <strong style="color:#1e293b;">Comunicações Necessárias</strong>: Informar sobre o planejamento.<br>3. <strong style="color:#1e293b;">Prazos Sugeridos</strong>: Planejado.<br><br><strong style="color:#1e293b;">C. Resumo Executivo para Gestores</strong>: <br>- <strong style="color:#1e293b;">Status</strong>: Atrasada.<br>- <strong style="color:#1e293b;">Riscos</strong>: Baixo impacto imediato.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar conforme planejado.<br><br>###</li></div>
-        </div>
-      </div>
-    </div>
-    <div class="ia-card">
-      <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
-        <div class="ia-card-titulo">
-          <i class="fas fa-chart-line"></i>
-          <div class="ia-card-info">
-            <div class="ia-card-nome">Conclusão Geral</div>
-          </div>
-        </div>
-        <div class="ia-card-direita">
-          <div class="ia-card-badge tipo-geral">CONCLUSÃO</div>
-          <i class="fas fa-chevron-down ia-card-toggle"></i>
-        </div>
-      </div>
-      <div class="ia-card-content">
-        <div class="ia-card-metadata">
-          <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>GERAL</strong></span></div>
-          <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>10 de 10</strong></span></div>
-          <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>GERAL</strong></span></div>
-        </div>
-        <div class="ia-card-analysis">
-          <div style="font-size:0.9em; line-height:1.6;">Conclusão Completa<br><br>O projeto Usina Fotovoltaica Serra do Salitre apresenta desafios significativos em suas atividades críticas, principalmente relacionadas a atrasos no cronograma e impacto financeiro. A atividade 1 está em execução com produtividade em atraso, mas possui flexibilidade no cronograma. As atividades 2 e 3 apresentam gaps significativos e necessitam de atenção imediata para não comprometerem o projeto. Atividades críticas como a 2.02.01 (LAYOUT - Usina) demandam conclusão imediata devido à sua margem de atraso zero.<br><br>Recomendações:<br><br>- <strong style="color:#1e293b;">Priorizar</strong> atividades atrasadas e críticas.<br>- <strong style="color:#1e293b;">Iniciar</strong> atividades ainda não começadas com urgência.<br>- <strong style="color:#1e293b;">Comunicar</strong> constantemente o status e riscos para os setores envolvidos.<br>- <strong style="color:#1e293b;">Monitorar</strong> e <strong style="color:#1e293b;">ajustar</strong> o cronograma e orçamento conforme necessário.<br><br>Implementando essas medidas, o projeto pode mitigar os riscos atuais e alcançar seus objetivos dentro do cronograma e orçamento planejados.</div>
-        </div>
-      </div>
-    </div>
-    </div>
-    <div class="ia-cards-footer">
-      <p><i class="fas fa-info-circle"></i> Análise gerada por IA em tempo real</p>
+    <div class="ia-header-acoes">
+      <button class="ia-btn ia-btn-expandir" onclick="expandAllIACards()"><i class="fas fa-expand-alt"></i> Expandir Todas</button>
+      <button class="ia-btn ia-btn-recolher" onclick="collapseAllIACards()"><i class="fas fa-compress-alt"></i> Recolher Todas</button>
     </div>
   </div>
+  <div class="ia-cards-grid">
+<div class="ia-card">
+  <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
+    <div class="ia-card-titulo">
+      <i class="fas fa-play-circle"></i>
+      <div class="ia-card-info">
+        <div class="ia-card-nome">1.01.02 - Contratação dos Seguros - Contratuais</div>
+      </div>
+    </div>
+    <div class="ia-card-direita">
+      <div class="ia-card-badge tipo-execucao">EM EXECUÇÃO</div>
+      <i class="fas fa-chevron-down ia-card-toggle"></i>
+    </div>
+  </div>
+  <div class="ia-card-content">
+    <div class="ia-card-metadata">
+      <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>1.01.02</strong></span></div>
+      <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>1 de 10</strong></span></div>
+      <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>EM EXECUÇÃO</strong></span></div>
+    </div>
+    <div class="ia-card-analysis">
+      <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">01.02 - Contratação dos Seguros - Contratuais<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong><br>   - Gap: 8.0 pontos percentuais (33% planejada vs 25% concluída)<br>   - Margem de atraso disponível: 200 dias (há flexibilidade no cronograma)<br>   - Causas prováveis: Produtividade abaixo do esperado.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong><br>   - Valor planejado a receber: R$ 0,00<br>   - Valor realmente recebido: R$ 0,00<br>   - Saldo: R$ 0,00 (neutro)<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong><br>   - Sucessoras diretas: 0<br>   - Impacto: Baixo<br><br><strong style="color:#1e293b;">B. Recomendações Açãoáveis</strong><br><br>1. <strong style="color:#1e293b;">Ações imediatas</strong>: Acionar plano de recuperação para retomar a produtividade.<br>2. <strong style="color:#1e293b;">Comunicações necessárias</strong>: Informar equipe sobre a importância de concluir a atividade.<br>3. <strong style="color:#1e293b;">Prazos sugeridos</strong>: Retomar o cronograma previsto inicialmente.<br><br><strong style="color:#1e293b;">C. Resumo Executivo</strong><br><br>- <strong style="color:#1e293b;">Status</strong>: Em execução com produtividade em atraso.<br>- <strong style="color:#1e293b;">Riscos</strong>: Atraso no cronograma.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Implementar plano de recuperação.<br><br>####</li></div>
+    </div>
+  </div>
+</div>
+<div class="ia-card">
+  <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
+    <div class="ia-card-titulo">
+      <i class="fas fa-clock"></i>
+      <div class="ia-card-info">
+        <div class="ia-card-nome">1.01.03 - Administração Mensal</div>
+      </div>
+    </div>
+    <div class="ia-card-direita">
+      <div class="ia-card-badge tipo-atrasada">ATRASADA</div>
+      <i class="fas fa-chevron-down ia-card-toggle"></i>
+    </div>
+  </div>
+  <div class="ia-card-content">
+    <div class="ia-card-metadata">
+      <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>1.01.03</strong></span></div>
+      <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>2 de 10</strong></span></div>
+      <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>ATRASADA</strong></span></div>
+    </div>
+    <div class="ia-card-analysis">
+      <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">01.03 - Administração Mensal<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong><br>   - Gap: 33.0 pontos percentuais (33% planejada vs 0% concluída)<br>   - Margem de atraso disponível: 200 dias<br>   - Causas prováveis: Ainda não iniciada.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong><br>   - Valor planejado a receber: R$ 244,204.33<br>   - Valor realmente recebido: R$ 0,00<br>   - Saldo: -R$ 244,204.33 (negativo)<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong><br>   - Sucessoras diretas: 2<br>   - Impacto: Crítico<br><br><strong style="color:#1e293b;">B. Recomendações Açãoáveis</strong><br><br>1. <strong style="color:#1e293b;">Ações imediatas</strong>: Iniciar atividade o mais rápido possível.<br>2. <strong style="color:#1e293b;">Comunicações necessárias</strong>: Alertar equipe sobre a urgência.<br>3. <strong style="color:#1e293b;">Prazos sugeridos</strong>: Iniciar imediatamente.<br><br><strong style="color:#1e293b;">C. Resumo Executivo</strong><br><br>- <strong style="color:#1e293b;">Status</strong>: Atrasada no cronograma.<br>- <strong style="color:#1e293b;">Riscos</strong>: Impacto financeiro e no cronograma das sucessoras.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar atividade imediatamente.<br><br>####</li></div>
+    </div>
+  </div>
+</div>
+<div class="ia-card">
+  <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
+    <div class="ia-card-titulo">
+      <i class="fas fa-clock"></i>
+      <div class="ia-card-info">
+        <div class="ia-card-nome">2.01.01 - Planialtimétrico do Terreno e Georreferenciamento</div>
+      </div>
+    </div>
+    <div class="ia-card-direita">
+      <div class="ia-card-badge tipo-atrasada">ATRASADA</div>
+      <i class="fas fa-chevron-down ia-card-toggle"></i>
+    </div>
+  </div>
+  <div class="ia-card-content">
+    <div class="ia-card-metadata">
+      <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>2.01.01</strong></span></div>
+      <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>3 de 10</strong></span></div>
+      <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>ATRASADA</strong></span></div>
+    </div>
+    <div class="ia-card-analysis">
+      <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">01.01 - Planialtimétrico do Terreno e Georreferenciamento<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong><br>   - Gap: 100.0 pontos percentuais<br>   - Margem de atraso disponível: 6 dias<br>   - Causas prováveis: Ainda não iniciada.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong><br>   - Valor planejado a receber: R$ 0,00<br>   - Valor realmente recebido: R$ 0,00<br>   - Saldo: R$ 0,00<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong><br>   - Sucessoras diretas: 0<br>   - Impacto: Baixo<br><br><strong style="color:#1e293b;">B. Recomendações Açãoáveis</strong><br><br>1. <strong style="color:#1e293b;">Ações imediatas</strong>: Iniciar atividade.<br>2. <strong style="color:#1e293b;">Comunicações necessárias</strong>: Equipe alertada sobre a urgência.<br>3. <strong style="color:#1e293b;">Prazos sugeridos</strong>: Iniciar o mais rápido possível.<br><br><strong style="color:#1e293b;">C. Resumo Executivo</strong><br><br>- <strong style="color:#1e293b;">Status</strong>: Atrasada no cronograma.<br>- <strong style="color:#1e293b;">Riscos</strong>: Atraso no cronograma do projeto.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar atividade imediatamente.<br><br>####</li></div>
+    </div>
+  </div>
+</div>
+<div class="ia-card">
+  <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
+    <div class="ia-card-titulo">
+      <i class="fas fa-clock"></i>
+      <div class="ia-card-info">
+        <div class="ia-card-nome">2.01.02 - Estudos Geológico - SPT</div>
+      </div>
+    </div>
+    <div class="ia-card-direita">
+      <div class="ia-card-badge tipo-atrasada">ATRASADA</div>
+      <i class="fas fa-chevron-down ia-card-toggle"></i>
+    </div>
+  </div>
+  <div class="ia-card-content">
+    <div class="ia-card-metadata">
+      <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>2.01.02</strong></span></div>
+      <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>4 de 10</strong></span></div>
+      <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>ATRASADA</strong></span></div>
+    </div>
+    <div class="ia-card-analysis">
+      <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">01.02 - Estudos Geológico - SPT<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong><br>   - Gap: 100.0 pontos percentuais<br>   - Margem de atraso disponível: 66 dias<br>   - Causas prováveis: Ainda não iniciada.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong><br>   - Valor planejado a receber: R$ 0,00<br>   - Valor realmente recebido: R$ 0,00<br>   - Saldo: R$ 0,00<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong><br>   - Sucessoras diretas: 0<br>   - Impacto: Baixo<br><br><strong style="color:#1e293b;">B. Recomendações Açãoáveis</strong><br><br>1. <strong style="color:#1e293b;">Ações imediatas</strong>: Iniciar atividade.<br>2. <strong style="color:#1e293b;">Comunicações necessárias</strong>: Equipe alertada sobre a importância.<br>3. <strong style="color:#1e293b;">Prazos sugeridos</strong>: Iniciar o mais rápido possível.<br><br><strong style="color:#1e293b;">C. Resumo Executivo</strong><br><br>- <strong style="color:#1e293b;">Status</strong>: Atrasada no cronograma.<br>- <strong style="color:#1e293b;">Riscos</strong>: Atraso no cronograma.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar atividade o mais rápido possível.<br><br>####</li></div>
+    </div>
+  </div>
+</div>
+<div class="ia-card">
+  <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
+    <div class="ia-card-titulo">
+      <i class="fas fa-clock"></i>
+      <div class="ia-card-info">
+        <div class="ia-card-nome">2.01.03 - Estudos Geológico - SEV</div>
+      </div>
+    </div>
+    <div class="ia-card-direita">
+      <div class="ia-card-badge tipo-atrasada">ATRASADA</div>
+      <i class="fas fa-chevron-down ia-card-toggle"></i>
+    </div>
+  </div>
+  <div class="ia-card-content">
+    <div class="ia-card-metadata">
+      <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>2.01.03</strong></span></div>
+      <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>5 de 10</strong></span></div>
+      <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>ATRASADA</strong></span></div>
+    </div>
+    <div class="ia-card-analysis">
+      <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">01.03 - Estudos Geológico - SEV<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong><br>   - Gap: 100.0 pontos percentuais<br>   - Margem de atraso disponível: 36 dias<br>   - Causas prováveis: Ainda não iniciada.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong><br>   - Valor planejado a receber: R$ 0,00<br>   - Valor realmente recebido: R$ 0,00<br>   - Saldo: R$ 0,00<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong><br>   - Sucessoras diretas: 0<br>   - Impacto: Baixo<br><br><strong style="color:#1e293b;">B. Recomendações Açãoáveis</strong><br><br>1. <strong style="color:#1e293b;">Ações imediatas</strong>: Iniciar atividade.<br>2. <strong style="color:#1e293b;">Comunicações necessárias</strong>: Equipe alertada sobre a importância.<br>3. <strong style="color:#1e293b;">Prazos sugeridos</strong>: Iniciar o mais rápido possível.<br><br><strong style="color:#1e293b;">C. Resumo Executivo</strong><br><br>- <strong style="color:#1e293b;">Status</strong>: Atrasada no cronograma.<br>- <strong style="color:#1e293b;">Riscos</strong>: Atraso no cronograma.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar atividade.<br><br>####</li></div>
+    </div>
+  </div>
+</div>
+<div class="ia-card">
+  <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
+    <div class="ia-card-titulo">
+      <i class="fas fa-clock"></i>
+      <div class="ia-card-info">
+        <div class="ia-card-nome">2.02.01 - LAYOUT - Usina</div>
+      </div>
+    </div>
+    <div class="ia-card-direita">
+      <div class="ia-card-badge tipo-atrasada">ATRASADA</div>
+      <i class="fas fa-chevron-down ia-card-toggle"></i>
+    </div>
+  </div>
+  <div class="ia-card-content">
+    <div class="ia-card-metadata">
+      <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>2.02.01</strong></span></div>
+      <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>6 de 10</strong></span></div>
+      <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>ATRASADA</strong></span></div>
+    </div>
+    <div class="ia-card-analysis">
+      <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">02.01 - LAYOUT - Usina<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong><br>   - Gap: 100.0 pontos percentuais<br>   - Margem de atraso disponível: 0 dias (crítica)<br>   - Causas prováveis: Ainda não iniciada.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong><br>   - Valor planejado a receber: R$ 0,00<br>   - Valor realmente recebido: R$ 0,00<br>   - Saldo: R$ 0,00<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong><br>   - Sucessoras diretas: 1<br>   - Impacto: Crítico<br><br><strong style="color:#1e293b;">B. Recomendações Açãoáveis</strong><br><br>1. <strong style="color:#1e293b;">Ações imediatas</strong>: Iniciar atividade imediatamente.<br>2. <strong style="color:#1e293b;">Comunicações necessárias</strong>: Alertar equipe sobre impacto crítico.<br>3. <strong style="color:#1e293b;">Prazos sugeridos</strong>: Iniciar de imediato.<br><br><strong style="color:#1e293b;">C. Resumo Executivo</strong><br><br>- <strong style="color:#1e293b;">Status</strong>: Atrasada no cronograma e crítica.<br>- <strong style="color:#1e293b;">Riscos</strong>: Impacto imediato no projeto.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar imediatamente.<br><br>####</li></div>
+    </div>
+  </div>
+</div>
+<div class="ia-card">
+  <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
+    <div class="ia-card-titulo">
+      <i class="fas fa-clock"></i>
+      <div class="ia-card-info">
+        <div class="ia-card-nome">2.03.01 - CMP</div>
+      </div>
+    </div>
+    <div class="ia-card-direita">
+      <div class="ia-card-badge tipo-atrasada">ATRASADA</div>
+      <i class="fas fa-chevron-down ia-card-toggle"></i>
+    </div>
+  </div>
+  <div class="ia-card-content">
+    <div class="ia-card-metadata">
+      <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>2.03.01</strong></span></div>
+      <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>7 de 10</strong></span></div>
+      <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>ATRASADA</strong></span></div>
+    </div>
+    <div class="ia-card-analysis">
+      <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">03.01 - CMP<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong><br>   - Gap: 100.0 pontos percentuais<br>   - Margem de atraso disponível: 15 dias<br>   - Causas prováveis: Ainda não iniciada.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong><br>   - Valor planejado a receber: R$ 0,00<br>   - Valor realmente recebido: R$ 0,00<br>   - Saldo: R$ 0,00<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong><br>   - Sucessoras diretas: 1<br>   - Impacto: Baixo<br><br><strong style="color:#1e293b;">B. Recomendações Açãoáveis</strong><br><br>1. <strong style="color:#1e293b;">Ações imediatas</strong>: Iniciar atividade.<br>2. <strong style="color:#1e293b;">Comunicações necessárias</strong>: Equipe alertada sobre importância.<br>3. <strong style="color:#1e293b;">Prazos sugeridos</strong>: Iniciar rapidamente.<br><br><strong style="color:#1e293b;">C. Resumo Executivo</strong><br><br>- <strong style="color:#1e293b;">Status</strong>: Atrasada no cronograma.<br>- <strong style="color:#1e293b;">Riscos</strong>: Atraso no cronograma.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar atividade.<br><br>####</li></div>
+    </div>
+  </div>
+</div>
+<div class="ia-card">
+  <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
+    <div class="ia-card-titulo">
+      <i class="fas fa-clock"></i>
+      <div class="ia-card-info">
+        <div class="ia-card-nome">2.03.02 - SKID</div>
+      </div>
+    </div>
+    <div class="ia-card-direita">
+      <div class="ia-card-badge tipo-atrasada">ATRASADA</div>
+      <i class="fas fa-chevron-down ia-card-toggle"></i>
+    </div>
+  </div>
+  <div class="ia-card-content">
+    <div class="ia-card-metadata">
+      <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>2.03.02</strong></span></div>
+      <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>8 de 10</strong></span></div>
+      <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>ATRASADA</strong></span></div>
+    </div>
+    <div class="ia-card-analysis">
+      <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">03.02 - SKID<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong><br>   - Gap: 100.0 pontos percentuais<br>   - Margem de atraso disponível: 15 dias<br>   - Causas prováveis: Ainda não iniciada.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong><br>   - Valor planejado a receber: R$ 0,00<br>   - Valor realmente recebido: R$ 0,00<br>   - Saldo: R$ 0,00<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong><br>   - Sucessoras diretas: 1<br>   - Impacto: Baixo<br><br><strong style="color:#1e293b;">B. Recomendações Açãoáveis</strong><br><br>1. <strong style="color:#1e293b;">Ações imediatas</strong>: Iniciar atividade.<br>2. <strong style="color:#1e293b;">Comunicações necessárias</strong>: Equipe informada.<br>3. <strong style="color:#1e293b;">Prazos sugeridos</strong>: Iniciar rapidamente.<br><br><strong style="color:#1e293b;">C. Resumo Executivo</strong><br><br>- <strong style="color:#1e293b;">Status</strong>: Atrasada no cronograma.<br>- <strong style="color:#1e293b;">Riscos</strong>: Atraso no cronograma.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar atividade.<br><br>####</li></div>
+    </div>
+  </div>
+</div>
+<div class="ia-card">
+  <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
+    <div class="ia-card-titulo">
+      <i class="fas fa-clock"></i>
+      <div class="ia-card-info">
+        <div class="ia-card-nome">2.03.03 - Estação Solarimétrica</div>
+      </div>
+    </div>
+    <div class="ia-card-direita">
+      <div class="ia-card-badge tipo-atrasada">ATRASADA</div>
+      <i class="fas fa-chevron-down ia-card-toggle"></i>
+    </div>
+  </div>
+  <div class="ia-card-content">
+    <div class="ia-card-metadata">
+      <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>2.03.03</strong></span></div>
+      <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>9 de 10</strong></span></div>
+      <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>ATRASADA</strong></span></div>
+    </div>
+    <div class="ia-card-analysis">
+      <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">03.03 - Estação Solarimétrica<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong><br>   - Gap: 100.0 pontos percentuais<br>   - Margem de atraso disponível: 84 dias<br>   - Causas prováveis: Ainda não iniciada.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong><br>   - Valor planejado a receber: R$ 0,00<br>   - Valor realmente recebido: R$ 0,00<br>   - Saldo: R$ 0,00<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong><br>   - Sucessoras diretas: 1<br>   - Impacto: Baixo<br><br><strong style="color:#1e293b;">B. Recomendações Açãoáveis</strong><br><br>1. <strong style="color:#1e293b;">Ações imediatas</strong>: Iniciar atividade.<br>2. <strong style="color:#1e293b;">Comunicações necessárias</strong>: Equipe alertada sobre a importância.<br>3. <strong style="color:#1e293b;">Prazos sugeridos</strong>: Iniciar o mais rápido possível.<br><br><strong style="color:#1e293b;">C. Resumo Executivo</strong><br><br>- <strong style="color:#1e293b;">Status</strong>: Atrasada no cronograma.<br>- <strong style="color:#1e293b;">Riscos</strong>: Atraso no cronograma.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar atividade.<br><br>###</li></div>
+    </div>
+  </div>
+</div>
+<div class="ia-card">
+  <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
+    <div class="ia-card-titulo">
+      <i class="fas fa-chart-line"></i>
+      <div class="ia-card-info">
+        <div class="ia-card-nome">Conclusão Geral</div>
+      </div>
+    </div>
+    <div class="ia-card-direita">
+      <div class="ia-card-badge tipo-geral">CONCLUSÃO</div>
+      <i class="fas fa-chevron-down ia-card-toggle"></i>
+    </div>
+  </div>
+  <div class="ia-card-content">
+    <div class="ia-card-metadata">
+      <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>GERAL</strong></span></div>
+      <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>10 de 10</strong></span></div>
+      <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>GERAL</strong></span></div>
+    </div>
+    <div class="ia-card-analysis">
+      <div style="font-size:0.9em; line-height:1.6;">Conclusão Completa<br><br>As atividades críticas do Projeto Usina Fotovoltaica Serra do Salitre apresentam desafios significativos no que diz respeito ao cronograma e impacto financeiro. A maioria das atividades está atrasada ou em risco de atraso, com pouca ou nenhuma margem de atraso disponível. <br><br>É crucial que ações imediatas sejam implementadas para retomar o cronograma previsto, incluindo:<br><br>1. <strong style="color:#1e293b;">Priorização de Atividades Críticas</strong>: Foco em atividades com margem de atraso zero ou crítica.<br>2. <strong style="color:#1e293b;">Recuperação de Produtividade</strong>: Implementar planos de recuperação para atividades em atraso.<br>3. <strong style="color:#1e293b;">Gestão de Riscos</strong>: Identificar e mitigar riscos potenciais associados às atividades atrasadas.<br><br>Com uma abordagem proativa e coordenação eficaz entre as equipes, é possível minimizar os impactos negativos e garantir o sucesso do projeto dentro do cronograma e orçamento estabelecidos.</div>
+    </div>
+  </div>
+</div></div>
+  <div class="ia-cards-footer">
+    <p><i class="fas fa-info-circle"></i> Análise gerada por IA em tempo real</p>
+  </div>
+</div>
               </div>
             </div>
           </div>
@@ -164133,7 +164157,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   <strong>Relatório Diário de Obra - UFV CEMIG</strong>
               </p>
               <p>
-                  Gerado automaticamente em 27/01/2026 às 10:23 | 
+                  Gerado automaticamente em 27/01/2026 às 10:27 | 
                   Atividades monitoradas: 406 | 
                   Progresso financeiro: 0.0%
               </p>
