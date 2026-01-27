@@ -1216,7 +1216,7 @@
               <h1>Relatório Diário de Obra - UFV SERRA DO SALITRE</h1>
               <div class="header-subtitle">
                   <i class="fas fa-calendar-alt"></i>
-                  Relatório atualizado em: 27/01/2026 às 08:42
+                  Relatório atualizado em: 27/01/2026 às 08:55
               </div>
           </header>
 
@@ -163830,179 +163830,56 @@
               <div class="ia-content" style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #e5e7eb;">
                 
 <style>
+/* Container principal */
 .ia-cards-container {
   font-family: 'Inter', sans-serif;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.ia-cards-header {
-  text-align: center;
-  margin-bottom: 30px;
-  padding-bottom: 15px;
-  border-bottom: 2px solid #e5e7eb;
-}
-
-.ia-cards-header h3 {
-  color: #1d4ed8;
-  font-size: 1.5rem;
-  margin-bottom: 8px;
-}
-
-.ia-cards-header p {
-  color: #6b7280;
-  font-size: 0.95rem;
-}
-
-.ia-card {
-  background: white;
-  border-radius: 12px;
-  margin-bottom: 16px;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  transition: all 0.3s ease;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.ia-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border-color: #d1d5db;
-}
-
-.ia-card-header {
-  padding: 18px 20px;
   background: #f8fafc;
+  border-radius: 16px;
+  padding: 25px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Header */
+.ia-cards-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid transparent;
-  transition: all 0.3s ease;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e5e7eb;
 }
 
-.ia-card.active .ia-card-header {
-  background: white;
-  border-bottom-color: #e5e7eb;
-}
-
-.ia-card-titulo {
-  flex: 1;
+.ia-header-titulo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 600;
-  color: #1e293b;
-  font-size: 1rem;
+  gap: 15px;
 }
 
-.ia-card-titulo i {
+.ia-header-titulo i {
+  font-size: 2rem;
   color: #8b5cf6;
-  font-size: 1.1rem;
 }
 
-.ia-card-badge {
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  margin-right: 15px;
-}
-
-.ia-card-badge.tipo-critica {
-  background: #fee2e2;
-  color: #991b1b;
-}
-
-.ia-card-badge.tipo-atrasada {
-  background: #fef3c7;
-  color: #92400e;
-}
-
-.ia-card-badge.tipo-execucao {
-  background: #e0f2fe;
-  color: #075985;
-}
-
-.ia-card-badge.tipo-concluida {
-  background: #d1fae5;
-  color: #065f46;
-}
-
-.ia-card-badge.tipo-geral {
-  background: #8b5cf6;
-  color: white;
-}
-
-.ia-card-toggle {
-  color: #9ca3af;
-  transition: transform 0.3s ease;
-}
-
-.ia-card.active .ia-card-toggle {
-  transform: rotate(180deg);
+.ia-header-titulo h3 {
   color: #1d4ed8;
+  font-size: 1.5rem;
+  margin: 0 0 5px 0;
 }
 
-.ia-card-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease, padding 0.3s ease;
-  background: white;
-}
-
-.ia-card.active .ia-card-content {
-  max-height: 2000px;
-  padding: 20px;
-}
-
-.ia-card-metadata {
-  background: #f8fafc;
-  padding: 12px 15px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  font-size: 0.85rem;
-  color: #4b5563;
-}
-
-.ia-card-metadata span {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.ia-card-metadata i {
-  color: #8b5cf6;
-}
-
-.ia-card-analysis {
+.ia-header-titulo p {
+  color: #6b7280;
+  margin: 0;
   font-size: 0.9rem;
-  line-height: 1.6;
-  color: #374151;
 }
 
-.ia-card-analysis h2, 
-.ia-card-analysis h3, 
-.ia-card-analysis h4 {
-  font-family: 'Inter', sans-serif;
-  margin-top: 1.5em;
-  margin-bottom: 0.8em;
-}
-
-.ia-cards-footer {
+.ia-header-acoes {
   display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 25px;
-  padding-top: 20px;
-  border-top: 1px solid #e5e7eb;
+  gap: 10px;
 }
 
-.ia-expand-all,
-.ia-collapse-all {
+/* Botões */
+.ia-btn {
   padding: 10px 18px;
   border-radius: 8px;
   border: 1px solid #d1d5db;
@@ -164017,20 +163894,249 @@
   transition: all 0.2s ease;
 }
 
-.ia-expand-all:hover,
-.ia-collapse-all:hover {
+.ia-btn:hover {
   background: #f3f4f6;
   transform: translateY(-1px);
 }
 
-.ia-expand-all {
+.ia-btn-expandir {
   background: #1d4ed8;
   color: white;
   border-color: #1d4ed8;
 }
 
-.ia-expand-all:hover {
+.ia-btn-expandir:hover {
   background: #1e40af;
+}
+
+/* Cards */
+.ia-cards-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ia-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.ia-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  border-color: #cbd5e1;
+}
+
+/* Card Header */
+.ia-card-header {
+  padding: 18px 20px;
+  background: #f8fafc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.ia-card.active .ia-card-header {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.ia-card-titulo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.ia-card-titulo i {
+  font-size: 1.4rem;
+  color: #8b5cf6;
+  flex-shrink: 0;
+}
+
+.ia-card-info {
+  flex: 1;
+}
+
+.ia-card-nome {
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+.ia-card-resumo {
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.ia-card-direita {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Badges */
+.ia-card-badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ia-card-badge.tipo-critica {
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.ia-card-badge.tipo-atrasada {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  color: #92400e;
+  border: 1px solid #fbbf24;
+}
+
+.ia-card-badge.tipo-execucao {
+  background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+  color: #075985;
+  border: 1px solid #38bdf8;
+}
+
+.ia-card-badge.tipo-concluida {
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+  color: #065f46;
+  border: 1px solid #10b981;
+}
+
+.ia-card-badge.tipo-geral {
+  background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+  color: #5b21b6;
+  border: 1px solid #8b5cf6;
+}
+
+/* Toggle */
+.ia-card-toggle {
+  color: #9ca3af;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.ia-card.active .ia-card-toggle {
+  transform: rotate(180deg);
+  color: #1d4ed8;
+}
+
+/* Card Content */
+.ia-card-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+}
+
+.ia-card.active .ia-card-content {
+  max-height: 2000px;
+  padding: 20px;
+}
+
+/* Metadata */
+.ia-card-metadata {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 25px;
+  padding: 15px;
+  background: #f8fafc;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+.ia-metadata-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+
+.ia-metadata-item i {
+  color: #8b5cf6;
+}
+
+.ia-metadata-item strong {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* Análise */
+.ia-card-analysis {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #374151;
+}
+
+.ia-card-analysis h2 {
+  color: #1d4ed8;
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.ia-card-analysis h3 {
+  color: #1e40af;
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+}
+
+.ia-card-analysis h4 {
+  color: #374151;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.ia-card-analysis ul,
+.ia-card-analysis ol {
+  margin: 0.8em 0;
+  padding-left: 1.5em;
+}
+
+.ia-card-analysis li {
+  margin-bottom: 0.5em;
+}
+
+/* Footer */
+.ia-cards-footer {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.ia-cards-footer i {
+  color: #8b5cf6;
+  margin-right: 8px;
+}
+
+/* Empty State */
+.ia-empty {
+  text-align: center;
+  padding: 60px 30px;
+  color: #9ca3af;
+}
+
+.ia-empty i {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #d1d5db;
 }
 </style>
 
@@ -164057,142 +164163,664 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.ia-card').forEach(card => {
     card.classList.remove('active');
   });
+  
+  // Adicionar eventos de clique nos badges (para não expandir ao clicar neles)
+  document.querySelectorAll('.ia-card-badge').forEach(badge => {
+    badge.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+  });
 });
 </script>
 
-    <div class="ia-cards-container">
-      <div class="ia-card geral" onclick="toggleIACard(this)">
-        <div class="ia-card-header">
-          <div class="ia-card-titulo">
-            <i class="fas fa-chart-line"></i>
-            <span>Análise Geral do Projeto</span>
+  <div class="ia-cards-container">
+    <div class="ia-cards-header">
+      <div class="ia-header-titulo">
+        <i class="fas fa-robot"></i>
+        <div>
+          <h3>Análise de IA - Atividades Críticas</h3>
+          <p>10 atividade(s) analisada(s) - Clique para expandir</p>
+        </div>
+      </div>
+      <div class="ia-header-acoes">
+        <button class="ia-btn ia-btn-expandir" onclick="expandAllIACards()">
+          <i class="fas fa-expand-alt"></i> Expandir Todas
+        </button>
+        <button class="ia-btn ia-btn-recolher" onclick="collapseAllIACards()">
+          <i class="fas fa-compress-alt"></i> Recolher Todas
+        </button>
+      </div>
+    </div>
+    
+    <div class="ia-cards-grid">
+      
+    <div class="ia-card" onclick="toggleIACard(this)">
+      <div class="ia-card-header">
+        <div class="ia-card-titulo">
+          <i class="fas fa-play-circle"></i>
+          <div class="ia-card-info">
+            <div class="ia-card-nome">1.01.02 - Contratação dos Seguros - Contratuais**</div>
+            <div class="ia-card-resumo">1.01.02 - Contratação dos Seguros - Contratuais**  **A. Diagnóstico da Situação Atual**  1. **Análise Física (Andamento ...</div>
           </div>
-          <div class="ia-card-badge tipo-geral">Geral</div>
+        </div>
+        <div class="ia-card-direita">
+          <div class="ia-card-badge tipo-execucao">
+            Em Execução
+          </div>
           <i class="fas fa-chevron-down ia-card-toggle"></i>
         </div>
-        <div class="ia-card-content">
-          <div style="font-size:0.9em; line-height:1.5;"><h4 style="color:#1d4ed8; margin-top:1.2em; margin-bottom:0.6em; font-size:1.1em;"><strong style="color:#1e293b;">Parecer Técnico Estruturado</strong></h4></p><p style="margin-bottom:0.8em;"><h4 style="color:#1d4ed8; margin-top:1.2em; margin-bottom:0.6em; font-size:1.1em;"># <strong style="color:#1e293b;">Atividade 1: 1.01.02 - Contratação dos Seguros - Contratuais</strong></h4></p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong></p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong></li>
-   - Gap: 8 pontos percentuais (<span style="color:#dc2626; font-weight:600;">33%</span> planejada vs <span style="color:#dc2626; font-weight:600;">25%</span> <span style="color:#059669; font-weight:700; background:#d1fae5; padding:1px 4px; border-radius:3px; font-size:0.85em;">concluída</span>)
-   - Margem de atraso disponível: 200 dias (há flexibilidade no cronograma)
-   - Causas prováveis: Produtividade abaixo do esperado.</p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong></li>
-   - Valor planejado a receber: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 0,00</span>
-   - Valor realmente recebido: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 0,00</span>
-   - Saldo: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 0,00</span> (neutro)</p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong></li>
-   - Sucessoras diretas: 0
-   - Impacto: Baixo</p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">B. Recomendações Acionáveis</strong></p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Ações Imediatas</strong>: Acionar plano de recuperação para retomar a produtividade.</li>
-<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Comunicações Necessárias</strong>: Informar equipe sobre a importância de cumprir o cronograma.</li>
-<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Prazos Sugeridos</strong>: Recuperação da produtividade em 2 semanas.</li></p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">C. Resumo Executivo</strong>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Status</strong>: Em execução com produtividade em atraso.</li>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Riscos</strong>: Atraso no cronograma.</li>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Recomendação</strong>: Implementar plano de recuperação.</li></p><p style="margin-bottom:0.8em;"><h4 style="color:#1d4ed8; margin-top:1.2em; margin-bottom:0.6em; font-size:1.1em;"># <strong style="color:#1e293b;">Atividade 2: 1.01.03 - Administração Mensal</strong></h4></p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong></p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong></li>
-   - Gap: 33 pontos percentuais (<span style="color:#dc2626; font-weight:600;">33%</span> planejada vs <span style="color:#dc2626; font-weight:600;">0%</span> <span style="color:#059669; font-weight:700; background:#d1fae5; padding:1px 4px; border-radius:3px; font-size:0.85em;">concluída</span>)
-   - Margem de atraso disponível: 200 dias
-   - Causas prováveis: Ainda não iniciada.</p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong></li>
-   - Valor planejado a receber: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 244.204,33</span>
-   - Valor realmente recebido: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 0,00</span>
-   - Saldo: -<span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 244.204,33</span> (negativo)</p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong></li>
-   - Sucessoras diretas: 2
-   - Impacto: Crítico</p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">B. Recomendações Acionáveis</strong></p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade o mais rápido possível.</li>
-<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Comunicações Necessárias</strong>: <span style="color:#d97706; font-weight:700; background:#fef3c7; padding:1px 4px; border-radius:3px; font-size:0.85em;">Alerta</span>r equipe sobre a criticidade do atraso.</li>
-<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Prazos Sugeridos</strong>: Início imediato e conclusão em 1 semana.</li></p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">C. Resumo Executivo</strong>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Status</strong>: <span style="color:#dc2626; font-weight:700; background:#fee2e2; padding:1px 4px; border-radius:3px; font-size:0.85em;">Atrasada</span> no cronograma.</li>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Riscos</strong>: Impacto financeiro negativo e atraso em sucessoras.</li>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Recomendação</strong>: Iniciar atividade imediatamente.</li></p><p style="margin-bottom:0.8em;"><h4 style="color:#1d4ed8; margin-top:1.2em; margin-bottom:0.6em; font-size:1.1em;"># <strong style="color:#1e293b;">Atividade 3: 2.01.01 - Planialtimétrico do Terreno e Georreferenciamento</strong></h4></p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong></p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong></li>
-   - Gap: 100 pontos percentuais (<span style="color:#dc2626; font-weight:600;">100%</span> planejada vs <span style="color:#dc2626; font-weight:600;">0%</span> <span style="color:#059669; font-weight:700; background:#d1fae5; padding:1px 4px; border-radius:3px; font-size:0.85em;">concluída</span>)
-   - Margem de atraso disponível: 6 dias
-   - Causas prováveis: Ainda não iniciada.</p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong></li>
-   - Valor planejado a receber: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 0,00</span>
-   - Valor realmente recebido: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 0,00</span>
-   - Saldo: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 0,00</span></p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong></li>
-   - Sucessoras diretas: 0
-   - Impacto: Baixo</p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">B. Recomendações Acionáveis</strong></p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade imediatamente.</li>
-<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Comunicações Necessárias</strong>: Informar equipe sobre a urgência.</li>
-<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Prazos Sugeridos</strong>: Concluir em 6 dias.</li></p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">C. Resumo Executivo</strong>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Status</strong>: <span style="color:#dc2626; font-weight:700; background:#fee2e2; padding:1px 4px; border-radius:3px; font-size:0.85em;">Atrasada</span> no cronograma.</li>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Riscos</strong>: Atraso crítico com pouca margem de erro.</li>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Recomendação</strong>: Iniciar atividade de imediato.</li></p><p style="margin-bottom:0.8em;"><h4 style="color:#1d4ed8; margin-top:1.2em; margin-bottom:0.6em; font-size:1.1em;"># <strong style="color:#1e293b;">Atividade 4: 2.01.02 - Estudos Geológico - SPT</strong></h4></p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong></p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong></li>
-   - Gap: 100 pontos percentuais
-   - Margem de atraso disponível: 66 dias
-   - Causas: Ainda não iniciada.</p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong></li>
-   - Valor planejado a receber: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 0,00</span>
-   - Valor realmente recebido: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 0,00</span>
-   - Saldo: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 0,00</span></p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong></li>
-   - Sucessoras diretas: 0
-   - Impacto: Baixo</p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">B. Recomendações Acionáveis</strong></p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade.</li>
-<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Comunicações Necessárias</strong>: <span style="color:#d97706; font-weight:700; background:#fef3c7; padding:1px 4px; border-radius:3px; font-size:0.85em;">Alerta</span>r equipe sobre a importância.</li>
-<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Prazos Sugeridos</strong>: Concluir em 30 dias.</li></p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">C. Resumo Executivo</strong>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Status</strong>: <span style="color:#dc2626; font-weight:700; background:#fee2e2; padding:1px 4px; border-radius:3px; font-size:0.85em;">Atrasada</span>.</li>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Riscos</strong>: Atraso com impacto futuro.</li>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Recomendação</strong>: Iniciar atividade.</li></p><p style="margin-bottom:0.8em;"><h4 style="color:#1d4ed8; margin-top:1.2em; margin-bottom:0.6em; font-size:1.1em;"># <strong style="color:#1e293b;">Atividade 5: 2.01.03 - Estudos Geológico - SEV</strong></h4></p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong></p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong></li>
-   - Gap: 100 pontos percentuais
-   - Margem de atraso disponível: 36 dias
-   - Causas: Ainda não iniciada.</p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong></li>
-   - Valor planejado a receber: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 0,00</span>
-   - Valor realmente recebido: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 0,00</span>
-   - Saldo: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 0,00</span></p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong></li>
-   - Sucessoras diretas: 0
-   - Impacto: Baixo</p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">B. Recomendações Acionáveis</strong></p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade.</li>
-<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Comunicações Necessárias</strong>: Informar sobre prioridade.</li>
-<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Prazos Sugeridos</strong>: Concluir em 20 dias.</li></p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">C. Resumo Executivo</strong>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Status</strong>: <span style="color:#dc2626; font-weight:700; background:#fee2e2; padding:1px 4px; border-radius:3px; font-size:0.85em;">Atrasada</span>.</li>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Riscos</strong>: Atraso futuro.</li>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Recomendação</strong>: Iniciar.</li></p><p style="margin-bottom:0.8em;"><h4 style="color:#1d4ed8; margin-top:1.2em; margin-bottom:0.6em; font-size:1.1em;"># <strong style="color:#1e293b;">Atividade 6: 2.02.01 - LAYOUT - Usina</strong></h4></p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong></p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong></li>
-   - Gap: 100 pontos percentuais
-   - Margem de atraso disponível: 0 dias (crítico)
-   - Causas: Ainda não iniciada.</p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong></li>
-   - Valor planejado a receber: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 0,00</span>
-   - Valor realmente recebido: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 0,00</span>
-   - Saldo: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 0,00</span></p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong></li>
-   - Sucessoras diretas: 1
-   - Impacto: Crítico</p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">B. Recomendações Acionáveis</strong></p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar imediatamente.</li>
-<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Comunicações Necessárias</strong>: Informar sobre criticidade.</li>
-<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Prazos Sugeridos</strong>: Concluir em até 5 dias.</li></p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">C. Resumo Executivo</strong>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Status</strong>: <span style="color:#dc2626; font-weight:700; background:#fee2e2; padding:1px 4px; border-radius:3px; font-size:0.85em;">Crítica</span>, <span style="color:#dc2626; font-weight:700; background:#fee2e2; padding:1px 4px; border-radius:3px; font-size:0.85em;">atrasada</span> e sem margem de atraso.</li>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Riscos</strong>: Alto impacto em sucessoras.</li>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Recomendação</strong>: Iniciar imediatamente.</li></p><p style="margin-bottom:0.8em;"><h4 style="color:#1d4ed8; margin-top:1.2em; margin-bottom:0.6em; font-size:1.1em;"># <strong style="color:#1e293b;">Atividade 7: 2.03.01 - CMP</strong></h4></p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong></p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong></li>
-   - Gap: 100 pontos percentuais
-   - Margem de atraso disponível: 15 dias
-   - Causas: Ainda não iniciada.</p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong></li>
-   - Valor planejado a receber: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 0,00</span>
-   - Valor realmente recebido: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 0,00</span>
-   - Saldo: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 0,00</span></p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong></li>
-   - Sucessoras diretas: 1
-   - Impacto: Baixo</p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">B. Recomendações Acionáveis</strong></p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade.</li>
-<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Comunicações Necessárias</strong>: Informar sobre prioridade.</li>
-<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Prazos Sugeridos</strong>: Concluir em 10 dias.</li></p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">C. Resumo Executivo</strong>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Status</strong>: <span style="color:#dc2626; font-weight:700; background:#fee2e2; padding:1px 4px; border-radius:3px; font-size:0.85em;">Atrasada</span>.</li>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Riscos</strong>: Impacto futuro.</li>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Recomendação</strong>: Iniciar atividade.</li></p><p style="margin-bottom:0.8em;"><h4 style="color:#1d4ed8; margin-top:1.2em; margin-bottom:0.6em; font-size:1.1em;"># <strong style="color:#1e293b;">Atividade 8: 2.03.02 - SKID</strong></h4></p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong></p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong></li>
-   - Gap: 100 pontos percentuais
-   - Margem de atraso disponível: 15 dias
-   - Causas: Ainda não iniciada.</p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong></li>
-   - Valor planejado a receber: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 0,00</span>
-   - Valor realmente recebido: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 0,00</span>
-   - Saldo: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 0,00</span></p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong></li>
-   - Sucessoras diretas: 1
-   - Impacto: Baixo</p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">B. Recomendações Acionáveis</strong></p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade.</li>
-<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Comunicações Necessárias</strong>: Informar sobre prioridade.</li>
-<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Prazos Sugeridos</strong>: Concluir em 10 dias.</li></p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">C. Resumo Executivo</strong>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Status</strong>: <span style="color:#dc2626; font-weight:700; background:#fee2e2; padding:1px 4px; border-radius:3px; font-size:0.85em;">Atrasada</span>.</li>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Riscos</strong>: Impacto futuro.</li>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Recomendação</strong>: Iniciar atividade.</li></p><p style="margin-bottom:0.8em;"><h4 style="color:#1d4ed8; margin-top:1.2em; margin-bottom:0.6em; font-size:1.1em;"># <strong style="color:#1e293b;">Atividade 9: 2.03.03 - Estação Solarimétrica</strong></h4></p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong></p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong></li>
-   - Gap: 100 pontos percentuais
-   - Margem de atraso disponível: 84 dias
-   - Causas: Ainda não iniciada.</p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong></li>
-   - Valor planejado a receber: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 0,00</span>
-   - Valor realmente recebido: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 0,00</span>
-   - Saldo: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:1px 4px; border-radius:3px; border:1px solid #a7f3d0; font-size:0.9em;">R$ 0,00</span></p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong></li>
-   - Sucessoras diretas: 1
-   - Impacto: Baixo</p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">B. Recomendações Acionáveis</strong></p><p style="margin-bottom:0.8em;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade.</li>
-<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Comunicações Necessárias</strong>: Informar sobre prioridade.</li>
-<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Prazos Sugeridos</strong>: Concluir em 30 dias.</li></p><p style="margin-bottom:0.8em;"><strong style="color:#1e293b;">C. Resumo Executivo</strong>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Status</strong>: <span style="color:#dc2626; font-weight:700; background:#fee2e2; padding:1px 4px; border-radius:3px; font-size:0.85em;">Atrasada</span>.</li>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Riscos</strong>: Atraso futuro.</li>
-<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Recomendação</strong>: Iniciar atividade.</li></p><p style="margin-bottom:0.8em;"><h4 style="color:#1d4ed8; margin-top:1.2em; margin-bottom:0.6em; font-size:1.1em;"><strong style="color:#1e293b;">Conclusão</strong></h4></p><p style="margin-bottom:0.8em;">É crucial que medidas imediatas sejam tomadas para retomar e acelerar as atividades <span style="color:#dc2626; font-weight:700; background:#fee2e2; padding:1px 4px; border-radius:3px; font-size:0.85em;">crítica</span>s e <span style="color:#dc2626; font-weight:700; background:#fee2e2; padding:1px 4px; border-radius:3px; font-size:0.85em;">atrasada</span>s. A implementação de planos de recuperação, comunicação eficaz com as equipes, e o monitoramento contínuo do progresso são essenciais para mitigar os riscos de atraso e impacto financeiro no projeto da Usina Fotovoltaica Serra do Salitre.</div>
+      </div>
+      <div class="ia-card-content">
+        <div class="ia-card-metadata">
+          <div class="ia-metadata-item">
+            <i class="fas fa-hashtag"></i>
+            <span>Código: <strong>1.01.02</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-list-ol"></i>
+            <span>Número: <strong>1 de 10</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-tag"></i>
+            <span>Tipo: <strong>EM EXECUÇÃO COM ATRASO</strong></span>
+          </div>
+        </div>
+        <div class="ia-card-analysis">
+          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">01.02 - Contratação dos Seguros - Contratuais<em style="color:#4b5563;"></em></li>
+
+<strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong></li>
+   - <strong style="color:#1e293b;">Gap</strong>: 8.0 pontos percentuais (33.<span style="color:#dc2626; font-weight:600; background:#fef2f2; padding:2px 6px; border-radius:4px;">0%</span> planejada vs 25.<span style="color:#dc2626; font-weight:600; background:#fef2f2; padding:2px 6px; border-radius:4px;">0%</span> ✅ CONCLUÍDA)
+   - <strong style="color:#1e293b;">Margem de Atraso Disponível</strong>: 200 dias (há flexibilidade no cronograma)
+   - <strong style="color:#1e293b;">Causas Prováveis do Atraso/Início</strong>: Produtividade abaixo do esperado.
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong></li>
+   - <strong style="color:#1e293b;">Valor Planejado a Receber</strong>: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 0,00</span>
+   - <strong style="color:#1e293b;">Valor Realmente Recebido</strong>: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 0,00</span>
+   - <strong style="color:#1e293b;">Saldo</strong>: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 0,00</span>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong></li>
+   - Não há sucessoras diretas.
+
+<strong style="color:#1e293b;">B. Recomendações Açãoáveis</strong>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Ações Imediatas</strong>: Acionar Plano de Recuperação para retomar a produtividade.</li>
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Comunicações Necessárias</strong>: Informar ao setor de Gestão sobre a necessidade de acelerar a contratação.</li>
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Prazos Sugeridos</strong>: Retomar o cronograma previsto inicialmente.</li>
+
+<strong style="color:#1e293b;">C. Resumo Executivo para Gestores</strong>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Status Atual</strong>: Em execução com produtividade em atraso.</li>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Principais Riscos</strong>: Impacto no cronograma geral se não recuperado.</li>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">💡 RECOMENDAÇÃO Principal</strong>: Implementar Plano de Recuperação.</li>
+
+<h4 style="color:#1d4ed8; margin-top:1.2em; margin-bottom:0.6em; font-size:1.1em;"># <em style="color:#4b5563;"></em>Atividade 2:</h4></div>
         </div>
       </div>
     </div>
     
+    <div class="ia-card" onclick="toggleIACard(this)">
+      <div class="ia-card-header">
+        <div class="ia-card-titulo">
+          <i class="fas fa-chart-line"></i>
+          <div class="ia-card-info">
+            <div class="ia-card-nome">1.01.03 - Administração Mensal**</div>
+            <div class="ia-card-resumo">1.01.03 - Administração Mensal**  **A. Diagnóstico da Situação Atual**  1. **Análise Física (Andamento do Trabalho)**   ...</div>
+          </div>
+        </div>
+        <div class="ia-card-direita">
+          <div class="ia-card-badge tipo-geral">
+            Análise
+          </div>
+          <i class="fas fa-chevron-down ia-card-toggle"></i>
+        </div>
+      </div>
+      <div class="ia-card-content">
+        <div class="ia-card-metadata">
+          <div class="ia-metadata-item">
+            <i class="fas fa-hashtag"></i>
+            <span>Código: <strong>1.01.03</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-list-ol"></i>
+            <span>Número: <strong>2 de 10</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-tag"></i>
+            <span>Tipo: <strong>Análise</strong></span>
+          </div>
+        </div>
+        <div class="ia-card-analysis">
+          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">01.03 - Administração Mensal<em style="color:#4b5563;"></em></li>
+
+<strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong></li>
+   - <strong style="color:#1e293b;">Gap</strong>: 33.0 pontos percentuais (33.<span style="color:#dc2626; font-weight:600; background:#fef2f2; padding:2px 6px; border-radius:4px;">0%</span> planejada vs 0.<span style="color:#dc2626; font-weight:600; background:#fef2f2; padding:2px 6px; border-radius:4px;">0%</span> ✅ CONCLUÍDA)
+   - <strong style="color:#1e293b;">Margem de Atraso Disponível</strong>: 200 dias
+   - <strong style="color:#1e293b;">Causas Prováveis do Atraso/Início</strong>: Ainda não iniciada.
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong></li>
+   - <strong style="color:#1e293b;">Valor Planejado a Receber</strong>: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 244,</span></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ia-card" onclick="toggleIACard(this)">
+      <div class="ia-card-header">
+        <div class="ia-card-titulo">
+          <i class="fas fa-clock"></i>
+          <div class="ia-card-info">
+            <div class="ia-card-nome">204.33 - **Valor Realmente Recebido**: R$ 0,00</div>
+            <div class="ia-card-resumo">204.33    - **Valor Realmente Recebido**: R$ 0,00    - **Saldo**: -R$ 244,204.33  3. **Análise de Impacto em Cadeia**   ...</div>
+          </div>
+        </div>
+        <div class="ia-card-direita">
+          <div class="ia-card-badge tipo-atrasada">
+            Atrasada
+          </div>
+          <i class="fas fa-chevron-down ia-card-toggle"></i>
+        </div>
+      </div>
+      <div class="ia-card-content">
+        <div class="ia-card-metadata">
+          <div class="ia-metadata-item">
+            <i class="fas fa-hashtag"></i>
+            <span>Código: <strong>204.33</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-list-ol"></i>
+            <span>Número: <strong>3 de 10</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-tag"></i>
+            <span>Tipo: <strong>ATRASADA</strong></span>
+          </div>
+        </div>
+        <div class="ia-card-analysis">
+          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">33</li>
+   - <strong style="color:#1e293b;">Valor Realmente Recebido</strong>: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 0,00</span>
+   - <strong style="color:#1e293b;">Saldo</strong>: -<span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 244,204.33</span>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong></li>
+   - 2 sucessoras diretas dependentes.
+
+<strong style="color:#1e293b;">B. Recomendações Açãoáveis</strong>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade o mais breve possível.</li>
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Comunicações Necessárias</strong>: 🔔 ALERTA ao setor de Gestão sobre o impacto nas sucessoras.</li>
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Prazos Sugeridos</strong>: Iniciar imediatamente.</li>
+
+<strong style="color:#1e293b;">C. Resumo Executivo para Gestores</strong>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Status Atual</strong>: ⏰ ATRASADA no cronograma.</li>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Principais Riscos</strong>: Impacto financeiro e nas sucessoras.</li>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">💡 RECOMENDAÇÃO Principal</strong>: Priorizar o início.</li>
+
+<h4 style="color:#1d4ed8; margin-top:1.2em; margin-bottom:0.6em; font-size:1.1em;"># <em style="color:#4b5563;"></em>Atividade 3:</h4></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ia-card" onclick="toggleIACard(this)">
+      <div class="ia-card-header">
+        <div class="ia-card-titulo">
+          <i class="fas fa-clock"></i>
+          <div class="ia-card-info">
+            <div class="ia-card-nome">2.01.01 - Planialtimétrico do Terreno e Georreferenciamento**</div>
+            <div class="ia-card-resumo">2.01.01 - Planialtimétrico do Terreno e Georreferenciamento**  **A. Diagnóstico da Situação Atual**  1. **Análise Física...</div>
+          </div>
+        </div>
+        <div class="ia-card-direita">
+          <div class="ia-card-badge tipo-atrasada">
+            Atrasada
+          </div>
+          <i class="fas fa-chevron-down ia-card-toggle"></i>
+        </div>
+      </div>
+      <div class="ia-card-content">
+        <div class="ia-card-metadata">
+          <div class="ia-metadata-item">
+            <i class="fas fa-hashtag"></i>
+            <span>Código: <strong>2.01.01</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-list-ol"></i>
+            <span>Número: <strong>4 de 10</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-tag"></i>
+            <span>Tipo: <strong>ATRASADA</strong></span>
+          </div>
+        </div>
+        <div class="ia-card-analysis">
+          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">01.01 - Planialtimétrico do Terreno e Georreferenciamento<em style="color:#4b5563;"></em></li>
+
+<strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong></li>
+   - <strong style="color:#1e293b;">Gap</strong>: 100.0 pontos percentuais
+   - <strong style="color:#1e293b;">Margem de Atraso Disponível</strong>: 6 dias
+   - <strong style="color:#1e293b;">Causas Prováveis do Atraso/Início</strong>: Ainda não iniciada.
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong></li>
+   - <strong style="color:#1e293b;">Valor Planejado a Receber</strong>: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 0,00</span>
+   - <strong style="color:#1e293b;">Valor Realmente Recebido</strong>: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 0,00</span>
+   - <strong style="color:#1e293b;">Saldo</strong>: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 0,00</span>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong></li>
+   - Nenhuma sucessora direta.
+
+<strong style="color:#1e293b;">B. Recomendações Açãoáveis</strong>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade imediatamente.</li>
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Comunicações Necessárias</strong>: Informar setor de Estudo sobre a urgência.</li>
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Prazos Sugeridos</strong>: Iniciar nos próximos 2 dias.</li>
+
+<strong style="color:#1e293b;">C. Resumo Executivo para Gestores</strong>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Status Atual</strong>: ⏰ ATRASADA no cronograma.</li>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Principais Riscos</strong>: Perda da margem de atraso ⚠️ CRÍTICA.</li>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">💡 RECOMENDAÇÃO Principal</strong>: Iniciar atividade de imediato.</li>
+
+<h4 style="color:#1d4ed8; margin-top:1.2em; margin-bottom:0.6em; font-size:1.1em;"># <em style="color:#4b5563;"></em>Atividade 4:</h4></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ia-card" onclick="toggleIACard(this)">
+      <div class="ia-card-header">
+        <div class="ia-card-titulo">
+          <i class="fas fa-clock"></i>
+          <div class="ia-card-info">
+            <div class="ia-card-nome">2.01.02 - Estudos Geológico - SPT**</div>
+            <div class="ia-card-resumo">2.01.02 - Estudos Geológico - SPT**  **A. Diagnóstico da Situação Atual**  1. **Análise Física (Andamento do Trabalho)**...</div>
+          </div>
+        </div>
+        <div class="ia-card-direita">
+          <div class="ia-card-badge tipo-atrasada">
+            Atrasada
+          </div>
+          <i class="fas fa-chevron-down ia-card-toggle"></i>
+        </div>
+      </div>
+      <div class="ia-card-content">
+        <div class="ia-card-metadata">
+          <div class="ia-metadata-item">
+            <i class="fas fa-hashtag"></i>
+            <span>Código: <strong>2.01.02</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-list-ol"></i>
+            <span>Número: <strong>5 de 10</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-tag"></i>
+            <span>Tipo: <strong>ATRASADA</strong></span>
+          </div>
+        </div>
+        <div class="ia-card-analysis">
+          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">01.02 - Estudos Geológico - SPT<em style="color:#4b5563;"></em></li>
+
+<strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong></li>
+   - <strong style="color:#1e293b;">Gap</strong>: 100.0 pontos percentuais
+   - <strong style="color:#1e293b;">Margem de Atraso Disponível</strong>: 66 dias
+   - <strong style="color:#1e293b;">Causas Prováveis do Atraso/Início</strong>: Ainda não iniciada.
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong></li>
+   - <strong style="color:#1e293b;">Valor Planejado a Receber</strong>: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 0,00</span>
+   - <strong style="color:#1e293b;">Valor Realmente Recebido</strong>: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 0,00</span>
+   - <strong style="color:#1e293b;">Saldo</strong>: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 0,00</span>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong></li>
+   - Nenhuma sucessora direta.
+
+<strong style="color:#1e293b;">B. Recomendações Açãoáveis</strong>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade o mais rápido possível.</li>
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Comunicações Necessárias</strong>: 🔔 ALERTA ao setor de Estudo.</li>
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Prazos Sugeridos</strong>: Iniciar nos próximos 7 dias.</li>
+
+<strong style="color:#1e293b;">C. Resumo Executivo para Gestores</strong>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Status Atual</strong>: ⏰ ATRASADA no cronograma.</li>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Principais Riscos</strong>: Atraso com margem de segurança razoável.</li>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">💡 RECOMENDAÇÃO Principal</strong>: Iniciar estudos.</li>
+
+<h4 style="color:#1d4ed8; margin-top:1.2em; margin-bottom:0.6em; font-size:1.1em;"># <em style="color:#4b5563;"></em>Atividade 5:</h4></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ia-card" onclick="toggleIACard(this)">
+      <div class="ia-card-header">
+        <div class="ia-card-titulo">
+          <i class="fas fa-clock"></i>
+          <div class="ia-card-info">
+            <div class="ia-card-nome">2.01.03 - Estudos Geológico - SEV**</div>
+            <div class="ia-card-resumo">2.01.03 - Estudos Geológico - SEV**  **A. Diagnóstico da Situação Atual**  1. **Análise Física (Andamento do Trabalho)**...</div>
+          </div>
+        </div>
+        <div class="ia-card-direita">
+          <div class="ia-card-badge tipo-atrasada">
+            Atrasada
+          </div>
+          <i class="fas fa-chevron-down ia-card-toggle"></i>
+        </div>
+      </div>
+      <div class="ia-card-content">
+        <div class="ia-card-metadata">
+          <div class="ia-metadata-item">
+            <i class="fas fa-hashtag"></i>
+            <span>Código: <strong>2.01.03</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-list-ol"></i>
+            <span>Número: <strong>6 de 10</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-tag"></i>
+            <span>Tipo: <strong>ATRASADA</strong></span>
+          </div>
+        </div>
+        <div class="ia-card-analysis">
+          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">01.03 - Estudos Geológico - SEV<em style="color:#4b5563;"></em></li>
+
+<strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong></li>
+   - <strong style="color:#1e293b;">Gap</strong>: 100.0 pontos percentuais
+   - <strong style="color:#1e293b;">Margem de Atraso Disponível</strong>: 36 dias
+   - <strong style="color:#1e293b;">Causas Prováveis do Atraso/Início</strong>: Ainda não iniciada.
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong></li>
+   - <strong style="color:#1e293b;">Valor Planejado a Receber</strong>: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 0,00</span>
+   - <strong style="color:#1e293b;">Valor Realmente Recebido</strong>: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 0,00</span>
+   - <strong style="color:#1e293b;">Saldo</strong>: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 0,00</span>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong></li>
+   - Nenhuma sucessora direta.
+
+<strong style="color:#1e293b;">B. Recomendações Açãoáveis</strong>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade rapidamente.</li>
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Comunicações Necessárias</strong>: Informar setor de Estudo sobre prioridade.</li>
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Prazos Sugeridos</strong>: Iniciar nos próximos 7 dias.</li>
+
+<strong style="color:#1e293b;">C. Resumo Executivo para Gestores</strong>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Status Atual</strong>: ⏰ ATRASADA no cronograma.</li>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Principais Riscos</strong>: Atraso com margem de segurança média.</li>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">💡 RECOMENDAÇÃO Principal</strong>: Iniciar atividade.</li>
+
+<h4 style="color:#1d4ed8; margin-top:1.2em; margin-bottom:0.6em; font-size:1.1em;"># <em style="color:#4b5563;"></em>Atividade 6:</h4></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ia-card" onclick="toggleIACard(this)">
+      <div class="ia-card-header">
+        <div class="ia-card-titulo">
+          <i class="fas fa-clock"></i>
+          <div class="ia-card-info">
+            <div class="ia-card-nome">2.02.01 - LAYOUT - Usina**</div>
+            <div class="ia-card-resumo">2.02.01 - LAYOUT - Usina**  **A. Diagnóstico da Situação Atual**  1. **Análise Física (Andamento do Trabalho)**    - **G...</div>
+          </div>
+        </div>
+        <div class="ia-card-direita">
+          <div class="ia-card-badge tipo-atrasada">
+            Atrasada
+          </div>
+          <i class="fas fa-chevron-down ia-card-toggle"></i>
+        </div>
+      </div>
+      <div class="ia-card-content">
+        <div class="ia-card-metadata">
+          <div class="ia-metadata-item">
+            <i class="fas fa-hashtag"></i>
+            <span>Código: <strong>2.02.01</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-list-ol"></i>
+            <span>Número: <strong>7 de 10</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-tag"></i>
+            <span>Tipo: <strong>ATRASADA</strong></span>
+          </div>
+        </div>
+        <div class="ia-card-analysis">
+          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">02.01 - LAYOUT - Usina<em style="color:#4b5563;"></em></li>
+
+<strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong></li>
+   - <strong style="color:#1e293b;">Gap</strong>: 100.0 pontos percentuais
+   - <strong style="color:#1e293b;">Margem de Atraso Disponível</strong>: 0 dias (⚠️ CRÍTICA)
+   - <strong style="color:#1e293b;">Causas Prováveis do Atraso/Início</strong>: Ainda não iniciada.
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong></li>
+   - <strong style="color:#1e293b;">Valor Planejado a Receber</strong>: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 0,00</span>
+   - <strong style="color:#1e293b;">Valor Realmente Recebido</strong>: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 0,00</span>
+   - <strong style="color:#1e293b;">Saldo</strong>: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 0,00</span>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong></li>
+   - 1 sucessora direta dependente.
+
+<strong style="color:#1e293b;">B. Recomendações Açãoáveis</strong>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade de imediato.</li>
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Comunicações Necessárias</strong>: 🔔 ALERTAr gestores sobre criticidade.</li>
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Prazos Sugeridos</strong>: Iniciar imediatamente.</li>
+
+<strong style="color:#1e293b;">C. Resumo Executivo para Gestores</strong>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Status Atual</strong>: ⏰ ATRASADA no cronograma e ⚠️ CRÍTICA.</li>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Principais Riscos</strong>: Impacto imediato no cronograma geral.</li>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">💡 RECOMENDAÇÃO Principal</strong>: Iniciar de imediato.</li>
+
+<h4 style="color:#1d4ed8; margin-top:1.2em; margin-bottom:0.6em; font-size:1.1em;"># <em style="color:#4b5563;"></em>Atividade 7:</h4></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ia-card" onclick="toggleIACard(this)">
+      <div class="ia-card-header">
+        <div class="ia-card-titulo">
+          <i class="fas fa-clock"></i>
+          <div class="ia-card-info">
+            <div class="ia-card-nome">2.03.01 - CMP**</div>
+            <div class="ia-card-resumo">2.03.01 - CMP**  **A. Diagnóstico da Situação Atual**  1. **Análise Física (Andamento do Trabalho)**    - **Gap**: 100.0...</div>
+          </div>
+        </div>
+        <div class="ia-card-direita">
+          <div class="ia-card-badge tipo-atrasada">
+            Atrasada
+          </div>
+          <i class="fas fa-chevron-down ia-card-toggle"></i>
+        </div>
+      </div>
+      <div class="ia-card-content">
+        <div class="ia-card-metadata">
+          <div class="ia-metadata-item">
+            <i class="fas fa-hashtag"></i>
+            <span>Código: <strong>2.03.01</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-list-ol"></i>
+            <span>Número: <strong>8 de 10</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-tag"></i>
+            <span>Tipo: <strong>ATRASADA</strong></span>
+          </div>
+        </div>
+        <div class="ia-card-analysis">
+          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">03.01 - CMP<em style="color:#4b5563;"></em></li>
+
+<strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong></li>
+   - <strong style="color:#1e293b;">Gap</strong>: 100.0 pontos percentuais
+   - <strong style="color:#1e293b;">Margem de Atraso Disponível</strong>: 15 dias
+   - <strong style="color:#1e293b;">Causas Prováveis do Atraso/Início</strong>: Ainda não iniciada.
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong></li>
+   - <strong style="color:#1e293b;">Valor Planejado a Receber</strong>: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 0,00</span>
+   - <strong style="color:#1e293b;">Valor Realmente Recebido</strong>: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 0,00</span>
+   - <strong style="color:#1e293b;">Saldo</strong>: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 0,00</span>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong></li>
+   - 1 sucessora direta.
+
+<strong style="color:#1e293b;">B. Recomendações Açãoáveis</strong>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade rapidamente.</li>
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Comunicações Necessárias</strong>: Informar setor de Proj. Executivo e MDT.</li>
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Prazos Sugeridos</strong>: Iniciar nos próximos 7 dias.</li>
+
+<strong style="color:#1e293b;">C. Resumo Executivo para Gestores</strong>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Status Atual</strong>: ⏰ ATRASADA no cronograma.</li>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Principais Riscos</strong>: Impacto com margem de segurança baixa.</li>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">💡 RECOMENDAÇÃO Principal</strong>: Iniciar atividade.</li>
+
+<h4 style="color:#1d4ed8; margin-top:1.2em; margin-bottom:0.6em; font-size:1.1em;"># <em style="color:#4b5563;"></em>Atividade 8:</h4></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ia-card" onclick="toggleIACard(this)">
+      <div class="ia-card-header">
+        <div class="ia-card-titulo">
+          <i class="fas fa-clock"></i>
+          <div class="ia-card-info">
+            <div class="ia-card-nome">2.03.02 - SKID**</div>
+            <div class="ia-card-resumo">2.03.02 - SKID**  **A. Diagnóstico da Situação Atual**  1. **Análise Física (Andamento do Trabalho)**    - **Gap**: 100....</div>
+          </div>
+        </div>
+        <div class="ia-card-direita">
+          <div class="ia-card-badge tipo-atrasada">
+            Atrasada
+          </div>
+          <i class="fas fa-chevron-down ia-card-toggle"></i>
+        </div>
+      </div>
+      <div class="ia-card-content">
+        <div class="ia-card-metadata">
+          <div class="ia-metadata-item">
+            <i class="fas fa-hashtag"></i>
+            <span>Código: <strong>2.03.02</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-list-ol"></i>
+            <span>Número: <strong>9 de 10</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-tag"></i>
+            <span>Tipo: <strong>ATRASADA</strong></span>
+          </div>
+        </div>
+        <div class="ia-card-analysis">
+          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">03.02 - SKID<em style="color:#4b5563;"></em></li>
+
+<strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong></li>
+   - <strong style="color:#1e293b;">Gap</strong>: 100.0 pontos percentuais
+   - <strong style="color:#1e293b;">Margem de Atraso Disponível</strong>: 15 dias
+   - <strong style="color:#1e293b;">Causas Prováveis do Atraso/Início</strong>: Ainda não iniciada.
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong></li>
+   - <strong style="color:#1e293b;">Valor Planejado a Receber</strong>: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 0,00</span>
+   - <strong style="color:#1e293b;">Valor Realmente Recebido</strong>: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 0,00</span>
+   - <strong style="color:#1e293b;">Saldo</strong>: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 0,00</span>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong></li>
+   - 1 sucessora direta.
+
+<strong style="color:#1e293b;">B. Recomendações Açãoáveis</strong>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade rapidamente.</li>
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Comunicações Necessárias</strong>: 🔔 ALERTAr setor de Proj. Executivo e MDT.</li>
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Prazos Sugeridos</strong>: Iniciar nos próximos 7 dias.</li>
+
+<strong style="color:#1e293b;">C. Resumo Executivo para Gestores</strong>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Status Atual</strong>: ⏰ ATRASADA no cronograma.</li>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Principais Riscos</strong>: Impacto com margem de segurança baixa.</li>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">💡 RECOMENDAÇÃO Principal</strong>: Iniciar atividade.</li>
+
+<h4 style="color:#1d4ed8; margin-top:1.2em; margin-bottom:0.6em; font-size:1.1em;"># <em style="color:#4b5563;"></em>Atividade 9:</h4></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ia-card" onclick="toggleIACard(this)">
+      <div class="ia-card-header">
+        <div class="ia-card-titulo">
+          <i class="fas fa-clock"></i>
+          <div class="ia-card-info">
+            <div class="ia-card-nome">2.03.03 - Estação Solarimétrica**</div>
+            <div class="ia-card-resumo">2.03.03 - Estação Solarimétrica**  **A. Diagnóstico da Situação Atual**  1. **Análise Física (Andamento do Trabalho)**  ...</div>
+          </div>
+        </div>
+        <div class="ia-card-direita">
+          <div class="ia-card-badge tipo-atrasada">
+            Atrasada
+          </div>
+          <i class="fas fa-chevron-down ia-card-toggle"></i>
+        </div>
+      </div>
+      <div class="ia-card-content">
+        <div class="ia-card-metadata">
+          <div class="ia-metadata-item">
+            <i class="fas fa-hashtag"></i>
+            <span>Código: <strong>2.03.03</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-list-ol"></i>
+            <span>Número: <strong>10 de 10</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-tag"></i>
+            <span>Tipo: <strong>ATRASADA</strong></span>
+          </div>
+        </div>
+        <div class="ia-card-analysis">
+          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">03.03 - Estação Solarimétrica<em style="color:#4b5563;"></em></li>
+
+<strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong></li>
+   - <strong style="color:#1e293b;">Gap</strong>: 100.0 pontos percentuais
+   - <strong style="color:#1e293b;">Margem de Atraso Disponível</strong>: 84 dias
+   - <strong style="color:#1e293b;">Causas Prováveis do Atraso/Início</strong>: Ainda não iniciada.
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong></li>
+   - <strong style="color:#1e293b;">Valor Planejado a Receber</strong>: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 0,00</span>
+   - <strong style="color:#1e293b;">Valor Realmente Recebido</strong>: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 0,00</span>
+   - <strong style="color:#1e293b;">Saldo</strong>: <span style="color:#059669; font-weight:600; background:#ecfdf5; padding:2px 6px; border-radius:4px; border:1px solid #a7f3d0;">R$ 0,00</span>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong></li>
+   - 1 sucessora direta.
+
+<strong style="color:#1e293b;">B. Recomendações Açãoáveis</strong>
+
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade em breve.</li>
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Comunicações Necessárias</strong>: Informar setor de Proj. Executivo e MDT sobre o planejamento.</li>
+<li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;"><strong style="color:#1e293b;">Prazos Sugeridos</strong>: Iniciar nos próximos 15 dias.</li>
+
+<strong style="color:#1e293b;">C. Resumo Executivo para Gestores</strong>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Status Atual</strong>: ⏰ ATRASADA no cronograma.</li>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">Principais Riscos</strong>: Baixo impacto imediato, mas com atenção necessária.</li>
+<li style="margin-bottom:0.4em; padding-left:1.2em; position:relative; color:#374151;"><span style="position:absolute; left:0; color:#8b5cf6;">•</span> <strong style="color:#1e293b;">💡 RECOMENDAÇÃO Principal</strong>: Planejar início.</li></div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+    
+    <div class="ia-cards-footer">
+      <p><i class="fas fa-info-circle"></i> Análise gerada por IA em tempo real</p>
+    </div>
+  </div>
+  
               </div>
             </div>
           </div>
@@ -164207,7 +164835,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   <strong>Relatório Diário de Obra - UFV CEMIG</strong>
               </p>
               <p>
-                  Gerado automaticamente em 27/01/2026 às 08:42 | 
+                  Gerado automaticamente em 27/01/2026 às 08:55 | 
                   Atividades monitoradas: 406 | 
                   Progresso financeiro: 0.0%
               </p>
