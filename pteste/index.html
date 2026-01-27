@@ -1216,7 +1216,7 @@
               <h1>Relatório Diário de Obra - UFV SERRA DO SALITRE</h1>
               <div class="header-subtitle">
                   <i class="fas fa-calendar-alt"></i>
-                  Relatório atualizado em: 27/01/2026 às 09:38
+                  Relatório atualizado em: 27/01/2026 às 09:41
               </div>
           </header>
 
@@ -163828,7 +163828,755 @@
                 Análise de IA - Recomendações e Insights
               </div>
               <div class="ia-content" style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #e5e7eb;">
-                <style>/* Container principal */.ia-cards-container {font-family: "Inter", sans-serif;background: white;border-radius: 8px;padding: 20px;margin: 0 auto;max-width: 1200px;}/* Header */.ia-cards-header {text-align: center;margin-bottom: 25px;padding-bottom: 15px;border-bottom: 2px solid #e5e7eb;}.ia-cards-header h2 {color: #1d4ed8;font-size: 1.4rem;margin: 0 0 8px 0;display: flex;align-items: center;justify-content: center;gap: 10px;}.ia-cards-header p {color: #6b7280;margin: 0;font-size: 0.9rem;}/* Grid de cards */.ia-cards-row {display: flex;gap: 15px;margin-bottom: 15px;}.ia-card-col {flex: 1;min-width: 0;}.ia-card-col.empty {visibility: hidden;}/* Card individual */.ia-card {background: white;border-radius: 8px;border: 1px solid #e5e7eb;box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);overflow: hidden;height: 100%;display: flex;flex-direction: column;}/* Card Header - CLIQUE APENAS NO HEADER */.ia-card-header {padding: 12px 15px;background: #f8fafc;display: flex;align-items: center;justify-content: space-between;cursor: pointer;user-select: none;border-bottom: 1px solid #e5e7eb;flex-shrink: 0;}.ia-card.active .ia-card-header {background: white;}.ia-card-titulo {flex: 1;min-width: 0;}.ia-card-codigo {font-weight: 700;color: #1e293b;font-size: 0.95rem;margin-bottom: 2px;}.ia-card-nome {color: #4b5563;font-size: 0.85rem;line-height: 1.3;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}/* Badges */.ia-card-badge {padding: 4px 10px;border-radius: 12px;font-size: 0.75rem;font-weight: 700;text-transform: uppercase;letter-spacing: 0.5px;margin: 0 10px;flex-shrink: 0;}.badge-atrasada {background: linear-gradient(135deg, #fee2e2, #fecaca);color: #991b1b;}.badge-execucao {background: linear-gradient(135deg, #fee2e2, #fecaca);color: #991b1b;}/* Toggle - CLIQUE APENAS NO TOGGLE */.ia-card-toggle {color: #9ca3af;font-size: 0.9rem;cursor: pointer;padding: 4px;border-radius: 4px;transition: background-color 0.2s;flex-shrink: 0;}.ia-card-toggle:hover {background-color: #f3f4f6;}.ia-card.active .ia-card-toggle i {transform: rotate(180deg);}/* Card Content */.ia-card-content {max-height: 0;overflow: hidden;transition: max-height 0.4s ease;flex: 1;}.ia-card.active .ia-card-content {max-height: 1000px;overflow-y: auto;}.ia-card-content > div {padding: 15px;font-size: 0.85rem;line-height: 1.5;color: #374151;}/* Conclusão Geral */.ia-conclusao-row {margin-top: 20px;}.ia-conclusao-container {border: 1px solid #e5e7eb;border-radius: 8px;overflow: hidden;background: #f0f9ff;}.ia-conclusao-header {padding: 15px 20px;background: #e0f2fe;display: flex;align-items: center;justify-content: space-between;cursor: pointer;user-select: none;}.ia-conclusao-header h3 {color: #075985;margin: 0;font-size: 1.1rem;display: flex;align-items: center;gap: 10px;flex: 1;}.ia-conclusao-toggle {color: #075985;}.ia-conclusao-content {max-height: 0;overflow: hidden;transition: max-height 0.4s ease;}.ia-conclusao-container.active .ia-conclusao-content {max-height: 800px;}.ia-conclusao-content > div {padding: 20px;}/* Footer com botões */.ia-cards-footer {display: flex;justify-content: center;gap: 12px;margin-top: 25px;padding-top: 20px;border-top: 1px solid #e5e7eb;}.ia-btn {padding: 10px 18px;border-radius: 6px;border: 1px solid #d1d5db;background: white;color: #4b5563;font-weight: 600;font-size: 0.9rem;cursor: pointer;display: flex;align-items: center;gap: 8px;transition: all 0.2s ease;}.ia-btn:hover {background: #f3f4f6;}.ia-btn-expandir {background: #1d4ed8;color: white;border-color: #1d4ed8;}.ia-btn-expandir:hover {background: #1e40af;}/* Scrollbar personalizada */.ia-card-content::-webkit-scrollbar {width: 6px;}.ia-card-content::-webkit-scrollbar-track {background: #f1f1f1;}.ia-card-content::-webkit-scrollbar-thumb {background: #c1c1c1;border-radius: 3px;}.ia-card-content::-webkit-scrollbar-thumb:hover {background: #a1a1a1;}/* Empty state */.ia-empty {text-align: center;padding: 40px 20px;color: #9ca3af;background: #f8fafc;border-radius: 8px;border: 1px dashed #d1d5db;}</style><script>// Variável global para controlar o estadolet currentActiveCard = null;// Função para expandir/recolher card específicofunction toggleIACard(cardId, event) {if (event) {event.stopPropagation();}const card = document.querySelector('.ia-card[data-id="' + cardId + '"]');const content = document.getElementById('content-' + cardId);if (!card) return;if (card.classList.contains('active')) {// Recolher este cardcard.classList.remove('active');currentActiveCard = null;} else {// Expandir este card// Primeiro recolhe o card ativo atual (se houver)if (currentActiveCard && currentActiveCard !== cardId) {const prevCard = document.querySelector('.ia-card[data-id="' + currentActiveCard + '"]');if (prevCard) {prevCard.classList.remove('active');}}card.classList.add('active');currentActiveCard = cardId;}}// Função para expandir/recolher conclusãofunction toggleConclusao() {const container = document.querySelector('.ia-conclusao-container');if (container) {container.classList.toggle('active');}}// Função para expandir todos os cardsfunction expandAllIACards() {document.querySelectorAll('.ia-card').forEach(function(card) {card.classList.add('active');});const conclusao = document.querySelector('.ia-conclusao-container');if (conclusao) {conclusao.classList.add('active');}}// Função para recolher todos os cardsfunction collapseAllIACards() {document.querySelectorAll('.ia-card').forEach(function(card) {card.classList.remove('active');});const conclusao = document.querySelector('.ia-conclusao-container');if (conclusao) {conclusao.classList.remove('active');}currentActiveCard = null;}// Inicializar com todos os cards recolhidosdocument.addEventListener('DOMContentLoaded', function() {collapseAllIACards();});</script>undefined
+                
+<style>
+/* Container principal */
+.ia-cards-container {
+  font-family: 'Inter', sans-serif;
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 25px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+/* Header */
+.ia-cards-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e5e7eb;
+}
+.ia-header-titulo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.ia-header-titulo i {
+  font-size: 2rem;
+  color: #8b5cf6;
+}
+.ia-header-titulo h3 {
+  color: #1d4ed8;
+  font-size: 1.5rem;
+  margin: 0 0 5px 0;
+}
+.ia-header-titulo p {
+  color: #6b7280;
+  margin: 0;
+  font-size: 0.9rem;
+}
+.ia-header-acoes {
+  display: flex;
+  gap: 10px;
+}
+/* Botões */
+.ia-btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: white;
+  color: #4b5563;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+.ia-btn:hover {
+  background: #f3f4f6;
+  transform: translateY(-1px);
+}
+.ia-btn-expandir {
+  background: #1d4ed8;
+  color: white;
+  border-color: #1d4ed8;
+}
+.ia-btn-expandir:hover {
+  background: #1e40af;
+}
+/* Cards Grid */
+.ia-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+@media (max-width: 768px) {
+  .ia-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.ia-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+.ia-card-conclusao {
+  grid-column: span 3; /* Ocupa toda a linha pra centralizar */
+}
+.ia-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  border-color: #cbd5e1;
+}
+/* Card Header */
+.ia-card-header {
+  padding: 18px 20px;
+  background: #f8fafc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.ia-card.active .ia-card-header {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+.ia-card-titulo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+.ia-card-titulo i {
+  font-size: 1.4rem;
+  color: #8b5cf6;
+  flex-shrink: 0;
+}
+.ia-card-info {
+  flex: 1;
+}
+.ia-card-nome {
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+.ia-card-direita {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+/* Badges */
+.ia-card-badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.ia-card-badge.tipo-atrasada {
+  background: linear-gradient(135deg, #fee2e2, #ef4444);
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+.ia-card-badge.tipo-execucao {
+  background: linear-gradient(135deg, #fecaca, #dc2626);
+  color: #7f1d1d;
+  border: 1px solid #f87171;
+}
+.ia-card-badge.tipo-geral {
+  background: linear-gradient(135deg, #e5e7eb, #d1d5db);
+  color: #4b5563;
+  border: 1px solid #9ca3af;
+}
+/* Toggle */
+.ia-card-toggle {
+  color: #9ca3af;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+.ia-card.active .ia-card-toggle {
+  transform: rotate(180deg);
+  color: #1d4ed8;
+}
+/* Card Content */
+.ia-card-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+}
+.ia-card.active .ia-card-content {
+  max-height: 2000px;
+  padding: 20px;
+}
+/* Metadata */
+.ia-card-metadata {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 25px;
+  padding: 15px;
+  background: #f8fafc;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+.ia-metadata-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+.ia-metadata-item i {
+  color: #8b5cf6;
+}
+.ia-metadata-item strong {
+  color: #1e293b;
+  font-weight: 600;
+}
+/* Análise */
+.ia-card-analysis {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #374151;
+}
+.ia-card-analysis h2 {
+  color: #1d4ed8;
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid #e5e7eb;
+}
+.ia-card-analysis h3 {
+  color: #1e40af;
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+}
+.ia-card-analysis h4 {
+  color: #374151;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+.ia-card-analysis ul,
+.ia-card-analysis ol {
+  margin: 0.8em 0;
+  padding-left: 1.5em;
+}
+.ia-card-analysis li {
+  margin-bottom: 0.5em;
+}
+/* Footer */
+.ia-cards-footer {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+.ia-cards-footer i {
+  color: #8b5cf6;
+  margin-right: 8px;
+}
+/* Empty State */
+.ia-empty {
+  text-align: center;
+  padding: 60px 30px;
+  color: #9ca3af;
+}
+.ia-empty i {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #d1d5db;
+}
+</style>
+<script>
+// Funções JavaScript para controlar a expansão dos cards
+function toggleIACard(cardElement) {
+  cardElement.classList.toggle('active');
+}
+function expandAllIACards() {
+  document.querySelectorAll('.ia-card').forEach(card => {
+    card.classList.add('active');
+  });
+}
+function collapseAllIACards() {
+  document.querySelectorAll('.ia-card').forEach(card => {
+    card.classList.remove('active');
+  });
+}
+// Inicializar com todos os cards recolhidos
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.ia-card').forEach(card => {
+    card.classList.remove('active');
+  });
+ 
+  // Parar propagação em elementos internos (pra não togglar ao clicar no conteúdo)
+  document.querySelectorAll('.ia-card-content, .ia-card-badge').forEach(elem => {
+    elem.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+  });
+});
+</script>
+
+  <div class="ia-cards-container">
+    <div class="ia-cards-header">
+      <div class="ia-header-titulo">
+        <i class="fas fa-robot"></i>
+        <div>
+          <h3>Análise de IA - Atividades Críticas</h3>
+          <p>12 atividade(s) analisada(s) - Clique para expandir</p>
+        </div>
+      </div>
+      <div class="ia-header-acoes">
+        <button class="ia-btn ia-btn-expandir" onclick="expandAllIACards()">
+          <i class="fas fa-expand-alt"></i> Expandir Todas
+        </button>
+        <button class="ia-btn ia-btn-recolher" onclick="collapseAllIACards()">
+          <i class="fas fa-compress-alt"></i> Recolher Todas
+        </button>
+      </div>
+    </div>
+   
+    <div class="ia-cards-grid">
+      
+    <div class="ia-card " >
+      <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
+        <div class="ia-card-titulo">
+          <i class="fas fa-play-circle"></i>
+          <div class="ia-card-info">
+            <div class="ia-card-nome">1.01.02 - Contratação dos Seguros - Contratuais</div>
+          </div>
+        </div>
+        <div class="ia-card-direita">
+          <div class="ia-card-badge tipo-execucao">
+            EM EXECUÇÃO
+          </div>
+          <i class="fas fa-chevron-down ia-card-toggle"></i>
+        </div>
+      </div>
+      <div class="ia-card-content">
+        <div class="ia-card-metadata">
+          <div class="ia-metadata-item">
+            <i class="fas fa-hashtag"></i>
+            <span>Código: <strong>1.01.02</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-list-ol"></i>
+            <span>Número: <strong>1 de 12</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-tag"></i>
+            <span>Tipo: <strong>EM EXECUÇÃO</strong></span>
+          </div>
+        </div>
+        <div class="ia-card-analysis">
+          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">01.02 - Contratação dos Seguros - Contratuais<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong><br>   - Gap: 8.0 pontos percentuais (33.0% planejada vs 25.0% ✅ CONCLUÍDA)<br>   - Margem de atraso disponível: 200 dias (grande flexibilidade)<br>   - Causas prováveis: Produtividade abaixo do esperado.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong><br>   - Valor Planejado a Receber: R$ 0,00<br>   - Valor Realmente Recebido: R$ 0,00<br>   - Saldo: R$ 0,00<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong><br>   - Sucessoras diretas: 0<br>   - Impacto: Baixo<br><br><strong style="color:#1e293b;">B. Recomendações Acionáveis</strong><br><br>1. <strong style="color:#1e293b;">Ações Imediatas</strong>: Acionar Plano de Recuperação para retomar a produtividade.<br>2. <strong style="color:#1e293b;">Comunicações Necessárias</strong>: Informar ao setor de gestão sobre a necessidade de acelerar a contratação.<br>3. <strong style="color:#1e293b;">Prazos Sugeridos</strong>: Concluir em até 15 dias.<br><br><strong style="color:#1e293b;">C. Resumo Executivo</strong><br>- <strong style="color:#1e293b;">Status</strong>: Em execução com produtividade em atraso.<br>- <strong style="color:#1e293b;">Riscos</strong>: Atraso no cronograma.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Implementar Plano de Recuperação.<br><br>###</li></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ia-card " >
+      <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
+        <div class="ia-card-titulo">
+          <i class="fas fa-play-circle"></i>
+          <div class="ia-card-info">
+            <div class="ia-card-nome">1.01.03 - Administração Mensal</div>
+          </div>
+        </div>
+        <div class="ia-card-direita">
+          <div class="ia-card-badge tipo-execucao">
+            EM EXECUÇÃO
+          </div>
+          <i class="fas fa-chevron-down ia-card-toggle"></i>
+        </div>
+      </div>
+      <div class="ia-card-content">
+        <div class="ia-card-metadata">
+          <div class="ia-metadata-item">
+            <i class="fas fa-hashtag"></i>
+            <span>Código: <strong>1.01.03</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-list-ol"></i>
+            <span>Número: <strong>2 de 12</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-tag"></i>
+            <span>Tipo: <strong>EM EXECUÇÃO</strong></span>
+          </div>
+        </div>
+        <div class="ia-card-analysis">
+          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">01.03 - Administração Mensal<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong><br>   - Gap: 33.0 pontos percentuais (33.0% planejada vs 0.0% ✅ CONCLUÍDA)<br>   - Margem de atraso disponível: 200 dias<br>   - Causas prováveis: Ainda não iniciada.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong><br>   - Valor Planejado a Receber: R$ 244,</li></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ia-card " >
+      <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
+        <div class="ia-card-titulo">
+          <i class="fas fa-clock"></i>
+          <div class="ia-card-info">
+            <div class="ia-card-nome">204.33 - Valor Realmente Recebido</div>
+          </div>
+        </div>
+        <div class="ia-card-direita">
+          <div class="ia-card-badge tipo-atrasada">
+            ATRASADA
+          </div>
+          <i class="fas fa-chevron-down ia-card-toggle"></i>
+        </div>
+      </div>
+      <div class="ia-card-content">
+        <div class="ia-card-metadata">
+          <div class="ia-metadata-item">
+            <i class="fas fa-hashtag"></i>
+            <span>Código: <strong>204.33</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-list-ol"></i>
+            <span>Número: <strong>3 de 12</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-tag"></i>
+            <span>Tipo: <strong>ATRASADA</strong></span>
+          </div>
+        </div>
+        <div class="ia-card-analysis">
+          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">33<br>   - Valor Realmente Recebido: R$ 0,00<br>   - Saldo: -R$ 244,204.33<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong><br>   - Sucessoras diretas: 2<br>   - Impacto: Crítico<br><br><strong style="color:#1e293b;">B. Recomendações Acionáveis</strong><br><br>1. <strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade imediatamente.<br>2. <strong style="color:#1e293b;">Comunicações Necessárias</strong>: Alertar o setor de gestão sobre a urgência.<br>3. <strong style="color:#1e293b;">Prazos Sugeridos</strong>: Iniciar em até 3 dias.<br><br><strong style="color:#1e293b;">C. Resumo Executivo</strong><br>- <strong style="color:#1e293b;">Status</strong>: ⏰ ATRASADA no cronograma.<br>- <strong style="color:#1e293b;">Riscos</strong>: Impacto financeiro e no cronograma das sucessoras.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar atividade imediatamente.<br><br>###</li></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ia-card " >
+      <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
+        <div class="ia-card-titulo">
+          <i class="fas fa-clock"></i>
+          <div class="ia-card-info">
+            <div class="ia-card-nome">2.01.01 - Planialtimétrico do Terreno e Georreferenciamento</div>
+          </div>
+        </div>
+        <div class="ia-card-direita">
+          <div class="ia-card-badge tipo-atrasada">
+            ATRASADA
+          </div>
+          <i class="fas fa-chevron-down ia-card-toggle"></i>
+        </div>
+      </div>
+      <div class="ia-card-content">
+        <div class="ia-card-metadata">
+          <div class="ia-metadata-item">
+            <i class="fas fa-hashtag"></i>
+            <span>Código: <strong>2.01.01</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-list-ol"></i>
+            <span>Número: <strong>4 de 12</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-tag"></i>
+            <span>Tipo: <strong>ATRASADA</strong></span>
+          </div>
+        </div>
+        <div class="ia-card-analysis">
+          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">01.01 - Planialtimétrico do Terreno e Georreferenciamento<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong><br>   - Gap: 100.0 pontos percentuais<br>   - Margem de atraso disponível: 6 dias<br>   - Causas prováveis: Ainda não iniciada.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong><br>   - Valor Planejado a Receber: R$ 0,00<br>   - Valor Realmente Recebido: R$ 0,00<br>   - Saldo: R$ 0,00<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong><br>   - Sucessoras diretas: 0<br>   - Impacto: Baixo<br><br><strong style="color:#1e293b;">B. Recomendações Acionáveis</strong><br><br>1. <strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade imediatamente.<br>2. <strong style="color:#1e293b;">Comunicações Necessárias</strong>: Informar ao setor de estudo sobre a urgência.<br>3. <strong style="color:#1e293b;">Prazos Sugeridos</strong>: Iniciar em até 3 dias.<br><br><strong style="color:#1e293b;">C. Resumo Executivo</strong><br>- <strong style="color:#1e293b;">Status</strong>: ⏰ ATRASADA no cronograma.<br>- <strong style="color:#1e293b;">Riscos</strong>: Atraso no cronograma.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar atividade imediatamente.<br><br>###</li></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ia-card " >
+      <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
+        <div class="ia-card-titulo">
+          <i class="fas fa-clock"></i>
+          <div class="ia-card-info">
+            <div class="ia-card-nome">2.01.02 - Estudos Geológico - SPT</div>
+          </div>
+        </div>
+        <div class="ia-card-direita">
+          <div class="ia-card-badge tipo-atrasada">
+            ATRASADA
+          </div>
+          <i class="fas fa-chevron-down ia-card-toggle"></i>
+        </div>
+      </div>
+      <div class="ia-card-content">
+        <div class="ia-card-metadata">
+          <div class="ia-metadata-item">
+            <i class="fas fa-hashtag"></i>
+            <span>Código: <strong>2.01.02</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-list-ol"></i>
+            <span>Número: <strong>5 de 12</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-tag"></i>
+            <span>Tipo: <strong>ATRASADA</strong></span>
+          </div>
+        </div>
+        <div class="ia-card-analysis">
+          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">01.02 - Estudos Geológico - SPT<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong><br>   - Gap: 100.0 pontos percentuais<br>   - Margem de atraso disponível: 66 dias<br>   - Causas prováveis: Ainda não iniciada.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong><br>   - Valor Planejado a Receber: R$ 0,00<br>   - Valor Realmente Recebido: R$ 0,00<br>   - Saldo: R$ 0,00<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong><br>   - Sucessoras diretas: 0<br>   - Impacto: Baixo<br><br><strong style="color:#1e293b;">B. Recomendações Acionáveis</strong><br><br>1. <strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade o mais rápido possível.<br>2. <strong style="color:#1e293b;">Comunicações Necessárias</strong>: Informar ao setor de estudo.<br>3. <strong style="color:#1e293b;">Prazos Sugeridos</strong>: Iniciar em até 15 dias.<br><br><strong style="color:#1e293b;">C. Resumo Executivo</strong><br>- <strong style="color:#1e293b;">Status</strong>: ⏰ ATRASADA no cronograma.<br>- <strong style="color:#1e293b;">Riscos</strong>: Atraso no cronograma.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar atividade o mais rápido possível.<br><br>###</li></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ia-card " >
+      <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
+        <div class="ia-card-titulo">
+          <i class="fas fa-clock"></i>
+          <div class="ia-card-info">
+            <div class="ia-card-nome">2.01.03 - Estudos Geológico - SEV</div>
+          </div>
+        </div>
+        <div class="ia-card-direita">
+          <div class="ia-card-badge tipo-atrasada">
+            ATRASADA
+          </div>
+          <i class="fas fa-chevron-down ia-card-toggle"></i>
+        </div>
+      </div>
+      <div class="ia-card-content">
+        <div class="ia-card-metadata">
+          <div class="ia-metadata-item">
+            <i class="fas fa-hashtag"></i>
+            <span>Código: <strong>2.01.03</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-list-ol"></i>
+            <span>Número: <strong>6 de 12</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-tag"></i>
+            <span>Tipo: <strong>ATRASADA</strong></span>
+          </div>
+        </div>
+        <div class="ia-card-analysis">
+          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">01.03 - Estudos Geológico - SEV<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong><br>   - Gap: 100.0 pontos percentuais<br>   - Margem de atraso disponível: 36 dias<br>   - Causas prováveis: Ainda não iniciada.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong><br>   - Valor Planejado a Receber: R$ 0,00<br>   - Valor Realmente Recebido: R$ 0,00<br>   - Saldo: R$ 0,00<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong><br>   - Sucessoras diretas: 0<br>   - Impacto: Baixo<br><br><strong style="color:#1e293b;">B. Recomendações Acionáveis</strong><br><br>1. <strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade o mais rápido possível.<br>2. <strong style="color:#1e293b;">Comunicações Necessárias</strong>: Informar ao setor de estudo.<br>3. <strong style="color:#1e293b;">Prazos Sugeridos</strong>: Iniciar em até 15 dias.<br><br><strong style="color:#1e293b;">C. Resumo Executivo</strong><br>- <strong style="color:#1e293b;">Status</strong>: ⏰ ATRASADA no cronograma.<br>- <strong style="color:#1e293b;">Riscos</strong>: Atraso no cronograma.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar atividade o mais rápido possível.<br><br>###</li></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ia-card " >
+      <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
+        <div class="ia-card-titulo">
+          <i class="fas fa-clock"></i>
+          <div class="ia-card-info">
+            <div class="ia-card-nome">2.02.01 - LAYOUT - Usina</div>
+          </div>
+        </div>
+        <div class="ia-card-direita">
+          <div class="ia-card-badge tipo-atrasada">
+            ATRASADA
+          </div>
+          <i class="fas fa-chevron-down ia-card-toggle"></i>
+        </div>
+      </div>
+      <div class="ia-card-content">
+        <div class="ia-card-metadata">
+          <div class="ia-metadata-item">
+            <i class="fas fa-hashtag"></i>
+            <span>Código: <strong>2.02.01</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-list-ol"></i>
+            <span>Número: <strong>7 de 12</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-tag"></i>
+            <span>Tipo: <strong>ATRASADA</strong></span>
+          </div>
+        </div>
+        <div class="ia-card-analysis">
+          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">02.01 - LAYOUT - Usina<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong><br>   - Gap: 100.0 pontos percentuais<br>   - Margem de atraso disponível: 0 dias (⚠️ CRÍTICA)<br>   - Causas prováveis: Ainda não iniciada.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong><br>   - Valor Planejado a Receber: R$ 0,00<br>   - Valor Realmente Recebido: R$ 0,00<br>   - Saldo: R$ 0,00<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong><br>   - Sucessoras diretas: 1<br>   - Impacto: Crítico<br><br><strong style="color:#1e293b;">B. Recomendações Acionáveis</strong><br><br>1. <strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade imediatamente.<br>2. <strong style="color:#1e293b;">Comunicações Necessárias</strong>: Alertar o setor de projetos básicos.<br>3. <strong style="color:#1e293b;">Prazos Sugeridos</strong>: Iniciar em até 2 dias.<br><br><strong style="color:#1e293b;">C. Resumo Executivo</strong><br>- <strong style="color:#1e293b;">Status</strong>: ⏰ ATRASADA no cronograma e ⚠️ CRÍTICA.<br>- <strong style="color:#1e293b;">Riscos</strong>: Impacto imediato no cronograma e nas sucessoras.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar atividade imediatamente.<br><br>###</li></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ia-card " >
+      <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
+        <div class="ia-card-titulo">
+          <i class="fas fa-clock"></i>
+          <div class="ia-card-info">
+            <div class="ia-card-nome">2.03.01 - CMP</div>
+          </div>
+        </div>
+        <div class="ia-card-direita">
+          <div class="ia-card-badge tipo-atrasada">
+            ATRASADA
+          </div>
+          <i class="fas fa-chevron-down ia-card-toggle"></i>
+        </div>
+      </div>
+      <div class="ia-card-content">
+        <div class="ia-card-metadata">
+          <div class="ia-metadata-item">
+            <i class="fas fa-hashtag"></i>
+            <span>Código: <strong>2.03.01</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-list-ol"></i>
+            <span>Número: <strong>8 de 12</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-tag"></i>
+            <span>Tipo: <strong>ATRASADA</strong></span>
+          </div>
+        </div>
+        <div class="ia-card-analysis">
+          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">03.01 - CMP<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong><br>   - Gap: 100.0 pontos percentuais<br>   - Margem de atraso disponível: 15 dias<br>   - Causas prováveis: Ainda não iniciada.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong><br>   - Valor Planejado a Receber: R$ 0,00<br>   - Valor Realmente Recebido: R$ 0,00<br>   - Saldo: R$ 0,00<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong><br>   - Sucessoras diretas: 1<br>   - Impacto: Baixo<br><br><strong style="color:#1e293b;">B. Recomendações Acionáveis</strong><br><br>1. <strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade o mais rápido possível.<br>2. <strong style="color:#1e293b;">Comunicações Necessárias</strong>: Informar ao setor de projetos executivos.<br>3. <strong style="color:#1e293b;">Prazos Sugeridos</strong>: Iniciar em até 10 dias.<br><br><strong style="color:#1e293b;">C. Resumo Executivo</strong><br>- <strong style="color:#1e293b;">Status</strong>: ⏰ ATRASADA no cronograma.<br>- <strong style="color:#1e293b;">Riscos</strong>: Atraso no cronograma.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar atividade o mais rápido possível.<br><br>###</li></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ia-card " >
+      <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
+        <div class="ia-card-titulo">
+          <i class="fas fa-clock"></i>
+          <div class="ia-card-info">
+            <div class="ia-card-nome">2.03.02 - SKID</div>
+          </div>
+        </div>
+        <div class="ia-card-direita">
+          <div class="ia-card-badge tipo-atrasada">
+            ATRASADA
+          </div>
+          <i class="fas fa-chevron-down ia-card-toggle"></i>
+        </div>
+      </div>
+      <div class="ia-card-content">
+        <div class="ia-card-metadata">
+          <div class="ia-metadata-item">
+            <i class="fas fa-hashtag"></i>
+            <span>Código: <strong>2.03.02</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-list-ol"></i>
+            <span>Número: <strong>9 de 12</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-tag"></i>
+            <span>Tipo: <strong>ATRASADA</strong></span>
+          </div>
+        </div>
+        <div class="ia-card-analysis">
+          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">03.02 - SKID<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong><br>   - Gap: 100.0 pontos percentuais<br>   - Margem de atraso disponível: 15 dias<br>   - Causas prováveis: Ainda não iniciada.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong><br>   - Valor Planejado a Receber: R$ 0,00<br>   - Valor Realmente Recebido: R$ 0,00<br>   - Saldo: R$ 0,00<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong><br>   - Sucessoras diretas: 1<br>   - Impacto: Baixo<br><br><strong style="color:#1e293b;">B. Recomendações Acionáveis</strong><br><br>1. <strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade o mais rápido possível.<br>2. <strong style="color:#1e293b;">Comunicações Necessárias</strong>: Informar ao setor de projetos executivos.<br>3. <strong style="color:#1e293b;">Prazos Sugeridos</strong>: Iniciar em até 10 dias.<br><br><strong style="color:#1e293b;">C. Resumo Executivo</strong><br>- <strong style="color:#1e293b;">Status</strong>: ⏰ ATRASADA no cronograma.<br>- <strong style="color:#1e293b;">Riscos</strong>: Atraso no cronograma.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar atividade o mais rápido possível.<br><br>###</li></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ia-card " >
+      <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
+        <div class="ia-card-titulo">
+          <i class="fas fa-clock"></i>
+          <div class="ia-card-info">
+            <div class="ia-card-nome">2.03.03 - Estação Solarimétrica</div>
+          </div>
+        </div>
+        <div class="ia-card-direita">
+          <div class="ia-card-badge tipo-atrasada">
+            ATRASADA
+          </div>
+          <i class="fas fa-chevron-down ia-card-toggle"></i>
+        </div>
+      </div>
+      <div class="ia-card-content">
+        <div class="ia-card-metadata">
+          <div class="ia-metadata-item">
+            <i class="fas fa-hashtag"></i>
+            <span>Código: <strong>2.03.03</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-list-ol"></i>
+            <span>Número: <strong>10 de 12</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-tag"></i>
+            <span>Tipo: <strong>ATRASADA</strong></span>
+          </div>
+        </div>
+        <div class="ia-card-analysis">
+          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">03.03 - Estação Solarimétrica<br><br><strong style="color:#1e293b;">A. Diagnóstico da Situação Atual</strong><br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong><br>   - Gap: 100.0 pontos percentuais<br>   - Margem de atraso disponível: 84 dias<br>   - Causas prováveis: Ainda não iniciada.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong><br>   - Valor Planejado a Receber: R$ 0,00<br>   - Valor Realmente Recebido: R$ 0,00<br>   - Saldo: R$ 0,00<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong><br>   - Sucessoras diretas: 1<br>   - Impacto: Baixo<br><br><strong style="color:#1e293b;">B. Recomendações Acionáveis</strong><br><br>1. <strong style="color:#1e293b;">Ações Imediatas</strong>: Iniciar atividade o mais rápido possível.<br>2. <strong style="color:#1e293b;">Comunicações Necessárias</strong>: Informar ao setor de projetos executivos.<br>3. <strong style="color:#1e293b;">Prazos Sugeridos</strong>: Iniciar em até 20 dias.<br><br><strong style="color:#1e293b;">C. Resumo Executivo</strong><br>- <strong style="color:#1e293b;">Status</strong>: ⏰ ATRASADA no cronograma.<br>- <strong style="color:#1e293b;">Riscos</strong>: Atraso no cronograma.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar atividade o mais rápido possível.<br><br>### Conclusão Completa<br><br>O projeto Usina Fotovoltaica Serra do Salitre apresenta desafios significativos em seu cronograma, com 8 das 9 atividades ⚠️ CRÍTICAs ⏰ ATRASADAs. A atividade</li></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ia-card " >
+      <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
+        <div class="ia-card-titulo">
+          <i class="fas fa-play-circle"></i>
+          <div class="ia-card-info">
+            <div class="ia-card-nome">2.02.01 - LAYOUT - Usina é considerada crítica com margem de atraso zero, necessitando de atenção imediata.</div>
+          </div>
+        </div>
+        <div class="ia-card-direita">
+          <div class="ia-card-badge tipo-execucao">
+            EM EXECUÇÃO
+          </div>
+          <i class="fas fa-chevron-down ia-card-toggle"></i>
+        </div>
+      </div>
+      <div class="ia-card-content">
+        <div class="ia-card-metadata">
+          <div class="ia-metadata-item">
+            <i class="fas fa-hashtag"></i>
+            <span>Código: <strong>2.02.01</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-list-ol"></i>
+            <span>Número: <strong>11 de 12</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-tag"></i>
+            <span>Tipo: <strong>EM EXECUÇÃO</strong></span>
+          </div>
+        </div>
+        <div class="ia-card-analysis">
+          <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">02.01 - LAYOUT - Usina é considerada ⚠️ CRÍTICA com margem de atraso zero, necessitando de atenção imediata. <br><br>Recomendações gerais:<br><br>1. <strong style="color:#1e293b;">Priorizar</strong> as atividades ⚠️ CRÍTICAs com margem de atraso zero ou baixa.<br>2. <strong style="color:#1e293b;">Implementar Planos de Recuperação</strong> para atividades em atraso com alta criticidade.<br>3. <strong style="color:#1e293b;">Comunicar eficientemente</strong> com os setores envolvidos sobre os prazos e ações necessárias.<br><br>É crucial agir rapidamente para mitigar os riscos de atraso no cronograma e impacto financeiro, garantindo o cumprimento dos prazos e valores planejados.</li></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ia-card ia-card-conclusao" >
+      <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
+        <div class="ia-card-titulo">
+          <i class="fas fa-chart-line"></i>
+          <div class="ia-card-info">
+            <div class="ia-card-nome">Conclusão Geral</div>
+          </div>
+        </div>
+        <div class="ia-card-direita">
+          <div class="ia-card-badge tipo-geral">
+            CONCLUSÃO
+          </div>
+          <i class="fas fa-chevron-down ia-card-toggle"></i>
+        </div>
+      </div>
+      <div class="ia-card-content">
+        <div class="ia-card-metadata">
+          <div class="ia-metadata-item">
+            <i class="fas fa-hashtag"></i>
+            <span>Código: <strong>GERAL</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-list-ol"></i>
+            <span>Número: <strong>12 de 12</strong></span>
+          </div>
+          <div class="ia-metadata-item">
+            <i class="fas fa-tag"></i>
+            <span>Tipo: <strong>GERAL</strong></span>
+          </div>
+        </div>
+        <div class="ia-card-analysis">
+          <div style="font-size:0.9em; line-height:1.6;">É crucial agir rapidamente para mitigar os riscos de atraso no cronograma e impacto financeiro, garantindo o cumprimento dos prazos e valores planejados.</div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+   
+    <div class="ia-cards-footer">
+      <p><i class="fas fa-info-circle"></i> Análise gerada por IA em tempo real</p>
+    </div>
+  </div>
+  
               </div>
             </div>
           </div>
@@ -163843,7 +164591,7 @@
                   <strong>Relatório Diário de Obra - UFV CEMIG</strong>
               </p>
               <p>
-                  Gerado automaticamente em 27/01/2026 às 09:38 | 
+                  Gerado automaticamente em 27/01/2026 às 09:41 | 
                   Atividades monitoradas: 406 | 
                   Progresso financeiro: 0.0%
               </p>
