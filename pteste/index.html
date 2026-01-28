@@ -1216,7 +1216,7 @@
               <h1>Relatório Diário de Obra - UFV SERRA DO SALITRE</h1>
               <div class="header-subtitle">
                   <i class="fas fa-calendar-alt"></i>
-                  Relatório atualizado em: 28/01/2026 às 09:24
+                  Relatório atualizado em: 28/01/2026 às 10:39
               </div>
           </header>
 
@@ -162541,7 +162541,7 @@
         <div class="tab-pane" id="ia">
           <div class="tab-filter-notice">
             <i class="fas fa-filter"></i>
-            Análise gerada por IA com base nas atividades críticas e atrasadas
+            Análise gerada por IA com base nas atividades críticas
           </div>
           <div style="padding: 30px;">
            <div class="ia-quadro" style="border-left-color: #8b5cf6;">
@@ -162550,225 +162550,7 @@
                 Análise de IA - Recomendações e Insights
               </div>
               <div class="ia-content" style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #e5e7eb;">
-                
-<style>
-.ia-cards-container { font-family: 'Inter', sans-serif; background: #f8fafc; border-radius: 16px; padding: 25px; margin: 0 auto; max-width: 1200px; }
-.ia-cards-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid #e5e7eb; }
-.ia-header-titulo { display: flex; align-items: center; gap: 15px; }
-.ia-header-titulo i { font-size: 2rem; color: #8b5cf6; }
-.ia-header-titulo h3 { color: #1d4ed8; font-size: 1.5rem; margin: 0 0 5px 0; }
-.ia-header-titulo p { color: #6b7280; margin: 0; font-size: 0.9rem; }
-.ia-header-acoes { display: flex; gap: 10px; }
-.ia-btn { padding: 10px 18px; border-radius: 8px; border: 1px solid #d1d5db; background: white; color: #4b5563; font-weight: 600; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: all 0.2s ease; }
-.ia-btn:hover { background: #f3f4f6; transform: translateY(-1px); }
-.ia-btn-expandir { background: #1d4ed8; color: white; border-color: #1d4ed8; }
-.ia-btn-expandir:hover { background: #1e40af; }
-.ia-cards-grid { display: flex; flex-direction: column; gap: 20px; }
-.ia-card { background: white; border-radius: 12px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.04); transition: all 0.3s ease; overflow: hidden; cursor: pointer; }
-.ia-card:hover { box-shadow: 0 6px 16px rgba(0,0,0,0.08); border-color: #cbd5e1; }
-.ia-card-header { padding: 18px 20px; background: #f8fafc; display: flex; justify-content: space-between; align-items: center; }
-.ia-card.active .ia-card-header { background: white; border-bottom: 1px solid #e5e7eb; }
-.ia-card-titulo { display: flex; align-items: center; gap: 12px; flex: 1; }
-.ia-card-titulo i { font-size: 1.4rem; color: #8b5cf6; flex-shrink: 0; }
-.ia-card-info { flex: 1; }
-.ia-card-nome { font-weight: 700; color: #1e293b; font-size: 1.05rem; margin-bottom: 4px; }
-.ia-card-direita { display: flex; align-items: center; gap: 15px; }
-.ia-card-badge { padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-.ia-card-badge.tipo-atrasada { background: linear-gradient(135deg, #fee2e2, #ef4444); color: #991b1b; border: 1px solid #fca5a5; }
-.ia-card-badge.tipo-execucao { background: linear-gradient(135deg, #fecaca, #dc2626); color: #7f1d1d; border: 1px solid #f87171; }
-.ia-card-badge.tipo-geral { background: linear-gradient(135deg, #e5e7eb, #d1d5db); color: #4b5563; border: 1px solid #9ca3af; }
-.ia-card-toggle { color: #9ca3af; font-size: 1.1rem; transition: transform 0.3s ease; }
-.ia-card.active .ia-card-toggle { transform: rotate(180deg); color: #1d4ed8; }
-.ia-card-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease, padding 0.3s ease; }
-.ia-card.active .ia-card-content { max-height: 2000px; padding: 20px; }
-.ia-card-metadata { display: flex; gap: 25px; margin-bottom: 25px; padding: 15px; background: #f8fafc; border-radius: 10px; border: 1px solid #e5e7eb; }
-.ia-metadata-item { display: flex; align-items: center; gap: 8px; color: #4b5563; font-size: 0.9rem; }
-.ia-metadata-item i { color: #8b5cf6; }
-.ia-metadata-item strong { color: #1e293b; font-weight: 600; }
-.ia-card-analysis { font-size: 0.95rem; line-height: 1.7; color: #374151; }
-.ia-card-analysis h2, h3, h4 { color: #1d4ed8; margin-top: 1.5em; margin-bottom: 0.8em; }
-.ia-card-analysis ul, ol { margin: 0.8em 0; padding-left: 1.5em; }
-.ia-card-analysis li { margin-bottom: 0.5em; }
-.ia-cards-footer { margin-top: 25px; padding-top: 20px; border-top: 1px solid #e5e7eb; text-align: center; color: #6b7280; font-size: 0.9rem; }
-.ia-cards-footer i { color: #8b5cf6; margin-right: 8px; }
-.ia-empty { text-align: center; padding: 60px 30px; color: #9ca3af; }
-.ia-empty i { font-size: 3rem; margin-bottom: 20px; color: #d1d5db; }
-</style>
-<script>
-function toggleIACard(card) { card.classList.toggle('active'); }
-function expandAllIACards() { document.querySelectorAll('.ia-card').forEach(c => c.classList.add('active')); }
-function collapseAllIACards() { document.querySelectorAll('.ia-card').forEach(c => c.classList.remove('active')); }
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.ia-card').forEach(c => c.classList.remove('active'));
-  document.querySelectorAll('.ia-card-content, .ia-card-badge').forEach(el => {
-    el.addEventListener('click', e => e.stopPropagation());
-  });
-});
-</script>
-
-<div class="ia-cards-container">
-  <div class="ia-cards-header">
-    <div class="ia-header-titulo">
-      <i class="fas fa-robot"></i>
-      <div>
-        <h3>Análise de IA - Atividades Críticas</h3>
-        <p>6 atividade(s) analisada(s) - Clique para expandir</p>
-      </div>
-    </div>
-    <div class="ia-header-acoes">
-      <button class="ia-btn ia-btn-expandir" onclick="expandAllIACards()"><i class="fas fa-expand-alt"></i> Expandir Todas</button>
-      <button class="ia-btn ia-btn-recolher" onclick="collapseAllIACards()"><i class="fas fa-compress-alt"></i> Recolher Todas</button>
-    </div>
-  </div>
-  <div class="ia-cards-grid">
-<div class="ia-card">
-  <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
-    <div class="ia-card-titulo">
-      <i class="fas fa-clock"></i>
-      <div class="ia-card-info">
-        <div class="ia-card-nome">2.01.02 - Estudos Geológico - SPT</div>
-      </div>
-    </div>
-    <div class="ia-card-direita">
-      <div class="ia-card-badge tipo-atrasada">ATRASADA</div>
-      <i class="fas fa-chevron-down ia-card-toggle"></i>
-    </div>
-  </div>
-  <div class="ia-card-content">
-    <div class="ia-card-metadata">
-      <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>2.01.02</strong></span></div>
-      <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>1 de 6</strong></span></div>
-      <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>ATRASADA</strong></span></div>
-    </div>
-    <div class="ia-card-analysis">
-      <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">01.02 - Estudos Geológico - SPT<br><br>#### A. Diagnóstico da Situação Atual<br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong><br>   - Gap: 65.0 pontos percentuais (0.0% concluído vs 65.0% planejado)<br>   - Margem de atraso disponível: 66 dias (há flexibilidade no cronograma)<br>   - Causas prováveis: Ainda não iniciada.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong><br>   - Valor planejado a receber: R$ 19.586,94<br>   - Valor realmente recebido: R$ 0,00<br>   - Saldo: R$ -19.586,94 (negativo)<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong><br>   - Sem impacto direto em sucessoras, pois não há sucessoras diretas.<br><br>#### B. Recomendações Acionáveis<br><br>1. <strong style="color:#1e293b;">Ações imediatas</strong>: Iniciar atividade o mais breve possível.<br>2. <strong style="color:#1e293b;">Comunicações necessárias</strong>: Informar equipe do setor de Estudo sobre a importância do início imediato.<br>3. <strong style="color:#1e293b;">Prazos sugeridos</strong>: Iniciar em 29/01/2026.<br><br>#### C. Resumo Executivo<br><br>- <strong style="color:#1e293b;">Status</strong>: Atrasada, ainda não iniciada.<br>- <strong style="color:#1e293b;">Riscos</strong>: Impacto no cronograma e financeiro.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar atividade imediatamente.<br><br>###</li></div>
-    </div>
-  </div>
-</div>
-<div class="ia-card">
-  <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
-    <div class="ia-card-titulo">
-      <i class="fas fa-clock"></i>
-      <div class="ia-card-info">
-        <div class="ia-card-nome">2.01.03 - Estudos Geológico - SEV</div>
-      </div>
-    </div>
-    <div class="ia-card-direita">
-      <div class="ia-card-badge tipo-atrasada">ATRASADA</div>
-      <i class="fas fa-chevron-down ia-card-toggle"></i>
-    </div>
-  </div>
-  <div class="ia-card-content">
-    <div class="ia-card-metadata">
-      <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>2.01.03</strong></span></div>
-      <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>2 de 6</strong></span></div>
-      <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>ATRASADA</strong></span></div>
-    </div>
-    <div class="ia-card-analysis">
-      <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">01.03 - Estudos Geológico - SEV<br><br>#### A. Diagnóstico da Situação Atual<br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong><br>   - Gap: 65.0 pontos percentuais<br>   - Margem de atraso disponível: 36 dias<br>   - Causas prováveis: Ainda não iniciada.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong><br>   - Valor planejado a receber: R$ 19.586,94<br>   - Valor realmente recebido: R$ 0,00<br>   - Saldo: R$ -19.586,94 (negativo)<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong><br>   - Sem impacto direto em sucessoras, pois não há sucessoras diretas.<br><br>#### B. Recomendações Acionáveis<br><br>1. <strong style="color:#1e293b;">Ações imediatas</strong>: Iniciar atividade o mais breve possível.<br>2. <strong style="color:#1e293b;">Comunicações necessárias</strong>: Informar equipe do setor de Estudo.<br>3. <strong style="color:#1e293b;">Prazos sugeridos</strong>: Iniciar em 29/01/2026.<br><br>#### C. Resumo Executivo<br><br>- <strong style="color:#1e293b;">Status</strong>: Atrasada, ainda não iniciada.<br>- <strong style="color:#1e293b;">Riscos</strong>: Impacto no cronograma e financeiro.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar atividade imediatamente.<br><br>###</li></div>
-    </div>
-  </div>
-</div>
-<div class="ia-card">
-  <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
-    <div class="ia-card-titulo">
-      <i class="fas fa-clock"></i>
-      <div class="ia-card-info">
-        <div class="ia-card-nome">2.02.01 - LAYOUT - Usina</div>
-      </div>
-    </div>
-    <div class="ia-card-direita">
-      <div class="ia-card-badge tipo-atrasada">ATRASADA</div>
-      <i class="fas fa-chevron-down ia-card-toggle"></i>
-    </div>
-  </div>
-  <div class="ia-card-content">
-    <div class="ia-card-metadata">
-      <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>2.02.01</strong></span></div>
-      <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>3 de 6</strong></span></div>
-      <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>ATRASADA</strong></span></div>
-    </div>
-    <div class="ia-card-analysis">
-      <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">02.01 - LAYOUT - Usina<br><br>#### A. Diagnóstico da Situação Atual<br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong><br>   - Gap: 86.0 pontos percentuais<br>   - Margem de atraso disponível: 0 dias (crítica)<br>   - Causas prováveis: Ainda não iniciada.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong><br>   - Valor planejado a receber: R$ 37.714,28<br>   - Valor realmente recebido: R$ 0,00<br>   - Saldo: R$ -37.714,28 (negativo)<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong><br>   - Impacto em 1 atividade sucessora.<br><br>#### B. Recomendações Acionáveis<br><br>1. <strong style="color:#1e293b;">Ações imediatas</strong>: Iniciar atividade imediatamente.<br>2. <strong style="color:#1e293b;">Comunicações necessárias</strong>: Informar equipe do setor de Proj. Básico.<br>3. <strong style="color:#1e293b;">Prazos sugeridos</strong>: Iniciar em 29/01/2026.<br><br>#### C. Resumo Executivo<br><br>- <strong style="color:#1e293b;">Status</strong>: Crítica, atrasada, ainda não iniciada.<br>- <strong style="color:#1e293b;">Riscos</strong>: Alto impacto no cronograma e financeiro.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Prioridade máxima para início imediato.<br><br>###</li></div>
-    </div>
-  </div>
-</div>
-<div class="ia-card">
-  <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
-    <div class="ia-card-titulo">
-      <i class="fas fa-clock"></i>
-      <div class="ia-card-info">
-        <div class="ia-card-nome">2.03.01 - CMP</div>
-      </div>
-    </div>
-    <div class="ia-card-direita">
-      <div class="ia-card-badge tipo-atrasada">ATRASADA</div>
-      <i class="fas fa-chevron-down ia-card-toggle"></i>
-    </div>
-  </div>
-  <div class="ia-card-content">
-    <div class="ia-card-metadata">
-      <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>2.03.01</strong></span></div>
-      <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>4 de 6</strong></span></div>
-      <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>ATRASADA</strong></span></div>
-    </div>
-    <div class="ia-card-analysis">
-      <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">03.01 - CMP<br><br>#### A. Diagnóstico da Situação Atual<br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong><br>   - Gap: 66.0 pontos percentuais<br>   - Margem de atraso disponível: 15 dias<br>   - Causas prováveis: Ainda não iniciada.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong><br>   - Valor planejado a receber: R$ 5.120,39<br>   - Valor realmente recebido: R$ 0,00<br>   - Saldo: R$ -5.120,39 (negativo)<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong><br>   - Impacto em 1 atividade sucessora.<br><br>#### B. Recomendações Acionáveis<br><br>1. <strong style="color:#1e293b;">Ações imediatas</strong>: Iniciar atividade o mais breve possível.<br>2. <strong style="color:#1e293b;">Comunicações necessárias</strong>: Informar equipe do setor de Proj. Executivo e MDT - Elétrica.<br>3. <strong style="color:#1e293b;">Prazos sugeridos</strong>: Iniciar em 29/01/2026.<br><br>#### C. Resumo Executivo<br><br>- <strong style="color:#1e293b;">Status</strong>: Atrasada, ainda não iniciada.<br>- <strong style="color:#1e293b;">Riscos</strong>: Impacto no cronograma e financeiro.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar atividade o mais breve possível.<br><br>###</li></div>
-    </div>
-  </div>
-</div>
-<div class="ia-card">
-  <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
-    <div class="ia-card-titulo">
-      <i class="fas fa-clock"></i>
-      <div class="ia-card-info">
-        <div class="ia-card-nome">2.03.02 - SKID</div>
-      </div>
-    </div>
-    <div class="ia-card-direita">
-      <div class="ia-card-badge tipo-atrasada">ATRASADA</div>
-      <i class="fas fa-chevron-down ia-card-toggle"></i>
-    </div>
-  </div>
-  <div class="ia-card-content">
-    <div class="ia-card-metadata">
-      <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>2.03.02</strong></span></div>
-      <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>5 de 6</strong></span></div>
-      <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>ATRASADA</strong></span></div>
-    </div>
-    <div class="ia-card-analysis">
-      <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">03.02 - SKID<br><br>#### A. Diagnóstico da Situação Atual<br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong><br>   - Gap: 66.0 pontos percentuais<br>   - Margem de atraso disponível: 15 dias<br>   - Causas prováveis: Ainda não iniciada.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong><br>   - Valor planejado a receber: R$ 5.120,39<br>   - Valor realmente recebido: R$ 0,00<br>   - Saldo: R$ -5.120,39 (negativo)<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong><br>   - Impacto em 1 atividade sucessora.<br><br>#### B. Recomendações Acionáveis<br><br>1. <strong style="color:#1e293b;">Ações imediatas</strong>: Iniciar atividade o mais breve possível.<br>2. <strong style="color:#1e293b;">Comunicações necessárias</strong>: Informar equipe do setor de Proj. Executivo e MDT - Elétrica.<br>3. <strong style="color:#1e293b;">Prazos sugeridos</strong>: Iniciar em 29/01/2026.<br><br>#### C. Resumo Executivo<br><br>- <strong style="color:#1e293b;">Status</strong>: Atrasada, ainda não iniciada.<br>- <strong style="color:#1e293b;">Riscos</strong>: Impacto no cronograma e financeiro.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar atividade o mais breve possível.<br><br>###</li></div>
-    </div>
-  </div>
-</div>
-<div class="ia-card">
-  <div class="ia-card-header" onclick="toggleIACard(this.parentElement)">
-    <div class="ia-card-titulo">
-      <i class="fas fa-clock"></i>
-      <div class="ia-card-info">
-        <div class="ia-card-nome">2.03.03 - Estação Solarimétrica</div>
-      </div>
-    </div>
-    <div class="ia-card-direita">
-      <div class="ia-card-badge tipo-atrasada">ATRASADA</div>
-      <i class="fas fa-chevron-down ia-card-toggle"></i>
-    </div>
-  </div>
-  <div class="ia-card-content">
-    <div class="ia-card-metadata">
-      <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>2.03.03</strong></span></div>
-      <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>6 de 6</strong></span></div>
-      <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>ATRASADA</strong></span></div>
-    </div>
-    <div class="ia-card-analysis">
-      <div style="font-size:0.9em; line-height:1.6;"><li style="margin-bottom:0.4em; padding-left:1.5em; counter-increment: item; color:#374151;">03.03 - Estação Solarimétrica<br><br>#### A. Diagnóstico da Situação Atual<br><br>1. <strong style="color:#1e293b;">Análise Física (Andamento do Trabalho)</strong><br>   - Gap: 80.0 pontos percentuais<br>   - Margem de atraso disponível: 84 dias<br>   - Causas prováveis: Ainda não iniciada.<br><br>2. <strong style="color:#1e293b;">Análise Financeira (Valores a Receber)</strong><br>   - Valor planejado a receber: R$ 4.767,25<br>   - Valor realmente recebido: R$ 0,00<br>   - Saldo: R$ -4.767,25 (negativo)<br><br>3. <strong style="color:#1e293b;">Análise de Impacto em Cadeia</strong><br>   - Impacto em 1 atividade sucessora.<br><br>#### B. Recomendações Acionáveis<br><br>1. <strong style="color:#1e293b;">Ações imediatas</strong>: Iniciar atividade o mais breve possível.<br>2. <strong style="color:#1e293b;">Comunicações necessárias</strong>: Informar equipe do setor de Proj. Executivo e MDT - Elétrica.<br>3. <strong style="color:#1e293b;">Prazos sugeridos</strong>: Iniciar em 29/01/2026.<br><br>#### C. Resumo Executivo<br><br>- <strong style="color:#1e293b;">Status</strong>: Atrasada, ainda não iniciada.<br>- <strong style="color:#1e293b;">Riscos</strong>: Impacto no cronograma e financeiro.<br>- <strong style="color:#1e293b;">💡 RECOMENDAÇÃO</strong>: Iniciar atividade o mais breve possível.<br><br>## Conclusão<br><br>Todas as atividades críticas analisadas estão atrasadas e ainda não iniciaram. As atividades 2.02.01 (LAYOUT - Usina) é a mais crítica, com margem de atraso zero, exigindo atenção imediata. As demais atividades, apesar de terem margem de atraso disponível, necessitam ser iniciadas o mais breve possível para evitar impactos no cronograma e financeiro do projeto. Ações imediatas, comunicações necessárias e prazos sugeridos foram estabelecidos para cada atividade. A implementação destas recomendações visa mitigar os riscos e garantir o progresso do projeto dentro do cronograma e orçamento planejados.</li></div>
-    </div>
-  </div>
-</div></div>
-  <div class="ia-cards-footer">
-    <p><i class="fas fa-info-circle"></i> Análise gerada por IA em tempo real</p>
-  </div>
-</div>
+                <p style="padding:40px; text-align:center; color:#6b7280;">Análise de IA não disponível no momento.</p>
               </div>
             </div>
           </div>
@@ -162783,7 +162565,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   <strong>Relatório Diário de Obra - UFV CEMIG</strong>
               </p>
               <p>
-                  Gerado automaticamente em 28/01/2026 às 09:24 | 
+                  Gerado automaticamente em 28/01/2026 às 10:39 | 
                   Atividades monitoradas: 406 | 
                   Progresso financeiro: 8.9%
               </p>
@@ -162990,7 +162772,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           // FUNÇÕES DOS GRÁFICOS
           function initCharts() {
-              // Gráfico Físico
+              // Gráfico Físico - COM VALORES EXTERNOS
               const ctxFisico = document.getElementById('fisicoChart').getContext('2d');
               fisicoChart = new Chart(ctxFisico, {
                   type: 'pie',
@@ -162998,13 +162780,25 @@ document.addEventListener('DOMContentLoaded', () => {
                   options: {
                       responsive: true,
                       maintainAspectRatio: false,
+                      layout: {
+                          padding: {
+                              left: 30,
+                              right: 30,
+                              top: 20,
+                              bottom: 20
+                          }
+                      },
                       plugins: {
                           legend: {
                               position: 'right',
                               labels: {
-                                  padding: 20,
+                                  padding: 25,
                                   usePointStyle: true,
                                   pointStyle: 'circle',
+                                  font: {
+                                      size: 12,
+                                      weight: '600'
+                                  },
                                   generateLabels: function(chart) {
                                       const data = chart.data;
                                       const total = data.datasets[0].data.reduce((a, b) => a + b, 0);
@@ -163012,12 +162806,13 @@ document.addEventListener('DOMContentLoaded', () => {
                                           const value = data.datasets[0].data[i];
                                           const percentage = total > 0 ? Math.round((value / total) * 100) : 0;
                                           return {
-                                              text: `${label}: ${value} (${percentage}%)`,
+                                              text: `${label}`,
                                               fillStyle: data.datasets[0].backgroundColor[i],
                                               strokeStyle: '#ffffff',
                                               lineWidth: 2,
                                               hidden: false,
-                                              index: i
+                                              index: i,
+                                              fontColor: '#1e293b'
                                           };
                                       });
                                   }
@@ -163056,44 +162851,97 @@ document.addEventListener('DOMContentLoaded', () => {
                       }
                   },
                   plugins: [{
-                      id: 'pieValues',
+                      id: 'pieValuesWithArrows',
                       afterDraw: function(chart) {
                           const ctx = chart.ctx;
-                          ctx.textAlign = 'center';
-                          ctx.textBaseline = 'middle';
-                          ctx.font = 'bold 14px Inter';
+                          ctx.save();
 
                           const total = chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
 
                           chart.data.datasets.forEach((dataset, i) => {
                               const meta = chart.getDatasetMeta(i);
+
                               meta.data.forEach((slice, index) => {
                                   const value = dataset.data[index];
                                   if (value > 0) {
                                       const percentage = Math.round((value / total) * 100);
 
+                                      // Posição do label externo
                                       const angle = slice.startAngle + (slice.endAngle - slice.startAngle) / 2;
                                       const outerRadius = slice.outerRadius;
-                                      const innerRadius = slice.innerRadius;
-                                      const radius = innerRadius + (outerRadius - innerRadius) * 0.75;
 
-                                      const x = slice.x + Math.cos(angle) * radius;
-                                      const y = slice.y + Math.sin(angle) * radius;
+                                      // Ponto na borda externa
+                                      const x = slice.x + Math.cos(angle) * outerRadius;
+                                      const y = slice.y + Math.sin(angle) * outerRadius;
 
-                                      ctx.fillStyle = '#000000';
-                                      ctx.fillText(`${value}`, x, y);
+                                      // Ponto final (fora do gráfico)
+                                      const labelRadius = outerRadius + 50;
+                                      const labelX = slice.x + Math.cos(angle) * labelRadius;
+                                      const labelY = slice.y + Math.sin(angle) * labelRadius;
 
-                                      ctx.font = 'bold 11px Inter';
-                                      ctx.fillText(`(${percentage}%)`, x, y + 16);
+                                      // Desenhar linha com seta
+                                      ctx.beginPath();
+                                      ctx.moveTo(x, y);
+
+                                      // Criar curva suave
+                                      const midRadius = outerRadius + 25;
+                                      const midX = slice.x + Math.cos(angle) * midRadius;
+                                      const midY = slice.y + Math.sin(angle) * midRadius;
+
+                                      ctx.lineTo(midX, midY);
+                                      ctx.lineTo(labelX, labelY);
+
+                                      ctx.strokeStyle = '#94a3b8';
+                                      ctx.lineWidth = 1.5;
+                                      ctx.setLineDash([2, 2]);
+                                      ctx.stroke();
+                                      ctx.setLineDash([]);
+
+                                      // Desenhar seta
+                                      const arrowSize = 4;
+                                      const angleRad = Math.atan2(labelY - midY, labelX - midX);
+
+                                      ctx.beginPath();
+                                      ctx.moveTo(labelX, labelY);
+                                      ctx.lineTo(
+                                          labelX - arrowSize * Math.cos(angleRad - Math.PI / 6),
+                                          labelY - arrowSize * Math.sin(angleRad - Math.PI / 6)
+                                      );
+                                      ctx.lineTo(
+                                          labelX - arrowSize * Math.cos(angleRad + Math.PI / 6),
+                                          labelY - arrowSize * Math.sin(angleRad + Math.PI / 6)
+                                      );
+                                      ctx.closePath();
+                                      ctx.fillStyle = '#94a3b8';
+                                      ctx.fill();
+
+                                      // Desenhar valor
+                                      ctx.textAlign = angle > -Math.PI/2 && angle < Math.PI/2 ? 'left' : 'right';
+                                      ctx.textBaseline = 'middle';
                                       ctx.font = 'bold 14px Inter';
+                                      ctx.fillStyle = '#1e293b';
+
+                                      const textX = angle > -Math.PI/2 && angle < Math.PI/2 ? labelX + 10 : labelX - 10;
+                                      ctx.fillText(`${value} (${percentage}%)`, textX, labelY);
+
+                                      // Desenhar label
+                                      ctx.font = '600 11px Inter';
+                                      ctx.fillStyle = '#4b5563';
+                                      ctx.fillText(
+                                          graficoFisicoData.labels[index], 
+                                          textX, 
+                                          labelY + 18
+                                      );
                                   }
                               });
                           });
+
+                          ctx.restore();
                       }
                   }]
               });
 
-              // Gráfico Financeiro
+              // Gráfico Financeiro - COM MAIS ESPAÇO NO TOPO
               const ctxFinanceiro = document.getElementById('financeiroChart').getContext('2d');
               financeiroChart = new Chart(ctxFinanceiro, {
                   type: 'bar',
@@ -163101,6 +162949,12 @@ document.addEventListener('DOMContentLoaded', () => {
                   options: {
                       responsive: true,
                       maintainAspectRatio: false,
+                      layout: {
+                          padding: {
+                              top: 50,  // Mais espaço no topo para não cortar valores
+                              bottom: 20
+                          }
+                      },
                       plugins: {
                           legend: {
                               display: false
@@ -163129,7 +162983,13 @@ document.addEventListener('DOMContentLoaded', () => {
                                   font: {
                                       size: 12,
                                       weight: '600'
-                                  }
+                                  },
+                                  padding: 10
+                              },
+                              // Ajustar os limites para dar mais espaço
+                              suggestedMax: function(context) {
+                                  const max = context.chart.data.datasets[0].data.reduce((a, b) => Math.max(a, b), 0);
+                                  return max * 1.3; // 30% a mais do que o valor máximo
                               }
                           },
                           x: {
@@ -163146,23 +163006,49 @@ document.addEventListener('DOMContentLoaded', () => {
                       }
                   },
                   plugins: [{
-                      id: 'barValues',
+                      id: 'barValuesImproved',
                       afterDraw: function(chart) {
                           const ctx = chart.ctx;
-                          ctx.textAlign = 'center';
-                          ctx.textBaseline = 'bottom';
-                          ctx.font = 'bold 12px Inter';
-                          ctx.fillStyle = '#000000';
+                          ctx.save();
 
                           chart.data.datasets.forEach((dataset, i) => {
                               const meta = chart.getDatasetMeta(i);
+
                               meta.data.forEach((bar, index) => {
                                   const value = dataset.data[index];
                                   if (value !== 0) {
                                       let formattedValue = formatarValorFinanceiro(value);
 
+                                      // Posicionamento do texto
                                       const yPosition = bar.y - 10;
                                       const adjustedY = value < 0 ? bar.y + 20 : yPosition;
+
+                                      // Fundo para melhor legibilidade
+                                      const textWidth = ctx.measureText(`R$ ${formattedValue}`).width;
+
+                                      ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+                                      ctx.fillRect(
+                                          bar.x - textWidth/2 - 5,
+                                          adjustedY - 12,
+                                          textWidth + 10,
+                                          20
+                                      );
+
+                                      // Borda
+                                      ctx.strokeStyle = dataset.backgroundColor[index];
+                                      ctx.lineWidth = 1;
+                                      ctx.strokeRect(
+                                          bar.x - textWidth/2 - 5,
+                                          adjustedY - 12,
+                                          textWidth + 10,
+                                          20
+                                      );
+
+                                      // Texto
+                                      ctx.textAlign = 'center';
+                                      ctx.textBaseline = 'middle';
+                                      ctx.font = 'bold 12px Inter';
+                                      ctx.fillStyle = '#1e293b';
 
                                       ctx.fillText(
                                           `R$ ${formattedValue}`,
@@ -163172,6 +163058,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                   }
                               });
                           });
+
+                          ctx.restore();
                       }
                   }]
               });
