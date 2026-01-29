@@ -1216,7 +1216,7 @@
               <h1>Relatório Diário de Obra - UFV SERRA DO SALITRE</h1>
               <div class="header-subtitle">
                   <i class="fas fa-calendar-alt"></i>
-                  Relatório atualizado em: 29/01/2026 às 09:03
+                  Relatório atualizado em: 29/01/2026 às 10:06
               </div>
           </header>
 
@@ -163843,7 +163843,7 @@
                   <strong>Relatório Diário de Obra - UFV CEMIG</strong>
               </p>
               <p>
-                  Gerado automaticamente em 29/01/2026 às 09:03 | 
+                  Gerado automaticamente em 29/01/2026 às 10:06 | 
                   Atividades monitoradas: 406 | 
                   Progresso financeiro: 0.0%
               </p>
@@ -164060,10 +164060,10 @@
                       maintainAspectRatio: false,
                       layout: {
                           padding: {
-                              left: 30,
-                              right: 30,
-                              top: 20,
-                              bottom: 20
+                              left: 40,
+                              right: 40,
+                              top: 30,
+                              bottom: 30
                           }
                       },
                       plugins: {
@@ -164135,6 +164135,8 @@
                           ctx.save();
 
                           const total = chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+                          const chartArea = chart.chartArea;
+                          const padding = 10;
 
                           chart.data.datasets.forEach((dataset, i) => {
                               const meta = chart.getDatasetMeta(i);
@@ -164152,63 +164154,80 @@
                                       const x = slice.x + Math.cos(angle) * outerRadius;
                                       const y = slice.y + Math.sin(angle) * outerRadius;
 
-                                      // Ponto final (fora do gráfico)
-                                      const labelRadius = outerRadius + 50;
+                                      // REDUZIR O RAIO DAS SETAS para ficar dentro da área
+                                      const labelRadius = outerRadius + 35;
                                       const labelX = slice.x + Math.cos(angle) * labelRadius;
                                       const labelY = slice.y + Math.sin(angle) * labelRadius;
 
-                                      // Desenhar linha com seta
+                                      // Verificar se o label está dentro da área do gráfico
+                                      let finalLabelX = labelX;
+                                      let finalLabelY = labelY;
+
+                                      // Limitar dentro da área do gráfico
+                                      if (finalLabelX < chartArea.left + padding) {
+                                          finalLabelX = chartArea.left + padding;
+                                      }
+                                      if (finalLabelX > chartArea.right - padding) {
+                                          finalLabelX = chartArea.right - padding;
+                                      }
+                                      if (finalLabelY < chartArea.top + padding) {
+                                          finalLabelY = chartArea.top + padding;
+                                      }
+                                      if (finalLabelY > chartArea.bottom - padding) {
+                                          finalLabelY = chartArea.bottom - padding;
+                                      }
+
+                                      // Desenhar linha com seta (mais curta)
                                       ctx.beginPath();
                                       ctx.moveTo(x, y);
 
-                                      // Criar curva suave
-                                      const midRadius = outerRadius + 25;
+                                      // Criar curva suave (mais curta)
+                                      const midRadius = outerRadius + 15;
                                       const midX = slice.x + Math.cos(angle) * midRadius;
                                       const midY = slice.y + Math.sin(angle) * midRadius;
 
                                       ctx.lineTo(midX, midY);
-                                      ctx.lineTo(labelX, labelY);
+                                      ctx.lineTo(finalLabelX, finalLabelY);
 
                                       ctx.strokeStyle = '#94a3b8';
-                                      ctx.lineWidth = 1.5;
+                                      ctx.lineWidth = 1.2;
                                       ctx.setLineDash([2, 2]);
                                       ctx.stroke();
                                       ctx.setLineDash([]);
 
-                                      // Desenhar seta
-                                      const arrowSize = 4;
-                                      const angleRad = Math.atan2(labelY - midY, labelX - midX);
+                                      // Desenhar seta (menor)
+                                      const arrowSize = 3;
+                                      const angleRad = Math.atan2(finalLabelY - midY, finalLabelX - midX);
 
                                       ctx.beginPath();
-                                      ctx.moveTo(labelX, labelY);
+                                      ctx.moveTo(finalLabelX, finalLabelY);
                                       ctx.lineTo(
-                                          labelX - arrowSize * Math.cos(angleRad - Math.PI / 6),
-                                          labelY - arrowSize * Math.sin(angleRad - Math.PI / 6)
+                                          finalLabelX - arrowSize * Math.cos(angleRad - Math.PI / 6),
+                                          finalLabelY - arrowSize * Math.sin(angleRad - Math.PI / 6)
                                       );
                                       ctx.lineTo(
-                                          labelX - arrowSize * Math.cos(angleRad + Math.PI / 6),
-                                          labelY - arrowSize * Math.sin(angleRad + Math.PI / 6)
+                                          finalLabelX - arrowSize * Math.cos(angleRad + Math.PI / 6),
+                                          finalLabelY - arrowSize * Math.sin(angleRad + Math.PI / 6)
                                       );
                                       ctx.closePath();
                                       ctx.fillStyle = '#94a3b8';
                                       ctx.fill();
 
-                                      // Desenhar valor
-                                      ctx.textAlign = angle > -Math.PI/2 && angle < Math.PI/2 ? 'left' : 'right';
+                                      // Desenhar valor com fonte menor
+                                      ctx.textAlign = 'center';
                                       ctx.textBaseline = 'middle';
-                                      ctx.font = 'bold 14px Inter';
+                                      ctx.font = 'bold 12px Inter';
                                       ctx.fillStyle = '#1e293b';
 
-                                      const textX = angle > -Math.PI/2 && angle < Math.PI/2 ? labelX + 10 : labelX - 10;
-                                      ctx.fillText(`${value} (${percentage}%)`, textX, labelY);
+                                      ctx.fillText(`${value} (${percentage}%)`, finalLabelX, finalLabelY - 8);
 
-                                      // Desenhar label
-                                      ctx.font = '600 11px Inter';
+                                      // Desenhar label com fonte menor
+                                      ctx.font = '600 10px Inter';
                                       ctx.fillStyle = '#4b5563';
                                       ctx.fillText(
                                           graficoFisicoData.labels[index], 
-                                          textX, 
-                                          labelY + 18
+                                          finalLabelX, 
+                                          finalLabelY + 8
                                       );
                                   }
                               });
@@ -164229,7 +164248,7 @@
                       maintainAspectRatio: false,
                       layout: {
                           padding: {
-                              top: 50,  // Mais espaço no topo para não cortar valores
+                              top: 50,
                               bottom: 20
                           }
                       },
@@ -164264,10 +164283,9 @@
                                   },
                                   padding: 10
                               },
-                              // Ajustar os limites para dar mais espaço
                               suggestedMax: function(context) {
                                   const max = context.chart.data.datasets[0].data.reduce((a, b) => Math.max(a, b), 0);
-                                  return max * 1.3; // 30% a mais do que o valor máximo
+                                  return max * 1.3;
                               }
                           },
                           x: {
