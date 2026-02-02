@@ -1216,7 +1216,7 @@
               <h1>Relatório Diário de Obra - UFV SERRA DO SALITRE</h1>
               <div class="header-subtitle">
                   <i class="fas fa-calendar-alt"></i>
-                  Relatório atualizado em: 02/02/2026 às 08:30
+                  Relatório atualizado em: 02/02/2026 às 08:45
               </div>
           </header>
 
@@ -163830,293 +163830,23 @@
               <div class="ia-content" style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #e5e7eb;">
                 
 <style>
-.ia-cards-container { 
-  font-family: 'Inter', sans-serif; 
-  background: #f8fafc; 
-  border-radius: 16px; 
-  padding: 25px; 
-  margin: 0 auto; 
-  max-width: 1200px; 
-}
-.ia-cards-header { 
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-  margin-bottom: 25px; 
-  padding-bottom: 20px; 
-  border-bottom: 2px solid #e5e7eb; 
-}
-.ia-header-titulo { 
-  display: flex; 
-  align-items: center; 
-  gap: 15px; 
-}
-.ia-header-titulo i { 
-  font-size: 2rem; 
-  color: #8b5cf6; 
-}
-.ia-header-titulo h3 { 
-  color: #1d4ed8; 
-  font-size: 1.5rem; 
-  margin: 0 0 5px 0; 
-}
-.ia-header-titulo p { 
-  color: #6b7280; 
-  margin: 0; 
-  font-size: 0.9rem; 
-}
-.ia-header-acoes { 
-  display: flex; 
-  gap: 10px; 
-}
-.ia-btn { 
-  padding: 10px 18px; 
-  border-radius: 8px; 
-  border: 1px solid #d1d5db; 
-  background: white; 
-  color: #4b5563; 
-  font-weight: 600; 
-  font-size: 0.9rem; 
-  cursor: pointer; 
-  display: flex; 
-  align-items: center; 
-  gap: 8px; 
-  transition: all 0.2s ease; 
-}
-.ia-btn:hover { 
-  background: #f3f4f6; 
-  transform: translateY(-1px); 
-}
-.ia-btn-expandir { 
-  background: #1d4ed8; 
-  color: white; 
-  border-color: #1d4ed8; 
-}
-.ia-btn-expandir:hover { 
-  background: #1e40af; 
-}
-.ia-cards-grid { 
-  display: flex; 
-  flex-direction: column; 
-  gap: 20px; 
-}
-.ia-card { 
-  background: white; 
-  border-radius: 12px; 
-  border: 1px solid #e5e7eb; 
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04); 
-  transition: all 0.3s ease; 
-  overflow: hidden; 
-  cursor: pointer; 
-}
-.ia-card:hover { 
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08); 
-  border-color: #cbd5e1; 
-}
-.ia-card-header { 
-  padding: 18px 20px; 
-  background: #f8fafc; 
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-}
-.ia-card.active .ia-card-header { 
-  background: white; 
-  border-bottom: 1px solid #e5e7eb; 
-}
-.ia-card-titulo { 
-  display: flex; 
-  align-items: center; 
-  gap: 12px; 
-  flex: 1; 
-}
-.ia-card-titulo i { 
-  font-size: 1.4rem; 
-  color: #8b5cf6; 
-  flex-shrink: 0; 
-}
-.ia-card-info { 
-  flex: 1; 
-}
-.ia-card-nome { 
-  font-weight: 700; 
-  color: #1e293b; 
-  font-size: 1.05rem; 
-  margin-bottom: 4px; 
-}
-.ia-card-desc {
-  font-size: 0.85em;
-  color: #6b7280;
-}
-.ia-card-direita { 
-  display: flex; 
-  align-items: center; 
-  gap: 15px; 
-}
-.ia-card-badge { 
-  padding: 6px 14px; 
-  border-radius: 20px; 
-  font-size: 0.85rem; 
-  font-weight: 700; 
-  text-transform: uppercase; 
-  letter-spacing: 0.5px; 
-}
-.ia-card-badge.tipo-atrasada { 
-  background: linear-gradient(135deg, #fee2e2, #ef4444); 
-  color: #991b1b; 
-  border: 1px solid #fca5a5; 
-}
-.ia-card-badge.tipo-execucao { 
-  background: linear-gradient(135deg, #e0f2fe, #38bdf8); 
-  color: #075985; 
-  border: 1px solid #7dd3fc; 
-}
-.ia-card-badge.tipo-geral { 
-  background: linear-gradient(135deg, #e5e7eb, #d1d5db); 
-  color: #4b5563; 
-  border: 1px solid #9ca3af; 
-}
-.ia-card-toggle { 
-  color: #9ca3af; 
-  font-size: 1.1rem; 
-  transition: transform 0.3s ease; 
-}
-.ia-card.active .ia-card-toggle { 
-  transform: rotate(180deg); 
-  color: #1d4ed8; 
-}
-.ia-card-content { 
-  max-height: 0; 
-  overflow: hidden; 
-  transition: max-height 0.5s ease, padding 0.3s ease; 
-}
-.ia-card.active .ia-card-content { 
-  max-height: 5000px; 
-  padding: 20px; 
-}
-.ia-card-metadata { 
-  display: flex; 
-  gap: 25px; 
-  margin-bottom: 25px; 
-  padding: 15px; 
-  background: #f8fafc; 
-  border-radius: 10px; 
-  border: 1px solid #e5e7eb; 
-}
-.ia-metadata-item { 
-  display: flex; 
-  align-items: center; 
-  gap: 8px; 
-  color: #4b5563; 
-  font-size: 0.9rem; 
-}
-.ia-metadata-item i { 
-  color: #8b5cf6; 
-}
-.ia-metadata-item strong { 
-  color: #1e293b; 
-  font-weight: 600; 
-}
-.ia-card-analysis { 
-  font-size: 0.95rem; 
-  line-height: 1.7; 
-  color: #374151; 
-}
-.ia-card-analysis h4 { 
-  color: #1d4ed8; 
-  margin-top: 1.5em; 
-  margin-bottom: 0.8em; 
-  padding-bottom: 6px; 
-}
-.ia-card-analysis ul, .ia-card-analysis ol { 
-  margin: 0.8em 0; 
-  padding-left: 1.5em; 
-}
-.ia-card-analysis li { 
-  margin-bottom: 0.5em; 
-}
-.ia-cards-footer { 
-  margin-top: 25px; 
-  padding-top: 20px; 
-  border-top: 1px solid #e5e7eb; 
-  text-align: center; 
-  color: #6b7280; 
-  font-size: 0.9rem; 
-}
-.ia-cards-footer i { 
-  color: #8b5cf6; 
-  margin-right: 8px; 
-}
-.ia-empty { 
-  text-align: center; 
-  padding: 60px 30px; 
-  color: #9ca3af; 
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 </style>
-<script>
-function toggleIACard(card) { 
-  card.classList.toggle('active'); 
-}
-function expandAllIACards() { 
-  document.querySelectorAll('.ia-card').forEach(c => c.classList.add('active')); 
-}
-function collapseAllIACards() { 
-  document.querySelectorAll('.ia-card').forEach(c => c.classList.remove('active')); 
-}
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.ia-card').forEach(c => c.classList.remove('active'));
-  document.querySelectorAll('.ia-card-content, .ia-card-badge').forEach(el => {
-    el.addEventListener('click', e => e.stopPropagation());
-  });
-});
-</script>
 
-<div class="ia-cards-container">
-  <div class="ia-cards-header">
-    <div class="ia-header-titulo">
-      <i class="fas fa-robot"></i>
-      <div>
-        <h3>Análise de IA - Atividades Críticas</h3>
-        <p>1 atividade(s) analisada(s) - Clique para expandir</p>
-      </div>
+  <div style="font-family: 'Inter', sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px;">
+    <h2 style="color:#1d4ed8; border-bottom:2px solid #e5e7eb; padding-bottom:10px; margin-bottom:20px;">
+      <i class="fas fa-robot"></i> Análise de IA - Atividades Críticas
+    </h2>
+    
+    <div style="color:#374151; line-height:1.6; font-size:0.95rem;">
+      <strong>PARA CADA ATIVIDADE CRÍTICA, ANALISE:</strong><br><br>### Atividade 1: Contratação dos Seguros - Contratuais<br><br><strong></div><div style="margin:15px 0 10px 0; color:#374151;"><strong style="color:#dc2626; display:block; margin-bottom:5px;">🔍 Diagnóstico da Situação Atual</strong></strong><br><br>1. <strong>ANÁLISE FÍSICA (ANDAMENTO DO TRABALHO)</strong><br>   - O gap entre % planejada e % realmente concluída é de 8 pontos percentuais, indicando um atraso no andamento do trabalho.<br>   - A margem de atraso disponível é de 200 dias, o que indica uma grande flexibilidade no cronograma.<br>   - A causa provável para o atraso pode ser a falta de priorização ou recursos adequados.<br><br>2. <strong>ANÁLISE FINANCEIRA (VALORES A RECEBER)</strong><br>   - O valor planejado a receber e o valor realmente recebido são iguais a R$ 0,00, indicando que não há impacto financeiro direto.<br>   - O saldo é de R$ 0,00, mostrando que não há diferença entre o planejado e o recebido.<br><br>3. <strong>ANÁLISE DE IMPACTO EM CADEIA</strong><br>   - Como não há sucessoras diretas, o impacto em cadeia é mínimo.<br><br><strong></div><div style="margin:15px 0 10px 0; color:#374151;"><strong style="color:#10b981; display:block; margin-bottom:5px;">💡 Recomendações de Ação</strong></strong><br><br>1. <strong>AÇÕES IMEDIATAS</strong>: Reavaliar a priorização dos recursos e garantir que a contratação dos seguros seja finalizada o mais breve possível.<br>2. <strong>COMUNICAÇÕES NECESSÁRIAS</strong>: Comunicar com o setor de gestão sobre a necessidade de acelerar o processo.<br>3. <strong>PRAZOS SUGERIDOS</strong>: Estabelecer um prazo de 30 dias para a conclusão da contratação.<br><br><strong>C. RESUMO EXECUTIVO</strong><br>- Status atual: Atrasada, mas com margem de atraso disponível.<br>- Principais riscos: Atraso no cronograma.<br>- Recomendação principal: Priorizar a contratação dos seguros.<br><br>### Atividade 2: Administração Mensal<br><br><strong></div><div style="margin:15px 0 10px 0; color:#374151;"><strong style="color:#dc2626; display:block; margin-bottom:5px;">🔍 Diagnóstico da Situação Atual</strong></strong><br><br>1. <strong>ANÁLISE FÍSICA (ANDAMENTO DO TRABALHO)</strong><br>   - O gap entre % planejada e % realmente concluída é de 33 pontos percentuais, indicando um atraso significativo.<br>   - A margem de atraso disponível é de 200 dias, o que ainda oferece flexibilidade.<br>   - A causa provável pode ser a falta de início das atividades.<br><br>2. <strong>ANÁLISE FINANCEIRA (VALORES A RECEBER)</strong><br>   - O valor planejado a receber é de R$ 244.204,33, e o valor realmente recebido é de R$ 0,00, indicando um impacto financeiro negativo.<br>   - O saldo é de R$ -244.204,33, mostrando que a empresa está recebendo menos do que o planejado.<br><br>3. <strong>ANÁLISE DE IMPACTO EM CADEIA</strong><br>   - O atraso afeta as sucessoras diretas, que são 2 atividades, potencialmente impactando o cronograma geral.<br><br><strong></div><div style="margin:15px 0 10px 0; color:#374151;"><strong style="color:#10b981; display:block; margin-bottom:5px;">💡 Recomendações de Ação</strong></strong><br><br>1. <strong>AÇÕES IMEDIATAS</strong>: Iniciar a administração mensal o mais rápido possível.<br>2. <strong>COMUNICAÇÕES NECESSÁRIAS</strong>: Comunicar com os setores envolvidos sobre a necessidade de iniciar as atividades.<br>3. <strong>PRAZOS SUGERIDOS</strong>: Estabelecer um prazo de 15 dias para o início da administração mensal.<br><br><strong>C. RESUMO EXECUTIVO</strong><br>- Status atual: Atrasada, com impacto financeiro.<br>- Principais riscos: Atraso no cronograma e impacto financeiro.<br>- Recomendação principal: Iniciar a administração mensal imediatamente.<br><br>### Atividade 3: Planialtimétrico do Terreno e Georreferenciamento<br><br><strong></div><div style="margin:15px 0 10px 0; color:#374151;"><strong style="color:#dc2626; display:block; margin-bottom:5px;">🔍 Diagnóstico da Situação Atual</strong></strong><br><br>1. <strong>ANÁLISE FÍSICA (ANDAMENTO DO TRABALHO)</strong><br>   - O gap entre % planejada e % realmente concluída é de 100 pontos percentuais, indicando que a atividade não foi iniciada.<br>   - A margem de atraso disponível é de 6 dias, o que é muito pequena.<br>   - A causa provável é a falta de início das atividades.<br><br>2. <strong>ANÁLISE FINANCEIRA (VALORES A RECEBER)</strong><br>   - O valor planejado a receber e o valor realmente recebido são iguais a R$ 0,00.<br>   - O saldo é de R$ 0,00.<br><br>3. <strong>ANÁLISE DE IMPACTO EM CADEIA</strong><br>   - Como não há sucessoras diretas, o impacto em cadeia é mínimo.<br><br><strong></div><div style="margin:15px 0 10px 0; color:#374151;"><strong style="color:#10b981; display:block; margin-bottom:5px;">💡 Recomendações de Ação</strong></strong><br><br>1. <strong>AÇÕES IMEDIATAS</strong>: Iniciar o planialtimétrico do terreno e georreferenciamento o mais rápido possível.<br>2. <strong>COMUNICAÇÕES NECESSÁRIAS</strong>: Comunicar com o setor de estudo sobre a necessidade de iniciar as atividades.<br>3. <strong>PRAZOS SUGERIDOS</strong>: Estabelecer um prazo de 10 dias para o início da atividade.<br><br><strong>C. RESUMO EXECUTIVO</strong><br>- Status atual: Não iniciada, com margem de atraso pequena.<br>- Principais riscos: Atraso no cronograma.<br>- Recomendação principal: Iniciar a atividade imediatamente.<br><br>### Atividade 4: Estudos Geológico - SPT<br><br><strong></div><div style="margin:15px 0 10px 0; color:#374151;"><strong style="color:#dc2626; display:block; margin-bottom:5px;">🔍 Diagnóstico da Situação Atual</strong></strong><br><br>1. <strong>ANÁLISE FÍSICA (ANDAMENTO DO TRABALHO)</strong><br>   - O gap entre % planejada e % realmente concluída é de 100 pontos percentuais.<br>   - A margem de atraso disponível é de 66 dias.<br><br>2. <strong>ANÁLISE FINANCEIRA (VALORES A RECEBER)</strong><br>   - O valor planejado a receber e o valor realmente recebido são iguais a R$ 0,00.<br>   - O saldo é de R$ 0,00.<br><br>3. <strong>ANÁLISE DE IMPACTO EM CADEIA</strong><br>   - Como não há sucessoras diretas, o impacto em cadeia é mínimo.<br><br><strong></div><div style="margin:15px 0 10px 0; color:#374151;"><strong style="color:#10b981; display:block; margin-bottom:5px;">💡 Recomendações de Ação</strong></strong><br><br>1. <strong>AÇÕES IMEDIATAS</strong>: Iniciar os estudos geológicos o mais rápido possível.<br>2. <strong>COMUNICAÇÕES NECESSÁRIAS</strong>: Comunicar com o setor de estudo sobre a necessidade de iniciar as atividades.<br>3. <strong>PRAZOS SUGERIDOS</strong>: Estabelecer um prazo de 20 dias para o início da atividade.<br><br><strong>C. RESUMO EXECUTIVO</strong><br>- Status atual: Não iniciada.<br>- Principais riscos: Atraso no cronograma.<br>- Recomendação principal: Iniciar a atividade imediatamente.<br><br>### Atividade 5: Estudos Geológico - SEV<br><br><strong></div><div style="margin:15px 0 10px 0; color:#374151;"><strong style="color:#dc2626; display:block; margin-bottom:5px;">🔍 Diagnóstico da Situação Atual</strong></strong><br><br>1. <strong>ANÁLISE FÍSICA (ANDAMENTO DO TRABALHO)</strong><br>   - O gap entre % planejada e % realmente concluída é de 100 pontos percentuais.<br>   - A margem de atraso disponível é de 36 dias.<br><br>2. <strong>ANÁLISE FINANCEIRA (VALORES A RECEBER)</strong><br>   - O valor planejado a receber e o valor realmente recebido são iguais a R$ 0,00.<br>   - O saldo é de R$ 0,00.<br><br>3. <strong>ANÁLISE DE IMPACTO EM CADEIA</strong><br>   - Como não há sucessoras diretas, o impacto em cadeia é mínimo.<br><br><strong></div><div style="margin:15px 0 10px 0; color:#374151;"><strong style="color:#10b981; display:block; margin-bottom:5px;">💡 Recomendações de Ação</strong></strong><br><br>1. <strong>AÇÕES IMEDIATAS</strong>: Iniciar os estudos geológicos o mais rápido possível.<br>2. <strong>COMUNICAÇÕES NECESSÁRIAS</strong>: Comunicar com o setor de estudo sobre a necessidade de iniciar as atividades.<br>3. <strong>PRAZOS SUGERIDOS</strong>: Estabelecer um prazo de 15 dias para o início da atividade.<br><br><strong>C. RESUMO EXECUTIVO</strong><br>- Status atual: Não iniciada.<br>- Principais riscos: Atraso no cronograma.<br>- Recomendação principal: Iniciar a atividade imediatamente.<br><br>### Atividade 6: LAYOUT - Usina<br><br><strong></div><div style="margin:15px 0 10px 0; color:#374151;"><strong style="color:#dc2626; display:block; margin-bottom:5px;">🔍 Diagnóstico da Situação Atual</strong></strong><br><br>1. <strong>ANÁLISE FÍSICA (ANDAMENTO DO TRABALHO)</strong><br>   - O gap entre % planejada e % realmente concluída é de 100 pontos percentuais.<br>   - A <span style="color:#ef4444; font-weight:bold;">margem de atraso disponível é de 0 dias ⚠️</span>, o que indica uma atividade crítica.<br><br>2. <strong>ANÁLISE FINANCEIRA (VALORES A RECEBER)</strong><br>   - O valor planejado a receber e o valor realmente recebido são iguais a R$ 0,00.<br>   - O saldo é de R$ 0,00.<br><br>3. <strong>ANÁLISE DE IMPACTO EM CADEIA</strong><br>   - O atraso afeta a sucessora direta, que é 1 atividade.<br><br><strong></div><div style="margin:15px 0 10px 0; color:#374151;"><strong style="color:#10b981; display:block; margin-bottom:5px;">💡 Recomendações de Ação</strong></strong><br><br>1. <strong>AÇÕES IMEDIATAS</strong>: Iniciar o layout da usina o mais rápido possível.<br>2. <strong>COMUNICAÇÕES NECESSÁRIAS</strong>: Comunicar com o setor de projetos básicos sobre a necessidade de iniciar as atividades.<br>3. <strong>PRAZOS SUGERIDOS</strong>: Estabelecer um prazo de 5 dias para o início da atividade.<br><br><strong>C. RESUMO EXECUTIVO</strong><br>- Status atual: Não iniciada, com margem de atraso zero.<br>- Principais riscos: Atraso no cronograma e impacto em cadeia.<br>- Recomendação principal: Iniciar a atividade imediatamente.<br><br>### Atividade 7: CMP<br><br><strong></div><div style="margin:15px 0 10px 0; color:#374151;"><strong style="color:#dc2626; display:block; margin-bottom:5px;">🔍 Diagnóstico da Situação Atual</strong></strong><br><br>1. <strong>ANÁLISE FÍSICA (ANDAMENTO DO TRABALHO)</strong><br>   - O gap entre % planejada e % realmente concluída é de 100 pontos percentuais.<br>   - A margem de atraso disponível é de 15 dias.<br><br>2. <strong>ANÁLISE FINANCEIRA (VALORES A RECEBER)</strong><br>   - O valor planejado a receber e o valor realmente recebido são iguais a R$ 0,00.<br>   - O saldo é de R$ 0,00.<br><br>3. <strong>ANÁLISE DE IMPACTO EM CADEIA</strong><br>   - O atraso afeta a sucessora direta, que é 1 atividade.<br><br><strong></div><div style="margin:15px 0 10px 0; color:#374151;"><strong style="color:#10b981; display:block; margin-bottom:5px;">💡 Recomendações de Ação</strong></strong><br><br>1. <strong>AÇÕES IMEDIATAS</strong>: Iniciar a CMP o mais rápido possível.<br>2. <strong>COMUNICAÇÕES NECESSÁRIAS</strong>: Comunicar com o setor de projetos executivos e MDT sobre a necessidade de iniciar as atividades.<br>3. <strong>PRAZOS SUGERIDOS</strong>: Estabelecer um prazo de 10 dias para o início da atividade.<br><br><strong>C. RESUMO EXECUTIVO</strong><br>- Status atual: Não iniciada.<br>- Principais riscos: Atraso no cronograma e impacto em cadeia.<br>- Recomendação principal: Iniciar a atividade imediatamente.<br><br>### Atividade 8: SKID<br><br><strong></div><div style="margin:15px 0 10px 0; color:#374151;"><strong style="color:#dc2626; display:block; margin-bottom:5px;">🔍 Diagnóstico da Situação Atual</strong></strong><br><br>1. <strong>ANÁLISE FÍSICA (ANDAMENTO DO TRABALHO)</strong><br>   - O gap entre % planejada e % realmente concluída é de 100 pontos percentuais.<br>   - A margem de atraso disponível é de 15 dias.<br><br>2. <strong>ANÁLISE FINANCEIRA (VALORES A RECEBER)</strong><br>   - O valor planejado a receber e o valor realmente recebido são iguais a R$ 0,00.<br>   - O saldo é de R$ 0,00.<br><br>3. <strong>ANÁLISE DE IMPACTO EM CADEIA</strong><br>   - O atraso afeta a sucessora direta, que é 1 atividade.<br><br><strong></div><div style="margin:15px 0 10px 0; color:#374151;"><strong style="color:#10b981; display:block; margin-bottom:5px;">💡 Recomendações de Ação</strong></strong><br><br>1. <strong>AÇÕES IMEDIATAS</strong>: Iniciar a SKID o mais rápido possível.<br>2. <strong>COMUNICAÇÕES NECESSÁRIAS</strong>: Comunicar com o setor de projetos executivos e MDT sobre a necessidade de iniciar as atividades.<br>3. <strong>PRAZOS SUGERIDOS</strong>: Estabelecer um prazo de 10 dias para o início da atividade.<br><br><strong>C. RESUMO EXECUTIVO</strong><br>- Status atual: Não iniciada.<br>- Principais riscos: Atraso no cronograma e impacto em cadeia.<br>- Recomendação principal: Iniciar a atividade imediatamente.<br><br>### Atividade 9: Estação Solarimétrica<br><br><strong></div><div style="margin:15px 0 10px 0; color:#374151;"><strong style="color:#dc2626; display:block; margin-bottom:5px;">🔍 Diagnóstico da Situação Atual</strong></strong><br><br>1. <strong>ANÁLISE FÍSICA (ANDAMENTO DO TRABALHO)</strong><br>   - O gap entre % planejada e % realmente concluída é de 100 pontos percentuais.<br>   - A margem de atraso disponível é de 84 dias.<br><br>2. <strong>ANÁLISE FINANCEIRA (VALORES A RECEBER)</strong><br>   - O valor planejado a receber e o valor realmente recebido são iguais a R$ 0,00.<br>   - O saldo é de R$ 0,00.<br><br>3. <strong>ANÁLISE DE IMPACTO EM CADEIA</strong><br>   - O atraso afeta a sucessora direta, que é 1 atividade.<br><br><strong></div><div style="margin:15px 0 10px 0; color:#374151;"><strong style="color:#10b981; display:block; margin-bottom:5px;">💡 Recomendações de Ação</strong></strong><br><br>1. <strong>AÇÕES IMEDIATAS</strong>: Iniciar a estação solarimétrica o mais rápido possível.<br>2. <strong>COMUNICAÇÕES NECESSÁRIAS</strong>: Comunicar com o setor de projetos executivos e MDT sobre a necessidade de iniciar as atividades.<br>3. <strong>PRAZOS SUGERIDOS</strong>: Estabelecer um prazo de 20 dias para o início da atividade.<br><br><strong>C. RESUMO EXECUTIVO</strong><br>- Status atual: Não iniciada.<br>- Principais riscos: Atraso no cronograma e impacto em cadeia.<br>- Recomendação principal: Iniciar a atividade imediatamente.<br><br><strong>CONCLUSÃO</strong><br><br>As 9 atividades críticas apresentam diferentes níveis de atraso e impacto no cronograma e nos valores a receber. A atividade 2 (Administração Mensal) apresenta o maior impacto financeiro, com um saldo negativo de R$ -244.204,33. As atividades 6 (LAYOUT - Usina) e 7 (CMP) têm margens de atraso disponíveis de 0 dias e 15 dias, respectivamente, o que as torna críticas para o cronograma do projeto.<br><br>As recomendações de ação incluem iniciar as atividades o mais rápido possível, comunicar com os setores envolvidos e estabelecer prazos para a conclusão das atividades. É fundamental monitorar o andamento das atividades e ajustar as recomendações de ação conforme necessário para garantir que o projeto seja concluído dentro do prazo e do orçamento estabelecidos.<br><br>Além disso, é importante realizar uma análise mais detalhada das causas raiz dos atrasos e implementar ações corretivas para evitar que os atrasos se repitam no futuro. A comunicação eficaz entre os setores envolvidos e a gestão do projeto é fundamental para garantir que as recomendações de ação sejam implementadas e que o projeto seja concluído com sucesso.
     </div>
-    <div class="ia-header-acoes">
-      <button class="ia-btn ia-btn-expandir" onclick="expandAllIACards()"><i class="fas fa-expand-alt"></i> Expandir Todas</button>
-      <button class="ia-btn ia-btn-recolher" onclick="collapseAllIACards()"><i class="fas fa-compress-alt"></i> Recolher Todas</button>
-    </div>
-  </div>
-  <div class="ia-cards-grid">
-<div class="ia-card">
-  <div class="ia-card-header" onclick="toggleIACard(this.parentElement)" style="border-left: 4px solid #8b5cf6;">
-    <div class="ia-card-titulo">
-      <i class="fas fa-chart-line"></i>
-      <div class="ia-card-info">
-        <div class="ia-card-nome">Conclusão Geral</div>
-        <div class="ia-card-desc" style="font-size:0.85em; color:#6b7280; margin-top:3px;">
-          Resumo final da análise
-        </div>
-      </div>
-    </div>
-    <div class="ia-card-direita">
-      <div class="ia-card-badge tipo-geral">CONCLUSÃO</div>
-      <i class="fas fa-chevron-down ia-card-toggle"></i>
+    
+    <div style="margin-top:30px; padding-top:20px; border-top:1px solid #e5e7eb; text-align:center; color:#6b7280; font-size:0.9rem;">
+      <i class="fas fa-info-circle"></i> Análise gerada por IA em tempo real
     </div>
   </div>
-  <div class="ia-card-content">
-    <div class="ia-card-metadata">
-      <div class="ia-metadata-item"><i class="fas fa-hashtag"></i><span>Código: <strong>GERAL</strong></span></div>
-      <div class="ia-metadata-item"><i class="fas fa-list-ol"></i><span>Número: <strong>1 de 1</strong></span></div>
-      <div class="ia-metadata-item"><i class="fas fa-tag"></i><span>Tipo: <strong>GERAL</strong></span></div>
-    </div>
-    <div class="ia-card-analysis">
-      <div style="font-size:0.95em; line-height:1.6;">O projeto Usina Fotovoltaica Serra do Salitre apresenta 9 atividades críticas atrasadas, com diferentes níveis de risco e impacto financeiro. As principais causas dos atrasos incluem falta de início das atividades e falta de priorização. As recomendações incluem iniciar as atividades imediatamente, comunicar com os setores envolvidos e estabelecer prazos realistas para a conclusão das atividades. É fundamental que as atividades sejam iniciadas o mais breve possível para minimizar os riscos e impactos financeiros. Além disso, é importante monitorar o andamento das atividades e realizar ajustes necessários para garantir a conclusão do projeto dentro do prazo estabelecido.</div>
-    </div>
-  </div>
-</div></div>
-  <div class="ia-cards-footer">
-    <p><i class="fas fa-info-circle"></i> Análise gerada por IA em tempo real com base nas atividades críticas</p>
-  </div>
-</div>
               </div>
             </div>
           </div>
@@ -164131,7 +163861,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   <strong>Relatório Diário de Obra - UFV CEMIG</strong>
               </p>
               <p>
-                  Gerado automaticamente em 02/02/2026 às 08:30 | 
+                  Gerado automaticamente em 02/02/2026 às 08:45 | 
                   Atividades monitoradas: 406 | 
                   Progresso financeiro: 0.0%
               </p>
