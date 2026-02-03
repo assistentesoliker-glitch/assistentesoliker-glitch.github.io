@@ -1288,7 +1288,7 @@
               <h1>Relatório Diário de Obra - UFV SERRA DO SALITRE</h1>
               <div class="header-subtitle">
                   <i class="fas fa-calendar-alt"></i>
-                  Relatório atualizado em: 03/02/2026 às 11:55
+                  Relatório atualizado em: 03/02/2026 às 12:02
               </div>
           </header>
 
@@ -167941,61 +167941,62 @@ strong {
   color: var(--dark);
 }
 /* Ajustes para modo escuro */
-.dark-mode .atividade-accordion-item {
+.dark-mode .atividade-item {
   background: var(--gray-100) !important;
 }
 .dark-mode h3, .dark-mode h4, .dark-mode strong {
   color: var(--dark);
 }
-.atividade-accordion-header:hover { background: var(--gray-100) !important; }
-.atividade-accordion-content.active { max-height: 5000px !important; padding: 20px 0 !important; }
-.diagnostico-content.active, .recomendacoes-content.active { max-height: 5000px !important; padding: 0 0 15px 0 !important; }
-.dark-mode .atividade-accordion-item { background: var(--gray-200) !important; }
-.dark-mode .atividade-accordion-header { background: var(--gray-300) !important; color: var(--dark) !important; }
+/* Estilo para o botão de voltar ao topo */
+#voltarTopoBtn:hover {
+  background: var(--primary-dark) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.dark-mode #voltarTopoBtn {
+  background: var(--primary);
+}
+.dark-mode #voltarTopoBtn:hover {
+  background: var(--primary-light) !important;
+}
 </style>
 
 <script>
-// Função para alternar o acordeão principal (atividade completa)
-function toggleAtividadeAccordionOnClick(element, event) {
-  event.stopPropagation();
-  const item = element.closest('.atividade-accordion-item');
-  const content = item.querySelector('.atividade-accordion-content');
-  const icon = element.querySelector('i');
-  
-  if (content.classList.contains('active')) {
-    content.classList.remove('active');
-    icon.style.transform = 'rotate(0deg)';
-  } else {
-    content.classList.add('active');
-    icon.style.transform = 'rotate(180deg)';
-  }
+// Função para voltar ao topo da página
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
 }
 
-// Função para alternar diagnóstico/recomendações (sub-acordeões)
-function toggleDiagnosticoRecomendacao(element, targetId) {
-  event.stopPropagation();
-  const target = document.getElementById(targetId);
-  const icon = element.querySelector('i');
-  
-  if (target.classList.contains('active')) {
-    target.classList.remove('active');
-    icon.style.transform = 'rotate(0deg)';
-  } else {
-    target.classList.add('active');
-    icon.style.transform = 'rotate(180deg)';
-  }
-}
-
-// Opcional: Expandir automaticamente a primeira atividade
+// Adicionar evento de clique ao botão
 document.addEventListener('DOMContentLoaded', function() {
-  const primeiraAtividade = document.querySelector('.atividade-accordion-item');
-  if (primeiraAtividade) {
-    const primeiroHeader = primeiraAtividade.querySelector('.atividade-accordion-header');
-    const primeiroContent = primeiraAtividade.querySelector('.atividade-accordion-content');
-    const primeiroIcon = primeiroHeader.querySelector('i');
-    
-    primeiroContent.classList.add('active');
-    primeiroIcon.style.transform = 'rotate(180deg)';
+  const voltarTopoBtn = document.getElementById('voltarTopoBtn');
+  if (voltarTopoBtn) {
+    voltarTopoBtn.addEventListener('click', scrollToTop);
+  }
+  
+  // Mostrar/ocultar botão baseado na posição de rolagem
+  window.addEventListener('scroll', function() {
+    const btn = document.getElementById('voltarTopoBtn');
+    if (btn) {
+      if (window.scrollY > 300) {
+        btn.style.opacity = '1';
+        btn.style.visibility = 'visible';
+      } else {
+        btn.style.opacity = '0';
+        btn.style.visibility = 'hidden';
+      }
+    }
+  });
+  
+  // Configurar estilo inicial do botão
+  const inicialBtn = document.getElementById('voltarTopoBtn');
+  if (inicialBtn) {
+    inicialBtn.style.transition = 'opacity 0.3s, visibility 0.3s, transform 0.3s';
+    inicialBtn.style.opacity = '0';
+    inicialBtn.style.visibility = 'hidden';
   }
 });
 </script>
@@ -168009,7 +168010,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   
       <div style="background: var(--gray-100); padding:20px; border-radius:8px;">
-        <h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Análise Técnica das Atividades Críticas do Projeto Usina Fotovoltaica Serra do Salitre</h3><br><br>#<h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Atividade 1.01.02 - Contratação dos Seguros - Contratuais</h3><br><br><strong>A. Diagnóstico da Situação Atual</strong><br><br>1. <strong>Análise Física (Andamento do Trabalho)</strong><br>   - % Planejada: 33.0%<br>   - % Realmente Concluída: 25.0%<br>   - Gap: 8.0 pontos percentuais<br>   - Margem de Atraso Disponível: 200 dias<br>   - Causas prováveis para o atraso/no início: Produtividade abaixo do esperado.<br><br>2. <strong>Análise Financeira (Valores a Receber)</strong><br>   - Valor Planejado a Receber: R$ 0,00<br>   - Valor Realmente Recebido: R$ 0,00<br>   - Saldo: R$ 0,00<br><br>3. <strong>Análise de Impacto em Cadeia</strong><br>   - Número de sucessoras diretas: 0<br>   - Impacto: Baixo<br><br><strong>B. Recomendações de Ação</strong><br><br>1. <strong>Ações Imediatas</strong>: Acionar Plano de Recuperação para retomar a produtividade.<br>2. <strong>Comunicações Necessárias</strong>: Informar ao setor de Gestão sobre a necessidade de acelerar a contratação.<br>3. <strong>Prazos Sugeridos</strong>: 15 dias para retomar o cronograma planejado.<br><br>#<h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Atividade 1.01.03 - Administração Mensal</h3><br><br><strong>A. Diagnóstico da Situação Atual</strong><br><br>1. <strong>Análise Física (Andamento do Trabalho)</strong><br>   - % Planejada: 33.0%<br>   - % Realmente Concluída: 0.0%<br>   - Gap: 33.0 pontos percentuais<br>   - Margem de Atraso Disponível: 200 dias<br>   - Causas prováveis para o atraso/no início: Ainda não iniciada.<br><br>2. <strong>Análise Financeira (Valores a Receber)</strong><br>   - Valor Planejado a Receber: R$ 244,204.33<br>   - Valor Realmente Recebido: R$ 0,00<br>   - Saldo: -R$ 244,204.33<br><br>3. <strong>Análise de Impacto em Cadeia</strong><br>   - Número de sucessoras diretas: 2<br>   - Impacto: Crítico<br><br><strong>B. Recomendações de Ação</strong><br><br>1. <strong>Ações Imediatas</strong>: Iniciar imediatamente a administração mensal.<br>2. <strong>Comunicações Necessárias</strong>: Informar ao setor de Gestão sobre a urgência de iniciar a atividade.<br>3. <strong>Prazos Sugeridos</strong>: 10 dias para iniciar e 30 dias para concluir.<br><br>#<h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Atividade 2.01.01 - Planialtimétrico do Terreno e Georreferenciamento</h3><br><br><strong>A. Diagnóstico da Situação Atual</strong><br><br>1. <strong>Análise Física (Andamento do Trabalho)</strong><br>   - % Planejada: 100%<br>   - % Realmente Concluída: 0.0%<br>   - Gap: 100.0 pontos percentuais<br>   - Margem de Atraso Disponível: 6 dias<br>   - Causas prováveis para o atraso/no início: Ainda não iniciada.<br><br>2. <strong>Análise Financeira (Valores a Receber)</strong><br>   - Valor Planejado a Receber: R$ 0,00<br>   - Valor Realmente Recebido: R$ 0,00<br>   - Saldo: R$ 0,00<br><br>3. <strong>Análise de Impacto em Cadeia</strong><br>   - Número de sucessoras diretas: 0<br>   - Impacto: Baixo<br><br><strong>B. Recomendações de Ação</strong><br><br>1. <strong>Ações Imediatas</strong>: Iniciar o planialtimétrico do terreno e georreferenciamento.<br>2. <strong>Comunicações Necessárias</strong>: Informar ao setor de Estudo sobre a necessidade de iniciar a atividade.<br>3. <strong>Prazos Sugeridos</strong>: 5 dias para iniciar e 20 dias para concluir.<br><br>#<h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Atividade 2.02.01 - LAYOUT - Usina</h3><br><br><strong>A. Diagnóstico da Situação Atual</strong><br><br>1. <strong>Análise Física (Andamento do Trabalho)</strong><br>   - % Planejada: 100%<br>   - % Realmente Concluída: 0.0%<br>   - Gap: 100.0 pontos percentuais<br>   - Margem de Atraso Disponível: 0 dias<br>   - Causas prováveis para o atraso/no início: Ainda não iniciada.<br><br>2. <strong>Análise Financeira (Valores a Receber)</strong><br>   - Valor Planejado a Receber: R$ 0,00<br>   - Valor Realmente Recebido: R$ 0,00<br>   - Saldo: R$ 0,00<br><br>3. <strong>Análise de Impacto em Cadeia</strong><br>   - Número de sucessoras diretas: 1<br>   - Impacto: Crítico<br><br><strong>B. Recomendações de Ação</strong><br><br>1. <strong>Ações Imediatas</strong>: Iniciar o layout da usina.<br>2. <strong>Comunicações Necessárias</strong>: Informar ao setor de Proj. Básico sobre a urgência de iniciar a atividade.<br>3. <strong>Prazos Sugeridos</strong>: 3 dias para iniciar e 15 dias para concluir.<br><br>#<h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Atividade 3.01.01 - Inversores</h3><br><br><strong>A. Diagnóstico da Situação Atual</strong><br><br>1. <strong>Análise Física (Andamento do Trabalho)</strong><br>   - % Planejada: 100%<br>   - % Realmente Concluída: 0.0%<br>   - Gap: 100.0 pontos percentuais<br>   - Margem de Atraso Disponível: 98 dias<br>   - Causas prováveis para o atraso/no início: Ainda não iniciada.<br><br>2. <strong>Análise Financeira (Valores a Receber)</strong><br>   - Valor Planejado a Receber: R$ 0,00<br>   - Valor Realmente Recebido: R$ 0,00<br>   - Saldo: R$ 0,00<br><br>3. <strong>Análise de Impacto em Cadeia</strong><br>   - Número de sucessoras diretas: 2<br>   - Impacto: Crítico<br><br><strong>B. Recomendações de Ação</strong><br><br>1. <strong>Ações Imediatas</strong>: Iniciar a aquisição de inversores.<br>2. <strong>Comunicações Necessárias</strong>: Informar ao setor de Logística sobre a necessidade de iniciar a atividade.<br>3. <strong>Prazos Sugeridos</strong>: 10 dias para iniciar e 40 dias para concluir.<br><br><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Conclusão</h3><br><br>As atividades críticas analisadas apresentam gaps significativos entre o planejado e o realizado, impactando o cronograma e o orçamento do projeto. A implementação imediata das recomendações de ação é crucial para mitigar esses atrasos e garantir o cumprimento dos prazos e valores financeiros previstos. A comunicação efetiva entre os setores envolvidos é fundamental para o sucesso dessas ações.<br><br><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Recomendações Gerais</h3><br><br>- <strong>Monitoramento Contínuo</strong>: Manter um monitoramento rigoroso das atividades críticas.<br>- <strong>Ação Imediata</strong>: Tomar ações imediatas para atividades com margem de atraso zero ou baixa.<br>- <strong>Comunicação</strong>: Estabelecer comunicação clara e frequente entre os setores envolvidos.<br><br>Implementando essas medidas, é possível minimizar os impactos dos atrasos e assegurar o progresso do projeto dentro dos parâmetros financeiros e cronológicos estabelecidos.
+        <h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Análise Técnica das Atividades Críticas do Projeto Usina Fotovoltaica Serra do Salitre</h3><br><br>#<h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Atividade 1.01.02 - Contratação dos Seguros - Contratuais</h3><br><br><strong><div style="background: rgba(var(--danger), 0.05); padding:10px 15px; border-left:4px solid var(--danger); margin:15px 0; border-radius:4px;"><strong style="color: var(--danger);">A. Diagnóstico da Situação Atual</strong></div></strong><br><br>1. <strong>Análise Física (Andamento do Trabalho)</strong><br>   - % Planejada: 33.0%<br>   - % Realmente Concluída: 25.0%<br>   - Gap: 8.0 pontos percentuais<br>   - Margem de Atraso Disponível: 200 dias<br>   - Causas prováveis para o atraso/no início: Produtividade abaixo do esperado.<br><br>2. <strong>Análise Financeira (Valores a Receber)</strong><br>   - Valor Planejado a Receber: R$ 0,00<br>   - Valor Realmente Recebido: R$ 0,00<br>   - Saldo: R$ 0,00<br><br>3. <strong>Análise de Impacto em Cadeia</strong><br>   - Número de sucessoras diretas: 0<br>   - Impacto: Baixo<br><br><strong><div style="background: rgba(var(--success), 0.05); padding:10px 15px; border-left:4px solid var(--success); margin:15px 0; border-radius:4px;"><strong style="color: var(--success);">B. Recomendações de Ação</strong></div></strong><br><br>1. <strong>Ações Imediatas</strong>: Acionar Plano de Recuperação para retomar a produtividade.<br>2. <strong>Comunicações Necessárias</strong>: Informar ao setor de Gestão sobre a necessidade de acelerar a contratação.<br>3. <strong>Prazos Sugeridos</strong>: 15 dias para retomar o cronograma planejado.<br><br>#<h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Atividade 1.01.03 - Administração Mensal</h3><br><br><strong><div style="background: rgba(var(--danger), 0.05); padding:10px 15px; border-left:4px solid var(--danger); margin:15px 0; border-radius:4px;"><strong style="color: var(--danger);">A. Diagnóstico da Situação Atual</strong></div></strong><br><br>1. <strong>Análise Física (Andamento do Trabalho)</strong><br>   - % Planejada: 33.0%<br>   - % Realmente Concluída: 0.0%<br>   - Gap: 33.0 pontos percentuais<br>   - Margem de Atraso Disponível: 200 dias<br>   - Causas prováveis para o atraso/no início: Ainda não iniciada.<br><br>2. <strong>Análise Financeira (Valores a Receber)</strong><br>   - Valor Planejado a Receber: R$ 244,204.33<br>   - Valor Realmente Recebido: R$ 0,00<br>   - Saldo: -R$ 244,204.33<br><br>3. <strong>Análise de Impacto em Cadeia</strong><br>   - Número de sucessoras diretas: 2<br>   - Impacto: Crítico<br><br><strong><div style="background: rgba(var(--success), 0.05); padding:10px 15px; border-left:4px solid var(--success); margin:15px 0; border-radius:4px;"><strong style="color: var(--success);">B. Recomendações de Ação</strong></div></strong><br><br>1. <strong>Ações Imediatas</strong>: Iniciar imediatamente a administração mensal.<br>2. <strong>Comunicações Necessárias</strong>: Informar ao setor de Gestão sobre a urgência de iniciar a atividade.<br>3. <strong>Prazos Sugeridos</strong>: 10 dias para iniciar e 30 dias para concluir.<br><br>#<h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Atividade 2.01.01 - Planialtimétrico do Terreno e Georreferenciamento</h3><br><br><strong><div style="background: rgba(var(--danger), 0.05); padding:10px 15px; border-left:4px solid var(--danger); margin:15px 0; border-radius:4px;"><strong style="color: var(--danger);">A. Diagnóstico da Situação Atual</strong></div></strong><br><br>1. <strong>Análise Física (Andamento do Trabalho)</strong><br>   - % Planejada: 100%<br>   - % Realmente Concluída: 0.0%<br>   - Gap: 100.0 pontos percentuais<br>   - Margem de Atraso Disponível: 6 dias<br>   - Causas prováveis para o atraso/no início: Ainda não iniciada.<br><br>2. <strong>Análise Financeira (Valores a Receber)</strong><br>   - Valor Planejado a Receber: R$ 0,00<br>   - Valor Realmente Recebido: R$ 0,00<br>   - Saldo: R$ 0,00<br><br>3. <strong>Análise de Impacto em Cadeia</strong><br>   - Número de sucessoras diretas: 0<br>   - Impacto: Baixo<br><br><strong><div style="background: rgba(var(--success), 0.05); padding:10px 15px; border-left:4px solid var(--success); margin:15px 0; border-radius:4px;"><strong style="color: var(--success);">B. Recomendações de Ação</strong></div></strong><br><br>1. <strong>Ações Imediatas</strong>: Iniciar o planialtimétrico do terreno e georreferenciamento.<br>2. <strong>Comunicações Necessárias</strong>: Informar ao setor de Estudo sobre a necessidade de iniciar a atividade.<br>3. <strong>Prazos Sugeridos</strong>: 5 dias para iniciar e 20 dias para concluir.<br><br><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Conclusão</h3><br><br>As atividades críticas analisadas apresentam gaps significativos entre o planejado e o realizado, impactando o cronograma e o orçamento do projeto. A implementação imediata das recomendações de ação é crucial para mitigar esses atrasos e garantir o cumprimento dos prazos e valores financeiros previstos. A comunicação efetiva entre os setores envolvidos é fundamental para o sucesso dessas ações.<br><br><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Recomendações Gerais</h3><br><br>- <strong>Monitoramento Contínuo</strong>: Manter um monitoramento rigoroso das atividades críticas.<br>- <strong>Ação Imediata</strong>: Tomar ações imediatas para atividades com margem de atraso zero ou baixa.<br>- <strong>Comunicação</strong>: Estabelecer comunicação clara e frequente entre os setores envolvidos.<br><br>Implementando essas medidas, é possível minimizar os impactos dos atrasos e assegurar o progresso do projeto dentro dos parâmetros financeiros e cronológicos estabelecidos.
       </div>
       <div style="margin-top:20px; padding-top:20px; border-top:1px solid var(--gray-200); text-align:center; color: var(--gray-500);">
         <i class="fas fa-info-circle"></i> Análise gerada por IA
@@ -168029,7 +168030,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   <strong>Relatório Diário de Obra - UFV CEMIG</strong>
               </p>
               <p>
-                  Gerado automaticamente em 03/02/2026 às 11:55 | 
+                  Gerado automaticamente em 03/02/2026 às 12:02 | 
                   Atividades monitoradas: 406 | 
                   Progresso financeiro: 0.0%
               </p>
