@@ -1305,7 +1305,7 @@
               <h1>Relatório Diário de Obra - UFV SERRA DO SALITRE</h1>
               <div class="header-subtitle">
                   <i class="fas fa-calendar-alt"></i>
-                  Relatório atualizado em: 03/02/2026 às 10:40
+                  Relatório atualizado em: 03/02/2026 às 10:55
               </div>
           </header>
 
@@ -167958,7 +167958,7 @@
                   <strong>Relatório Diário de Obra - UFV CEMIG</strong>
               </p>
               <p>
-                  Gerado automaticamente em 03/02/2026 às 10:40 | 
+                  Gerado automaticamente em 03/02/2026 às 10:55 | 
                   Atividades monitoradas: 406 | 
                   Progresso financeiro: 0.0%
               </p>
@@ -168318,6 +168318,11 @@
                   },
                   plugins: [{
                       id: 'pieValues',
+                      beforeDraw: function(chart) {
+                          // Limpar qualquer texto anterior
+                          const ctx = chart.ctx;
+                          ctx.save();
+                      },
                       afterDraw: function(chart) {
                           const ctx = chart.ctx;
                           ctx.textAlign = 'center';
@@ -168331,8 +168336,8 @@
                               const meta = chart.getDatasetMeta(i);
                               meta.data.forEach((slice, index) => {
                                   const value = dataset.data[index];
-                                  // Verificar se a fatia está oculta - CORREÇÃO APLICADA AQUI
-                                  const isHidden = meta.data[index].hidden || false;
+                                  // VERIFICAR CORRETAMENTE se a fatia está oculta
+                                  const isHidden = meta.data[index].hidden;
 
                                   // SÓ desenha o número se o valor for maior que 0 e a fatia NÃO estiver oculta
                                   if (value > 0 && !isHidden) {
@@ -168346,17 +168351,36 @@
                                       const x = slice.x + Math.cos(angle) * radius;
                                       const y = slice.y + Math.sin(angle) * radius;
 
+                                      // Desenhar o número principal
                                       ctx.fillText(`${value}`, x, y);
 
+                                      // Desenhar a porcentagem abaixo
                                       ctx.font = 'bold 11px Inter';
                                       ctx.fillText(`(${percentage}%)`, x, y + 16);
                                       ctx.font = 'bold 14px Inter';
                                   }
                               });
                           });
+
+                          ctx.restore();
                       }
                   }]
               });
+
+              // Criar um evento para atualizar o gráfico quando a legenda for clicada
+              if (fisicoChart.legend) {
+                  const originalHandleEvent = fisicoChart.legend.handleEvent.bind(fisicoChart.legend);
+                  fisicoChart.legend.handleEvent = function(e) {
+                      const result = originalHandleEvent(e);
+                      // Se o evento foi tratado (clique na legenda), forçar atualização
+                      if (result) {
+                          setTimeout(() => {
+                              fisicoChart.update();
+                          }, 10);
+                      }
+                      return result;
+                  };
+              }
 
               // Gráfico Financeiro
               const ctxFinanceiro = document.getElementById('financeiroChart').getContext('2d');
