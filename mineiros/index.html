@@ -359,6 +359,12 @@
               min-width: 90px;
           }
 
+          /* CÓDIGO DA ATIVIDADE EM MODO ESCURO - BRANCO */
+          .dark-mode .accordion-codigo {
+              color: #ffffff !important;
+              font-weight: 900;
+          }
+
           .accordion-titulo {
               font-size: 1rem;
               font-weight: 600;
@@ -988,10 +994,21 @@
               display: inline-block;
           }
 
+          .dark-mode .dep-codigo-link {
+              color: #ffffff !important;
+              background: rgba(59, 130, 246, 0.3);
+              font-weight: 800;
+          }
+
           .dep-codigo-link:hover {
               color: var(--execucao);
               background: rgba(29, 78, 216, 0.2);
               text-decoration: none;
+          }
+
+          .dark-mode .dep-codigo-link:hover {
+              color: #e2e8f0 !important;
+              background: rgba(59, 130, 246, 0.5);
           }
 
           .dep-nome {
@@ -1288,7 +1305,7 @@
               <h1>Relatório Diário de Obra - UFV SERRA DO SALITRE</h1>
               <div class="header-subtitle">
                   <i class="fas fa-calendar-alt"></i>
-                  Relatório atualizado em: 03/02/2026 às 08:57
+                  Relatório atualizado em: 03/02/2026 às 09:24
               </div>
           </header>
 
@@ -167941,7 +167958,7 @@
                   <strong>Relatório Diário de Obra - UFV CEMIG</strong>
               </p>
               <p>
-                  Gerado automaticamente em 03/02/2026 às 08:57 | 
+                  Gerado automaticamente em 03/02/2026 às 09:24 | 
                   Atividades monitoradas: 406 | 
                   Progresso financeiro: 0.0%
               </p>
@@ -167959,6 +167976,15 @@
                   borderColor: '#ffffff'
               }]
           };
+
+          // CORES DO GRÁFICO FÍSICO PARA MODO ESCURO (mais fortes/vibrantes)
+          const graficoFisicoDarkColors = [
+              "#10b981", // Concluídas - Verde mais forte
+              "#ef4444", // Atrasadas - Vermelho mais forte
+              "#38bdf8", // Em execução - Azul mais forte
+              "#f59e0b", // Previstas - Laranja mais forte
+              "#94a3b8"  // Planejadas - Cinza
+          ];
 
           const graficoFinanceiroData = {
               labels: ["Planejado", "Executado", "Restante", "Saldo"],
@@ -168037,8 +168063,9 @@
               icon.classList.add('fa-sun');
               text.textContent = 'Modo Claro';
 
-              // Atualizar cores dos gráficos se já existirem
+              // Atualizar cores dos gráficos para o modo escuro
               if (fisicoChart) {
+                  fisicoChart.data.datasets[0].backgroundColor = graficoFisicoDarkColors;
                   fisicoChart.options.plugins.legend.labels.color = '#f8fafc';
                   fisicoChart.update();
               }
@@ -168063,8 +168090,9 @@
               icon.classList.add('fa-moon');
               text.textContent = 'Modo Escuro';
 
-              // Atualizar cores dos gráficos se já existirem
+              // Atualizar cores dos gráficos para o modo claro
               if (fisicoChart) {
+                  fisicoChart.data.datasets[0].backgroundColor = ["#10b981", "#ef4444", "#38bdf8", "#f59e0b", "#94a3b8"];
                   fisicoChart.options.plugins.legend.labels.color = '#1e293b';
                   fisicoChart.update();
               }
@@ -168244,7 +168272,9 @@
                                           const percentage = total > 0 ? Math.round((value / total) * 100) : 0;
                                           return {
                                               text: `${label}: ${value} (${percentage}%)`,
-                                              fillStyle: data.datasets[0].backgroundColor[i],
+                                              fillStyle: document.body.classList.contains('dark-mode') 
+                                                  ? graficoFisicoDarkColors[i]
+                                                  : data.datasets[0].backgroundColor[i],
                                               strokeStyle: '#ffffff',
                                               lineWidth: 2,
                                               hidden: false,
