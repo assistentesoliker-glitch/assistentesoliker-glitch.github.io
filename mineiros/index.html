@@ -1288,7 +1288,7 @@
               <h1>Relatório Diário de Obra - UFV SERRA DO SALITRE</h1>
               <div class="header-subtitle">
                   <i class="fas fa-calendar-alt"></i>
-                  Relatório atualizado em: 04/02/2026 às 07:55
+                  Relatório atualizado em: 04/02/2026 às 08:00
               </div>
           </header>
 
@@ -167930,76 +167930,48 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
 li {
   margin-bottom: 8px;
   padding-left: 10px;
 }
+
 h3, h4 {
   font-weight: 600;
 }
+
 strong {
   color: var(--dark);
 }
-/* Ajustes para modo escuro */
-.dark-mode .atividade-item {
-  background: var(--gray-100) !important;
+
+/* Estilo para o link de voltar ao topo */
+a[href="#"] {
+  text-decoration: none !important;
 }
-.dark-mode h3, .dark-mode h4, .dark-mode strong {
-  color: var(--dark);
-}
-/* Estilo para o botão de voltar ao topo */
-#voltarTopoBtn:hover {
+
+a[href="#"]:hover {
   background: var(--primary-dark) !important;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-.dark-mode #voltarTopoBtn {
-  background: var(--primary);
+
+/* Ajustes para modo escuro */
+.dark-mode .atividade-item {
+  background: var(--gray-100) !important;
 }
-.dark-mode #voltarTopoBtn:hover {
+
+.dark-mode h3, .dark-mode h4, .dark-mode strong {
+  color: var(--dark) !important;
+}
+
+.dark-mode a[href="#"] {
+  background: var(--primary) !important;
+}
+
+.dark-mode a[href="#"]:hover {
   background: var(--primary-light) !important;
 }
 </style>
-
-<script>
-// Função para voltar ao topo da página
-function scrollToTop() {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-}
-
-// Adicionar evento de clique ao botão
-document.addEventListener('DOMContentLoaded', function() {
-  const voltarTopoBtn = document.getElementById('voltarTopoBtn');
-  if (voltarTopoBtn) {
-    voltarTopoBtn.addEventListener('click', scrollToTop);
-  }
-  
-  // Mostrar/ocultar botão baseado na posição de rolagem
-  window.addEventListener('scroll', function() {
-    const btn = document.getElementById('voltarTopoBtn');
-    if (btn) {
-      if (window.scrollY > 300) {
-        btn.style.opacity = '1';
-        btn.style.visibility = 'visible';
-      } else {
-        btn.style.opacity = '0';
-        btn.style.visibility = 'hidden';
-      }
-    }
-  });
-  
-  // Configurar estilo inicial do botão
-  const inicialBtn = document.getElementById('voltarTopoBtn');
-  if (inicialBtn) {
-    inicialBtn.style.transition = 'opacity 0.3s, visibility 0.3s, transform 0.3s';
-    inicialBtn.style.opacity = '0';
-    inicialBtn.style.visibility = 'hidden';
-  }
-});
-</script>
 
     <div style="font-family: 'Inter', sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; background: var(--gray-50); color: var(--dark);">
       
@@ -168030,7 +168002,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   <strong>Relatório Diário de Obra - UFV CEMIG</strong>
               </p>
               <p>
-                  Gerado automaticamente em 04/02/2026 às 07:55 | 
+                  Gerado automaticamente em 04/02/2026 às 08:00 | 
                   Atividades monitoradas: 406 | 
                   Progresso financeiro: 0.0%
               </p>
