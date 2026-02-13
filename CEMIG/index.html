@@ -1288,7 +1288,7 @@
               <h1>Relatório Diário de Obra - UFV SERRA DO SALITRE</h1>
               <div class="header-subtitle">
                   <i class="fas fa-calendar-alt"></i>
-                  Relatório atualizado em: 13/02/2026 às 13:35
+                  Relatório atualizado em: 13/02/2026 às 13:41
               </div>
           </header>
 
@@ -108706,7 +108706,331 @@
                           Análise de IA - Recomendações e Insights
                       </div>
                       <div class="ia-content" style="background: var(--gray-100); padding: 20px; border-radius: 8px; border: 1px solid var(--gray-200);">
-                          <p style="padding:40px; text-align:center; color:#6b7280;">Análise de IA não disponível no momento.</p>
+                          
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --primary-light: #60a5fa;
+  --success: #10b981;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --dark: #1f2937;
+}
+
+.dark-mode {
+  --primary: #3b82f6;
+  --primary-dark: #2563eb;
+  --primary-light: #60a5fa;
+  --success: #10b981;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --gray-50: #111827;
+  --gray-100: #1f2937;
+  --gray-200: #374151;
+  --gray-300: #4b5563;
+  --gray-400: #6b7280;
+  --gray-500: #9ca3af;
+  --gray-600: #d1d5db;
+  --gray-700: #e5e7eb;
+  --gray-800: #f3f4f6;
+  --gray-900: #f9fafb;
+  --dark: #f9fafb;
+}
+
+.analise-container {
+  font-family: 'Inter', sans-serif;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background: var(--gray-50);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+.analise-header {
+  background: var(--gray-100);
+  padding: 20px 24px;
+  border-radius: 12px 12px 0 0;
+  border-bottom: 3px solid var(--primary);
+  margin-bottom: 24px;
+}
+
+.analise-header h2 {
+  margin: 0 0 8px 0;
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.analise-meta {
+  display: flex;
+  gap: 16px;
+  color: var(--gray-600);
+  font-size: 0.9rem;
+}
+
+.analise-meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.atividade-item {
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  border-radius: 10px;
+  margin-bottom: 24px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.atividade-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+.atividade-cabecalho {
+  border-left: 5px solid var(--primary);
+  padding: 18px 24px;
+  background: var(--gray-50);
+}
+
+.atividade-titulo {
+  font-weight: 600;
+  color: var(--dark);
+  font-size: 1.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.atividade-numero {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.atividade-conteudo {
+  padding: 24px;
+  color: var(--gray-700);
+}
+
+.atividade-conteudo h3 {
+  color: var(--primary);
+  margin-top: 20px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.atividade-conteudo h4 {
+  color: var(--gray-700);
+  margin-top: 16px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.atividade-conteudo p {
+  margin-bottom: 12px;
+}
+
+.atividade-conteudo ul,
+.atividade-conteudo ol {
+  margin: 12px 0;
+  padding-left: 24px;
+}
+
+.atividade-conteudo li {
+  margin-bottom: 8px;
+  padding-left: 8px;
+}
+
+.secao-especial {
+  border-radius: 10px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.secao-especial.resumo-executivo {
+  background: rgba(var(--warning-rgb), 0.05);
+  border: 1px solid var(--warning);
+}
+
+.secao-especial.conclusao {
+  background: rgba(var(--primary-rgb), 0.05);
+  border: 1px solid var(--primary);
+}
+
+.secao-cabecalho {
+  border-left: 5px solid;
+  padding: 18px 24px;
+  background: var(--gray-50);
+  font-weight: 600;
+  color: var(--dark);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.resumo-executivo .secao-cabecalho {
+  border-left-color: var(--warning);
+}
+
+.conclusao .secao-cabecalho {
+  border-left-color: var(--primary);
+}
+
+.secao-conteudo {
+  padding: 24px;
+}
+
+.recomendacao-badge {
+  color: var(--success);
+  font-weight: 700;
+  background: rgba(var(--success-rgb), 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 4px 0;
+}
+
+.diagnostico-box {
+  background: rgba(var(--danger-rgb), 0.05);
+  padding: 16px 20px;
+  border-left: 4px solid var(--danger);
+  margin: 16px 0;
+  border-radius: 6px;
+  font-weight: 600;
+  color: var(--danger);
+}
+
+.recomendacoes-box {
+  background: rgba(var(--success-rgb), 0.05);
+  padding: 16px 20px;
+  border-left: 4px solid var(--success);
+  margin: 16px 0;
+  border-radius: 6px;
+  font-weight: 600;
+  color: var(--success);
+}
+
+.alerta-critico {
+  color: var(--danger);
+  font-weight: 700;
+  background: rgba(var(--danger-rgb), 0.1);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.voltar-topo-container {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.voltar-topo-btn {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.voltar-topo-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.analise-footer {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--gray-200);
+  text-align: center;
+  color: var(--gray-500);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.analise-conteudo-completo {
+  background: var(--gray-100);
+  padding: 24px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Estilos para modo escuro automático */
+@media (prefers-color-scheme: dark) {
+  .analise-container:not(.light-mode) {
+    --gray-50: #111827;
+    --gray-100: #1f2937;
+    --gray-200: #374151;
+    --gray-300: #4b5563;
+    --gray-400: #6b7280;
+    --gray-500: #9ca3af;
+    --gray-600: #d1d5db;
+    --gray-700: #e5e7eb;
+    --gray-800: #f3f4f6;
+    --gray-900: #f9fafb;
+    --dark: #f9fafb;
+  }
+}
+
+/* Ajustes para impressão */
+@media print {
+  .voltar-topo-container {
+    display: none;
+  }
+  
+  .atividade-item {
+    break-inside: avoid;
+    border: 1px solid #ddd;
+  }
+}
+</style>
+
+    <div class="analise-container">
+      
+    <div class="analise-header">
+      <h2>
+        <i class="fas fa-robot"></i> Análise de IA - Atividades Críticas
+      </h2>
+      <div class="analise-meta">
+        <span><i class="fas fa-clock"></i> 2/13/2026, 4:41:11 PM</span>
+        
+      </div>
+    </div>
+  
+      <div class="analise-conteudo-completo">
+        Segue o parecer técnico estruturado sobre as 12 atividades críticas do Projeto Usina Fotovoltaica Serra do Salitre, com foco no diagnóstico da situação atual, análise e recomendações específicas, conforme solicitado.</p><p>---</p><p>## Análise Técnica das Atividades Críticas Atrasadas no Projeto</p><p><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Atividade 1 – 2.03.09 - Aterramento  </h3><br><strong><div class="diagnostico-box">A. Diagnóstico da Situação Atual</div></strong></p><p>1. <strong>Análise Física</strong>  <br><ul><br><li>% Planejada: 57,0%</li><br><li>% Realizada: 0,0%</li><br><li>Gap: 57 pontos percentuais</li><br><li>Margem de atraso: 9 dias (pequena, atenção necessária)  </p><p><strong>Possíveis causas do atraso:</strong> Falta de mobilização da equipe, pendência de materiais ou recursos específicos, ou atraso no planejamento detalhado do setor.</p><p>2. <strong>Análise Financeira</strong></li><br><li>Valor Planejado a receber: R$ 3.390,05</li><br><li>Valor recebido: R$ 0,00</li><br><li>Saldo: -R$ 3.390,05 (negativo, preocupante)</li><br><li>Impacto no fluxo de caixa: 0,14% do total do projeto - baixo impacto isolado, porém preocupante pela ausência total de recebimento.</p><p>3. <strong>Impacto em Cadeia</strong></li><br><li>Sucessoras diretas: 1 (atividade 10.01)</li><br><li>Como há margem de atraso, há alguma folga para sucessoras não serem imediatamente impactadas.</p><p><strong><div class="recomendacoes-box">B. Recomendações de Ação</div></strong></p><p>1. <strong>Ações Imediatas:</strong> Mobilizar recursos imediatos; revisar planejamento detalhado; confirmar disponibilidade ou aquisição de materiais necessários.</li><br><li><strong>Comunicações Necessárias:</strong> Gerente do setor Elétrico; Planejamento e Controle; Suprimentos/Logística.</li><br><li><strong>Prazos para Resolução:</strong> Recuperar andamento dentro de 5 dias para evitar impacto na margem disponível.</p><p>---</p><p><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Atividade 2 – 2.03.10 - SPDA  </h3></li><br></ul><br><strong>A. Diagnóstico</strong></p><p>1. <strong>Análise Física</strong>  <br><ul><br><li>% Planejada: 33,0%</li><br><li>% Realizada: 0,0%</li><br><li>Gap: 33 pontos</li><br><li>Margem atraso: 9 dias (pequena)  </p><p>Provável falta de início por questões similares à atividade 1: recursos, alinhamento ou planejamento.</p><p>2. <strong>Financeira</strong></li><br><li>Planejado: R$ 1.695,02</li><br><li>Recebido: R$ 0,00</li><br><li>Saldo: -R$ 1.695,02 (negativo)</li><br><li>Impacto no fluxo: 0,07% do projeto (baixo impacto isolado)</p><p>3. <strong>Impacto em Cadeia</strong></li><br><li>1 sucessora direta: atividade 10.01</li><br><li>Margem disponível oferece alguma folga.</p><p><strong>B. Recomendações</strong></p><p>1. Mobilizar equipe, confirmar recursos e iniciar imediatamente.</li><br><li>Comunicar gerência elétrica, planejamento e suprimentos.</li><br><li>Resolver em 5 dias.</p><p>---</p><p><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Atividade 3 – 2.04.01 - Terraplanagem (Margem ZERO)  </h3></li><br></ul><br><strong>A. Diagnóstico</strong></p><p>1. <strong>Análise Física</strong>  <br><ul><br><li>Planejado: 100%</li><br><li>Realizado: 0%</li><br><li>Gap: 100 pontos</li><br><li>Margem: 0 dias → Atividade crítica imediata</p><p>Prováveis causas: falha grave de mobilização, bloqueios burocráticos, falta de equipamentos.</p><p>2. <strong>Financeira</strong></li><br><li>Planejado: R$ 7.062,60</li><br><li>Recebido: R$ 0,00</li><br><li>Saldo: -R$ 7.062,60 (preocupante)</li><br><li>Impacto financeiro: 0,29% projeto isolado</p><p>3. <strong>Impacto em Cadeia</strong></li><br><li>Sucessora(s): 1 (atividade 10.01)</li><br><li>Margem zero indica sucessoras já sob risco imediato.</p><p><strong>B. Recomendações</strong></p><p>1. Implantação urgente do Plano de Recuperação da atividade (mobilizar equipes externas, equipamentos, recursos financeiros).</li><br><li>Comunicação imediata à Diretoria de Projeto Civil, Planejamento e Contratos.</li><br><li>Prazo para início imediato e conclusão parcial em <5 dias para mitigar impactos.</p><p>---</p><p><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Atividade 4 – 2.05.01 - Emissão da Licença - Ambientais  </h3></li><br></ul><br><strong>A. Diagnóstico</strong></p><p>1. Física  <br><ul><br><li>Planejado: 4%</li><br><li>Realizado: 0%</li><br><li>Gap: 4 pontos</li><br><li>Margem: 84 dias → Flexível, baixa criticidade imediata.</p><p>Provável atraso burocrático normal.</p><p>2. Financeira</li><br><li>Planejado: R$ 2.966,29</li><br><li>Recebido: R$ 0,00</li><br><li>Saldo: -R$ 2.966,29 (preocupante, mas baixo valor)</li><br><li>Impacto no fluxo: 0,12% projeto</p><p>3. Impacto em cadeia</li><br><li>Sem sucessoras, sem impacto direto em cronograma.</p><p><strong>B. Recomendações</strong></p><p>1. Monitorar e manter contato com órgãos ambientais, resolver burocracia.</li><br><li>Comunicação entre equipe jurídica, ambiental e gerência do projeto.</li><br><li>Prazo para resolução: até 15 dias, dada margem folgada.</p><p>---</p><p><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Atividade 5 – 3.01.01 - Inversores  </h3></li><br></ul><br><strong>A. Diagnóstico</strong></p><p>1. Física  <br><ul><br><li>Planejado: 54%</li><br><li>Realizado: 0%</li><br><li>Gap: 54 pontos</li><br><li>Margem: 65,32 dias → Flexível, mas importante agilizar.</p><p>Causas: atraso na aquisição/entrega; ausência de planejamento logístico.</p><p>2. Financeira</li><br><li>Planejado: R$ 9.750,44</li><br><li>Recebido: R$ 0,00</li><br><li>Saldo: -R$ 9.750,44</li><br><li>Impacto financeiro: 0,4%</p><p>3. Impacto em Cadeia</li><br><li>2 sucessoras; com margem confortável.</p><p><strong>B. Recomendações</strong></p><p>1. Rever logística e fornecedores imediatamente.</li><br><li>Comunicação: logística, suprimentos e planejamento.</li><br><li>Prazo: recuperação em até 10 dias.</p><p>---</p><p><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Atividade 6 – 3.01.02 - Estação Solarimétrica  </h3></li><br></ul><br><strong>A. Diagnóstico</strong></p><p>1. Física  <br><ul><br><li>Planejado: 57%</li><br><li>Realizado: 0%</li><br><li>Gap: 57 pontos</li><br><li>Margem: 78,32 dias → Flexível</p><p>Possíveis atrasos logísticos ou técnicos.</p><p>2. Financeira</li><br><li>Planejado: R$ 975,04</li><br><li>Recebido: R$ 0,00</li><br><li>Saldo: -R$ 975,04</li><br><li>Impacto: 0,04% baixa.</p><p>3. Impacto em Cadeia</li><br><li>3 sucessoras, margem disponível.</p><p><strong>B. Recomendações</strong></p><p>1. Confirmar estoque, iniciar montagem.</li><br><li>Comunicação: logística, equipes técnicas.</li><br><li>Prazo: 10 dias.</p><p>---</p><p><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Atividade 7 – 3.01.03 - Abrigos de Inversores  </h3></li><br></ul><br><strong>A. Diagnóstico</strong></p><p>1. Física  <br><ul><br><li>Planejado: 76%</li><br><li>Realizado: 0%</li><br><li>Gap: 76 pontos</li><br><li>Margem: 44,32 dias → Moderada, atenção</p><p>2. Financeira</li><br><li>Planejado: R$ 6.500,29</li><br><li>Recebido: R$ 0,00</li><br><li>Saldo: -R$ 6.500,29</li><br><li>Impacto: 0,27%</p><p>3. Impacto em Cadeia</li><br><li>3 sucessoras, margem parcialmente confortável.</p><p><strong>B. Recomendações</strong></p><p>1. Priorizar início; revisar logística.</li><br><li>Comunicação: logística e engenharia.</li><br><li>Prazo: 7 dias.</p><p>---</p><p><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Atividade 8 – 3.01.04 - Módulos Fotovoltaicos  </h3></li><br></ul><br><strong>A. Diagnóstico</strong></p><p>1. Física  <br><ul><br><li>Planejado: 41%</li><br><li>Realizado: 0%</li><br><li>Gap: 41 pontos</li><br><li>Margem: 61 dias → Flexível.</p><p>Possível atraso logístico.</p><p>2. Financeira</li><br><li>Planejado: R$ 52.300,27</li><br><li>Recebido: R$ 0,00</li><br><li>Saldo: -R$ 52.300,27</li><br><li>Impacto: 2,16% (alta importância financeira)</p><p>3. Impacto em Cadeia</li><br><li>2 sucessoras diretas, margem disponível para elas.</p><p><strong>B. Recomendações</strong></p><p>1. Forçar solução logística para módulos; negociar com fornecedores.</li><br><li>Comunicar logística, suprimentos, planejamento estratégico.</li><br><li>Prazo: 7 dias para iniciar e 15 dias para recuperação.</p><p>---</p><p><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Atividade 9 – 3.01.05 - Estruturas - Estacas (Margem ZERO)  </h3></li><br></ul><br><strong>A. Diagnóstico</strong></p><p>1. Física  <br><ul><br><li>Planejado: 76%</li><br><li>Realizado: 0%</li><br><li>Gap: 76 pontos</li><br><li>Margem: 0 dias → Atividade crítica.</p><p>Provável atraso por recursos ou licenças.</p><p>2. Financeira</li><br><li>Planejado: R$ 32.501,47</li><br><li>Recebido: R$ 0,00</li><br><li>Saldo: -R$ 32.501,47</li><br><li>Impacto: 2,14%</p><p>3. Impacto em Cadeia</li><br><li>4 sucessoras, algumas já atrasadas (ex. 3.01.06 - Peças, Eixos, Mesas), indicando efeito cascata negativo imediato.</p><p><strong>B. Recomendações</strong></p><p>1. Ativação imediata de plano de recuperação; possível contratação emergencial.</li><br><li>Comunicação direta com logística, planejamento e diretoria técnica.</li><br><li>Prazo: ação emergencial em 3 dias; recuperação acelerada em 7 dias.</p><p>---</p><p><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Atividade 10 – 3.01.06 - Estruturas - Peças, Eixos, Mesas  </h3></li><br></ul><br><strong>A. Diagnóstico</strong></p><p>1. Física  <br><ul><br><li>Planejado: 41%</li><br><li>Realizado: 0%</li><br><li>Gap: 41 pontos</li><br><li>Margem: 6 dias → Muito baixo.</p><p>Atraso ligado a predecessora 3.01.05, causando efeito cascata.</p><p>2. Financeira</li><br><li>Planejado: R$ 19.500,88</li><br><li>Recebido: R$ 0,00</li><br><li>Saldo: -R$ 19.500,88</li><br><li>Impacto: 0,8%</p><p>3. Impacto em Cadeia</li><br><li>3 sucessoras, margem pequena; atrasos podem se propagar.</p><p><strong>B. Recomendações</strong></p><p>1. Coordenação com equipe da predecessora para acelerar andamento.</li><br><li>Comunicação com logística, planejamento e controle de contrato.</li><br><li>Prazo: 5 dias para recuperar.</p><p>---</p><p><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Atividade 11 – 3.01.07 - Subestação - SKID (Margem ZERO)  </h3></li><br></ul><br><strong>A. Diagnóstico</strong></p><p>1. Física  <br><ul><br><li>Planejado: 16%</li><br><li>Realizado: 0%</li><br><li>Gap: 16 pontos</li><br><li>Margem: 0 dias – Atividade crítica.</p><p>Possível atraso por pendências técnicas ou logísticas.</p><p>2. Financeira</li><br><li>Planejado: R$ 2.959,96</li><br><li>Recebido: R$ 0,00</li><br><li>Saldo: -R$ 2.959,96</li><br><li>Impacto: 0,12%</p><p>3. Impacto em Cadeia</li><br><li>2 sucessoras, sem margem; risco de atrasos subsequentes imediatos.</p><p><strong>B. Recomendações</strong></p><p>1. Desbloquear imediatamente trabalho; checar pendências técnicas e materiais.</li><br><li>Comunicação: coordenação técnica, logística, contratos.</li><br><li>Prazo: 3 dias para reengajamento.</p><p>---</p><p><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Atividade 12 – 3.01.08 - Cabine - CMP  </h3></li><br></ul><br><strong>A. Diagnóstico</strong></p><p>1. Física  <br><ul><br><li>Planejado: 19%</li><br><li>Realizado: 0%</li><br><li>Gap: 19 pontos</li><br><li>Margem: 1 dia → muito pouco.</p><p>2. Financeira</li><br><li>Planejado: R$ 19.978,17</li><br><li>Recebido: R$ 0,00</li><br><li>Saldo: -R$ 19.978,17</li><br><li>Impacto: 0,82%</p><p>3. Impacto em Cadeia</li><br><li>2 sucessoras, pouca folga, risco de propagação do atraso.</p><p><strong>B. Recomendações</strong></p><p>1. Consolidar recursos para retomada imediata.</li><br><li>Comunicados à logística, planejamento e execução.</li><br><li>Prazo: até 3 dias para quebra de atraso.</p><p>---</p><p>## Conclusão Geral e Plano de Recuperação para o Projeto</p><p><strong>Situação Geral</strong></li><br><li>12 atividades críticas atrasadas, sendo 3 com margem zero, implicando risco imediato ao cronograma global.</li><br><li>Todas as atividades apresentam saldo financeiro negativo, indicando atraso no recebimento do fluxo financeiro, ainda que o impacto geral isolado seja baixo para a maioria, algumas como módulos fotovoltaicos e estruturas totais representam mais de 2% do valor financeiro do projeto.</li><br><li>O fluxo de caixa da empresa está comprometido no curto prazo se não houver retomada, situação agravada por atividades com dependências críticas e atrasos encadeados.</p><p><strong>Plano de Recuperação Geral</strong></p><p>1. <strong>Priorizar Atividades com Margem Zero</strong> (Terraplanagem, Estruturas - Estacas, Subestação - SKID)</li><br><li>Mobilização imediata de equipes e recursos, contratação emergencial se necessário.</li><br><li>Planejar turno extra ou trabalho em final de semana.</li><br><li>Monitoramento diário e relatórios de progresso.</p><p>2. <strong>Atividades com Margem Pequena (<15 dias)</strong></li><br><li>Avaliar possibilidade de apoio logístico e deslocamento antecipado de materiais e mão-de-obra.</li><br><li>Fazer reuniões específicas para destravar bloqueios técnicos e administrativos.</p><p>3. <strong>Gestão Financeira</strong></li><br><li>Revisão do fluxo de caixa considerando atrasos; negociar adiantamentos parciais com clientes ou fornecedores.</li><br><li>Priorizar pagamentos e recebimentos das etapas críticas para assegurar continuidade.</p><p>4. <strong>Comunicações e Responsabilidades</strong></li><br><li>Designar responsáveis claros por cada setor envolvido (Elétrica, Logística, Civil, Burocrático).</li><br><li>Estabelecer reuniões semanais de acompanhamento com foco em resolução rápida.  </p><p>5. <strong>Controle e Planejamento</strong></li><br><li>Atualizar cronograma e indicação das margens de atraso reais após ações de recuperação.</li><br><li>Implementar sistema de alerta precoce para acompanhamento da produtividade.  </p><p>6. <strong>Mitigação de Impacto em Cadeia</strong></li><br><li>Reavaliar dependências para minimizar bloqueios subsequentes.</li><br><li>Avaliar alternativas para execução simultânea de atividades sucessoras quando possível.</p><p><strong>Iniciativas adicionais recomendadas:</strong></li><br><li>Ajuste contratual para flexibilizar prazos ou penalidades em função do cenário real.</li><br><li>Investimento em tecnologia ou equipamentos que acelerem execução crítica.</li><br><li>Incentivos para equipes que alcancem metas de recuperação.</p><p>---</p><p>## Síntese Final</p><p>Apesar do número significativo de atividades atrasadas, o projeto mantém alguma margem para recuperação em grande parte delas. Os focos críticos com margem zero exigem atenção imediata para evitar impactos profundos no cronograma e nos recebimentos financeiros. Recomenda-se um esforço conjunto e coordenado entre todos os setores, com ações emergenciais para retomada rápida das atividades críticas e estabelecimento de metas claras de recuperação progressiva. O fluxo de caixa atual indica uma situação preocupante que pode prejudicar a continuidade sem correções rápidas.</p><p>Este parecer visa orientar a direção do projeto a implementar um plano estruturado e ágil de recuperação com foco na mitigação de riscos financeiros e de cronograma.</p><p>---</p><p>Caso necessário, posso detalhar plano de ação com cronograma específico para cada atividade e responsabilidade.</li><br></ul>
+      </div>
+      <div class="analise-footer">
+        <i class="fas fa-info-circle"></i> Análise gerada por IA
+      </div>
+    </div>
                       </div>
                   </div>
               </div>
@@ -108722,7 +109046,7 @@
                   <strong>Relatório Diário de Obra - UFV CEMIG</strong>
               </p>
               <p>
-                  Gerado automaticamente em 13/02/2026 às 13:35 | 
+                  Gerado automaticamente em 13/02/2026 às 13:41 | 
                   Atividades monitoradas: 252 | 
                   Progresso financeiro: 4.1%
               </p>
