@@ -282,11 +282,11 @@
           /* FILTRO NOTICE */
           .tab-filter-notice {
               background: rgba(59, 130, 246, 0.1);
-              border-left: 4px solid var(--primary);
-              padding: 12px 20px;
-              margin: 20px 30px 0 30px;
-              border-radius: 8px;
-              font-size: 0.9rem;
+              border-left: 3px solid var(--primary);
+              padding: 6px 12px;
+              margin: 10px 20px 0 20px;
+              border-radius: 4px;
+              font-size: 0.7rem;
               color: var(--gray-700);
               display: flex;
               align-items: center;
@@ -313,7 +313,7 @@
           }
 
           .atividade-accordion-header {
-              padding: 16px 20px;
+              padding: 10px 15px;  /* Padding reduzido */
               background: var(--gray-100);
               cursor: pointer;
               display: flex;
@@ -356,12 +356,12 @@
           .accordion-codigo {
               font-weight: 800;
               color: var(--primary);
-              font-size: 1rem;
-              min-width: 90px;
+              font-size: 0.85rem; /* Reduzido */
+              min-width: 80px; /* Reduzido */
           }
 
           .accordion-titulo {
-              font-size: 1rem;
+              font-size: 0.9rem; /* Reduzido */
               font-weight: 600;
               color: var(--dark);
               flex: 1;
@@ -372,9 +372,9 @@
               background: rgba(255, 255, 255, 0.15);
               border: 1px solid var(--gray-300);
               color: var(--gray-700);
-              padding: 4px 10px;
-              border-radius: 12px;
-              font-size: 0.8rem;
+              padding: 2px 6px;
+              border-radius: 8px;
+              font-size: 0.65rem;
               font-weight: 600;
               display: inline-flex;
               align-items: center;
@@ -393,7 +393,7 @@
 
           .triangulo-icon {
               color: #f59e0b;
-              font-size: 1rem;
+              font-size: 0.85rem;
               cursor: pointer;
               position: relative;
           }
@@ -416,9 +416,9 @@
           }
 
           .accordion-badge {
-              padding: 6px 12px;
-              border-radius: 16px;
-              font-size: 0.8rem;
+              padding: 4px 8px; /* Padding reduzido */
+              border-radius: 12px; /* Fonte reduzida */
+              font-size: 0.6rem; /* Fonte reduzida */
               font-weight: 700;
           }
 
@@ -478,15 +478,15 @@
           }
 
           .analise-title {
-              font-size: 1rem; /* Reduzido de 1.1rem */
+              font-size: 0.85rem; /* Reduzido de 1.1rem */
               font-weight: 700;
               color: var(--primary);
-              margin-bottom: 8px; /* Reduzido de 12px */
-              padding-bottom: 4px; /* Reduzido de 6px */
-              border-bottom: 2px solid var(--primary);
+              margin-bottom: 5px; /* Reduzido de 12px */
+              padding-bottom: 3px; /* Reduzido de 6px */
+              border-bottom: 1.5px solid var(--primary);
               display: flex;
               align-items: center;
-              gap: 8px; /* Reduzido de 10px */
+              gap: 5px; /* Reduzido de 10px */
               cursor: pointer;
           }
 
@@ -496,7 +496,7 @@
 
           .analise-title .toggle-icon {
               transition: transform 0.3s;
-              font-size: 0.8rem; /* Reduzido de 0.9rem */
+              font-size: 0.75rem; /* Reduzido de 0.9rem */
           }
 
           .analise-title.collapsed .toggle-icon {
@@ -621,14 +621,14 @@
           .analise-fisica-grid {
               display: grid;
               grid-template-columns: 1fr 1fr;
-              gap: 12px; /* Reduzido de 15px */
-              margin-bottom: 12px; /* Reduzido de 15px */
+              gap: 8px; /* Reduzido de 15px */
+              margin-bottom: 8px; /* Reduzido de 15px */
           }
 
           .fisica-quadro {
               background: var(--gray-50);
-              padding: 12px; /* Reduzido de 15px */
-              border-radius: 6px; /* Reduzido de 8px */
+              padding: 8px; /* Reduzido de 15px */
+              border-radius: 4px; /* Reduzido de 8px */
               border-left: 2px solid var(--primary); /* Reduzido de 3px */
           }
 
@@ -647,17 +647,18 @@
           }
 
           .data-label {
-              font-size: 0.65rem; /* Reduzido de 0.8rem */
+              font-size: 0.55rem; /* Reduzido de 0.8rem */
               color: var(--gray-600);
               font-weight: 600;
-              margin-bottom: 2px; /* Reduzido de 4px */
+              margin-bottom: 1px; /* Reduzido de 4px */
+              latter-spacing: 0.3px;
           }
 
           .data-value {
-              font-size: 0.8rem; /* Reduzido de 1rem */
+              font-size: 0.7rem; /* Reduzido de 1rem */
               font-weight: 700;
               color: var(--dark);
-              min-height: 18px; /* Reduzido de 22px */
+              min-height: 16px; /* Reduzido de 22px */
           }
 
           .data-value.empty {
@@ -689,16 +690,16 @@
           }
 
           .progresso-label-2x2 {
-              font-size: 0.6rem; /* Reduzido de 0.75rem */
+              font-size: 0.5rem; /* Reduzido de 0.75rem */
               color: var(--gray-600);
               font-weight: 600;
-              margin-bottom: 4px; /* Reduzido de 6px */
+              margin-bottom: 2px; /* Reduzido de 6px */
               text-transform: uppercase;
-              letter-spacing: 0.4px; /* Reduzido de 0.5px */
+              letter-spacing: 0.3px; /* Reduzido de 0.5px */
           }
 
           .progresso-valor-2x2 {
-              font-size: 0.9rem; /* Reduzido de 1.1rem */
+              font-size: 0.75rem; /* Reduzido de 1.1rem */
               font-weight: 800;
               color: var(--dark);
           }
@@ -734,16 +735,16 @@
           }
 
           .variacao-label {
-              font-size: 0.6rem; /* Reduzido de 0.75rem */
+              font-size: 0.5rem; /* Reduzido de 0.75rem */
               color: var(--gray-600);
               font-weight: 600;
-              margin-bottom: 4px; /* Reduzido de 6px */
+              margin-bottom: 2px; /* Reduzido de 6px */
               text-transform: uppercase;
-              letter-spacing: 0.4px; /* Reduzido de 0.5px */
+              letter-spacing: 0.3px; /* Reduzido de 0.5px */
           }
 
           .variacao-value {
-              font-size: 0.85rem; /* Reduzido de 1.1rem */
+              font-size: 0.7rem; /* Reduzido de 1.1rem */
               font-weight: 800;
               color: var(--dark);
           }
@@ -758,23 +759,23 @@
           }
 
           .locacao-header {
-              font-size: 0.8rem; /* Reduzido de 0.95rem */
+              font-size: 0.65rem; /* Reduzido de 0.95rem */
               font-weight: 700;
               color: #10b981;
-              margin-bottom: 8px; /* Reduzido de 12px */
-              padding-bottom: 4px; /* Reduzido de 6px */
+              margin-bottom: 5px; /* Reduzido de 12px */
+              padding-bottom: 3px; /* Reduzido de 6px */
               border-bottom: 1px solid rgba(16, 185, 129, 0.3);
               display: flex;
               align-items: center;
-              gap: 6px; /* Reduzido de 8px */
+              gap: 4px; /* Reduzido de 8px */
           }
 
           .locacao-content {
-              padding: 8px; /* Reduzido de 12px */
+              padding: 5px; /* Reduzido de 12px */
               background: var(--gray-100);
-              border-radius: 5px; /* Reduzido de 6px */
+              border-radius: 4px; /* Reduzido de 6px */
               border: 1px solid var(--gray-200);
-              font-size: 0.8rem; /* Reduzido de 0.95rem */
+              font-size: 0.7rem; /* Reduzido de 0.95rem */
               color: var(--gray-700);
           }
 
@@ -827,39 +828,39 @@
           .analise-financeira-grid {
               display: grid;
               grid-template-columns: 1fr 1fr 1fr;
-              gap: 12px; /* Reduzido de 15px */
-              margin-bottom: 12px; /* Reduzido de 15px */
+              gap: 6px; /* Reduzido de 15px */
+              margin-bottom: 6px; /* Reduzido de 15px */
           }
 
           .financeira-quadro {
               background: var(--gray-50);
-              padding: 12px; /* Reduzido de 15px */
-              border-radius: 6px; /* Reduzido de 8px */
+              padding: 6px; /* Reduzido de 15px */
+              border-radius: 4px; /* Reduzido de 8px */
               border-left: 2px solid var(--primary); /* Reduzido de 3px */
           }
 
           .financeira-quadro h4 {
-              font-size: 0.8rem; /* Reduzido de 0.95rem */
+              font-size: 0.65rem; /* Reduzido de 0.95rem */
               font-weight: 700;
               color: var(--primary);
-              margin-bottom: 8px; /* Reduzido de 12px */
-              padding-bottom: 4px; /* Reduzido de 6px */
+              margin-bottom: 4px; /* Reduzido de 12px */
+              padding-bottom: 2px; /* Reduzido de 6px */
               border-bottom: 1px solid var(--gray-300);
           }
 
           .financeira-item {
-              margin-bottom: 6px; /* Reduzido de 10px */
+              margin-bottom: 5px; /* Reduzido de 10px */
           }
 
           .financeira-label {
-              font-size: 0.65rem; /* Reduzido de 0.8rem */
+              font-size: 0.55rem; /* Reduzido de 0.8rem */
               color: var(--gray-600);
               font-weight: 600;
               margin-bottom: 1px; /* Reduzido de 2px */
           }
 
           .financeira-valor {
-              font-size: 0.85rem; /* Reduzido de 1.1rem */
+              font-size: 0.7rem; /* Reduzido de 1.1rem */
               font-weight: 800;
               color: var(--dark);
           }
@@ -914,12 +915,12 @@
           }
 
           .deps-titulo {
-              font-size: 0.95rem;
+              font-size: 0.8rem;
               font-weight: 700;
               color: var(--primary);
               display: flex;
               align-items: center;
-              gap: 6px;
+              gap: 4px;
           }
 
           .deps-toggle {
@@ -978,12 +979,12 @@
           .dep-codigo-link {
               font-weight: 700;
               color: var(--primary);
-              font-size: 0.85rem;
-              min-width: 70px;
+              font-size: 0.7rem;
+              min-width: 60px;
               cursor: pointer;
               transition: all 0.2s;
               text-decoration: none;
-              padding: 2px 6px;
+              padding: 1px 4px;
               border-radius: 4px;
               background: rgba(29, 78, 216, 0.1);
               display: inline-block;
@@ -997,7 +998,7 @@
 
           .dep-nome {
               flex: 1;
-              font-size: 0.85rem;
+              font-size: 0.7rem;
               color: var(--gray-700);
               overflow: hidden;
               text-overflow: ellipsis;
@@ -1055,13 +1056,13 @@
           }
 
           .dep-detail-label {
-              font-size: 0.7rem;
+              font-size: 0.6rem;
               color: var(--gray-600);
               font-weight: 600;
           }
 
           .dep-detail-value {
-              font-size: 0.8rem;
+              font-size: 0.65rem;
               color: var(--dark);
               font-weight: 500;
           }
@@ -1084,17 +1085,17 @@
           }
 
           .expansion-btn {
-              padding: 6px 12px;
+              padding: 4px 8px;
               background: var(--gray-50);
               border: 1px solid var(--gray-300);
               border-radius: 6px;
-              font-size: 0.85rem;
+              font-size: 0.7rem;
               font-weight: 600;
               color: var(--gray-700);
               cursor: pointer;
               display: flex;
               align-items: center;
-              gap: 4px;
+              gap: 3px;
               transition: all 0.2s;
           }
 
@@ -1289,7 +1290,7 @@
               <h1>Relatório Diário de Obra - UFV SERRA DO SALITRE</h1>
               <div class="header-subtitle">
                   <i class="fas fa-calendar-alt"></i>
-                  Relatório atualizado em: 19/02/2026 às 10:04
+                  Relatório atualizado em: 19/02/2026 às 13:07
               </div>
           </header>
 
@@ -9536,39 +9537,39 @@
                       </div>
 
                       <!-- CARDS DE RESUMO FINANCEIRO (TAMANHO REDUZIDO) -->
-                      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 15px 25px;">
-                          <div style="background: var(--gray-100); padding: 12px 15px; border-radius: 8px; border-left: 3px solid var(--primary);">
-                              <div style="font-size: 0.75rem; color: var(--gray-600); font-weight: 600; margin-bottom: 2px;">
+                      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 10px 20px;">
+                          <div style="background: var(--gray-100); padding: 8px 10px; border-radius: 6px; border-left: 2px solid var(--primary);">
+                              <div style="font-size: 0.65rem; color: var(--gray-600); font-weight: 600; margin-bottom: 1px;">
                                   <i class="fas fa-chart-line"></i> Valor Planejado
                               </div>
-                              <div style="font-size: 1.3rem; font-weight: 700; color: var(--dark);">
+                              <div style="font-size: 1rem; font-weight: 700; color: var(--dark);">
                                   R$ 395.761,15
                               </div>
-                              <div style="font-size: 0.65rem; color: var(--gray-500); margin-top: 2px;">
+                              <div style="font-size: 0.55rem; color: var(--gray-500); margin-top: 1px;">
                                   Total das atividades atrasadas
                               </div>
                           </div>
 
                           <div style="background: var(--gray-100); padding: 12px 15px; border-radius: 8px; border-left: 3px solid var(--success);">
-                              <div style="font-size: 0.75rem; color: var(--gray-600); font-weight: 600; margin-bottom: 2px;">
+                              <div style="font-size: 0.65rem; color: var(--gray-600); font-weight: 600; margin-bottom: 1px;">
                                   <i class="fas fa-check-circle"></i> Valor Executado
                               </div>
-                              <div style="font-size: 1.3rem; font-weight: 700; color: var(--dark);">
+                              <div style="font-size: 1rem; font-weight: 700; color: var(--dark);">
                                   R$ 0,00
                               </div>
-                              <div style="font-size: 0.65rem; color: var(--gray-500); margin-top: 2px;">
+                              <div style="font-size: 0.55rem; color: var(--gray-500); margin-top: 1px;">
                                   Já realizado nas atrasadas
                               </div>
                           </div>
 
-                          <div style="background: var(--gray-100); padding: 12px 15px; border-radius: 8px; border-left: 3px solid var(--danger);">
-                              <div style="font-size: 0.75rem; color: var(--gray-600); font-weight: 600; margin-bottom: 2px;">
+                          <div style="background: var(--gray-100); padding: 8px 10px; border-radius: 6px; border-left: 2px solid var(--danger);">
+                              <div style="font-size: 0.65rem; color: var(--gray-600); font-weight: 600; margin-bottom: 1px;">
                                   <i class="fas fa-balance-scale"></i> Saldo
                               </div>
-                              <div style="font-size: 1.3rem; font-weight: 700; color: var(--danger);">
+                              <div style="font-size: 1rem; font-weight: 700; color: var(--danger);">
                                   R$ -395.761,15
                               </div>
-                              <div style="font-size: 0.65rem; color: var(--gray-500); margin-top: 2px;">
+                              <div style="font-size: 0.55rem; color: var(--gray-500); margin-top: 1px;">
                                   Negativo
                               </div>
                           </div>
@@ -14617,7 +14618,7 @@
                           <div class="accordion-codigo">#4.01.01.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.01.01</strong> - Estruturação - Via de Tráfego Principal</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -15005,7 +15006,7 @@
                           <div class="accordion-codigo">#4.01.01.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.01.01</strong> - Estruturação - Via de Tráfego Principal</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -15393,7 +15394,7 @@
                           <div class="accordion-codigo">#4.01.02.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.01.02</strong> - Montagem - Canteiro de Obras</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -15839,7 +15840,7 @@
                           <div class="accordion-codigo">#4.01.02.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.01.02</strong> - Montagem - Canteiro de Obras</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -16169,7 +16170,7 @@
                           <div class="accordion-codigo">#4.01.02.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.01.02</strong> - Montagem - Canteiro de Obras</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -16557,7 +16558,7 @@
                           <div class="accordion-codigo">#4.01.02.04</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.01.02</strong> - Montagem - Canteiro de Obras</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -16887,7 +16888,7 @@
                           <div class="accordion-codigo">#4.01.02.05</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.01.02</strong> - Montagem - Canteiro de Obras</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -17217,7 +17218,7 @@
                           <div class="accordion-codigo">#4.01.02.07</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.01.02</strong> - Montagem - Canteiro de Obras</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -17493,39 +17494,39 @@
                       </div>
 
                       <!-- CARDS DE RESUMO FINANCEIRO (TAMANHO REDUZIDO) -->
-                      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 15px 25px;">
-                          <div style="background: var(--gray-100); padding: 12px 15px; border-radius: 8px; border-left: 3px solid var(--primary);">
-                              <div style="font-size: 0.75rem; color: var(--gray-600); font-weight: 600; margin-bottom: 2px;">
+                      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 10px 20px;">
+                          <div style="background: var(--gray-100); padding: 8px 10px; border-radius: 6px; border-left: 2px solid var(--primary);">
+                              <div style="font-size: 0.65rem; color: var(--gray-600); font-weight: 600; margin-bottom: 1px;">
                                   <i class="fas fa-chart-line"></i> Valor Planejado
                               </div>
-                              <div style="font-size: 1.3rem; font-weight: 700; color: var(--dark);">
+                              <div style="font-size: 1rem; font-weight: 700; color: var(--dark);">
                                   R$ 67.010,85
                               </div>
-                              <div style="font-size: 0.65rem; color: var(--gray-500); margin-top: 2px;">
+                              <div style="font-size: 0.55rem; color: var(--gray-500); margin-top: 1px;">
                                   Total das atividades em execução
                               </div>
                           </div>
 
                           <div style="background: var(--gray-100); padding: 12px 15px; border-radius: 8px; border-left: 3px solid var(--success);">
-                              <div style="font-size: 0.75rem; color: var(--gray-600); font-weight: 600; margin-bottom: 2px;">
+                              <div style="font-size: 0.65rem; color: var(--gray-600); font-weight: 600; margin-bottom: 1px;">
                                   <i class="fas fa-check-circle"></i> Valor Executado
                               </div>
-                              <div style="font-size: 1.3rem; font-weight: 700; color: var(--dark);">
+                              <div style="font-size: 1rem; font-weight: 700; color: var(--dark);">
                                   R$ 85.526,38
                               </div>
-                              <div style="font-size: 0.65rem; color: var(--gray-500); margin-top: 2px;">
+                              <div style="font-size: 0.55rem; color: var(--gray-500); margin-top: 1px;">
                                   Já realizado nas em execução
                               </div>
                           </div>
 
-                          <div style="background: var(--gray-100); padding: 12px 15px; border-radius: 8px; border-left: 3px solid var(--success);">
-                              <div style="font-size: 0.75rem; color: var(--gray-600); font-weight: 600; margin-bottom: 2px;">
+                          <div style="background: var(--gray-100); padding: 8px 10px; border-radius: 6px; border-left: 2px solid var(--success);">
+                              <div style="font-size: 0.65rem; color: var(--gray-600); font-weight: 600; margin-bottom: 1px;">
                                   <i class="fas fa-balance-scale"></i> Saldo
                               </div>
-                              <div style="font-size: 1.3rem; font-weight: 700; color: var(--success);">
+                              <div style="font-size: 1rem; font-weight: 700; color: var(--success);">
                                   R$ 18.515,53
                               </div>
-                              <div style="font-size: 0.65rem; color: var(--gray-500); margin-top: 2px;">
+                              <div style="font-size: 0.55rem; color: var(--gray-500); margin-top: 1px;">
                                   Positivo
                               </div>
                           </div>
@@ -17550,7 +17551,7 @@
                           <div class="accordion-codigo">#4.02.01.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.02.01</strong> - Supressão - Vegetação</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -18054,7 +18055,7 @@
                           <div class="accordion-codigo">#4.02.01.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.02.01</strong> - Supressão - Vegetação</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -18326,7 +18327,7 @@
                           <div class="accordion-codigo">#4.02.02.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.02.02</strong> - Terraplenagem - Limpeza e Nivelamento</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -19956,7 +19957,7 @@
                           <div class="accordion-codigo">#4.01.02.06</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.01.02</strong> - Montagem - Canteiro de Obras</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -20228,7 +20229,7 @@
                           <div class="accordion-codigo">#4.02.02.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.02.02</strong> - Terraplenagem - Limpeza e Nivelamento</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -27002,7 +27003,7 @@
                           <div class="accordion-codigo">#4.02.02.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.02.02</strong> - Terraplenagem - Limpeza e Nivelamento</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -27390,7 +27391,7 @@
                           <div class="accordion-codigo">#4.02.02.04</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.02.02</strong> - Terraplenagem - Limpeza e Nivelamento</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -27720,7 +27721,7 @@
                           <div class="accordion-codigo">#4.02.02.05</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.02.02</strong> - Terraplenagem - Limpeza e Nivelamento</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -27992,7 +27993,7 @@
                           <div class="accordion-codigo">#4.02.03.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.02.03</strong> - Estruturação - Vias de Tráfego Internas</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -28322,7 +28323,7 @@
                           <div class="accordion-codigo">#4.02.03.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.02.03</strong> - Estruturação - Vias de Tráfego Internas</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -28652,7 +28653,7 @@
                           <div class="accordion-codigo">#4.02.03.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.02.03</strong> - Estruturação - Vias de Tráfego Internas</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -28982,7 +28983,7 @@
                           <div class="accordion-codigo">#4.02.04.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.02.04</strong> - Conferência Técnica</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -29428,7 +29429,7 @@
                           <div class="accordion-codigo">#4.02.04.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.02.04</strong> - Conferência Técnica</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -29700,7 +29701,7 @@
                           <div class="accordion-codigo">#4.02.05.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.02.05</strong> - Estruturação de Vias de Trânsito</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -30030,7 +30031,7 @@
                           <div class="accordion-codigo">#4.02.05.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.02.05</strong> - Estruturação de Vias de Trânsito</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -30360,7 +30361,7 @@
                           <div class="accordion-codigo">#4.02.05.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.02.05</strong> - Estruturação de Vias de Trânsito</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -30632,7 +30633,7 @@
                           <div class="accordion-codigo">#4.03.01.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.03.01</strong> - Georreferenciamento</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -31136,7 +31137,7 @@
                           <div class="accordion-codigo">#4.03.01.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.03.01</strong> - Georreferenciamento</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -31814,7 +31815,7 @@
                           <div class="accordion-codigo">#4.03.02.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.03.02</strong> - Cercamento Perimetral</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -32260,7 +32261,7 @@
                           <div class="accordion-codigo">#4.03.02.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.03.02</strong> - Cercamento Perimetral</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -32590,7 +32591,7 @@
                           <div class="accordion-codigo">#4.03.02.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.03.02</strong> - Cercamento Perimetral</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -32978,7 +32979,7 @@
                           <div class="accordion-codigo">#4.03.02.04</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.03.02</strong> - Cercamento Perimetral</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -33250,7 +33251,7 @@
                           <div class="accordion-codigo">#4.03.02.05</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.03.02</strong> - Cercamento Perimetral</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -33522,7 +33523,7 @@
                           <div class="accordion-codigo">#4.04.01.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.01</strong> - Execução - Fixação Estacas</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -33968,7 +33969,7 @@
                           <div class="accordion-codigo">#4.04.01.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.01</strong> - Execução - Fixação Estacas</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -34298,7 +34299,7 @@
                           <div class="accordion-codigo">#4.04.01.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.01</strong> - Execução - Fixação Estacas</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -34628,7 +34629,7 @@
                           <div class="accordion-codigo">#4.04.02.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.02</strong> - Construção - CMP</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -35248,7 +35249,7 @@
                           <div class="accordion-codigo">#4.04.02.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.02</strong> - Construção - CMP</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -35578,7 +35579,7 @@
                           <div class="accordion-codigo">#4.04.02.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.02</strong> - Construção - CMP</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -36024,7 +36025,7 @@
                           <div class="accordion-codigo">#4.04.02.04</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.02</strong> - Construção - CMP</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -36296,7 +36297,7 @@
                           <div class="accordion-codigo">#4.04.02.05</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.02</strong> - Construção - CMP</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -36626,7 +36627,7 @@
                           <div class="accordion-codigo">#4.04.02.06</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.02</strong> - Construção - CMP</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -36956,7 +36957,7 @@
                           <div class="accordion-codigo">#4.04.02.07</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.02</strong> - Construção - CMP</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -37344,7 +37345,7 @@
                           <div class="accordion-codigo">#4.04.02.08</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.02</strong> - Construção - CMP</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -37732,7 +37733,7 @@
                           <div class="accordion-codigo">#4.04.03.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.03</strong> - Execução de Valas - Aterramento</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -38526,7 +38527,7 @@
                           <div class="accordion-codigo">#4.04.03.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.03</strong> - Execução de Valas - Aterramento</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -38856,7 +38857,7 @@
                           <div class="accordion-codigo">#4.04.03.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.03</strong> - Execução de Valas - Aterramento</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -39186,7 +39187,7 @@
                           <div class="accordion-codigo">#4.04.03.04</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.03</strong> - Execução de Valas - Aterramento</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -39516,7 +39517,7 @@
                           <div class="accordion-codigo">#4.04.03.05</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.03</strong> - Execução de Valas - Aterramento</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -39788,7 +39789,7 @@
                           <div class="accordion-codigo">#4.04.04.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.04</strong> - Construção - SKID</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -40234,7 +40235,7 @@
                           <div class="accordion-codigo">#4.04.04.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.04</strong> - Construção - SKID</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -40564,7 +40565,7 @@
                           <div class="accordion-codigo">#4.04.04.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.04</strong> - Construção - SKID</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -40894,7 +40895,7 @@
                           <div class="accordion-codigo">#4.04.04.04</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.04</strong> - Construção - SKID</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -41224,7 +41225,7 @@
                           <div class="accordion-codigo">#4.04.05.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.05</strong> - Construção - Abrigos Inversores</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -41728,7 +41729,7 @@
                           <div class="accordion-codigo">#4.04.05.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.05</strong> - Construção - Abrigos Inversores</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -42058,7 +42059,7 @@
                           <div class="accordion-codigo">#4.04.05.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.05</strong> - Construção - Abrigos Inversores</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -42388,7 +42389,7 @@
                           <div class="accordion-codigo">#4.04.05.04</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.05</strong> - Construção - Abrigos Inversores</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -42718,7 +42719,7 @@
                           <div class="accordion-codigo">#4.04.06.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.06</strong> - Construção - ADM e Almoxarifado</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -43744,7 +43745,7 @@
                           <div class="accordion-codigo">#4.04.06.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.06</strong> - Construção - ADM e Almoxarifado</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -44074,7 +44075,7 @@
                           <div class="accordion-codigo">#4.04.06.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.06</strong> - Construção - ADM e Almoxarifado</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -44462,7 +44463,7 @@
                           <div class="accordion-codigo">#4.04.06.04</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.06</strong> - Construção - ADM e Almoxarifado</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -44792,7 +44793,7 @@
                           <div class="accordion-codigo">#4.04.06.05</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.06</strong> - Construção - ADM e Almoxarifado</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -45180,7 +45181,7 @@
                           <div class="accordion-codigo">#4.04.06.06</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.06</strong> - Construção - ADM e Almoxarifado</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -45510,7 +45511,7 @@
                           <div class="accordion-codigo">#4.04.06.07</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.06</strong> - Construção - ADM e Almoxarifado</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -46014,7 +46015,7 @@
                           <div class="accordion-codigo">#4.04.06.08</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.06</strong> - Construção - ADM e Almoxarifado</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -46286,7 +46287,7 @@
                           <div class="accordion-codigo">#4.04.07.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.07</strong> - Construção - Estação Solarimétrica</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -46790,7 +46791,7 @@
                           <div class="accordion-codigo">#4.04.07.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.07</strong> - Construção - Estação Solarimétrica</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -47120,7 +47121,7 @@
                           <div class="accordion-codigo">#4.04.07.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.07</strong> - Construção - Estação Solarimétrica</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -47450,7 +47451,7 @@
                           <div class="accordion-codigo">#4.04.07.04</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.07</strong> - Construção - Estação Solarimétrica</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -47722,7 +47723,7 @@
                           <div class="accordion-codigo">#4.04.08.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.08</strong> - Construção - RSU_NCU</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -48168,7 +48169,7 @@
                           <div class="accordion-codigo">#4.04.08.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.08</strong> - Construção - RSU_NCU</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -48498,7 +48499,7 @@
                           <div class="accordion-codigo">#4.04.08.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.08</strong> - Construção - RSU_NCU</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -48828,7 +48829,7 @@
                           <div class="accordion-codigo">#4.04.08.04</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.08</strong> - Construção - RSU_NCU</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -49100,7 +49101,7 @@
                           <div class="accordion-codigo">#4.04.09.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.09</strong> - Execução de Valas - BT_CC</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -49894,7 +49895,7 @@
                           <div class="accordion-codigo">#4.04.09.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.09</strong> - Execução de Valas - BT_CC</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -50224,7 +50225,7 @@
                           <div class="accordion-codigo">#4.04.09.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.09</strong> - Execução de Valas - BT_CC</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -50612,7 +50613,7 @@
                           <div class="accordion-codigo">#4.04.09.04</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.09</strong> - Execução de Valas - BT_CC</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -50942,7 +50943,7 @@
                           <div class="accordion-codigo">#4.04.10.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.10</strong> - Execução de Valas - BT_CA</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -51852,7 +51853,7 @@
                           <div class="accordion-codigo">#4.04.10.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.10</strong> - Execução de Valas - BT_CA</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -52182,7 +52183,7 @@
                           <div class="accordion-codigo">#4.04.10.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.10</strong> - Execução de Valas - BT_CA</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -52686,7 +52687,7 @@
                           <div class="accordion-codigo">#4.04.10.04</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.10</strong> - Execução de Valas - BT_CA</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -53016,7 +53017,7 @@
                           <div class="accordion-codigo">#4.04.11.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.11</strong> - Execução de Valas - MT_CA</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -53810,7 +53811,7 @@
                           <div class="accordion-codigo">#4.04.11.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.11</strong> - Execução de Valas - MT_CA</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -54140,7 +54141,7 @@
                           <div class="accordion-codigo">#4.04.11.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.11</strong> - Execução de Valas - MT_CA</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -54528,7 +54529,7 @@
                           <div class="accordion-codigo">#4.04.11.04</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.11</strong> - Execução de Valas - MT_CA</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -54858,7 +54859,7 @@
                           <div class="accordion-codigo">#4.04.12.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.12</strong> - Execução de Valas - CFTV</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -55652,7 +55653,7 @@
                           <div class="accordion-codigo">#4.04.12.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.12</strong> - Execução de Valas - CFTV</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -55982,7 +55983,7 @@
                           <div class="accordion-codigo">#4.04.12.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.12</strong> - Execução de Valas - CFTV</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -56428,7 +56429,7 @@
                           <div class="accordion-codigo">#4.04.12.04</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.12</strong> - Execução de Valas - CFTV</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -56758,7 +56759,7 @@
                           <div class="accordion-codigo">#4.04.12.05</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.04.12</strong> - Execução de Valas - CFTV</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -57030,7 +57031,7 @@
                           <div class="accordion-codigo">#4.05.01.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.05.01</strong> - Montagem Subestação - CMP</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -57534,7 +57535,7 @@
                           <div class="accordion-codigo">#4.05.01.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.05.01</strong> - Montagem Subestação - CMP</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -57806,7 +57807,7 @@
                           <div class="accordion-codigo">#4.05.02.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.05.02</strong> - Montagem Subestação - SKID</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -58310,7 +58311,7 @@
                           <div class="accordion-codigo">#4.05.02.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.05.02</strong> - Montagem Subestação - SKID</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -58582,7 +58583,7 @@
                           <div class="accordion-codigo">#4.05.03.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.05.03</strong> - Montagem - Inversores</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -59144,7 +59145,7 @@
                           <div class="accordion-codigo">#4.05.03.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.05.03</strong> - Montagem - Inversores</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -59474,7 +59475,7 @@
                           <div class="accordion-codigo">#4.05.03.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.05.03</strong> - Montagem - Inversores</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -59746,7 +59747,7 @@
                           <div class="accordion-codigo">#4.05.04.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.05.04</strong> - Montagem Estruturas</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -60192,7 +60193,7 @@
                           <div class="accordion-codigo">#4.05.04.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.05.04</strong> - Montagem Estruturas</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -60522,7 +60523,7 @@
                           <div class="accordion-codigo">#4.05.04.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.05.04</strong> - Montagem Estruturas</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -60852,7 +60853,7 @@
                           <div class="accordion-codigo">#4.05.04.04</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.05.04</strong> - Montagem Estruturas</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -61182,7 +61183,7 @@
                           <div class="accordion-codigo">#4.05.05.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.05.05</strong> - Montagem - Módulos</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -61570,7 +61571,7 @@
                           <div class="accordion-codigo">#4.05.05.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.05.05</strong> - Montagem - Módulos</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -61900,7 +61901,7 @@
                           <div class="accordion-codigo">#4.05.06.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.05.06</strong> - Montagem - Estação Solarimétrica</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -62404,7 +62405,7 @@
                           <div class="accordion-codigo">#4.05.07.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.05.07</strong> - Montagem - RSU_NCU</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -63024,7 +63025,7 @@
                           <div class="accordion-codigo">#4.06.01.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.06.01</strong> - Execução de Cabeamento - BT_CC</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -63644,7 +63645,7 @@
                           <div class="accordion-codigo">#4.06.01.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.06.01</strong> - Execução de Cabeamento - BT_CC</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -64206,7 +64207,7 @@
                           <div class="accordion-codigo">#4.06.01.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.06.01</strong> - Execução de Cabeamento - BT_CC</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -64536,7 +64537,7 @@
                           <div class="accordion-codigo">#4.06.02.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.06.02</strong> - Execução de Cabeamento - BT_CA</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -65214,7 +65215,7 @@
                           <div class="accordion-codigo">#4.06.02.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.06.02</strong> - Execução de Cabeamento - BT_CA</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -65834,7 +65835,7 @@
                           <div class="accordion-codigo">#4.06.02.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.06.02</strong> - Execução de Cabeamento - BT_CA</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -66454,7 +66455,7 @@
                           <div class="accordion-codigo">#4.06.02.04</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.06.02</strong> - Execução de Cabeamento - BT_CA</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -66726,7 +66727,7 @@
                           <div class="accordion-codigo">#4.06.03.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.06.03</strong> - Execução de Cabeamento - Inversores</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -67404,7 +67405,7 @@
                           <div class="accordion-codigo">#4.06.03.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.06.03</strong> - Execução de Cabeamento - Inversores</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -67850,7 +67851,7 @@
                           <div class="accordion-codigo">#4.06.03.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.06.03</strong> - Execução de Cabeamento - Inversores</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -68122,7 +68123,7 @@
                           <div class="accordion-codigo">#4.06.04.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.06.04</strong> - Execução de Cabeamento - MT_CA</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -68684,7 +68685,7 @@
                           <div class="accordion-codigo">#4.06.04.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.06.04</strong> - Execução de Cabeamento - MT_CA</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -69246,7 +69247,7 @@
                           <div class="accordion-codigo">#4.06.04.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.06.04</strong> - Execução de Cabeamento - MT_CA</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -69518,7 +69519,7 @@
                           <div class="accordion-codigo">#4.06.05.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.06.05</strong> - Execução de Cabeamento - CFTV</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -70138,7 +70139,7 @@
                           <div class="accordion-codigo">#4.06.05.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.06.05</strong> - Execução de Cabeamento - CFTV</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -70526,7 +70527,7 @@
                           <div class="accordion-codigo">#4.07.01.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.01</strong> - Conexão - CFTV</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -71030,7 +71031,7 @@
                           <div class="accordion-codigo">#4.07.01.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.01</strong> - Conexão - CFTV</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -71476,7 +71477,7 @@
                           <div class="accordion-codigo">#4.07.01.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.01</strong> - Conexão - CFTV</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -71864,7 +71865,7 @@
                           <div class="accordion-codigo">#4.07.01.04</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.01</strong> - Conexão - CFTV</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -72136,7 +72137,7 @@
                           <div class="accordion-codigo">#4.07.02.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.02</strong> - Conexão - ADM</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -73336,7 +73337,7 @@
                           <div class="accordion-codigo">#4.07.02.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.02</strong> - Conexão - ADM</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -73666,7 +73667,7 @@
                           <div class="accordion-codigo">#4.07.03.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.03</strong> - Conexão - CMP</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -74170,7 +74171,7 @@
                           <div class="accordion-codigo">#4.07.03.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.03</strong> - Conexão - CMP</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -74500,7 +74501,7 @@
                           <div class="accordion-codigo">#4.07.03.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.03</strong> - Conexão - CMP</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -74830,7 +74831,7 @@
                           <div class="accordion-codigo">#4.07.04.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.04</strong> - Conexão - SKID</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -75566,7 +75567,7 @@
                           <div class="accordion-codigo">#4.07.04.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.04</strong> - Conexão - SKID</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -76186,7 +76187,7 @@
                           <div class="accordion-codigo">#4.07.04.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.04</strong> - Conexão - SKID</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -76806,7 +76807,7 @@
                           <div class="accordion-codigo">#4.07.04.04</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.04</strong> - Conexão - SKID</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -77194,7 +77195,7 @@
                           <div class="accordion-codigo">#4.07.04.05</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.04</strong> - Conexão - SKID</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -77582,7 +77583,7 @@
                           <div class="accordion-codigo">#4.07.05.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.05</strong> - Conexão - Inversores</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -78028,7 +78029,7 @@
                           <div class="accordion-codigo">#4.07.05.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.05</strong> - Conexão - Inversores</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -78416,7 +78417,7 @@
                           <div class="accordion-codigo">#4.07.05.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.05</strong> - Conexão - Inversores</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -78978,7 +78979,7 @@
                           <div class="accordion-codigo">#4.07.05.04</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.05</strong> - Conexão - Inversores</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -79366,7 +79367,7 @@
                           <div class="accordion-codigo">#4.07.06.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.06</strong> - Conexão - Aterramento Equipamentos</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -80218,7 +80219,7 @@
                           <div class="accordion-codigo">#4.07.06.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.06</strong> - Conexão - Aterramento Equipamentos</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -80606,7 +80607,7 @@
                           <div class="accordion-codigo">#4.07.06.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.06</strong> - Conexão - Aterramento Equipamentos</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -80994,7 +80995,7 @@
                           <div class="accordion-codigo">#4.07.06.04</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.06</strong> - Conexão - Aterramento Equipamentos</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -81382,7 +81383,7 @@
                           <div class="accordion-codigo">#4.07.06.05</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.06</strong> - Conexão - Aterramento Equipamentos</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -81770,7 +81771,7 @@
                           <div class="accordion-codigo">#4.07.06.06</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.06</strong> - Conexão - Aterramento Equipamentos</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -82158,7 +82159,7 @@
                           <div class="accordion-codigo">#4.07.06.07</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.06</strong> - Conexão - Aterramento Equipamentos</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -82546,7 +82547,7 @@
                           <div class="accordion-codigo">#4.07.06.08</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.06</strong> - Conexão - Aterramento Equipamentos</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -82934,7 +82935,7 @@
                           <div class="accordion-codigo">#4.07.06.09</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.06</strong> - Conexão - Aterramento Equipamentos</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -83322,7 +83323,7 @@
                           <div class="accordion-codigo">#4.07.07.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.07</strong> - Conexão - SPDA</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -84000,7 +84001,7 @@
                           <div class="accordion-codigo">#4.07.07.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.07</strong> - Conexão - SPDA</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -84330,7 +84331,7 @@
                           <div class="accordion-codigo">#4.07.07.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.07</strong> - Conexão - SPDA</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -84660,7 +84661,7 @@
                           <div class="accordion-codigo">#4.07.07.04</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.07.07</strong> - Conexão - SPDA</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -84990,7 +84991,7 @@
                           <div class="accordion-codigo">#4.08.01.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.08.01</strong> - Estrutura e Módulos</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -86248,7 +86249,7 @@
                           <div class="accordion-codigo">#4.08.01.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.08.01</strong> - Estrutura e Módulos</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -86520,7 +86521,7 @@
                           <div class="accordion-codigo">#4.08.02.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.08.02</strong> - Cabos</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -86792,7 +86793,7 @@
                           <div class="accordion-codigo">#4.08.02.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.08.02</strong> - Cabos</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -87064,7 +87065,7 @@
                           <div class="accordion-codigo">#4.08.02.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.08.02</strong> - Cabos</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -87336,7 +87337,7 @@
                           <div class="accordion-codigo">#4.08.02.04</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.08.02</strong> - Cabos</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -87608,7 +87609,7 @@
                           <div class="accordion-codigo">#4.08.03.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.08.03</strong> - Inversores</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -87880,7 +87881,7 @@
                           <div class="accordion-codigo">#4.08.03.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.08.03</strong> - Inversores</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -88152,7 +88153,7 @@
                           <div class="accordion-codigo">#4.08.04.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.08.04</strong> - SKID</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -88424,7 +88425,7 @@
                           <div class="accordion-codigo">#4.08.04.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.08.04</strong> - SKID</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -88696,7 +88697,7 @@
                           <div class="accordion-codigo">#4.08.05.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.08.05</strong> - CMP</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -88968,7 +88969,7 @@
                           <div class="accordion-codigo">#4.08.05.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.08.05</strong> - CMP</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -89240,7 +89241,7 @@
                           <div class="accordion-codigo">#4.08.05.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.08.05</strong> - CMP</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -89512,7 +89513,7 @@
                           <div class="accordion-codigo">#4.08.06.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.08.06</strong> - CFTV</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -89784,7 +89785,7 @@
                           <div class="accordion-codigo">#4.08.07.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.08.07</strong> - Sistema de Scada</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -90114,7 +90115,7 @@
                           <div class="accordion-codigo">#4.09.01.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.09.01</strong> - Cercamento Interno</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -90444,7 +90445,7 @@
                           <div class="accordion-codigo">#4.09.01.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.09.01</strong> - Cercamento Interno</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -90774,7 +90775,7 @@
                           <div class="accordion-codigo">#4.09.01.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.09.01</strong> - Cercamento Interno</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -91046,7 +91047,7 @@
                           <div class="accordion-codigo">#4.09.02.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.09.02</strong> - Estruturação - Drenagem</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -91724,7 +91725,7 @@
                           <div class="accordion-codigo">#4.09.02.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.09.02</strong> - Estruturação - Drenagem</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -92054,7 +92055,7 @@
                           <div class="accordion-codigo">#4.09.02.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.09.02</strong> - Estruturação - Drenagem</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -92384,7 +92385,7 @@
                           <div class="accordion-codigo">#4.09.03.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.09.03</strong> - Construção Poço Artesiano</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -92714,7 +92715,7 @@
                           <div class="accordion-codigo">#4.09.03.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.09.03</strong> - Construção Poço Artesiano</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -92986,7 +92987,7 @@
                           <div class="accordion-codigo">#4.09.04.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.09.04</strong> - Limpeza Final - Vistoria</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -93548,7 +93549,7 @@
                           <div class="accordion-codigo">#4.09.04.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.09.04</strong> - Limpeza Final - Vistoria</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -93820,7 +93821,7 @@
                           <div class="accordion-codigo">#4.09.04.03</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.09.04</strong> - Limpeza Final - Vistoria</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -94092,7 +94093,7 @@
                           <div class="accordion-codigo">#4.09.04.04</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.09.04</strong> - Limpeza Final - Vistoria</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -94364,7 +94365,7 @@
                           <div class="accordion-codigo">#4.09.04.05</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.09.04</strong> - Limpeza Final - Vistoria</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -94636,7 +94637,7 @@
                           <div class="accordion-codigo">#4.09.04.06</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#4.09.04</strong> - Limpeza Final - Vistoria</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -94908,7 +94909,7 @@
                           <div class="accordion-codigo">#5.01.01.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#5.01.01</strong> - Execução dos Postes</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -95412,7 +95413,7 @@
                           <div class="accordion-codigo">#5.01.01.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#5.01.01</strong> - Execução dos Postes</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -95742,7 +95743,7 @@
                           <div class="accordion-codigo">#5.01.02.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#5.01.02</strong> - Execução de Cabeamento - Rede</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -96130,7 +96131,7 @@
                           <div class="accordion-codigo">#5.01.02.02</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#5.01.02</strong> - Execução de Cabeamento - Rede</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -96460,7 +96461,7 @@
                           <div class="accordion-codigo">#5.01.03.01</div>
                           <div style="flex: 1;">
                               
-                  <div style="font-size: 0.7rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.6rem; color: var(--gray-500); margin-bottom: 2px; display: flex; align-items: center; gap: 5px;">
                       <i class="fas fa-sitemap" style="font-size: 0.65rem;"></i>
                       <span> <strong>#5.01.03</strong> - Comissionamento da Rede</span>
                       <span style="margin-left: auto; font-size: 0.65rem; background: var(--gray-50); padding: 2px 6px; border-radius: 4px;">
@@ -109020,13 +109021,13 @@
         <i class="fas fa-robot"></i> Análise de IA - Atividades Críticas
       </h2>
       <div class="analise-meta">
-        <span><i class="fas fa-clock"></i> 2/19/2026, 1:04:14 PM</span>
+        <span><i class="fas fa-clock"></i> 2/19/2026, 4:07:58 PM</span>
         
       </div>
     </div>
   
       <div class="analise-conteudo-completo">
-        <h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">PARECER TÉCNICO ESTRUTURADO – PROJETO USINA FOTOVOLTAICA SERRA DO SALITRE  </h3><br><strong>Data da análise: 19/02/2026</strong></p><p>---</p><p>## ATIVIDADE 3 de 12 - Terraplanagem (2.04.01) [ATIVIDADE CRÍTICA: MARGEM DE ATRASO ZERO]</p><p><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;"><div class="diagnostico-box">A. Diagnóstico da Situação Atual</div></h3></p><p>1. <strong>Análise Física</strong>  <br><ul><br><li>% Planejada: 100,0%</li><br><li>% Realmente concluída: 0,0%</li><br><li>Gap: 100 pontos percentuais</li><br><li>Margem de atraso: 0 dias (atividade crítica)</li><br><li>Causas prováveis do atraso:</li><br><li>Falha no planejamento inicial de mobilização e recursos (quantidade de recursos diária zero sugere falta completa de encaminhamento físico)</li><br><li>Possíveis burocracias na liberação do local ou pendências não identificadas</li><br><li>Problemas na cadeia de suprimentos que afetam início imediato da terraplanagem  </p><p>2. <strong>Análise Financeira</strong></li><br><li>Valor Planejado a Receber: R$ 7.062,60</li><br><li>Valor Realmente Recebido: R$ 0,00</li><br><li>Saldo: -R$ 7.062,60 (negativo, recebendo menos que planejado)</li><br><li>Impacto no fluxo de caixa: representa 0,00087 do valor total do projeto; baixo percentual isolado, porém significativo pela criticidade e potencial efeito cascata.  </p><p>3. <strong>Análise de Impacto em Cadeia</strong></li><br><li>Sucessoras diretas: 1 atividade</li><br><li>Valor a receber das sucessoras: R$ 0,00</li><br><li>Margem da atividade é zero, portanto as sucessoras estão condicionadas à conclusão imediata da terraplanagem sem folga para atrasos.  </p><p><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;"><div class="recomendacoes-box">B. Recomendações de Ação</div></h3></p><p>1. <strong>Ações imediatas</strong></li><br><li>Acionar plano de mobilização de equipes e equipamentos SEM atraso adicional</li><br><li>Revisão e liberação de recursos físicos e logísticos no local, identificação rápida dos gargalos</li><br><li>Realizar reunião emergencial para acelerar o início físico da atividade ainda esta semana  </p><p>2. <strong>Comunicações necessárias</strong></li><br><li>Coordenador de obra civil</li><br><li>Planejamento e controle de obras</li><br><li>Suprimentos para garantir materiais e equipamentos</li><br><li>Diretor de projetos para apoio estratégico e priorização  </p><p>3. <strong>Prazos sugeridos</strong></li><br><li>Início efetivo da terraplanagem em no máximo 3 dias para evitar impacto irreversível no cronograma global  </p><p>---</p><p>## ATIVIDADE 9 de 12 - Estruturas - Estacas (3.01.05) [ATIVIDADE CRÍTICA: MARGEM DE ATRASO ZERO]</p><p><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;"><div class="diagnostico-box">A. Diagnóstico da Situação Atual</div></h3></p><p>1. <strong>Análise Física</strong></li><br><li>% Planejada: 76,0%</li><br><li>% Realmente concluída: 0,0%</li><br><li>Gap: 76 pontos percentuais</li><br><li>Margem de atraso: 0 dias (atividade crítica)</li><br><li>Causas prováveis do atraso:</li><br><li>Falta de suprimento/material ou equipamento específico para perfuração/implantação de estacas</li><br><li>Atrasos na aprovação técnica e liberação das estacas poderiam ter ocorrido antes, apesar do relatório indicar aprovações concluídas; possível falha na logística ou execução física  </p><p>2. <strong>Análise Financeira</strong></li><br><li>Valor Planejado a Receber: R$ 39.466,07</li><br><li>Valor Realmente Recebido: R$ 0,00</li><br><li>Saldo: -R$ 39.466,07 (recebimento muito atrasado)</li><br><li>Percentual peso no projeto: 0,00644</li><br><li>Impacto relevante no fluxo de caixa diante do percentual e da criticidade da atividade  </p><p>3. <strong>Análise de Impacto em Cadeia</strong></li><br><li>Sucessoras diretas: 4 atividades</li><br><li>Valor total das sucessoras: R$ 23.679,64</li><br><li>Saldo sucessoras: negativo -R$ 23.679,64 (sucessoras também atrasadas diretamente influenciadas)</li><br><li>O atraso produzido impacta diretamente a cadeia, com sucessoras em atraso ou dependentes da liberação dessa etapa sem possibilidade de compensação.  </p><p><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;"><div class="recomendacoes-box">B. Recomendações de Ação</div></h3></p><p>1. <strong>Ações imediatas</strong></li><br><li>Identificação pontual das causas de atraso</li><br><li>Mobilizar recursos extras (equipamentos, equipe especializada para aceleração)</li><br><li>Reavaliação do plano de execução para possíveis trabalhos em paralelo nas sucessoras onde possível  </p><p>2. <strong>Comunicações necessárias</strong></li><br><li>Gestão de logística e suprimentos para garantir entrega e disponibilidade imediata dos materiais</li><br><li>Coordenador de obras de fundações</li><br><li>Planejamento estratégico da obra para realocação de recursos e remanejamentos  </p><p>3. <strong>Prazos sugeridos</strong></li><br><li>Deve sair do nível crítico em até 5 dias com esforços concentrados para minimizar impacto irreversível  </p><p>---</p><p>## ATIVIDADE 11 de 12 - Subestação - SKID (3.01.07) [ATIVIDADE CRÍTICA: MARGEM DE ATRASO ZERO]</p><p><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;"><div class="diagnostico-box">A. Diagnóstico da Situação Atual</div></h3></p><p>1. <strong>Análise Física</strong></li><br><li>% Planejada: 16,0%</li><br><li>% Realmente concluída: 0,0%</li><br><li>Gap: 16 pontos percentuais</li><br><li>Margem de atraso: 0 dias (atividade crítica)</li><br><li>Causa provável:</li><br><li>Falta de alocação de recursos internos ou externo para início do serviço</li><br><li>Possível atraso em recebimento de componentes críticos  </p><p>2. <strong>Análise Financeira</strong></li><br><li>Valor Planejado a Receber: R$ 4.004,65</li><br><li>Valor Realmente Recebido: R$ 0,00</li><br><li>Saldo: -R$ 4.004,65</li><br><li>Impacto financeiro bruto pequeno (0,00258 do projeto total), mas crítico para sequência do fluxo físico da subestação.  </p><p>3. <strong>Análise de Impacto em Cadeia</strong></li><br><li>Sucessoras diretas: 2 atividades</li><br><li>Margem zero, sucessoras dependem diretamente da conclusão desta  </p><p><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;"><div class="recomendacoes-box">B. Recomendações de Ação</div></h3></p><p>1. <strong>Ações imediatas</strong></li><br><li>Priorizar a liberação e mobilização para início imediato, mínimo no prazo de 3 dias</li><br><li>Conferir possíveis gargalos em suprimentos  </p><p>2. <strong>Comunicações necessárias</strong></li><br><li>Logística e suprimentos para antecipação de entregas</li><br><li>Coordenação técnica da subestação  </p><p>3. <strong>Prazos sugeridos</strong></li><br><li>Resolver em até 4 dias para evitar desdobramentos graves  </p><p>---</p><p>## Análise das demais atividades com margem pequena ou folga:</p><p>| Atividade                  | % Planejada | % Realizada | Gap | Margem (dias) | Impacto financeiro (R$) | Ação recomendada principal             |</li><br></ul><br>|---------------------------|-------------|-------------|-----|---------------|------------------------|--------------------------------------|<br>| 2.03.09 - Aterramento      | 57,0%       | 0,0%        | 57  | 9             | 3.390,05               | Início imediato, aproveitar margem   |<br>| 2.03.10 - SPDA             | 33,0%       | 0,0%        | 33  | 9             | 1.695,02               | Preparação para início rápido         |<br>| 2.05.01 - Emissão Licença  | 4,0%        | 0,0%        | 4   | 84            | 2.966,29               | Monitorar, menor urgência             |<br>| 3.01.01 - Inversores       | 54,0%       | 0,0%        | 54  | 65,32         | 11.839,82              | Há folga; controlar e programar início|<br>| 3.01.02 - Estação Solarim. | 57,0%       | 0,0%        | 57  | 78,32         | 1.253,63               | Boa margem; manter ritmo planejado   |<br>| 3.01.03 - Abrigos          | 76,0%       | 0,0%        | 76  | 44,32         | 7.893,21               | Atenção para iniciar progressão       |<br>| 3.01.04 - Módulos Fotovoltaicos | 41,0%   | 0,0%        | 41  | 61            | 63.507,47              | Priorizar por peso financeiro alto    |<br>| 3.01.06 - Estruturas Peças | 41,0%       | 0,0%        | 41  | 6             | 23.679,64              | Checar recursos para evitar zero margem|<br>| 3.01.08 - Cabine CMP       | 19,0%       | 0,0%        | 19  | 1             | 25.686,22              | Alerta máximo, tomar ação imediata    |</p><p><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Recomendações Gerais para essas atividades</h3></p><p>- As atividades com margens inferiores a 10 dias (6 dias, 9 dias, 1 dia) requerem atenção imediata para mobilização e início, pois estão em risco de se tornar críticas.  <br><ul><br><li>Atividades com maiores margens (acima de 40 dias) devem ser monitoradas com avaliações periódicas para evitar propágem de atrasos.</li><br><li>Para as atividades de peso financeiro elevado (Módulos Fotovoltaicos, Cabine CMP) a prioridade é alta dado o impacto no fluxo de caixa.</p><p>---</p><p>## CONCLUSÃO TÉCNICA GERAL E PLANO DE RECUPERAÇÃO</p><p>1. <strong>Situação Atual</strong>:</li><br></ul><br>O projeto apresenta 12 atividades atrasadas, dentre as quais 3 são críticas com margem zero. O atraso acumulado é preocupante, especialmente nas atividades Terraplanagem, Estruturas - Estacas e Subestação SKID, pois estas comprometem diretamente o fluxo físico do projeto e podem gerar atrasos cumulativos. O impacto financeiro isolado dessas atividades parece pequeno em percentual, mas o efeito no cronograma pode causar perdas maiores e reflexos negativos indiretos no caixa.</p><p>2. <strong>Plano de Recuperação Geral</strong>:  <br><ul><br><li><strong>Mobilização Imediata das Atividades Críticas (0 dias de margem):</strong></li><br></ul><br>  Priorizar as 3 atividades com atraso zero, com ações emergenciais para início e aceleração. Reuniões semanais de acompanhamento focadas nos recursos, gargalos e entregas dessas frentes.  <br><ul><br><li><strong>Mitigação dos Atrasos com Margem Pequena:</strong></li><br></ul><br>  Garantir a entrada desses trabalhos com recursos alocados, monitoramento quinzenal e relatório de progresso detalhado para antecipar correções.  <br><ul><br><li><strong>Gestão Integrada e Comunicação:</strong></li><br></ul><br>  Envolver gestão de logística (suprimentos e equipamentos), equipe técnica e administrativa para remover impedimentos rapidamente. Comunicação permanente com diretorias e equipe de planejamento.  <br><ul><br><li><strong>Controle Financeiro e Fluxo de Caixa:</strong></li><br></ul><br>  Ajustar projeção financeira considerando os atrasos e ganhos possíveis com recuperação. Reforçar cobrança de pagamentos vinculados a entregas concluídas e negociar condições de ajuste contratual se necessário.  <br><ul><br><li><strong>Aprimoramento do Planejamento e Acompanhamento:</strong></li><br></ul><br>  Revisar planejamento para identificar atividades de risco e criar planos de contingência específicos para os próximos 60 dias.  <br><ul><br><li><strong>Treinamento e Acompanhamento da Equipe:</strong></li><br></ul><br>  Capacitar supervisionamento para monitorar produtividade, com indicadores claros de avanço e alertas antecipados para evitar novos atrasos.  </p><p>3. <strong>Recomendações Específicas de Monitoramento:</strong>  <br><ul><br><li>Atividades com peso financeiro elevado (ex: Módulos Fotovoltaicos e Cabine CMP) devem ser objeto de relatórios financeiros e operacionais semanais.</li><br><li>Implantar cronograma revisado com buffers para evitar que margens reduzidas causem atrasos em cadeia.</li><br><li>Avaliar possibilidade de trabalhos em paralelo nas sucessoras para diminuir o efeito cascata dos atrasos nas predecessoras.  </p><p>---</p><p>## PONTOS CRÍTICOS E ALERTAS</p><p>- Se as atividades com margem zero não forem iniciadas em até 5 dias, haverá impacto direto e imediato no prazo final do projeto.</li><br><li>Atrasos que somados equivalem a valores financeiros acumulados acima de R$ 120 mil exigem equilíbrio entre esforço para recuperação e planejamento financeiro da empresa.</li><br><li>A comunicação entre setores e as ações emergenciais devem evitar que o saldo negativo financeiro aumente, visto que todas as atividades críticas estão com saldo negativo e com risco de comprometer o fluxo de caixa no curto prazo.  </p><p>---</p><p><strong>Em suma:</strong> a situação demanda intervenção rápida e concentrada nos núcleos críticos, com forte gestão multidisciplinar e realocação de esforços para aquela fatia de atividades com impacto zero em margem e alto potencial de atraso em cadeia para recuperar o cronograma e proteger o fluxo financeiro. A execução de um plano de recuperação eficiente nessas primeiras semanas pode garantir controle e trazer maior segurança para o término do projeto dentro dos limites financeiros e temporais estipulados.</li><br></ul>
+        ---</p><p># Parecer Técnico Estruturado sobre Atividades Críticas do Projeto Usina Fotovoltaica Serra do Salitre  <br><strong>Data de Análise:</strong> 19/02/2026  <br><strong>Total de Atividades Críticas Avaliadas:</strong> 12  </p><p>---</p><p>## Atividade 3: 2.04.01 - Terraplanagem  <br><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;"><div class="diagnostico-box">A. Diagnóstico da Situação Atual</div>  </h3></p><p><strong>1. Análise Física</strong>  <br><ul><br><li>% Planejada: 100.0%</li><br><li>% Realmente concluída: 0.0%</li><br><li>Gap: 100.0 pontos percentuais (atraso total)</li><br><li>Margem de Atraso Disponível: 0 dias → Atividade crítica com zero folga → qualquer atraso impacta imediatamente o cronograma geral do projeto.</li><br><li>Causas prováveis:</li><br><li>Falta de mobilização de recursos internos/externos;</li><br><li>Problemas de liberação técnica ou ambiental;</li><br><li>Pendências contratuais ou logísticas;</li><br><li>Falta de definição técnica final ou estratégia executiva.  </p><p><strong>2. Análise Financeira</strong></li><br><li>Valor Planejado a Receber: R$ 7.062,60</li><br><li>Valor Realmente Recebido: R$ 0,00</li><br><li>Saldo: R$ -7.062,60 (negativo → receita abaixo do planejado)</li><br><li>Impacto financeiro: 0,28% do valor total do projeto → direto impacto no fluxo de caixa por maior atraso financeiro e operacional.   </p><p><strong>3. Análise de Impacto em Cadeia</strong></li><br><li>Sucessoras Diretas: 1</li><br><li>Atraso impacta diretamente sucessora pela cadeia de dependência técnica.</li><br><li>Margem zero indica que sucessoras podem ser impactadas imediatamente por esse atraso, causando efeito dominó.  </p><p><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;"><div class="recomendacoes-box">B. Recomendações de Ação</div>  </h3></p><p>1. <strong>Ações Imediatas:</strong></li><br><li>Mobilização imediata da equipe para iniciar o serviço;</li><br><li>Levantamento e resolução rápida de eventuais bloqueios (técnicos, ambientais, logísticos);</li><br><li>Alocação emergencial de recursos extras se necessário.  </p><p>2. <strong>Comunicações Necessárias:</strong></li><br><li>Comunicação urgente com gerência do Proj. Executivo e MDT - Civil;</li><br><li>Informar corpo diretor e projeto de planejamento para readequação;</li><br><li>Alinhar com área financeira para ajustar fluxo de caixa.  </p><p>3. <strong>Prazos Sugeridos:</strong></li><br><li>Início da atividade nos próximos 2 dias;</li><br><li>Recuperação progressiva para atingir 50% do avanço em 7 dias, eliminando a crítica;</li><br><li>Conclusão em 15 dias para evitar impactos maiores.  </p><p>---</p><p>## Atividade 9: 3.01.05 - Estruturas - Estacas</li><br></ul><br><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;"><div class="diagnostico-box">A. Diagnóstico da Situação Atual</div>  </h3></p><p><strong>1. Análise Física</strong>  <br><ul><br><li>% Planejada: 76.0%</li><br><li>% Realmente concluída: 0.0%</li><br><li>Gap: 76 pontos percentuais (atraso severo)</li><br><li>Margem de Atraso: 0 dias → crítica, impacto imediato no cronograma.</li><br><li>Causas prováveis:</li><br><li>Atraso na entrega/logística de materiais;</li><br><li>Problemas técnicos ou operacionais não resolvidos;</li><br><li>Dependência de aprovação ou liberação anterior;</li><br><li>Falta de planejamento detalhado de execução.</p><p><strong>2. Análise Financeira</strong></li><br><li>Valor Planejado a Receber: R$ 39.466,07</li><br><li>Valor Realmente Recebido: R$ 0,00</li><br><li>Saldo: R$ -39.466,07 (negativo, impacto financeiro forte)</li><br><li>Impacto total em cadeia: R$ 63.145,71 (2,5% do projeto) considerando sucessoras; impacto relevante no caixa.  </p><p><strong>3. Análise de Impacto em Cadeia</strong></li><br><li>4 sucessoras diretas, sendo 1 atrasada;</li><br><li>Sucessoras apresentam saldo negativo, indicando efeito cascata negativo e comprometimento da cadeia crítica;</li><br><li>Margem zero demonstra necessidade de ação urgente para evitar comprometimento total do cronograma logístico.  </p><p><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;"><div class="recomendacoes-box">B. Recomendações de Ação</div>  </h3></p><p>1. <strong>Ações Imediatas:</strong></li><br><li>Rápida mobilização da equipe de logística e campo;</li><br><li>Verificação e liberação prioritária dos materiais;</li><br><li>Realização de reunião emergencial para revisão do plano de execução e mitigação dos impedimentos.  </p><p>2. <strong>Comunicações Necessárias:</strong></li><br><li>Comunicação direta com gerência de Logística e engenharia;</li><br><li>Envolvimento da alta gestão para apoio na resolução de gargalos;</li><br><li>Alinhamento com financeiro para reajustes no fluxo de caixa.  </p><p>3. <strong>Prazos Sugeridos:</strong></li><br><li>Início imediato em até 1 dia;</li><br><li>Recuperação de pelo menos 50% de avanço em 10 dias;</li><br><li>Trabalho integral para finalização em 25 dias.  </p><p>---</p><p>## Atividade 11: 3.01.07 - Subestação - SKID</li><br></ul><br><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;"><div class="diagnostico-box">A. Diagnóstico da Situação Atual</div>  </h3></p><p><strong>1. Análise Física</strong>  <br><ul><br><li>% Planejada: 16.0%</li><br><li>% Realmente concluída: 0.0%</li><br><li>Gap: 16 pontos percentuais</li><br><li>Margem de Atraso: 0 dias → crítica, impacto direto no cronograma;</li><br><li>Causas prováveis:</li><br><li>Complexidade técnica do SKID;</li><br><li>Atrasos em aprovações técnicas e/ou aquisição de equipamentos;</li><br><li>Falta de mobilização da equipe técnica especializada;</li><br><li>Problemas cadastrais ou de integridade logística.</p><p><strong>2. Análise Financeira</strong></li><br><li>Valor Planejado a Receber: R$ 4.004,65</li><br><li>Valor Realmente Recebido: R$ 0,00</li><br><li>Saldo: R$ -4.004,65 (negativo, pequeno impacto financeiro mas critica operacional).</li><br><li>Impacto financeiro total: 0,16% do projeto, com potencial repercussão no cronograma operacional.  </p><p><strong>3. Análise de Impacto em Cadeia</strong></li><br><li>2 sucessoras diretas;</li><br><li>Margem zero indica que as sucessoras serão impactadas diretamente e em curto prazo;</li><br><li>Crítico evitar atrasos em cadeia para não comprometer o conjunto da logística.  </p><p><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;"><div class="recomendacoes-box">B. Recomendações de Ação</div>  </h3></p><p>1. <strong>Ações Imediatas:</strong></li><br><li>Priorização do início da obra, com alocação de técnicos especializados;</li><br><li>Revisão e liberação rápida de materiais e equipamentos;</li><br><li>Definição clara de responsabilidades e monitoramento diário.  </p><p>2. <strong>Comunicações Necessárias:</strong></li><br><li>Intensificar comunicação entre equipes de logística, engenharia e fornecedor do SKID;</li><br><li>Reportar à gerência para suporte decisório;</li><br><li>Envolvimento do planejamento para ajustes finos.  </p><p>3. <strong>Prazos Sugeridos:</strong></li><br><li>Início nas próximas 48 horas;</li><br><li>Avanço de 50% em 15 dias;</li><br><li>Conclusão em até 60 dias, dado cronograma original longo.  </p><p>---</p><p>## Atividades com Margem Pequena (<15 dias)</li><br></ul><br><strong>Atividades com atenção imediata, porém sem margem zero:</strong></p><p>| Código   | Nome                       | % Planejada | % Realizada | Gap   | Margem (dias) | Peso Financeiro no projeto | Valor Planejado (R$) | Valor Recebido (R$) | Saldo (R$)        | Comentário                                   |<br>|----------|----------------------------|-------------|-------------|-------|---------------|----------------------------|----------------------|--------------------|-------------------|---------------------------------------------|<br>| 2.03.09  | Aterramento                | 57%         | 0%          | 57 p.p.| 9             | 0.00065                    | 3.390,05             | 0,00               | -3.390,05          | Atraso relevante, margem baixa, urgência.   |<br>| 2.03.10  | SPDA                       | 33%         | 0%          | 33 p.p.| 9             | 0.00065                    | 1.695,02             | 0,00               | -1.695,02          | Margem baixa, monitorar evolução.           |<br>| 3.01.08  | Cabine - CMP               | 19%         | 0%          | 19 p.p.| 1             | 0.01408                    | 25.686,22            | 0,00               | -25.686,22         | Margem crítica, próximo da margem zero.     |<br>| 3.01.06  | Estruturas - Peças, Eixos  | 41%         | 0%          | 41 p.p.| 6             | 0.00644                    | 23.679,64            | 0,00               | -23.679,64         | Atenção e ações corretivas necessárias.     |<br>| 3.01.03  | Abrigos de Inversores       | 76%         | 0%          | 76 p.p.| 44.32         | 0.00129                    | 7.893,21             | 0,00               | -7.893,21          | Margem maior, mas atraso considerável.      |</p><p><h3 style="color: var(--primary); margin-top:20px; margin-bottom:10px;">Recomendações gerais para estas atividades:  </h3><br><ul><br><li>Mobilizar recursos para início imediato;</li><br><li>Ações de aceleração e controle diário da produtividade;</li><br><li>Revisão das causas fundamentais, especialmente em logística e planejamento;</li><br><li>Comunicação permanente com setores operacionais.  </p><p>---</p><p>## Atividades com Margem Alta (>50 dias) – Flexibilidade no Cronograma</li><br><li>3.01.01 - Inversores (65 dias marg);</li><br><li>3.01.02 - Estação Solarimétrica (78 dias marg);</li><br><li>3.01.04 - Módulos Fotovoltaicos (61 dias marg);</li><br><li>2.05.01 - Emissão Licença Ambiental (84 dias marg).  </p><p><strong>Diagnóstico:</strong> Estas atividades apresentam atraso físico real (0% realizado) e atraso financeiro (receita zero contra planejada), mas possuem margem ampla para recuperação sem impactar o cronograma geral.  </p><p><strong>Recomendações:</strong></li><br><li>Planejamento estratégico para início gradual e controle de progresso;</li><br><li>Monitoramento mensalizado, priorizando atividades com margem menor;</li><br><li>Mitigar riscos de acúmulo de atrasos futuros;</li><br><li>Garantir liberações técnicas e ambientais sem impactos adicionais.  </p><p>---</p><p># <strong>Conclusão Final e Plano de Recuperação Geral</strong></p><p>## Diagnóstico Global:</li><br><li>Todas as 12 atividades críticas estão atrazadas em termos físicos e financeiros, com nenhum valor recebido até o momento, configurando um risco real para o fluxo financeiro e para o cronograma do projeto.</li><br><li>Três atividades possuem margem zero, o que as torna críticas para o cronograma; seu atraso imediato impacta diretamente o projeto.</li><br><li>Atividades com margens pequenas (até 15 dias) demandam ações rápidas para evitar que se tornem críticas.</li><br><li>Atividades com margens maiores permitem algum planejamento de recuperação, mas seu atraso acumulado é preocupante.</li><br><li>O peso financeiro agregado dessas atividades representa aproximadamente 7,5% do valor total do projeto (considerando saldos negativos em todas). Este impacto no fluxo de caixa é significativo e deverá ser gerenciado com cautela.</p><p>## Plano de Recuperação Geral:  </p><p>1. <strong>Mobilização Geral Imediata</strong></li><br><li>Acionar equipes técnicas e logísticas para início imediato das atividades com margem zero e menores folgas;</li><br><li>Priorizar liberação de recursos, materiais e autorizações pendentes;</li><br><li>Estabelecer reunião diária de acompanhamento até que atividades críticas estejam recuperadas.  </p><p>2. <strong>Monitoramento e Controle Rigoroso</strong></li><br><li>Implantar sistema de análise diária do progresso físico e financeiro;</li><br><li>Identificar e eliminar gargalos em feedback contínuo;</li><br><li>Promover escalonamento de recursos para acelerar entregas.  </p><p>3. <strong>Comunicação e Alinhamento</strong></li><br><li>Coordenar comunicação entre todos os setores envolvidos (Projeto Executivo, MDT Civil e Elétrica, Logística, Burocrática e Financeiro);</li><br><li>Estabelecer responsáveis claros para cada segmento crítico;</li><br><li>Informar stakeholders sobre riscos, impactos e planos de mitigação.  </p><p>4. <strong>Ações Específicas para Minimizar Impactos Financeiros</strong></li><br><li>Negociar revisões contratuais para pagamento adiantado ou condições especiais temporárias;</li><br><li>Ajustar fluxo de caixa para cobrir atrasos no recebimento;</li><br><li>Avaliar possibilidade de execução parcial financiada para amenizar impactos imediatos.  </p><p>5. <strong>Revisão do Planejamento e Mitigação de Riscos</strong></li><br><li>Replanejar atividades de médio e longo prazo para otimizar recursos;</li><br><li>Implementar planos de contingência em atividades com maior risco;</li><br><li>Avaliar novas margens críticas e ajustar prazos conforme evolução.  </p><p>## Recomendações Finais:</li><br><li>Priorizar urgentemente atividades com margem zero (Terraplanagem, Estruturas - Estacas e Subestação - SKID), pois qualquer atraso adicional afetará toda a cadeia produtiva e financeira.</li><br><li>Garantir execução alinhada entre planejamento físico e financeiro para evitar desequilíbrio de caixa e riscos contratuais.</li><br><li>Utilizar margem existente em outras atividades para acomodar realocações estratégicas de recursos e balancear esforços.</li><br><li>Refinar repetidamente o controle de produtividade, reforçando a responsabilidade das equipes para reverter atrasos.  </p><p>---</p><p><strong>Este parecer enfatiza a criticidade imediata e sugere forte atuação gerencial integrada para garantir a reversão dos atrasos e estabilização do projeto, minimizando impactos financeiros e assegurando a entrega com qualidade e prazo.</strong></p><p>---</li><br></ul>
       </div>
       <div class="analise-footer">
         <i class="fas fa-info-circle"></i> Análise gerada por IA
@@ -109047,7 +109048,7 @@
                   <strong>Relatório Diário de Obra - UFV CEMIG</strong>
               </p>
               <p>
-                  Gerado automaticamente em 19/02/2026 às 10:04 | 
+                  Gerado automaticamente em 19/02/2026 às 13:07 | 
                   Atividades monitoradas: 252 | 
                   Progresso financeiro: 4.1%
               </p>
